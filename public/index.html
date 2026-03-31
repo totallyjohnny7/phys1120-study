@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHYS 1120 Exam 2 Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#07070b;--card:#0e0e14;--border:#1a1a24;--gold:#d4a826;--gold-dim:#a8841e;--text:#e0e0e0;--text-dim:#888;--green:#3ecf8e;--blue:#4ea8de;--force-gold:#f0c040;--red:#ef4444;--purple:#8b6cef;--correct:#22c55e;--wrong:#ef4444}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;min-height:100vh}
+.mono{font-family:'JetBrains Mono',monospace}
+</style>
+<style>
+/* HEADER & TABS */
+.header{text-align:center;padding:32px 20px 0;border-bottom:1px solid var(--border)}
+.header h1{font-family:'JetBrains Mono',monospace;font-size:28px;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
+.header p{color:var(--text-dim);font-size:13px;margin-bottom:20px}
+.tabs{display:flex;justify-content:center;gap:4px}
+.tab-btn{font-family:'JetBrains Mono',monospace;font-size:14px;padding:10px 28px;background:transparent;color:var(--text-dim);border:1px solid var(--border);border-bottom:none;border-radius:8px 8px 0 0;cursor:pointer;transition:all .3s}
+.tab-btn:hover{color:var(--gold);background:rgba(212,168,38,.06)}
+.tab-btn.active{color:var(--gold);background:var(--card);border-color:var(--gold);box-shadow:0 -2px 12px rgba(212,168,38,.15)}
+.tab-content{display:none;padding:24px;max-width:1200px;margin:0 auto}
+.tab-content.active{display:block}
+
+/* SEARCH */
+.search-wrap{display:flex;justify-content:center;margin:12px 0 8px}
+.search-box{width:100%;max-width:500px;padding:9px 16px 9px 36px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
+.search-box:focus{border-color:var(--gold);box-shadow:0 0 12px rgba(212,168,38,.15)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:15px;pointer-events:none}
+.search-container{position:relative;width:100%;max-width:500px}
+.search-count{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);text-align:center;margin-top:4px;min-height:14px}
+.problem-card.search-hidden{display:none}
+.problem-card .search-highlight{background:rgba(212,168,38,.35);color:#fff;border-radius:2px;padding:0 2px}
+
+/* PROBLEM CARDS */
+.problem-card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:10px;margin-bottom:24px;overflow:hidden;transition:box-shadow .3s}
+.problem-card:hover{box-shadow:0 0 20px rgba(212,168,38,.1)}
+.card-header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border)}
+.q-num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--bg);background:var(--gold);padding:4px 10px;border-radius:6px;font-weight:700}
+.q-title{font-size:16px;font-weight:600;color:#fff}
+.card-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.card-text{padding:20px}
+.card-svg{padding:20px;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border)}
+@media(max-width:800px){.card-body{grid-template-columns:1fr}.card-svg{border-left:none;border-top:1px solid var(--border)}#book-layout{grid-template-columns:1fr!important}}
+
+/* TEXT STYLES */
+.step{margin-bottom:10px;font-size:14px}
+.step-label{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:12px;font-weight:600}
+.eq{font-family:'JetBrains Mono',monospace;background:rgba(212,168,38,.08);border:1px solid rgba(212,168,38,.15);padding:6px 12px;border-radius:6px;margin:8px 0;display:inline-block;font-size:13px;color:var(--force-gold)}
+.answer-box{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);padding:8px 14px;border-radius:6px;margin:8px 0;font-size:13px}
+.answer-box .lbl{font-family:'JetBrains Mono',monospace;color:var(--correct);font-size:11px;font-weight:700}
+.warn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);padding:6px 12px;border-radius:6px;margin:8px 0;font-size:12px;color:var(--red)}
+.mnemonic{background:rgba(139,108,239,.08);border:1px solid rgba(139,108,239,.15);padding:6px 12px;border-radius:6px;margin:8px 0;font-size:12px;color:var(--purple)}
+.sub-case{margin:6px 0;padding:6px 10px;background:rgba(255,255,255,.03);border-radius:4px;font-size:13px}
+
+/* INTERACTIVE SLIDERS */
+.slider-group{margin:10px 0}
+.slider-group label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);display:block;margin-bottom:4px}
+.slider-group input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+.slider-val{font-family:'JetBrains Mono',monospace;color:var(--green);font-size:13px}
+.calc-result{font-family:'JetBrains Mono',monospace;background:rgba(62,207,142,.08);border:1px solid rgba(62,207,142,.15);padding:10px 14px;border-radius:6px;margin:8px 0;font-size:13px;color:var(--green)}
+
+/* QUIZ STYLES */
+.quiz-container{max-width:700px;margin:0 auto}
+.quiz-q{font-size:16px;font-weight:600;margin-bottom:16px;color:#fff}
+.quiz-progress{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin-bottom:12px}
+.quiz-option{display:block;width:100%;text-align:left;padding:14px 18px;margin-bottom:8px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif}
+.quiz-option:hover:not(.disabled){border-color:var(--gold);background:rgba(212,168,38,.06)}
+.quiz-option.correct{border-color:var(--correct);background:rgba(34,197,94,.1);box-shadow:0 0 12px rgba(34,197,94,.2)}
+.quiz-option.wrong{border-color:var(--wrong);background:rgba(239,68,68,.08)}
+.quiz-option.disabled{cursor:default;opacity:.7}
+.quiz-option.disabled.correct{opacity:1}
+.explanation{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:16px;font-size:13px;display:none}
+.explanation.show{display:block}
+.explanation h4{color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:13px;margin-bottom:8px}
+.exp-correct{color:var(--correct);margin-bottom:6px}
+.exp-wrong{color:var(--text-dim);margin-bottom:4px;font-size:12px}
+.next-btn{font-family:'JetBrains Mono',monospace;padding:10px 28px;background:var(--gold);color:var(--bg);border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:16px;transition:all .3s}
+.next-btn:hover{box-shadow:0 0 16px rgba(212,168,38,.4)}
+.score-card{text-align:center;padding:40px}
+.score-card h2{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:24px;margin-bottom:8px}
+.score-num{font-size:48px;font-weight:700;color:var(--correct);font-family:'JetBrains Mono',monospace}
+.grade{font-size:20px;margin-top:8px;font-family:'JetBrains Mono',monospace}
+.missed-list{text-align:left;max-width:500px;margin:20px auto}
+.missed-item{padding:8px 12px;margin:4px 0;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);border-radius:6px;font-size:13px}
+
+/* BADGE */
+.related-badge{font-family:'JetBrains Mono',monospace;font-size:11px;padding:2px 8px;border-radius:10px;display:inline-block;margin-left:8px}
+
+/* QUICK REF TABLE */
+.ref-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
+.ref-table th{font-family:'JetBrains Mono',monospace;background:rgba(212,168,38,.1);color:var(--gold);padding:10px;text-align:left;border:1px solid var(--border)}
+.ref-table td{padding:10px;border:1px solid var(--border)}
+
+/* SVG common */
+svg text{font-family:'JetBrains Mono',monospace}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>PHYS 1120 — EXAM 2 REVIEW</h1>
+<p>Electromagnetism &bull; Forces, Induction, Circuits &bull; 16 Problems + Quiz + Book Problems</p>
+<div class="search-wrap">
+  <div class="search-container">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" class="search-box" id="search-input" placeholder="Search problems... (e.g. Lenz, solenoid, series, alpha)" oninput="doSearch(this.value)">
+  </div>
+</div>
+<div class="search-count" id="search-count"></div>
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab('study')">STUDY</button>
+<button class="tab-btn" onclick="switchTab('quiz')">EXAM QUIZ</button>
+<button class="tab-btn" onclick="switchTab('book')">BOOK PROBLEMS</button>
+</div>
+</div>
+<!-- ==================== TAB 1: STUDY ==================== -->
+<div id="tab-study" class="tab-content active">
+
+<!-- Q1 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q1</span><span class="q-title">Force Direction on Proton (RHR 2)</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">CONCEPT</span><br>A positive charge moving through a magnetic field experiences a force: <span class="eq">F = qvB sin&theta;</span></div>
+<div class="step"><span class="step-label">METHOD</span><br>Use Right-Hand Rule #2: Point fingers in direction of v, curl toward B. Thumb = F direction (for + charge).</div>
+<div class="sub-case"><b>(a)</b> v &rarr; (right), B &uarr; (up) &rArr; <b>F out of page</b> (&odot;)</div>
+<div class="sub-case"><b>(b)</b> v &uarr; (up), B &otimes; (into page) &rArr; <b>F right</b> (&rarr;)</div>
+<div class="sub-case"><b>(c)</b> v &odot; (out of page), B &rarr; (right) &rArr; <b>F up</b> (&uarr;)</div>
+<div class="mnemonic">MNEMONIC: "FBI" &mdash; F = Thumb, B = Curl-to, I(v) = Fingers point</div>
+<div class="warn">For NEGATIVE charges (electrons), flip the force direction!</div>
+</div>
+<div class="card-svg">
+<svg width="320" height="220" viewBox="0 0 320 220">
+<rect width="320" height="220" fill="#0a0a12" rx="8"/>
+<text x="10" y="20" fill="#888" font-size="11">(a) v right, B up</text>
+<line x1="30" y1="60" x2="100" y2="60" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="55" y="55" fill="#3ecf8e" font-size="11">v</text>
+<line x1="65" y1="80" x2="65" y2="35" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<text x="70" y="50" fill="#4ea8de" font-size="11">B</text>
+<circle cx="65" cy="95" r="8" fill="none" stroke="#f0c040" stroke-width="2"/>
+<circle cx="65" cy="95" r="2" fill="#f0c040"/>
+<text x="78" y="99" fill="#f0c040" font-size="11">F (out)</text>
+
+<text x="160" y="20" fill="#888" font-size="11">(b) v up, B into page</text>
+<line x1="200" y1="80" x2="200" y2="35" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="205" y="50" fill="#3ecf8e" font-size="11">v</text>
+<circle cx="200" cy="65" r="8" fill="none" stroke="#4ea8de" stroke-width="2"/>
+<line x1="194" y1="59" x2="206" y2="71" stroke="#4ea8de" stroke-width="1.5"/>
+<line x1="206" y1="59" x2="194" y2="71" stroke="#4ea8de" stroke-width="1.5"/>
+<text x="212" y="69" fill="#4ea8de" font-size="11">B</text>
+<line x1="210" y1="60" x2="250" y2="60" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="230" y="55" fill="#f0c040" font-size="11">F</text>
+
+<text x="10" y="125" fill="#888" font-size="11">(c) v out of page, B right</text>
+<circle cx="55" cy="165" r="8" fill="none" stroke="#3ecf8e" stroke-width="2"/>
+<circle cx="55" cy="165" r="2" fill="#3ecf8e"/>
+<text x="67" y="169" fill="#3ecf8e" font-size="11">v (out)</text>
+<line x1="30" y1="190" x2="110" y2="190" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<text x="60" y="205" fill="#4ea8de" font-size="11">B</text>
+<line x1="55" y1="155" x2="55" y2="140" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="60" y="142" fill="#f0c040" font-size="11">F</text>
+
+<defs>
+<marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+<marker id="arrowB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+<marker id="arrowF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q2</span><span class="q-title">Find B from Known v and F (RHR 2 Reverse)</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">CONCEPT</span><br>Given v and F directions, find B by reversing RHR 2. Point fingers along v, thumb along F &mdash; palm pushes toward B.</div>
+<div class="sub-case"><b>Ex 1:</b> v &rarr; (right), F &uarr; (up) &rArr; <b>B out of page</b> (&odot;)</div>
+<div class="sub-case"><b>Ex 2:</b> v &rarr; (right), F &otimes; (into page) &rArr; <b>B down</b> (&darr;)</div>
+<div class="step"><span class="step-label">KEY</span><br>For electrons: apply RHR as if positive, then <b>flip B direction</b>.</div>
+<div class="eq">F = qvB &rArr; B = F/(qv)</div>
+<div class="warn">Common mistake: forgetting to flip for negative charges!</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="180" viewBox="0 0 280 180">
+<rect width="280" height="180" fill="#0a0a12" rx="8"/>
+<text x="10" y="18" fill="#888" font-size="11">Ex 1: v right, F up &rarr; B = ?</text>
+<line x1="30" y1="70" x2="120" y2="70" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="65" y="64" fill="#3ecf8e" font-size="11">v</text>
+<line x1="75" y1="65" x2="75" y2="35" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="80" y="45" fill="#f0c040" font-size="11">F</text>
+<circle cx="75" cy="85" r="8" fill="none" stroke="#4ea8de" stroke-width="2"/>
+<circle cx="75" cy="85" r="2" fill="#4ea8de"/>
+<text x="88" y="89" fill="#4ea8de" font-size="12" font-weight="bold">B (out)</text>
+
+<text x="10" y="118" fill="#888" font-size="11">Ex 2: v right, F into page &rarr; B = ?</text>
+<line x1="30" y1="150" x2="120" y2="150" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="65" y="144" fill="#3ecf8e" font-size="11">v</text>
+<circle cx="75" cy="150" r="6" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+<line x1="71" y1="146" x2="79" y2="154" stroke="#f0c040" stroke-width="1.5"/>
+<line x1="79" y1="146" x2="71" y2="154" stroke="#f0c040" stroke-width="1.5"/>
+<text x="85" y="147" fill="#f0c040" font-size="10">F(in)</text>
+<line x1="170" y1="150" x2="170" y2="165" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<text x="178" y="163" fill="#4ea8de" font-size="12" font-weight="bold">B (down)</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q3 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q3</span><span class="q-title">Forces Between Parallel Wires</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">RULE</span><br>Same direction currents &rarr; <b>ATTRACT</b><br>Opposite direction currents &rarr; <b>REPEL</b></div>
+<div class="eq">F/&#8467; = &mu;&#8320;I&#8321;I&#8322; / (2&pi;R&#8321;&#8322;)</div>
+<div class="step"><span class="step-label">WORKED EXAMPLE</span><br>I&#8321; = I&#8322; = 25 A, R = 35 cm = 0.35 m, &#8467; = 15 cm = 0.15 m</div>
+<div class="calc-result">F/&#8467; = (4&pi;&times;10&#8315;&#8311;)(25)(25) / (2&pi;)(0.35) = 3.57&times;10&#8315;&#8308; N/m<br>F = (3.57&times;10&#8315;&#8308;)(0.15) &asymp; <b>5.4&times;10&#8315;&#8308; N</b></div>
+<div class="mnemonic">MNEMONIC: "Same = Snuggle, Opposite = Oh no!" (attract vs repel)</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="180" viewBox="0 0 280 180">
+<rect width="280" height="180" fill="#0a0a12" rx="8"/>
+<text x="40" y="18" fill="#888" font-size="11">Same Direction = ATTRACT</text>
+<!-- Wire 1 -->
+<line x1="60" y1="40" x2="60" y2="120" stroke="#3ecf8e" stroke-width="3"/>
+<text x="45" y="135" fill="#3ecf8e" font-size="11">I&#8321;</text>
+<line x1="60" y1="80" x2="60" y2="45" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<!-- Wire 2 -->
+<line x1="120" y1="40" x2="120" y2="120" stroke="#3ecf8e" stroke-width="3"/>
+<text x="105" y="135" fill="#3ecf8e" font-size="11">I&#8322;</text>
+<line x1="120" y1="80" x2="120" y2="45" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<!-- Force arrows -->
+<line x1="65" y1="80" x2="85" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<line x1="115" y1="80" x2="95" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="72" y="75" fill="#f0c040" font-size="10">ATTRACT</text>
+
+<!-- Opposite -->
+<text x="170" y="18" fill="#888" font-size="11">Opposite = REPEL</text>
+<line x1="190" y1="40" x2="190" y2="120" stroke="#3ecf8e" stroke-width="3"/>
+<line x1="190" y1="80" x2="190" y2="45" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<line x1="250" y1="40" x2="250" y2="120" stroke="#ef4444" stroke-width="3"/>
+<line x1="250" y1="60" x2="250" y2="95" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowR)"/>
+<line x1="185" y1="80" x2="165" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<line x1="255" y1="80" x2="275" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="200" y="75" fill="#ef4444" font-size="10">REPEL</text>
+<defs><marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker></defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q4</span><span class="q-title">+ Charge in B Out of Page &rarr; Clockwise Circle</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">CONCEPT</span><br>A positive charge moving in a uniform B field follows a circular path. F is always perpendicular to v, acting as centripetal force.</div>
+<div class="eq">R = mv / (qB)</div>
+<div class="step"><span class="step-label">DIRECTION</span><br>+ charge enters B&odot; (out of page) moving right &rarr; RHR gives F downward &rarr; curves down &rarr; <b>Clockwise circle</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>Clockwise circular path</div>
+<div class="warn">Negative charge in same setup &rarr; COUNTERCLOCKWISE</div>
+</div>
+<div class="card-svg">
+<svg width="260" height="200" viewBox="0 0 260 200">
+<rect width="260" height="200" fill="#0a0a12" rx="8"/>
+<!-- B dots (out of page) -->
+<g fill="#4ea8de" font-size="16">
+<text x="20" y="30">&middot;</text><text x="60" y="30">&middot;</text><text x="100" y="30">&middot;</text><text x="140" y="30">&middot;</text><text x="180" y="30">&middot;</text><text x="220" y="30">&middot;</text>
+<text x="20" y="70">&middot;</text><text x="60" y="70">&middot;</text><text x="140" y="70">&middot;</text><text x="180" y="70">&middot;</text><text x="220" y="70">&middot;</text>
+<text x="20" y="110">&middot;</text><text x="60" y="110">&middot;</text><text x="140" y="110">&middot;</text><text x="180" y="110">&middot;</text><text x="220" y="110">&middot;</text>
+<text x="20" y="150">&middot;</text><text x="60" y="150">&middot;</text><text x="140" y="150">&middot;</text><text x="180" y="150">&middot;</text><text x="220" y="150">&middot;</text>
+<text x="20" y="190">&middot;</text><text x="60" y="190">&middot;</text><text x="100" y="190">&middot;</text><text x="140" y="190">&middot;</text><text x="180" y="190">&middot;</text><text x="220" y="190">&middot;</text>
+</g>
+<text x="230" y="18" fill="#4ea8de" font-size="10">B out</text>
+<!-- Circular path -->
+<circle cx="120" cy="110" r="50" fill="none" stroke="#f0c040" stroke-width="2" stroke-dasharray="6,3"/>
+<!-- Charge entering right -->
+<circle cx="170" cy="110" r="6" fill="#f0c040" stroke="#f0c040" stroke-width="1"/>
+<text x="168" y="114" fill="#0a0a12" font-size="10" font-weight="bold">+</text>
+<!-- v arrow at entry -->
+<line x1="170" y1="104" x2="170" y2="80" stroke="#3ecf8e" stroke-width="2"/>
+<text x="175" y="88" fill="#3ecf8e" font-size="10">v</text>
+<!-- CW arrow -->
+<path d="M155,65 A50,50 0 0,1 170,105" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#arrowF)"/>
+<text x="85" y="78" fill="#f0c040" font-size="12" font-weight="bold">CW</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q5 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q5</span><span class="q-title">Variable Resistor &rarr; Induced Current in Loop A</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">SETUP</span><br>Circuit with variable resistor (slider). Nearby loop A detects induced current.</div>
+<div class="step"><span class="step-label">CHAIN OF REASONING</span><br>
+Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
+&rarr; B increases (B &prop; I) &rarr; &Phi; through loop A increases<br>
+&rarr; Lenz's Law: induced current <b>opposes</b> increase<br>
+&rarr; Induced B opposes original B</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>(b) Counterclockwise in loop A</div>
+<div class="mnemonic">MNEMONIC: Lenz = "Nature is Lazy" &mdash; opposes all change</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="180" viewBox="0 0 280 180">
+<rect width="280" height="180" fill="#0a0a12" rx="8"/>
+<!-- Battery circuit -->
+<rect x="20" y="30" width="100" height="80" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+<text x="30" y="25" fill="#3ecf8e" font-size="10">Circuit</text>
+<!-- Battery symbol -->
+<line x1="20" y1="60" x2="20" y2="55" stroke="#f0c040" stroke-width="3"/>
+<line x1="20" y1="52" x2="20" y2="48" stroke="#f0c040" stroke-width="1"/>
+<!-- Resistor zigzag -->
+<path d="M50,30 L55,22 L60,38 L65,22 L70,38 L75,22 L80,30" fill="none" stroke="#888" stroke-width="1.5"/>
+<text x="55" y="18" fill="#888" font-size="9">R (slider)</text>
+<!-- Arrow showing R decrease -->
+<line x1="50" y1="14" x2="38" y2="14" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowR)"/>
+<text x="30" y="11" fill="#ef4444" font-size="8">R&darr;</text>
+<!-- I arrow -->
+<line x1="120" y1="70" x2="120" y2="45" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="124" y="58" fill="#3ecf8e" font-size="10">I&uarr;</text>
+<!-- B arrow into loop A -->
+<line x1="135" y1="70" x2="170" y2="70" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<text x="140" y="65" fill="#4ea8de" font-size="10">B&uarr;</text>
+<!-- Loop A -->
+<circle cx="210" cy="70" r="35" fill="none" stroke="#8b6cef" stroke-width="2"/>
+<text x="195" y="74" fill="#8b6cef" font-size="12" font-weight="bold">Loop A</text>
+<!-- CCW arrow -->
+<path d="M220,38 A30,30 0 1,0 185,50" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="215" y="118" fill="#f0c040" font-size="11" font-weight="bold">CCW</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q6 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q6</span><span class="q-title">KE of Particle in Circular Path</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>Magnetic force is always <b>perpendicular</b> to velocity. Therefore:</div>
+<div class="eq">W = F &middot; d &middot; cos(90&deg;) = 0</div>
+<div class="step">Zero work done &rarr; No change in kinetic energy &rarr; Speed stays constant (only direction changes)</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>(c) Remains constant &mdash; F &perp; v means W = 0 means &Delta;KE = 0</div>
+<div class="warn">B field changes DIRECTION of velocity, never SPEED!</div>
+</div>
+<div class="card-svg">
+<svg width="220" height="160" viewBox="0 0 220 160">
+<rect width="220" height="160" fill="#0a0a12" rx="8"/>
+<circle cx="110" cy="80" r="50" fill="none" stroke="#f0c040" stroke-width="2" stroke-dasharray="5,3"/>
+<circle cx="160" cy="80" r="5" fill="#3ecf8e"/>
+<text x="157" y="84" fill="#0a0a12" font-size="9" font-weight="bold">+</text>
+<!-- v tangent up -->
+<line x1="160" y1="75" x2="160" y2="50" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="164" y="58" fill="#3ecf8e" font-size="10">v</text>
+<!-- F toward center -->
+<line x1="155" y1="80" x2="125" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="130" y="75" fill="#f0c040" font-size="10">F</text>
+<!-- 90 degree mark -->
+<rect x="155" y="72" width="5" height="5" fill="none" stroke="#888" stroke-width="1"/>
+<text x="30" y="140" fill="#888" font-size="10">F &perp; v &rarr; W=0 &rarr; &Delta;KE=0</text>
+<text x="30" y="154" fill="#3ecf8e" font-size="11" font-weight="bold">|v| = constant</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q7 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q7</span><span class="q-title">Steady 1.5A in Solenoid &rarr; Loop Current</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>Faraday's Law: EMF is induced only when flux is <b>changing</b>.</div>
+<div class="eq">&epsilon; = &minus;d&Phi;/dt</div>
+<div class="step">Steady (constant) current &rarr; Constant B &rarr; Constant &Phi; &rarr; d&Phi;/dt = 0 &rarr; &epsilon; = 0 &rarr; <b>No induced current</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>ZERO &mdash; a steady current produces no change in flux</div>
+<div class="warn">This is the #1 Faraday trap! "Steady" = "constant" = NO induction. Only CHANGING currents induce.</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="160" viewBox="0 0 280 160">
+<rect width="280" height="160" fill="#0a0a12" rx="8"/>
+<!-- Solenoid -->
+<rect x="20" y="40" width="120" height="60" fill="none" stroke="#3ecf8e" stroke-width="2" rx="6"/>
+<text x="50" y="35" fill="#3ecf8e" font-size="10">Solenoid (1.5A steady)</text>
+<!-- B arrows inside -->
+<line x1="35" y1="70" x2="80" y2="70" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<line x1="80" y1="70" x2="125" y2="70" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
+<text x="60" y="62" fill="#4ea8de" font-size="9">B (constant)</text>
+<!-- Loop -->
+<circle cx="200" cy="70" r="30" fill="none" stroke="#8b6cef" stroke-width="2"/>
+<text x="185" y="74" fill="#8b6cef" font-size="11">Loop</text>
+<!-- Big X -->
+<line x1="185" y1="55" x2="215" y2="85" stroke="#ef4444" stroke-width="3"/>
+<line x1="215" y1="55" x2="185" y2="85" stroke="#ef4444" stroke-width="3"/>
+<text x="170" y="120" fill="#ef4444" font-size="12" font-weight="bold">I = 0</text>
+<text x="160" y="140" fill="#888" font-size="10">d&Phi;/dt = 0 &rarr; &epsilon; = 0</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q8 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q8</span><span class="q-title">Bar Magnet Through Loop</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">PHASE 1: APPROACHING (N-end down)</span><br>&Phi; increasing &rarr; Lenz opposes increase &rarr; induced B opposes magnet's B &rarr; <b>CCW current</b> (from above) &rarr; Loop REPELS magnet</div>
+<div class="step"><span class="step-label">PHASE 2: LEAVING (N-end still down)</span><br>&Phi; decreasing &rarr; Lenz opposes decrease &rarr; induced B supports magnet's B &rarr; <b>CW current</b> (from above) &rarr; Loop ATTRACTS magnet</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>Current REVERSES direction as magnet passes through. Approaching: CCW. Leaving: CW.</div>
+<div class="mnemonic">MNEMONIC: "Coming in? Push away. Going out? Pull back." &mdash; Lenz always fights change.</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<!-- Phase 1 -->
+<text x="15" y="18" fill="#888" font-size="10">Phase 1: Approaching</text>
+<!-- Magnet -->
+<rect x="40" y="25" width="30" height="50" fill="#ef4444" stroke="#ef4444" rx="3"/>
+<text x="46" y="45" fill="#fff" font-size="10" font-weight="bold">N</text>
+<rect x="40" y="75" width="30" height="30" fill="#4ea8de" stroke="#4ea8de" rx="3"/>
+<text x="48" y="94" fill="#fff" font-size="10" font-weight="bold">S</text>
+<!-- Arrow down -->
+<line x1="55" y1="22" x2="55" y2="8" stroke="#3ecf8e" stroke-width="2"/>
+<line x1="55" y1="110" x2="55" y2="125" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="60" y="120" fill="#3ecf8e" font-size="9">v</text>
+<!-- Loop -->
+<ellipse cx="55" cy="145" rx="35" ry="12" fill="none" stroke="#f0c040" stroke-width="2"/>
+<!-- CCW arrow -->
+<path d="M80,140 A25,10 0 1,0 75,155" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="30" y="175" fill="#f0c040" font-size="11" font-weight="bold">CCW</text>
+<text x="25" y="192" fill="#ef4444" font-size="10">REPELS</text>
+
+<!-- Phase 2 -->
+<text x="150" y="18" fill="#888" font-size="10">Phase 2: Leaving</text>
+<rect x="175" y="100" width="30" height="50" fill="#ef4444" stroke="#ef4444" rx="3"/>
+<text x="181" y="120" fill="#fff" font-size="10" font-weight="bold">N</text>
+<rect x="175" y="150" width="30" height="30" fill="#4ea8de" stroke="#4ea8de" rx="3"/>
+<text x="183" y="169" fill="#fff" font-size="10" font-weight="bold">S</text>
+<line x1="190" y1="185" x2="190" y2="195" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="195" y="195" fill="#3ecf8e" font-size="9">v</text>
+<!-- Loop above -->
+<ellipse cx="190" cy="75" rx="35" ry="12" fill="none" stroke="#f0c040" stroke-width="2"/>
+<!-- CW arrow -->
+<path d="M165,70 A25,10 0 1,1 170,85" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="170" y="58" fill="#f0c040" font-size="11" font-weight="bold">CW</text>
+<text x="160" y="48" fill="#3ecf8e" font-size="10">ATTRACTS</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q9 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q9</span><span class="q-title">4&times; Speed &rarr; 4R Radius</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">FORMULA</span></div>
+<div class="eq">R = mv / (qB)</div>
+<div class="step">R is <b>directly proportional</b> to v (m, q, B held constant).<br>If v &rarr; 4v, then R &rarr; <b>4R</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>New radius = 4R (radius scales linearly with speed)</div>
+<div class="warn">Don't confuse with KE (KE &prop; v&sup2;) &mdash; radius is LINEAR in v!</div>
+</div>
+<div class="card-svg">
+<svg width="240" height="180" viewBox="0 0 240 180">
+<rect width="240" height="180" fill="#0a0a12" rx="8"/>
+<!-- Small circle -->
+<circle cx="80" cy="100" r="25" fill="none" stroke="#f0c040" stroke-width="2"/>
+<text x="72" y="105" fill="#f0c040" font-size="11">R</text>
+<line x1="80" y1="100" x2="105" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="30" y="30" fill="#888" font-size="10">Original speed v</text>
+<!-- Large circle -->
+<circle cx="160" cy="100" r="60" fill="none" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="5,3"/>
+<text x="145" y="105" fill="#3ecf8e" font-size="11">4R</text>
+<line x1="160" y1="100" x2="220" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="140" y="30" fill="#888" font-size="10">Speed 4v</text>
+<!-- Arrow -->
+<line x1="110" y1="50" x2="135" y2="50" stroke="#d4a826" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="112" y="45" fill="#d4a826" font-size="10">4&times;</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q10 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q10</span><span class="q-title">Solenoid + Bar Magnet &rarr; Attract (Unlike Poles)</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">METHOD</span><br>1. Use RHR 1 to find solenoid polarity: curl fingers in direction of current, thumb points to N pole.<br>2. Compare solenoid pole facing magnet to magnet pole facing solenoid.<br>3. Unlike poles &rarr; ATTRACT. Like poles &rarr; REPEL.</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>Unlike poles face each other &rarr; <b>ATTRACT</b> (pull toward each other)</div>
+<div class="mnemonic">MNEMONIC: RHR 1 &mdash; "Curl with Current, Thumb = North"</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="150" viewBox="0 0 280 150">
+<rect width="280" height="150" fill="#0a0a12" rx="8"/>
+<!-- Solenoid -->
+<rect x="20" y="40" width="100" height="50" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+<text x="30" y="70" fill="#3ecf8e" font-size="12" font-weight="bold">S</text>
+<text x="95" y="70" fill="#ef4444" font-size="12" font-weight="bold">N</text>
+<text x="40" y="35" fill="#888" font-size="10">Solenoid</text>
+<!-- Coil lines -->
+<path d="M40,40 Q50,30 60,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+<path d="M60,40 Q70,30 80,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+<path d="M80,40 Q90,30 100,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+<!-- Bar magnet -->
+<rect x="160" y="45" width="40" height="40" fill="#4ea8de" rx="3"/>
+<text x="168" y="70" fill="#fff" font-size="12" font-weight="bold">S</text>
+<rect x="200" y="45" width="40" height="40" fill="#ef4444" rx="3"/>
+<text x="210" y="70" fill="#fff" font-size="12" font-weight="bold">N</text>
+<text x="175" y="35" fill="#888" font-size="10">Bar Magnet</text>
+<!-- Attract arrows -->
+<line x1="125" y1="65" x2="145" y2="65" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<line x1="155" y1="65" x2="135" y2="65" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="125" y="100" fill="#f0c040" font-size="12" font-weight="bold">ATTRACT</text>
+<text x="110" y="115" fill="#888" font-size="10">N faces S = unlike poles</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q11 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q11</span><span class="q-title">Electron Beam Between Magnets</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">SETUP</span><br>Electron beam travels horizontally between magnets. B field points downward.</div>
+<div class="step"><span class="step-label">METHOD</span><br>1. Pretend it's a POSITIVE charge &rarr; apply RHR 2<br>2. v horizontal, B down &rarr; RHR gives force in one direction<br>3. FLIP for electron (negative charge) &rarr; force in opposite direction &rarr; <b>UPWARD</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>(c) Accelerated upward &mdash; "accelerated" here means direction changes, not speed</div>
+<div class="warn">"Accelerated" in physics = any change in velocity (including direction). B field can accelerate without changing speed!</div>
+</div>
+<div class="card-svg">
+<svg width="260" height="160" viewBox="0 0 260 160">
+<rect width="260" height="160" fill="#0a0a12" rx="8"/>
+<!-- Magnets -->
+<rect x="40" y="10" width="180" height="25" fill="#ef4444" rx="4"/>
+<text x="110" y="27" fill="#fff" font-size="11" font-weight="bold">N</text>
+<rect x="40" y="115" width="180" height="25" fill="#4ea8de" rx="4"/>
+<text x="110" y="132" fill="#fff" font-size="11" font-weight="bold">S</text>
+<!-- B arrows down -->
+<line x1="80" y1="40" x2="80" y2="108" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#arrowB)"/>
+<line x1="130" y1="40" x2="130" y2="108" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#arrowB)"/>
+<line x1="180" y1="40" x2="180" y2="108" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#arrowB)"/>
+<text x="190" y="80" fill="#4ea8de" font-size="10">B</text>
+<!-- Electron beam -->
+<line x1="10" y1="75" x2="60" y2="75" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="15" y="70" fill="#3ecf8e" font-size="10">e&minus; beam</text>
+<!-- Curved path upward -->
+<path d="M60,75 Q130,75 130,45" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
+<text x="135" y="50" fill="#f0c040" font-size="11" font-weight="bold">F (up)</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q12 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q12</span><span class="q-title">Switch Opens &rarr; Voltmeter Reading Increases</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">CONCEPT</span><br>When switch S opens, a parallel branch is removed from the circuit.</div>
+<div class="step"><span class="step-label">CHAIN</span><br>Remove parallel branch &rarr; Total R increases &rarr; Current from battery may decrease &rarr; But the voltage redistribution across remaining components changes &rarr; Voltmeter reading <b>INCREASES</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>Voltmeter reading INCREASES when switch opens</div>
+<div class="step"><span class="step-label">WHY</span><br>Opening the switch removes a current path. The remaining resistor now gets a larger share of the battery voltage (less voltage dropped elsewhere).</div>
+</div>
+<div class="card-svg">
+<svg width="260" height="160" viewBox="0 0 260 160">
+<rect width="260" height="160" fill="#0a0a12" rx="8"/>
+<!-- Simple circuit -->
+<rect x="30" y="30" width="180" height="100" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+<!-- Battery -->
+<line x1="30" y1="60" x2="30" y2="55" stroke="#f0c040" stroke-width="3"/>
+<line x1="30" y1="52" x2="30" y2="48" stroke="#f0c040" stroke-width="1.5"/>
+<text x="12" y="58" fill="#f0c040" font-size="9">V</text>
+<!-- Switch (open) -->
+<line x1="100" y1="30" x2="120" y2="30" stroke="#3ecf8e" stroke-width="2"/>
+<line x1="120" y1="30" x2="140" y2="20" stroke="#ef4444" stroke-width="2"/>
+<line x1="145" y1="30" x2="160" y2="30" stroke="#3ecf8e" stroke-width="2"/>
+<text x="115" y="16" fill="#ef4444" font-size="9">S (open)</text>
+<!-- Voltmeter -->
+<circle cx="200" cy="80" r="15" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+<text x="195" y="84" fill="#f0c040" font-size="10">V</text>
+<!-- Arrow up -->
+<line x1="225" y1="85" x2="225" y2="65" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="230" y="78" fill="#3ecf8e" font-size="10" font-weight="bold">&uarr;</text>
+<text x="50" y="150" fill="#888" font-size="10">Remove branch &rarr; R&uarr; &rarr; V reading &uarr;</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q13 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q13</span><span class="q-title">R and 4R in SERIES, P(4R)=40W &rarr; P(R)=?</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>In SERIES, current I is the <b>same</b> through all resistors.</div>
+<div class="eq">P = I&sup2;R &rArr; P &prop; R (same I)</div>
+<div class="step"><span class="step-label">LOGIC</span><br>P(4R) = I&sup2;(4R) = 40W<br>P(R) = I&sup2;(R) = 40W &divide; 4 = <b>10W</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>P(R) = 10W &mdash; In series, power is proportional to resistance</div>
+<div class="warn">Series: P &prop; R (bigger R = MORE power)<br>Don't confuse with parallel!</div>
+</div>
+<div class="card-svg">
+<svg width="260" height="140" viewBox="0 0 260 140">
+<rect width="260" height="140" fill="#0a0a12" rx="8"/>
+<!-- Series circuit -->
+<line x1="30" y1="70" x2="80" y2="70" stroke="#3ecf8e" stroke-width="2"/>
+<rect x="80" y="55" width="50" height="30" fill="none" stroke="#f0c040" stroke-width="2" rx="4"/>
+<text x="95" y="74" fill="#f0c040" font-size="11">R</text>
+<text x="85" y="50" fill="#888" font-size="9">P=?</text>
+<line x1="130" y1="70" x2="150" y2="70" stroke="#3ecf8e" stroke-width="2"/>
+<rect x="150" y="55" width="50" height="30" fill="none" stroke="#f0c040" stroke-width="2" rx="4"/>
+<text x="160" y="74" fill="#f0c040" font-size="11">4R</text>
+<text x="152" y="50" fill="#3ecf8e" font-size="9">P=40W</text>
+<line x1="200" y1="70" x2="240" y2="70" stroke="#3ecf8e" stroke-width="2"/>
+<!-- I arrow -->
+<line x1="30" y1="60" x2="60" y2="60" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#arrowG)"/>
+<text x="35" y="56" fill="#3ecf8e" font-size="10">I (same)</text>
+<!-- Result -->
+<text x="50" y="115" fill="#f0c040" font-size="12" font-weight="bold">Series: P &prop; R</text>
+<text x="50" y="132" fill="#3ecf8e" font-size="11">P(R) = 40/4 = 10W</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q14 -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q14</span><span class="q-title">R and 5R in PARALLEL, P(R)=50W &rarr; P(5R)=?</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>In PARALLEL, voltage V is the <b>same</b> across all resistors.</div>
+<div class="eq">P = V&sup2;/R &rArr; P &prop; 1/R (same V)</div>
+<div class="step"><span class="step-label">LOGIC</span><br>P(R) = V&sup2;/R = 50W<br>P(5R) = V&sup2;/(5R) = 50W &divide; 5 = <b>10W</b></div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>P(5R) = 10W &mdash; In parallel, power is INVERSELY proportional to resistance</div>
+<div class="warn">Parallel: P &prop; 1/R (bigger R = LESS power)<br>OPPOSITE of series!</div>
+</div>
+<div class="card-svg">
+<svg width="260" height="150" viewBox="0 0 260 150">
+<rect width="260" height="150" fill="#0a0a12" rx="8"/>
+<!-- Parallel circuit -->
+<line x1="30" y1="75" x2="60" y2="75" stroke="#3ecf8e" stroke-width="2"/>
+<line x1="60" y1="40" x2="60" y2="110" stroke="#3ecf8e" stroke-width="2"/>
+<!-- Top branch -->
+<line x1="60" y1="40" x2="90" y2="40" stroke="#3ecf8e" stroke-width="1.5"/>
+<rect x="90" y="28" width="60" height="24" fill="none" stroke="#f0c040" stroke-width="2" rx="4"/>
+<text x="108" y="44" fill="#f0c040" font-size="11">R</text>
+<text x="95" y="24" fill="#3ecf8e" font-size="9">P=50W</text>
+<line x1="150" y1="40" x2="190" y2="40" stroke="#3ecf8e" stroke-width="1.5"/>
+<!-- Bottom branch -->
+<line x1="60" y1="110" x2="90" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+<rect x="90" y="98" width="60" height="24" fill="none" stroke="#f0c040" stroke-width="2" rx="4"/>
+<text x="105" y="114" fill="#f0c040" font-size="11">5R</text>
+<text x="95" y="95" fill="#888" font-size="9">P=?</text>
+<line x1="150" y1="110" x2="190" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+<line x1="190" y1="40" x2="190" y2="110" stroke="#3ecf8e" stroke-width="2"/>
+<line x1="190" y1="75" x2="230" y2="75" stroke="#3ecf8e" stroke-width="2"/>
+<!-- V label -->
+<text x="62" y="78" fill="#f0c040" font-size="9">V same</text>
+<!-- Result -->
+<text x="50" y="140" fill="#f0c040" font-size="11" font-weight="bold">Parallel: P &prop; 1/R &rarr; P(5R) = 50/5 = 10W</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Q15 INTERACTIVE -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q15</span><span class="q-title">Alpha Particle in B Field (INTERACTIVE)</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">GIVEN</span><br>Alpha particle: q = 2e = 3.2&times;10<sup>&minus;19</sup> C, m = 6.64&times;10<sup>&minus;27</sup> kg</div>
+<div class="eq">R = mv/(qB), Diameter = 2R, a = qvB/m</div>
+<div class="slider-group">
+<label>Speed v: <span id="v15val" class="slider-val">35.6 km/s</span></label>
+<input type="range" id="v15" min="10" max="100" value="35.6" step="0.1" oninput="calcQ15()">
+</div>
+<div class="slider-group">
+<label>Magnetic Field B: <span id="b15val" class="slider-val">1.10 T</span></label>
+<input type="range" id="b15" min="0.5" max="3.0" value="1.1" step="0.01" oninput="calcQ15()">
+</div>
+<div class="calc-result" id="q15result">
+R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
+</div>
+<div class="warn">Alpha has charge 2e (not 1e)! Forgetting = double the radius.</div>
+</div>
+<div class="card-svg">
+<svg width="240" height="200" viewBox="0 0 240 200" id="svg15">
+<rect width="240" height="200" fill="#0a0a12" rx="8"/>
+<!-- B field dots -->
+<g fill="#4ea8de" font-size="14">
+<text x="15" y="25">&middot;</text><text x="45" y="25">&middot;</text><text x="75" y="25">&middot;</text><text x="105" y="25">&middot;</text><text x="135" y="25">&middot;</text><text x="165" y="25">&middot;</text><text x="195" y="25">&middot;</text>
+<text x="15" y="55">&middot;</text><text x="45" y="55">&middot;</text><text x="195" y="55">&middot;</text>
+<text x="15" y="85">&middot;</text><text x="195" y="85">&middot;</text>
+<text x="15" y="115">&middot;</text><text x="195" y="115">&middot;</text>
+<text x="15" y="145">&middot;</text><text x="45" y="145">&middot;</text><text x="195" y="145">&middot;</text>
+<text x="15" y="175">&middot;</text><text x="45" y="175">&middot;</text><text x="75" y="175">&middot;</text><text x="105" y="175">&middot;</text><text x="135" y="175">&middot;</text><text x="165" y="175">&middot;</text><text x="195" y="175">&middot;</text>
+</g>
+<text x="200" y="18" fill="#4ea8de" font-size="9">B out</text>
+<circle id="circle15" cx="120" cy="100" r="40" fill="none" stroke="#f0c040" stroke-width="2"/>
+<circle cx="120" cy="60" r="5" fill="#f0c040"/>
+<text x="117" y="64" fill="#0a0a12" font-size="8" font-weight="bold">&alpha;</text>
+<text id="rlabel15" x="125" y="105" fill="#f0c040" font-size="11">R</text>
+<line x1="120" y1="100" x2="160" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<text id="diam15txt" x="60" y="195" fill="#3ecf8e" font-size="11">D = 1.34 mm</text>
+</svg>
+</div>
+</div>
+</div>
+
+<!-- Q16 INTERACTIVE -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">Q16</span><span class="q-title">Rod on Rails (INTERACTIVE)</span></div>
+<div class="card-body">
+<div class="card-text">
+<div class="step"><span class="step-label">GIVEN</span><br>Rod of length L = 0.50 m slides on rails, external resistor R = 1.50 &Omega;</div>
+<div class="eq">&epsilon; = BLv, I = &epsilon;/R, F = BIL</div>
+<div class="slider-group">
+<label>Rod Speed v: <span id="v16val" class="slider-val">7.50 m/s</span></label>
+<input type="range" id="v16" min="1" max="15" value="7.5" step="0.1" oninput="calcQ16()">
+</div>
+<div class="slider-group">
+<label>Magnetic Field B: <span id="b16val" class="slider-val">0.80 T</span></label>
+<input type="range" id="b16" min="0.2" max="2.0" value="0.8" step="0.01" oninput="calcQ16()">
+</div>
+<div class="calc-result" id="q16result">
+&epsilon; = 3.000 V | I = 2.000 A | F = 0.800 N
+</div>
+<div class="step"><span class="step-label">VIFf CHAIN</span><br>
+v (speed) &rarr; &epsilon; (EMF) &rarr; I (current) &rarr; F (force on rod)<br>
+Each depends on the previous!</div>
+<div class="warn">Force on the rod OPPOSES motion (Lenz's Law applied mechanically)</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<!-- Rails -->
+<line x1="30" y1="40" x2="240" y2="40" stroke="#888" stroke-width="2"/>
+<line x1="30" y1="150" x2="240" y2="150" stroke="#888" stroke-width="2"/>
+<!-- Resistor -->
+<path d="M30,40 L30,60 L22,65 L38,75 L22,85 L38,95 L22,105 L38,115 L30,120 L30,150" fill="none" stroke="#f0c040" stroke-width="2"/>
+<text x="8" y="95" fill="#f0c040" font-size="10">R</text>
+<!-- Rod -->
+<line id="rod16" x1="160" y1="35" x2="160" y2="155" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round"/>
+<text x="145" y="30" fill="#3ecf8e" font-size="10">Rod (L)</text>
+<!-- v arrow -->
+<line x1="165" y1="95" x2="200" y2="95" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowG)"/>
+<text x="175" y="90" fill="#3ecf8e" font-size="10">v</text>
+<!-- B crosses (into page) -->
+<g stroke="#4ea8de" stroke-width="1">
+<line x1="70" y1="60" x2="80" y2="70"/><line x1="80" y1="60" x2="70" y2="70"/>
+<line x1="100" y1="60" x2="110" y2="70"/><line x1="110" y1="60" x2="100" y2="70"/>
+<line x1="70" y1="110" x2="80" y2="120"/><line x1="80" y1="110" x2="70" y2="120"/>
+<line x1="100" y1="110" x2="110" y2="120"/><line x1="110" y1="110" x2="100" y2="120"/>
+</g>
+<text x="85" y="100" fill="#4ea8de" font-size="10">B (in)</text>
+<!-- EMF label -->
+<text id="emf16txt" x="100" y="180" fill="#f0c040" font-size="11">&epsilon; = BLv = 3.0 V</text>
+<!-- I arrow -->
+<line x1="80" y1="42" x2="140" y2="42" stroke="#8b6cef" stroke-width="1.5" marker-end="url(#arrowP)"/>
+<text x="95" y="52" fill="#8b6cef" font-size="9">I</text>
+<defs><marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker></defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- QUICK REFERENCE TABLE -->
+<div class="problem-card">
+<div class="card-header"><span class="q-num">REF</span><span class="q-title">Series vs Parallel Power Comparison</span></div>
+<div style="padding:20px">
+<table class="ref-table">
+<tr><th>Property</th><th>SERIES</th><th>PARALLEL</th></tr>
+<tr><td>What's shared?</td><td style="color:var(--green)">Current I (same through all)</td><td style="color:var(--green)">Voltage V (same across all)</td></tr>
+<tr><td>Power formula</td><td><span class="mono" style="color:var(--force-gold)">P = I&sup2;R</span></td><td><span class="mono" style="color:var(--force-gold)">P = V&sup2;/R</span></td></tr>
+<tr><td>Power vs R</td><td style="color:var(--blue)">P &prop; R (more R = more P)</td><td style="color:var(--blue)">P &prop; 1/R (more R = less P)</td></tr>
+<tr><td>Bigger resistor gets...</td><td style="color:var(--green)">MORE power</td><td style="color:var(--red)">LESS power</td></tr>
+<tr><td>Example</td><td>R &amp; 4R: P(4R) = 4&times;P(R)</td><td>R &amp; 5R: P(R) = 5&times;P(5R)</td></tr>
+<tr><td>Common mistake</td><td style="color:var(--red)">Using V&sup2;/R (wrong! V differs)</td><td style="color:var(--red)">Using I&sup2;R (wrong! I differs)</td></tr>
+</table>
+
+<table class="ref-table" style="margin-top:20px">
+<tr><th>Formula</th><th>Variables</th><th>Used In</th></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">F = qvB sin&theta;</span></td><td>Force on moving charge</td><td>Q1, Q2, Q11</td></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">R = mv/(qB)</span></td><td>Circular orbit radius</td><td>Q4, Q9, Q15</td></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">F/&#8467; = &mu;&#8320;I&#8321;I&#8322;/(2&pi;d)</span></td><td>Force between parallel wires</td><td>Q3</td></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">&epsilon; = &minus;d&Phi;/dt</span></td><td>Faraday's Law (EMF)</td><td>Q5, Q7, Q8</td></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">&epsilon; = BLv</span></td><td>Motional EMF</td><td>Q16</td></tr>
+<tr><td><span class="mono" style="color:var(--force-gold)">B = &mu;&#8320;nI</span></td><td>Solenoid B field</td><td>Q10</td></tr>
+</table>
+</div>
+</div>
+
+</div><!-- end tab-study -->
+<!-- ==================== TAB 2: EXAM QUIZ ==================== -->
+<div id="tab-quiz" class="tab-content">
+<div class="quiz-container">
+<div id="quiz-area">
+<div class="quiz-progress" id="quiz-progress">Question 1 of 16</div>
+<div class="quiz-q" id="quiz-question"></div>
+<div id="quiz-options"></div>
+<div class="explanation" id="quiz-explanation"></div>
+<button class="next-btn" id="quiz-next" style="display:none" onclick="nextQuizQ()">Next Question &rarr;</button>
+</div>
+<div id="quiz-score" class="score-card" style="display:none"></div>
+</div>
+</div>
+
+<!-- ==================== TAB 3: BOOK PROBLEMS ==================== -->
+<div id="tab-book" class="tab-content">
+<div class="quiz-container">
+<div id="book-area">
+<div class="quiz-progress" id="book-progress">Problem 1 of 13</div>
+<div id="book-badge" style="margin-bottom:10px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start" id="book-layout">
+  <div>
+    <div class="quiz-q" id="book-question"></div>
+    <div id="book-context" style="font-size:13px;color:var(--text-dim);margin-bottom:14px;padding:10px;background:rgba(255,255,255,.02);border-radius:6px"></div>
+    <div id="book-options"></div>
+  </div>
+  <div id="book-diagram" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:200px"></div>
+</div>
+<div class="explanation" id="book-explanation"></div>
+<button class="next-btn" id="book-next" style="display:none" onclick="nextBookQ()">Next Problem &rarr;</button>
+</div>
+<div id="book-score" class="score-card" style="display:none"></div>
+</div>
+</div>
+<script>
+// ============ TAB SWITCHING ============
+function switchTab(tab){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  const labels={study:'STUDY',quiz:'EXAM QUIZ',book:'BOOK PROBLEMS'};
+  document.querySelectorAll('.tab-btn').forEach(b=>{if(b.textContent===labels[tab])b.classList.add('active')});
+}
+
+// ============ Q15 INTERACTIVE CALCULATOR ============
+function calcQ15(){
+  const v=parseFloat(document.getElementById('v15').value)*1000;
+  const B=parseFloat(document.getElementById('b15').value);
+  const q=3.2e-19,m=6.64e-27;
+  const R=m*v/(q*B);
+  const D=2*R;
+  const a=q*v*B/m;
+  document.getElementById('v15val').textContent=(v/1000).toFixed(1)+' km/s';
+  document.getElementById('b15val').textContent=B.toFixed(2)+' T';
+  document.getElementById('q15result').innerHTML=
+    'R = '+(R*1000).toFixed(3)+' mm | Diameter = '+(D*1000).toFixed(3)+' mm<br>'+
+    'a = '+a.toExponential(2)+' m/s<sup>2</sup>';
+  const svgR=Math.min(80,Math.max(15,R*1e3*60));
+  document.getElementById('circle15').setAttribute('r',svgR);
+  document.getElementById('diam15txt').textContent='D = '+(D*1000).toFixed(2)+' mm';
+}
+
+// ============ Q16 INTERACTIVE CALCULATOR ============
+function calcQ16(){
+  const v=parseFloat(document.getElementById('v16').value);
+  const B=parseFloat(document.getElementById('b16').value);
+  const L=0.50,R=1.50;
+  const emf=B*L*v;
+  const I=emf/R;
+  const F=B*I*L;
+  document.getElementById('v16val').textContent=v.toFixed(2)+' m/s';
+  document.getElementById('b16val').textContent=B.toFixed(2)+' T';
+  document.getElementById('q16result').innerHTML=
+    '&epsilon; = '+emf.toFixed(3)+' V | I = '+I.toFixed(3)+' A | F = '+F.toFixed(3)+' N';
+  document.getElementById('emf16txt').textContent='\u03B5 = BLv = '+emf.toFixed(1)+' V';
+}
+// ============ EXAM QUIZ DATA ============
+const examQuiz=[
+{q:"A proton moves to the RIGHT through a magnetic field directed INTO the page. What is the direction of the magnetic force on the proton?",
+opts:["Up","Down","Left","Into the page"],correct:0,
+why:"RHR 2: fingers point right (v), curl into page (B), thumb points UP. Force is upward on a positive charge.",
+wrongs:["","(B) Down: This would be correct for an ELECTRON (negative charge). You forgot that proton is positive.","(C) Left: This would require v and B to be in a different configuration. You may have confused the RHR axes.","(D) Into page: Force cannot be parallel to B. The cross product v\u00D7B is always perpendicular to both."]},
+
+{q:"An electron moves to the RIGHT and is forced UPWARD. What is the direction of the magnetic field?",
+opts:["Out of page","Into the page","Up","Down"],correct:1,
+why:"For positive charge moving right with force up, RHR gives B OUT of page. But this is an ELECTRON (negative), so flip: B is INTO the page.",
+wrongs:["(A) Out of page: This would be correct for a POSITIVE charge. You forgot to flip for the electron's negative charge.","","(C) Up: B cannot be parallel to the force direction in a magnetic force problem. F = qv\u00D7B means F \u22A5 B always.","(D) Down: Confuses the relationship between F and B. The force is perpendicular to both v and B, not parallel."]},
+
+{q:"Two long parallel wires carry currents in the SAME direction. The force between them is:",
+opts:["Attractive","Repulsive","Zero","Oscillating"],correct:0,
+why:"Same-direction currents create magnetic fields that push the wires toward each other. F/l = \u03BC\u2080I\u2081I\u2082/(2\u03C0d). Same direction = ATTRACT.",
+wrongs:["","(B) Repulsive: This is the rule for OPPOSITE direction currents, not same direction. Remember: Same = Snuggle.","(C) Zero: The force is only zero if one current is zero. Two currents always interact magnetically.","(D) Oscillating: There is no oscillation in DC parallel wire forces. The force is steady and constant."]},
+
+{q:"A positive charge enters a region of B directed OUT of the page, moving to the right. The charge will:",
+opts:["Curve upward in a CCW circle","Curve downward in a CW circle","Travel in a straight line","Stop immediately"],correct:1,
+why:"RHR 2: v right, B out of page \u2192 F downward. Charge curves down, then continues in a CW circle. F is always perpendicular to v, providing centripetal force.",
+wrongs:["(A) CCW circle: This would be the path for a NEGATIVE charge. Positive charges curve CW in B out-of-page.","","(C) Straight line: A charged particle in a B field (with v not parallel to B) MUST curve. Only if v \u2225 B would it go straight.","(D) Stop: Magnetic force does zero work (F \u22A5 v), so it cannot slow down or stop a charge. Speed is constant."]},
+
+{q:"A variable resistor's slider moves LEFT, decreasing resistance. The induced current in nearby Loop A is:",
+opts:["Clockwise","Counterclockwise","Zero","Alternating"],correct:1,
+why:"R decreases \u2192 I increases \u2192 B increases \u2192 \u03A6 increases through Loop A \u2192 Lenz opposes increase \u2192 induced current is CCW to create opposing B.",
+wrongs:["(A) Clockwise: This would SUPPORT the increasing flux, violating Lenz's Law. Induced current must OPPOSE change.","","(C) Zero: Flux is CHANGING (because current is changing), so an EMF IS induced. Only steady flux gives zero.","(D) Alternating: The slider moves steadily in one direction, so the flux change is one-directional. No alternation."]},
+
+{q:"A charged particle moves in a circular path in a uniform magnetic field. Its kinetic energy:",
+opts:["Increases","Decreases","Remains constant","Oscillates"],correct:2,
+why:"Magnetic force is always perpendicular to velocity: W = Fd cos(90\u00B0) = 0. Zero work = zero change in KE. Speed (and thus KE) stays constant.",
+wrongs:["(A) Increases: No energy can be added by a magnetic force. It does zero work because F \u22A5 v at all times.","(B) Decreases: Magnetic force cannot remove energy either. Only direction changes, never speed.","","(D) Oscillates: Speed remains perfectly constant. Only the direction of v changes continuously."]},
+
+{q:"A solenoid carries a STEADY current of 1.5 A. A conducting loop is placed nearby. The induced current in the loop is:",
+opts:["1.5 A","0.75 A","Zero","Depends on loop area"],correct:2,
+why:"STEADY current = constant B = constant \u03A6 = d\u03A6/dt = 0 = no EMF = no induced current. Faraday's Law requires CHANGING flux.",
+wrongs:["(A) 1.5 A: The loop is not connected to the solenoid circuit. And even inductively, steady current induces nothing.","(B) 0.75 A: There is no 'half the current' rule. Induction requires changing flux, not just having flux.","","(D) Depends on area: Even with a large loop area, \u03A6 = BA is constant when B is constant, so d\u03A6/dt = 0 regardless of area."]},
+
+{q:"A bar magnet with N-pole pointing DOWN falls toward a horizontal conducting loop. Viewed from above, the induced current is:",
+opts:["Clockwise","Counterclockwise","Zero","First CW then CCW"],correct:1,
+why:"As N-pole approaches from above, downward flux through loop increases. Lenz's Law: induced current opposes increase by creating upward B inside loop \u2192 CCW when viewed from above.",
+wrongs:["(A) Clockwise: CW from above would create B pointing DOWN, which SUPPORTS the increasing flux. Lenz says OPPOSE.","","(C) Zero: Flux is clearly changing as the magnet approaches, so there must be an induced EMF and current.","(D) First CW then CCW: The reversal happens when the magnet PASSES THROUGH, not while approaching. During approach only, it's CCW."]},
+
+{q:"A particle orbits in a magnetic field with radius R. If its speed is increased to 4 times the original, the new radius is:",
+opts:["R/4","R","4R","16R"],correct:2,
+why:"R = mv/(qB). With m, q, B constant, R is directly proportional to v. If v \u2192 4v, then R \u2192 4R.",
+wrongs:["(A) R/4: This reverses the proportionality. R \u221D v (direct), not R \u221D 1/v (inverse).","(B) R: R only stays the same if v stays the same. Radius scales linearly with speed.","","(D) 16R: This confuses R with KE. KE \u221D v\u00B2 (so KE would be 16\u00D7), but R \u221D v (linear, so R is 4\u00D7)."]},
+
+{q:"A solenoid's N-end faces a bar magnet's S-end nearby. The force between them is:",
+opts:["Attractive (toward each other)","Repulsive (away from each other)","Zero","Depends on current magnitude"],correct:0,
+why:"N faces S = unlike poles = ATTRACT. This is the fundamental magnetic pole interaction: unlike poles attract, like poles repel.",
+wrongs:["","(B) Repulsive: Repulsion occurs between LIKE poles (N-N or S-S). Unlike poles (N-S) always attract.","(C) Zero: Two magnetic poles in proximity always exert a force. Zero force only if one has no magnetic field.","(D) Depends on current: While force magnitude depends on current (it determines B), the DIRECTION is always attractive for unlike poles."]},
+
+{q:"Electrons travel horizontally between magnets producing a downward B field. The electrons are:",
+opts:["Accelerated downward","Not affected","Accelerated upward","Accelerated along B"],correct:2,
+why:"For positive charge: v horizontal, B down \u2192 RHR gives force in one direction. But electrons are NEGATIVE, so flip \u2192 force is UPWARD. 'Accelerated' means direction changes.",
+wrongs:["(A) Downward: This is the result for a POSITIVE charge before flipping. For electrons, you must reverse the force direction.","(B) Not affected: Electrons ARE charged particles. Any charged particle moving through B (not parallel to B) experiences a force.","","(D) Along B: Magnetic force is ALWAYS perpendicular to B (and to v). It can never be parallel to B."]},
+
+{q:"In a circuit with parallel branches, switch S is opened (disconnecting one branch). The voltmeter reading across the remaining branch:",
+opts:["Decreases","Stays the same","Increases","Drops to zero"],correct:2,
+why:"Opening the switch removes a parallel path. Total resistance increases. The remaining resistor gets a larger share of battery voltage, so voltmeter reads higher.",
+wrongs:["(A) Decreases: Removing a parallel branch increases total R, which changes voltage distribution. The remaining branch gets MORE voltage, not less.","(B) Stays the same: Only true if the removed branch had infinite resistance (carried no current). A real branch removal changes the circuit.","","(D) Drops to zero: The circuit is still complete through the remaining branch. Current still flows and produces a voltage drop."]},
+
+{q:"Resistors R and 4R are connected in SERIES. If P(4R) = 40W, what is P(R)?",
+opts:["10 W","40 W","160 W","2.5 W"],correct:0,
+why:"Series: same current I through both. P = I\u00B2R, so P \u221D R. P(R)/P(4R) = R/(4R) = 1/4. P(R) = 40/4 = 10W.",
+wrongs:["","(B) 40 W: This assumes equal power in series. But P \u221D R in series, and R \u2260 4R, so powers differ by factor of 4.","(C) 160 W: This multiplied by 4 instead of dividing. The SMALLER resistor gets LESS power in series (P \u221D R).","(D) 2.5 W: This used P = V\u00B2/R (parallel formula) instead of P = I\u00B2R (series formula). In series, current is shared, not voltage."]},
+
+{q:"Resistors R and 5R are connected in PARALLEL. If P(R) = 50W, what is P(5R)?",
+opts:["250 W","50 W","10 W","5 W"],correct:2,
+why:"Parallel: same voltage V across both. P = V\u00B2/R, so P \u221D 1/R. P(5R)/P(R) = R/(5R) = 1/5. P(5R) = 50/5 = 10W.",
+wrongs:["(A) 250 W: This multiplied by 5 (used P \u221D R). That's the SERIES rule! In parallel, bigger R gets LESS power.","(B) 50 W: Equal power only if resistances are equal. 5R \u2260 R, so powers differ by factor of 5.","","(D) 5 W: Divided by 10 instead of 5. The ratio is R to 5R = factor of 5, not 10."]},
+
+{q:"An alpha particle (q=2e, m=6.64\u00D710\u207B\u00B2\u2077 kg) moves at 35.6 km/s in a 1.1 T field. Its circular orbit DIAMETER is approximately:",
+opts:["0.67 mm","1.34 mm","2.68 mm","0.34 mm"],correct:1,
+why:"R = mv/(qB) = (6.64\u00D710\u207B\u00B2\u2077)(35600)/((3.2\u00D710\u207B\u00B9\u2079)(1.1)) = 6.71\u00D710\u207B\u2074 m = 0.671 mm. DIAMETER = 2R \u2248 1.34 mm.",
+wrongs:["(A) 0.67 mm: This is the RADIUS, not the diameter! The question asks for diameter = 2R. Read carefully.","","(C) 2.68 mm: This used q = e (single charge) instead of q = 2e. Alpha particles have charge +2e, not +e.","(D) 0.34 mm: This used q = 4e or made another factor-of-2 error. Alpha charge is exactly 2e = 3.2\u00D710\u207B\u00B9\u2079 C."]},
+
+{q:"A rod of length 0.50 m moves at 7.5 m/s through a 0.8 T field on conducting rails with R = 1.50 \u03A9. The induced EMF is:",
+opts:["1.5 V","3.0 V","6.0 V","0.3 V"],correct:1,
+why:"\u03B5 = BLv = (0.8)(0.50)(7.5) = 3.0 V. Then I = \u03B5/R = 3.0/1.5 = 2.0 A, F = BIL = (0.8)(2.0)(0.50) = 0.8 N.",
+wrongs:["(A) 1.5 V: Likely forgot to include one factor. Check: B\u00D7L\u00D7v = 0.8\u00D70.5\u00D77.5 = 3.0, not 1.5.","","(C) 6.0 V: Possibly doubled one of the values or used L = 1.0 m instead of 0.50 m. Read the given values carefully.","(D) 0.3 V: Used incorrect units or decimal placement. Always convert to SI and check: 0.8 \u00D7 0.5 \u00D7 7.5 = 3.0."]}
+];
+// ============ EXAM QUIZ ENGINE ============
+let quizIdx=0, quizScore=0, quizAnswered=false, quizMissed=[];
+
+function shuffleOpts(q){
+  const indices=q.opts.map((_,i)=>i);
+  for(let i=indices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[indices[i],indices[j]]=[indices[j],indices[i]];}
+  return indices;
+}
+
+function renderQuizQ(){
+  if(quizIdx>=examQuiz.length){showQuizScore();return;}
+  quizAnswered=false;
+  const q=examQuiz[quizIdx];
+  const order=shuffleOpts(q);
+  document.getElementById('quiz-progress').textContent='Question '+(quizIdx+1)+' of '+examQuiz.length;
+  document.getElementById('quiz-question').textContent=q.q;
+  const letters=['A','B','C','D'];
+  let html='';
+  order.forEach((oi,di)=>{
+    html+='<button class="quiz-option" data-oi="'+oi+'" onclick="answerQuiz(this,'+oi+')">'+letters[di]+') '+q.opts[oi]+'</button>';
+  });
+  document.getElementById('quiz-options').innerHTML=html;
+  document.getElementById('quiz-explanation').className='explanation';
+  document.getElementById('quiz-explanation').innerHTML='';
+  document.getElementById('quiz-next').style.display='none';
+}
+
+function answerQuiz(btn,oi){
+  if(quizAnswered)return;
+  quizAnswered=true;
+  const q=examQuiz[quizIdx];
+  const correct=oi===q.correct;
+  if(correct)quizScore++;
+  else quizMissed.push({idx:quizIdx,q:q.q,yourAns:q.opts[oi],correctAns:q.opts[q.correct]});
+  document.querySelectorAll('.quiz-option').forEach(b=>{
+    b.classList.add('disabled');
+    const boi=parseInt(b.getAttribute('data-oi'));
+    if(boi===q.correct)b.classList.add('correct');
+    else if(b===btn&&!correct)b.classList.add('wrong');
+  });
+  let expHtml='<h4>'+(correct?'Correct!':'Incorrect')+'</h4>';
+  expHtml+='<div class="exp-correct">'+q.why+'</div>';
+  q.wrongs.forEach((w,i)=>{if(w&&i!==q.correct)expHtml+='<div class="exp-wrong">&bull; '+w+'</div>';});
+  document.getElementById('quiz-explanation').innerHTML=expHtml;
+  document.getElementById('quiz-explanation').className='explanation show';
+  document.getElementById('quiz-next').style.display='inline-block';
+}
+
+function nextQuizQ(){quizIdx++;renderQuizQ();}
+
+function showQuizScore(){
+  document.getElementById('quiz-area').style.display='none';
+  const pct=Math.round(quizScore/examQuiz.length*100);
+  let grade='F';
+  if(pct>=93)grade='A';else if(pct>=90)grade='A-';else if(pct>=87)grade='B+';else if(pct>=83)grade='B';else if(pct>=80)grade='B-';else if(pct>=77)grade='C+';else if(pct>=73)grade='C';else if(pct>=70)grade='C-';else if(pct>=67)grade='D+';else if(pct>=60)grade='D';
+  let html='<h2>EXAM QUIZ COMPLETE</h2>';
+  html+='<div class="score-num">'+quizScore+'/'+examQuiz.length+'</div>';
+  html+='<div style="color:var(--text-dim)">'+pct+'%</div>';
+  html+='<div class="grade" style="color:'+(pct>=70?'var(--correct)':'var(--wrong)')+'">Grade: '+grade+'</div>';
+  if(quizMissed.length>0){
+    html+='<div class="missed-list"><h4 style="color:var(--gold);margin:16px 0 8px">Missed Questions:</h4>';
+    quizMissed.forEach(m=>{
+      html+='<div class="missed-item"><b>Q'+(m.idx+1)+':</b> '+m.q.substring(0,80)+'...<br><span style="color:var(--wrong)">Your answer: '+m.yourAns+'</span> | <span style="color:var(--correct)">Correct: '+m.correctAns+'</span></div>';
+    });
+    html+='</div>';
+  }
+  html+='<button class="next-btn" onclick="resetQuiz()" style="margin-top:20px">Retake Quiz</button>';
+  document.getElementById('quiz-score').innerHTML=html;
+  document.getElementById('quiz-score').style.display='block';
+}
+
+function resetQuiz(){
+  quizIdx=0;quizScore=0;quizAnswered=false;quizMissed=[];
+  document.getElementById('quiz-area').style.display='block';
+  document.getElementById('quiz-score').style.display='none';
+  renderQuizQ();
+}
+// ============ BOOK PROBLEMS DATA ============
+const bookQuiz=[
+{related:"Q1",color:"#3ecf8e",
+ctx:"A proton (q=1.6\u00D710\u207B\u00B9\u2079 C) moves at 3\u00D710\u2075 m/s perpendicular to a 2.0 T field directed into the page.",
+q:"What is the magnitude and direction of the magnetic force on the proton?",
+opts:["9.6\u00D710\u207B\u00B9\u2074 N, upward","9.6\u00D710\u207B\u00B9\u2074 N, downward","4.8\u00D710\u207B\u00B9\u2074 N, upward","9.6\u00D710\u207B\u00B9\u2074 N, into page"],correct:0,
+why:"F = qvB sin(90\u00B0) = (1.6\u00D710\u207B\u00B9\u2079)(3\u00D710\u2075)(2.0)(1) = 9.6\u00D710\u207B\u00B9\u2074 N. RHR 2: v right, B into page \u2192 F upward for positive charge.",
+wrongs:["","(B) Downward: Correct magnitude but wrong direction. RHR 2 with v right and B into page gives F upward, not downward. Perhaps you applied the rule for an electron.","(C) Half magnitude: You may have used q = 0.8\u00D710\u207B\u00B9\u2079 or halved something incorrectly. Check: F = (1.6e-19)(3e5)(2.0) = 9.6e-14.","(D) Into page: Force is always perpendicular to BOTH v and B. It cannot be in the same direction as B."],
+diagram:'<svg viewBox="0 0 260 200" width="240"><defs><marker id="ba1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker><marker id="ba2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker></defs><rect x="10" y="10" width="240" height="140" rx="6" fill="none" stroke="#2a2a34" stroke-width="1.5"/><text x="25" y="35" fill="#4ea8de" font-family="JetBrains Mono" font-size="10">\u00d7 \u00d7 \u00d7 \u00d7 \u00d7 \u00d7</text><text x="25" y="55" fill="#4ea8de" font-family="JetBrains Mono" font-size="10">\u00d7 \u00d7 \u00d7 \u00d7 \u00d7 \u00d7</text><text x="25" y="75" fill="#4ea8de" font-family="JetBrains Mono" font-size="10">\u00d7 \u00d7 \u00d7 \u00d7 \u00d7 \u00d7</text><text x="25" y="95" fill="#4ea8de" font-family="JetBrains Mono" font-size="10">\u00d7 \u00d7 \u00d7 \u00d7 \u00d7 \u00d7</text><text x="25" y="115" fill="#4ea8de" font-family="JetBrains Mono" font-size="10">\u00d7 \u00d7 \u00d7 \u00d7 \u00d7 \u00d7</text><text x="170" y="35" fill="#4ea8de" font-family="JetBrains Mono" font-size="9">B = 2.0T \u2297</text><circle cx="50" cy="80" r="8" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="47" y="84" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">+</text><line x1="58" y1="80" x2="160" y2="80" stroke="#3ecf8e" stroke-width="2" marker-end="url(#ba1)"/><text x="100" y="75" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10">v = 3\u00d710\u2075</text><line x1="50" y1="72" x2="50" y2="30" stroke="#f0c040" stroke-width="2.5" marker-end="url(#ba2)"/><text x="56" y="48" fill="#f0c040" font-family="JetBrains Mono" font-size="11" font-weight="700">F \u2191</text><rect x="10" y="158" width="240" height="35" rx="6" fill="rgba(212,168,38,.08)" stroke="rgba(212,168,38,.15)"/><text x="20" y="178" fill="#f0c040" font-family="JetBrains Mono" font-size="10">F = qvB = 9.6\u00d710\u207b\u00b9\u2074 N (up)</text></svg>'},
+
+{related:"Q2",color:"#4ea8de",
+ctx:"An electron moves to the right at 5\u00D710\u2075 m/s and experiences an upward force. Find the magnetic field.",
+q:"What is the direction and magnitude of B if F = 1.6\u00D710\u207B\u00B9\u00B3 N?",
+opts:["2.0 T, out of page","2.0 T, into the page","2.0 T, upward","1.0 T, into the page"],correct:1,
+why:"B = F/(qv) = 1.6\u00D710\u207B\u00B9\u00B3/((1.6\u00D710\u207B\u00B9\u2079)(5\u00D710\u2075)) = 2.0 T. For positive charge: v right, F up \u2192 B out of page. But electron is negative \u2192 flip: B INTO the page.",
+wrongs:["(A) Out of page: This is correct for a POSITIVE charge. For an electron, you must flip the result. B is into the page.","","(C) Upward: B cannot be parallel to the force. F = qv\u00D7B requires F \u22A5 B at all times.","(D) 1.0 T: Magnitude error. Check: F/(qv) = 1.6e-13/(1.6e-19 \u00D7 5e5) = 1.6e-13/8e-14 = 2.0 T, not 1.0 T."],
+diagram:'<svg viewBox="0 0 260 200" width="240"><defs><marker id="bb1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker><marker id="bb2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker></defs><rect x="10" y="10" width="240" height="120" rx="6" fill="none" stroke="#2a2a34" stroke-width="1.5"/><circle cx="45" cy="80" r="8" fill="none" stroke="#ef4444" stroke-width="1.5"/><text x="42" y="84" fill="#ef4444" font-family="JetBrains Mono" font-size="9">e\u207b</text><line x1="53" y1="80" x2="180" y2="80" stroke="#3ecf8e" stroke-width="2" marker-end="url(#bb1)"/><text x="100" y="75" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10">v \u2192</text><line x1="100" y1="75" x2="100" y2="30" stroke="#f0c040" stroke-width="2" marker-end="url(#bb2)"/><text x="108" y="48" fill="#f0c040" font-family="JetBrains Mono" font-size="10">F \u2191</text><text x="160" y="30" fill="#4ea8de" font-family="JetBrains Mono" font-size="11" font-weight="700">B = ? \u2297</text><text x="160" y="45" fill="#4ea8de" font-family="JetBrains Mono" font-size="9">(into page)</text><rect x="10" y="140" width="240" height="50" rx="6" fill="rgba(239,68,68,.06)" stroke="rgba(239,68,68,.15)"/><text x="20" y="158" fill="#fca5a5" font-family="JetBrains Mono" font-size="9">+ charge: v\u2192, F\u2191 \u2192 B = \u2299 (out)</text><text x="20" y="175" fill="#fca5a5" font-family="JetBrains Mono" font-size="9">e\u207b is negative \u2192 FLIP \u2192 B = \u2297</text></svg>'},
+
+{related:"Q3",color:"#f0c040",
+ctx:"Two parallel wires carry I\u2081 = I\u2082 = 15,000 A in the same direction, separated by 0.0045 m.",
+q:"What is the force per unit length and is it attractive or repulsive?",
+opts:["10,000 N/m, attractive","10,000 N/m, repulsive","5,000 N/m, attractive","20,000 N/m, attractive"],correct:0,
+why:"F/L = \u03BC\u2080I\u2081I\u2082/(2\u03C0d) = (4\u03C0\u00D710\u207B\u2077)(15000)(15000)/(2\u03C0\u00D70.0045) = 10,000 N/m. Same direction = attractive.",
+wrongs:["","(B) Repulsive: Correct magnitude but wrong force type. Same-direction currents ATTRACT. Opposite direction would repel.","(C) 5,000 N/m: Half the correct answer. Check your arithmetic: \u03BC\u2080 \u00D7 I\u00B2 / (2\u03C0d) with these numbers gives 10,000.","(D) 20,000 N/m: Double the correct answer. Perhaps you used d/2 or forgot the 2\u03C0 in the denominator."],
+diagram:'<svg viewBox="0 0 260 180" width="240"><defs><marker id="bc1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker><marker id="bc2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker></defs><line x1="70" y1="140" x2="70" y2="20" stroke="#3ecf8e" stroke-width="3" marker-end="url(#bc1)"/><text x="55" y="155" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">I\u2081 \u2191</text><text x="48" y="15" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">15kA</text><line x1="170" y1="140" x2="170" y2="20" stroke="#3ecf8e" stroke-width="3" marker-end="url(#bc1)"/><text x="155" y="155" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">I\u2082 \u2191</text><text x="148" y="15" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">15kA</text><line x1="160" y1="80" x2="85" y2="80" stroke="#f0c040" stroke-width="2" marker-end="url(#bc2)"/><text x="100" y="73" fill="#f0c040" font-family="JetBrains Mono" font-size="9">F \u2190</text><line x1="80" y1="95" x2="155" y2="95" stroke="#f0c040" stroke-width="2" marker-end="url(#bc2)"/><text x="100" y="110" fill="#f0c040" font-family="JetBrains Mono" font-size="9">F \u2192</text><line x1="70" y1="60" x2="170" y2="60" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/><text x="105" y="55" fill="#888" font-family="JetBrains Mono" font-size="8">4.5mm</text><text x="60" y="175" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10" font-weight="700">Same dir \u2192 ATTRACT</text></svg>'},
+
+{related:"Q4",color:"#8b6cef",
+ctx:"A proton (m=1.67\u00D710\u207B\u00B2\u2077 kg, q=1.6\u00D710\u207B\u00B9\u2079 C) enters a 0.5 T field at 1\u00D710\u2075 m/s perpendicular to B.",
+q:"What is the radius of the circular path?",
+opts:["2.09 mm","4.18 mm","1.04 mm","20.9 mm"],correct:0,
+why:"R = mv/(qB) = (1.67\u00D710\u207B\u00B2\u2077)(1\u00D710\u2075)/((1.6\u00D710\u207B\u00B9\u2079)(0.5)) = 2.09\u00D710\u207B\u00B3 m = 2.09 mm.",
+wrongs:["","(B) 4.18 mm: This is the DIAMETER (2R), not the radius. Question asks for radius specifically.","(C) 1.04 mm: You may have used q = 2e (alpha particle charge) instead of q = e (proton charge).","(D) 20.9 mm: Off by a factor of 10. Check your exponent arithmetic carefully."],
+diagram:'<svg viewBox="0 0 260 200" width="240"><defs><marker id="bd1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker><marker id="bd2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker></defs><text x="15" y="20" fill="#4ea8de" font-family="JetBrains Mono" font-size="9">\u2299 \u2299 \u2299 \u2299 \u2299 \u2299 \u2299 (B=0.5T out)</text><circle cx="130" cy="110" r="55" fill="none" stroke="#f0c040" stroke-width="2" stroke-dasharray="4,3"/><circle cx="130" cy="55" r="7" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="127" y="59" fill="#3ecf8e" font-family="JetBrains Mono" font-size="8">+</text><line x1="137" y1="55" x2="200" y2="55" stroke="#3ecf8e" stroke-width="2" marker-end="url(#bd1)"/><text x="165" y="48" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">v</text><line x1="130" y1="62" x2="130" y2="95" stroke="#f0c040" stroke-width="2" marker-end="url(#bd2)"/><text x="136" y="85" fill="#f0c040" font-family="JetBrains Mono" font-size="9">F\u2193</text><circle cx="130" cy="110" r="2" fill="#888"/><line x1="130" y1="55" x2="130" y2="110" stroke="#888" stroke-width="1" stroke-dasharray="2,2"/><text x="136" y="90" fill="#888" font-family="JetBrains Mono" font-size="8">R</text><text x="15" y="190" fill="#f0c040" font-family="JetBrains Mono" font-size="10">R = mv/(qB) = 2.09 mm</text></svg>'},
+
+{related:"Q5",color:"#3ecf8e",
+ctx:"A circuit has a 10V battery with a variable resistor. R changes from 10\u03A9 to 5\u03A9, doubling the current. Nearby loop A is coupled magnetically.",
+q:"What is the direction of induced current in Loop A?",
+opts:["Clockwise","Counterclockwise","Zero","Same as circuit current"],correct:0,
+why:"R halves \u2192 I doubles \u2192 B doubles \u2192 \u03A6 increases through loop A. Lenz: induced current opposes increasing flux. In this geometry, that means CW in loop A.",
+wrongs:["","(B) CCW: This would support the increasing flux rather than oppose it. Lenz's Law requires opposition to the change.","(C) Zero: The flux IS changing (current is changing), so Faraday's Law gives a nonzero EMF.","(D) Same as circuit: The induced current direction depends on Lenz's Law, not on matching the source current direction."],
+diagram:'<svg viewBox="0 0 260 170" width="240"><rect x="10" y="20" width="140" height="70" rx="4" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="18" y="40" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">10V</text><text x="60" y="18" fill="#eae8e0" font-family="JetBrains Mono" font-size="8">R: 10\u03a9\u21925\u03a9</text><text x="60" y="35" fill="#f0c040" font-family="JetBrains Mono" font-size="8">slide\u2190</text><rect x="180" y="30" width="50" height="50" rx="4" fill="none" stroke="#8b6cef" stroke-width="2"/><text x="195" y="60" fill="#8b6cef" font-family="JetBrains Mono" font-size="11" font-weight="700">A</text><line x1="150" y1="50" x2="178" y2="50" stroke="#4ea8de" stroke-width="1.5" stroke-dasharray="3,2"/><text x="152" y="45" fill="#4ea8de" font-family="JetBrains Mono" font-size="8">B\u2192</text><rect x="10" y="110" width="240" height="45" rx="6" fill="rgba(212,168,38,.08)" stroke="rgba(212,168,38,.15)"/><text x="18" y="128" fill="#d4a826" font-family="JetBrains Mono" font-size="9">R\u2193 \u2192 I\u2191 \u2192 B\u2191 \u2192 \u03a6\u2191</text><text x="18" y="145" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">\u2192 Lenz opposes \u2192 CW in A</text></svg>'},
+
+{related:"Q6",color:"#4ea8de",
+ctx:"A proton orbits in a uniform magnetic field. The magnetic force provides centripetal acceleration.",
+q:"How much work does the magnetic force do on the proton per revolution?",
+opts:["W = qvB per revolution","W = 2\u03C0RqvB","W = 0 (zero work)","W = \u00BDmv\u00B2"],correct:2,
+why:"W = Fd cos\u03B8. Since F \u22A5 v always (\u03B8 = 90\u00B0), cos(90\u00B0) = 0, so W = 0 every instant and over any path including a full revolution.",
+wrongs:["(A) W = qvB: This is the magnitude of the force, not work. Work requires a force component along displacement.","(B) W = 2\u03C0RqvB: This multiplied force by circumference, but forgot that F \u22A5 displacement at every point. cos(90\u00B0) = 0.","","(D) W = \u00BDmv\u00B2: This is the kinetic energy, not the work done by B. Since W = 0, KE doesn't change."],
+diagram:'<svg viewBox="0 0 240 200" width="220"><defs><marker id="bf1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker><marker id="bf2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker></defs><circle cx="120" cy="100" r="60" fill="none" stroke="#f0c040" stroke-width="2" stroke-dasharray="4,3"/><circle cx="120" cy="40" r="7" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="117" y="44" fill="#3ecf8e" font-family="JetBrains Mono" font-size="8">+</text><line x1="127" y1="40" x2="175" y2="40" stroke="#3ecf8e" stroke-width="2" marker-end="url(#bf1)"/><text x="148" y="34" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">v</text><line x1="120" y1="47" x2="120" y2="85" stroke="#f0c040" stroke-width="2" marker-end="url(#bf2)"/><text x="126" y="72" fill="#f0c040" font-family="JetBrains Mono" font-size="9">F</text><rect x="117" y="37" width="8" height="8" fill="none" stroke="#eae8e0" stroke-width="1"/><text x="130" y="50" fill="#eae8e0" font-family="JetBrains Mono" font-size="7">90\u00b0</text><circle cx="120" cy="100" r="2" fill="#888"/><rect x="10" y="170" width="220" height="22" rx="4" fill="rgba(62,207,142,.08)"/><text x="18" y="185" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">F \u22a5 v \u2192 W = Fd cos90\u00b0 = 0</text></svg>'},
+
+{related:"Q7",color:"#ef4444",
+ctx:"A solenoid carries a steady DC current of 50 A. A conducting loop is placed near one end.",
+q:"The induced current in the loop is:",
+opts:["50 A","25 A","Proportional to loop area","Zero"],correct:3,
+why:"Steady (constant) current \u2192 constant B \u2192 constant \u03A6 \u2192 d\u03A6/dt = 0 \u2192 \u03B5 = 0 \u2192 no induced current. Induction requires CHANGING flux.",
+wrongs:["(A) 50 A: The loop is not in the solenoid circuit. Induction depends on changing flux, not on matching current values.","(B) 25 A: There is no 'transformer ratio' here without changing flux. Steady flux = zero EMF regardless.","(C) Proportional to area: Even though \u03A6 = BA depends on area, d\u03A6/dt = 0 when B is constant. Area doesn't help.",""],
+diagram:'<svg viewBox="0 0 260 150" width="240"><rect x="10" y="25" width="140" height="50" rx="3" fill="none" stroke="#3ecf8e" stroke-width="2"/><text x="20" y="20" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">SOLENOID</text><line x1="25" y1="50" x2="140" y2="50" stroke="#4ea8de" stroke-width="1.5"/><text x="55" y="45" fill="#4ea8de" font-family="JetBrains Mono" font-size="8">B (constant)</text><text x="20" y="70" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">I = 50A STEADY</text><rect x="175" y="30" width="45" height="40" rx="3" fill="none" stroke="#8b6cef" stroke-width="2"/><text x="185" y="55" fill="#8b6cef" font-family="JetBrains Mono" font-size="10">Loop</text><line x1="180" y1="35" x2="215" y2="65" stroke="#ef4444" stroke-width="2.5"/><line x1="215" y1="35" x2="180" y2="65" stroke="#ef4444" stroke-width="2.5"/><rect x="10" y="95" width="240" height="45" rx="6" fill="rgba(239,68,68,.06)" stroke="rgba(239,68,68,.15)"/><text x="18" y="112" fill="#fca5a5" font-family="JetBrains Mono" font-size="9">Steady I \u2192 constant B \u2192 constant \u03a6</text><text x="18" y="130" fill="#fca5a5" font-family="JetBrains Mono" font-size="9">\u2192 d\u03a6/dt = 0 \u2192 \u03b5 = 0 \u2192 I = 0</text></svg>'},
+
+{related:"Q8",color:"#f0c040",
+ctx:"A bar magnet with N-pole pointing down is dropped through a horizontal conducting loop.",
+q:"As the magnet passes through, the induced current:",
+opts:["Stays CCW throughout","Stays CW throughout","Reverses: CCW approaching, CW leaving","Is zero at all times"],correct:2,
+why:"Approaching N-down: \u03A6 increases downward \u2192 Lenz \u2192 CCW from above (creates upward B). After passing through, \u03A6 decreases \u2192 Lenz \u2192 CW (supports fading flux). Current REVERSES.",
+wrongs:["(A) Stays CCW: Only true during approach. Once the magnet passes through and moves away, the flux direction change reverses the current.","(B) Stays CW: Only true during departure. During approach, current is CCW to oppose increasing flux.","","(D) Zero: Flux is clearly changing throughout (magnet is moving), so Faraday's Law gives nonzero EMF."],
+diagram:'<svg viewBox="0 0 260 200" width="240"><rect x="20" y="10" width="100" height="80" rx="4" fill="none" stroke="#2a2a34"/><text x="25" y="25" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">APPROACH</text><rect x="50" y="30" width="22" height="35" rx="2" fill="none" stroke="#eae8e0" stroke-width="1.5"/><text x="53" y="45" fill="#ef4444" font-family="JetBrains Mono" font-size="8" font-weight="700">N</text><text x="54" y="60" fill="#4ea8de" font-family="JetBrains Mono" font-size="8" font-weight="700">S</text><ellipse cx="65" cy="78" rx="30" ry="7" fill="none" stroke="#f0c040" stroke-width="1.5"/><text x="40" y="95" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">\u21ba CCW</text><rect x="140" y="10" width="100" height="80" rx="4" fill="none" stroke="#2a2a34"/><text x="148" y="25" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">LEAVING</text><ellipse cx="185" cy="35" rx="30" ry="7" fill="none" stroke="#f0c040" stroke-width="1.5"/><rect x="170" y="50" width="22" height="35" rx="2" fill="none" stroke="#eae8e0" stroke-width="1.5"/><text x="173" y="65" fill="#ef4444" font-family="JetBrains Mono" font-size="8" font-weight="700">N</text><text x="174" y="80" fill="#4ea8de" font-family="JetBrains Mono" font-size="8" font-weight="700">S</text><text x="162" y="50" fill="#ef4444" font-family="JetBrains Mono" font-size="9">\u21bb CW</text><rect x="10" y="110" width="240" height="80" rx="6" fill="rgba(212,168,38,.08)" stroke="rgba(212,168,38,.15)"/><text x="18" y="130" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">CURRENT REVERSES!</text><text x="18" y="148" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">Approach: \u03a6\u2191 \u2192 oppose \u2192 CCW</text><text x="18" y="165" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">Leave: \u03a6\u2193 \u2192 support \u2192 CW</text><text x="18" y="182" fill="#8b6cef" font-family="JetBrains Mono" font-size="9">Clingy loop: pushes arriving, pulls leaving</text></svg>'},
+
+{related:"Q9",color:"#8b6cef",
+ctx:"A charged particle orbits with R = 2 m at speed 10,000 m/s. Speed is then increased to 40,000 m/s (same B field).",
+q:"What is the new orbital radius?",
+opts:["0.5 m","2 m","8 m","32 m"],correct:2,
+why:"R = mv/(qB) \u221D v. Speed increases by factor 4 (40000/10000 = 4). New R = 4 \u00D7 2 m = 8 m.",
+wrongs:["(A) 0.5 m: This uses R \u221D 1/v (inverse proportionality). But R = mv/(qB) shows R is DIRECTLY proportional to v.","(B) 2 m: R only stays the same if v stays the same. Speed quadrupled, so R must also change.","","(D) 32 m: This uses R \u221D v\u00B2. But R is linear in v (R = mv/(qB)), not quadratic. 32 = 2\u00D716 is wrong."],
+diagram:'<svg viewBox="0 0 260 140" width="240"><circle cx="65" cy="70" r="35" fill="none" stroke="#f0c040" stroke-width="2"/><text x="52" y="75" fill="#f0c040" font-family="JetBrains Mono" font-size="11" font-weight="700">R</text><text x="40" y="120" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">v = v\u2080</text><circle cx="185" cy="70" r="55" fill="none" stroke="#3ecf8e" stroke-width="2"/><text x="168" y="75" fill="#3ecf8e" font-family="JetBrains Mono" font-size="11" font-weight="700">4R</text><text x="155" y="135" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">v = 4v\u2080</text><line x1="102" y1="70" x2="128" y2="70" stroke="#d4a826" stroke-width="2"/><text x="105" y="63" fill="#d4a826" font-family="JetBrains Mono" font-size="8">4\u00d7</text></svg>'},
+
+{related:"Q10",color:"#3ecf8e",
+ctx:"A solenoid (n=500 turns/m, I=2A) has its left end as North pole. A bar magnet with N-pole faces the solenoid's N-end.",
+q:"The force between them is:",
+opts:["Attractive","Repulsive","Zero","Depends on distance"],correct:1,
+why:"Like poles (N-N) facing each other = REPEL. B inside solenoid: B = \u03BC\u2080nI = (4\u03C0\u00D710\u207B\u2077)(500)(2) = 1.26\u00D710\u207B\u00B3 T.",
+wrongs:["(A) Attractive: N-N is like poles, which repel. Attraction occurs between unlike poles (N-S).","","(C) Zero: Two magnets in proximity always exert forces on each other. Force depends on pole alignment and distance.","(D) Depends on distance: While the magnitude depends on distance, the DIRECTION (repulsive for N-N) does not depend on distance."],
+diagram:'<svg viewBox="0 0 280 130" width="260"><rect x="10" y="30" width="120" height="40" rx="3" fill="none" stroke="#3ecf8e" stroke-width="2"/><text x="15" y="25" fill="#3ecf8e" font-family="JetBrains Mono" font-size="9">SOLENOID</text><text x="20" y="55" fill="#ef4444" font-family="JetBrains Mono" font-size="10" font-weight="700">N</text><text x="110" y="55" fill="#4ea8de" font-family="JetBrains Mono" font-size="10" font-weight="700">S</text><rect x="170" y="35" width="80" height="30" rx="3" fill="none" stroke="#eae8e0" stroke-width="1.5"/><text x="178" y="55" fill="#ef4444" font-family="JetBrains Mono" font-size="10" font-weight="700">N</text><text x="230" y="55" fill="#4ea8de" font-family="JetBrains Mono" font-size="10" font-weight="700">S</text><text x="180" y="30" fill="#eae8e0" font-family="JetBrains Mono" font-size="8">Bar magnet</text><text x="55" y="85" fill="#ef4444" font-family="JetBrains Mono" font-size="9">N</text><text x="85" y="85" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">faces</text><text x="120" y="85" fill="#ef4444" font-family="JetBrains Mono" font-size="9">N</text><text x="55" y="100" fill="#ef4444" font-family="JetBrains Mono" font-size="11" font-weight="700">\u2192 REPEL \u2190</text><text x="15" y="120" fill="#d4a826" font-family="JetBrains Mono" font-size="9">B = \u03bc\u2080nI = 1.26\u00d710\u207b\u00b3 T</text></svg>'},
+
+{related:"Q11",color:"#ef4444",
+ctx:"Electrons move at 10\u2076 m/s through a 0.5 T field perpendicular to their velocity.",
+q:"What is the force on each electron?",
+opts:["8\u00D710\u207B\u00B9\u2074 N","1.6\u00D710\u207B\u00B9\u2074 N","8\u00D710\u207B\u00B9\u00B3 N","Zero"],correct:0,
+why:"F = qvB = (1.6\u00D710\u207B\u00B9\u2079)(10\u2076)(0.5) = 8\u00D710\u207B\u00B9\u2074 N. Direction: apply RHR for positive, then flip for electron.",
+wrongs:["","(B) 1.6\u00D710\u207B\u00B9\u2074 N: Likely used B = 0.1 T or v = 10\u2075 m/s. Check your given values: v = 10\u2076 m/s, B = 0.5 T.","(C) 8\u00D710\u207B\u00B9\u00B3 N: Off by a factor of 10. Recheck exponent arithmetic: 10\u207B\u00B9\u2079 \u00D7 10\u2076 \u00D7 10\u207B\u00B9 = 10\u207B\u00B9\u2074.","(D) Zero: The electron is moving perpendicular to B, so sin(90\u00B0) = 1. Force is zero only when v is parallel to B."],
+diagram:'<svg viewBox="0 0 260 170" width="240"><defs><marker id="bk1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f0c040"/></marker><marker id="bk2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#3ecf8e"/></marker></defs><rect x="20" y="10" width="200" height="25" rx="3" fill="rgba(239,68,68,.1)" stroke="#ef4444"/><text x="100" y="28" fill="#ef4444" font-family="JetBrains Mono" font-size="10" font-weight="700">N</text><rect x="20" y="110" width="200" height="25" rx="3" fill="rgba(78,168,222,.1)" stroke="#4ea8de"/><text x="100" y="128" fill="#4ea8de" font-family="JetBrains Mono" font-size="10" font-weight="700">S</text><line x1="80" y1="40" x2="80" y2="105" stroke="#4ea8de" stroke-width="1.5" stroke-dasharray="3,2"/><line x1="160" y1="40" x2="160" y2="105" stroke="#4ea8de" stroke-width="1.5" stroke-dasharray="3,2"/><text x="170" y="80" fill="#4ea8de" font-family="JetBrains Mono" font-size="9">B\u2193</text><circle cx="40" cy="70" r="6" fill="none" stroke="#f0c040" stroke-width="1.5"/><text x="35" y="74" fill="#f0c040" font-family="JetBrains Mono" font-size="7">e\u207b</text><line x1="46" y1="70" x2="140" y2="70" stroke="#f0c040" stroke-width="2" marker-end="url(#bk1)"/><text x="85" y="64" fill="#f0c040" font-family="JetBrains Mono" font-size="9">v \u2192 10\u2076</text><line x1="100" y1="65" x2="100" y2="42" stroke="#3ecf8e" stroke-width="2.5" marker-end="url(#bk2)"/><text x="108" y="52" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10" font-weight="700">F\u2191</text><text x="20" y="150" fill="#f0c040" font-family="JetBrains Mono" font-size="9">F = 8\u00d710\u207b\u00b9\u2074 N (RHR+flip)</text></svg>'},
+
+{related:"Q12",color:"#d4a826",
+ctx:"An inductor L = 2 H carries 5 A of current. The switch opens and current drops to 0 A in 0.01 s.",
+q:"What voltage spike appears across the inductor?",
+opts:["10 V","100 V","1,000 V","10,000 V"],correct:2,
+why:"V = L\u00D7|dI/dt| = 2 \u00D7 |0 - 5|/0.01 = 2 \u00D7 500 = 1,000 V. This is why inductors produce dangerous voltage spikes when circuits open!",
+wrongs:["(A) 10 V: Used dI/dt = 5/1 = 5 (wrong \u0394t). The time interval is 0.01 s, giving dI/dt = 500 A/s, not 5.","(B) 100 V: Used L = 0.2 H or \u0394t = 0.1 s. Check: L = 2 H and \u0394t = 0.01 s.","","(D) 10,000 V: Used \u0394t = 0.001 s instead of 0.01 s. Read the given time interval carefully."],
+diagram:'<svg viewBox="0 0 260 170" width="240"><rect x="20" y="20" width="200" height="70" rx="6" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="30" y="45" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10">12V</text><text x="90" y="18" fill="#eae8e0" font-family="JetBrains Mono" font-size="8">S (opens!)</text><line x1="80" y1="20" x2="95" y2="12" stroke="#ef4444" stroke-width="2"/><path d="M130,20 Q140,10 150,20 Q160,30 170,20 Q180,10 190,20" fill="none" stroke="#d4a826" stroke-width="2"/><text x="145" y="15" fill="#d4a826" font-family="JetBrains Mono" font-size="8">L=2H</text><text x="100" y="55" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">I: 5A \u2192 0A</text><text x="100" y="70" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">\u0394t = 0.01s</text><rect x="20" y="100" width="220" height="55" rx="6" fill="rgba(212,168,38,.08)" stroke="rgba(212,168,38,.15)"/><text x="30" y="118" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">V = L\u00d7|dI/dt|</text><text x="30" y="135" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">= 2 \u00d7 |5/0.01| = 2 \u00d7 500</text><text x="30" y="150" fill="#ef4444" font-family="JetBrains Mono" font-size="11" font-weight="700">= 1,000 V spike!</text></svg>'},
+
+{related:"Q13",color:"#f0c040",
+ctx:"Resistors R and 4R are in series with a battery. The power dissipated by 4R is 40W.",
+q:"What is the power dissipated by R?",
+opts:["10 W","40 W","160 W","2.5 W"],correct:0,
+why:"Series means same current I. P = I\u00B2R \u2192 P \u221D R. Since R is 1/4 of 4R, P(R) = P(4R)/4 = 40/4 = 10 W.",
+wrongs:["","(B) 40 W: Assumes equal power. But P \u221D R in series, and R \u2260 4R. The smaller resistor dissipates less power.","(C) 160 W: Multiplied by 4 instead of dividing. Smaller R = LESS power in series, not more.","(D) 2.5 W: Used the wrong formula (parallel P \u221D 1/R with additional error). In series, use P = I\u00B2R."],
+diagram:'<svg viewBox="0 0 260 150" width="240"><rect x="20" y="25" width="220" height="55" rx="6" fill="none" stroke="#3ecf8e" stroke-width="1.5"/><text x="30" y="55" fill="#3ecf8e" font-family="JetBrains Mono" font-size="10">\u03b5</text><rect x="80" y="22" width="45" height="12" rx="3" fill="rgba(212,168,38,.1)" stroke="#d4a826"/><text x="92" y="32" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">R</text><rect x="150" y="22" width="55" height="12" rx="3" fill="rgba(212,168,38,.1)" stroke="#d4a826"/><text x="163" y="32" fill="#d4a826" font-family="JetBrains Mono" font-size="9" font-weight="700">4R</text><text x="60" y="18" fill="#f0c040" font-family="JetBrains Mono" font-size="8">I \u2192\u2192\u2192 same through both</text><text x="85" y="55" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">10W</text><text x="158" y="55" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">40W</text><rect x="20" y="95" width="220" height="45" rx="6" fill="var(--card)" stroke="#d4a826" stroke-width="2"/><text x="30" y="115" fill="#d4a826" font-family="JetBrains Mono" font-size="10" font-weight="700">SERIES: same I \u2192 P = I\u00b2R</text><text x="30" y="132" fill="#eae8e0" font-family="JetBrains Mono" font-size="9">P \u221d R \u2192 ratio 1:4 \u2192 10W:40W</text></svg>'}
+];
+// ============ BOOK QUIZ ENGINE ============
+let bookIdx=0, bookScore=0, bookAnswered=false, bookMissed=[];
+
+function renderBookQ(){
+  if(bookIdx>=bookQuiz.length){showBookScore();return;}
+  bookAnswered=false;
+  const q=bookQuiz[bookIdx];
+  const order=shuffleOpts(q);
+  document.getElementById('book-progress').textContent='Problem '+(bookIdx+1)+' of '+bookQuiz.length;
+  document.getElementById('book-badge').innerHTML='<span class="related-badge" style="background:'+q.color+'22;color:'+q.color+';border:1px solid '+q.color+'44">Related to '+q.related+'</span>';
+  document.getElementById('book-context').textContent=q.ctx;
+  document.getElementById('book-question').textContent=q.q;
+  document.getElementById('book-diagram').innerHTML=q.diagram||'<span style="color:var(--text-dim);font-size:12px">No diagram</span>';
+  const letters=['A','B','C','D'];
+  let html='';
+  order.forEach((oi,di)=>{
+    html+='<button class="quiz-option" data-oi="'+oi+'" onclick="answerBook(this,'+oi+')">'+letters[di]+') '+q.opts[oi]+'</button>';
+  });
+  document.getElementById('book-options').innerHTML=html;
+  document.getElementById('book-explanation').className='explanation';
+  document.getElementById('book-explanation').innerHTML='';
+  document.getElementById('book-next').style.display='none';
+}
+
+function answerBook(btn,oi){
+  if(bookAnswered)return;
+  bookAnswered=true;
+  const q=bookQuiz[bookIdx];
+  const correct=oi===q.correct;
+  if(correct)bookScore++;
+  else bookMissed.push({idx:bookIdx,q:q.q,yourAns:q.opts[oi],correctAns:q.opts[q.correct],related:q.related});
+  document.querySelectorAll('#book-options .quiz-option').forEach(b=>{
+    b.classList.add('disabled');
+    const boi=parseInt(b.getAttribute('data-oi'));
+    if(boi===q.correct)b.classList.add('correct');
+    else if(b===btn&&!correct)b.classList.add('wrong');
+  });
+  let expHtml='<h4>'+(correct?'Correct!':'Incorrect')+'</h4>';
+  expHtml+='<div class="exp-correct">'+q.why+'</div>';
+  q.wrongs.forEach((w,i)=>{if(w&&i!==q.correct)expHtml+='<div class="exp-wrong">&bull; '+w+'</div>';});
+  document.getElementById('book-explanation').innerHTML=expHtml;
+  document.getElementById('book-explanation').className='explanation show';
+  document.getElementById('book-next').style.display='inline-block';
+}
+
+function nextBookQ(){bookIdx++;renderBookQ();}
+
+function showBookScore(){
+  document.getElementById('book-area').style.display='none';
+  const pct=Math.round(bookScore/bookQuiz.length*100);
+  let grade='F';
+  if(pct>=93)grade='A';else if(pct>=90)grade='A-';else if(pct>=87)grade='B+';else if(pct>=83)grade='B';else if(pct>=80)grade='B-';else if(pct>=77)grade='C+';else if(pct>=73)grade='C';else if(pct>=70)grade='C-';else if(pct>=67)grade='D+';else if(pct>=60)grade='D';
+  let html='<h2>BOOK PROBLEMS COMPLETE</h2>';
+  html+='<div class="score-num">'+bookScore+'/'+bookQuiz.length+'</div>';
+  html+='<div style="color:var(--text-dim)">'+pct+'%</div>';
+  html+='<div class="grade" style="color:'+(pct>=70?'var(--correct)':'var(--wrong)')+'">Grade: '+grade+'</div>';
+  if(bookMissed.length>0){
+    html+='<div class="missed-list"><h4 style="color:var(--gold);margin:16px 0 8px">Missed Problems:</h4>';
+    bookMissed.forEach(m=>{
+      html+='<div class="missed-item"><b>Problem '+(m.idx+1)+' ('+m.related+'):</b> '+m.q.substring(0,80)+'...<br><span style="color:var(--wrong)">Your answer: '+m.yourAns+'</span> | <span style="color:var(--correct)">Correct: '+m.correctAns+'</span></div>';
+    });
+    html+='</div>';
+  }
+  html+='<button class="next-btn" onclick="resetBook()" style="margin-top:20px">Retake Quiz</button>';
+  document.getElementById('book-score').innerHTML=html;
+  document.getElementById('book-score').style.display='block';
+}
+
+function resetBook(){
+  bookIdx=0;bookScore=0;bookAnswered=false;bookMissed=[];
+  document.getElementById('book-area').style.display='block';
+  document.getElementById('book-score').style.display='none';
+  renderBookQ();
+}
+
+// ============ SEARCH ============
+function doSearch(q){
+  const cards=document.querySelectorAll('#tab-study .problem-card');
+  const term=q.trim().toLowerCase();
+  if(!term){
+    cards.forEach(c=>{c.classList.remove('search-hidden');});
+    document.getElementById('search-count').textContent='';
+    return;
+  }
+  let shown=0;
+  cards.forEach(c=>{
+    const text=c.textContent.toLowerCase();
+    if(text.includes(term)){c.classList.remove('search-hidden');shown++;}
+    else{c.classList.add('search-hidden');}
+  });
+  document.getElementById('search-count').textContent=shown+' of '+cards.length+' problems match "'+q.trim()+'"';
+}
+document.addEventListener('keydown',function(e){
+  if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();document.getElementById('search-input').focus();}
+  if(e.key==='Escape'){document.getElementById('search-input').value='';doSearch('');}
+});
+
+// ============ INIT ============
+document.addEventListener('DOMContentLoaded',function(){
+  renderQuizQ();
+  renderBookQ();
+  calcQ15();
+  calcQ16();
+});
+</script>
+</body>
+</html>
