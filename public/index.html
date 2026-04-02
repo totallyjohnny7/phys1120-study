@@ -870,6 +870,128 @@ Each depends on the previous!</div>
 </div>
 </div>
 
+<!-- LAWS & PRINCIPLES -->
+<div class="tool-section">
+<div class="tool-header" onclick="toggleTool(this)">
+<div class="tool-icon">&#9878;</div>
+<div class="tool-title">LAWS, PRINCIPLES &amp; THEORIES</div>
+<div class="tool-chevron open">&#9660;</div>
+</div>
+<div class="tool-body open">
+<div class="formula-grid">
+
+<div class="formula-card" style="border-top:3px solid var(--gold)">
+<h4>CH 19 — Circuit Laws</h4>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Ohm's Law</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The current through a conductor is directly proportional to the voltage across it and inversely proportional to its resistance. <span class="f-eq" style="font-size:11px">V = IR</span>. Only applies to <em>ohmic</em> materials (constant R). A resistor's R does not depend on V or I.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Kirchhoff's Junction Rule (KCL)</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">At any junction in a circuit, the total current entering equals the total current leaving. <span class="f-eq" style="font-size:11px">&#931;I_in = &#931;I_out</span>. Based on <b>conservation of charge</b> — charge cannot accumulate at or vanish from a junction.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Kirchhoff's Loop Rule (KVL)</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">Around any closed loop in a circuit, the sum of all voltage gains and drops is zero. <span class="f-eq" style="font-size:11px">&#931;V = 0</span>. Based on <b>conservation of energy</b> — a charge returning to its starting point must have the same potential energy.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Joule's Law (Resistive Heating)</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">Current through a resistor converts electrical energy irreversibly into thermal energy (heat). <span class="f-eq" style="font-size:11px">P = I&#178;R = V&#178;/R = IV</span>. The energy is lost and cannot be stored — unlike a capacitor which stores energy in its electric field.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Series vs. Parallel Principle</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7"><b>Series:</b> Same current through all elements, voltages add. Adding R increases total resistance. <b>Parallel:</b> Same voltage across all elements, currents add. Adding R <em>decreases</em> total resistance (more paths for current).</div>
+</div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--blue)">
+<h4>CH 20 — Magnetism Laws</h4>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Lorentz Force Law</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">A charged particle moving through a magnetic field experiences a force perpendicular to both its velocity and the field. <span class="f-eq" style="font-size:11px">F = qv &#215; B</span>. The force is maximum when v &#8869; B and zero when v &#8741; B. Because F &#8869; v always, <b>the magnetic force does no work</b> and cannot change a particle's speed — only its direction.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Right-Hand Rule (Principle)</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7"><b>For force:</b> Point fingers along v, curl toward B, thumb points in F direction (for + charge). For negative charges, flip F. <b>For wire's B field:</b> Thumb along current I, fingers curl in B direction. <b>For solenoid:</b> Curl fingers with current, thumb = N pole.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Biot-Savart Law</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">Every small segment of current-carrying wire contributes to the magnetic field. For a long straight wire: <span class="f-eq" style="font-size:11px">B = &#956;&#8320;I/(2&#960;r)</span>. B decreases as 1/r from the wire. Field lines form concentric circles around the wire.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Amp&#232;re's Law</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The line integral of B around any closed loop equals &#956;&#8320; times the total current enclosed. Used to derive B inside a solenoid: <span class="f-eq" style="font-size:11px">B = &#956;&#8320;nI</span> (uniform inside, &#8776;0 outside). Also gives the field of straight wires and toroids.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Superposition Principle</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The net magnetic field at any point is the vector sum of fields from all sources. This is how we find where B = 0 between parallel wires, or add B fields from a wire and a loop. Always add as vectors (direction matters!).</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Gauss's Law for Magnetism</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">There are no magnetic monopoles. Every magnetic field line that enters a closed surface must also exit it. The net magnetic flux through any closed surface is zero: <span class="f-eq" style="font-size:11px">&#8750;B&#183;dA = 0</span>. This is why magnets always have both N and S poles.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Force Between Parallel Currents</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7"><b>Same direction</b> currents attract. <b>Opposite direction</b> currents repel. Why? Each wire sits in the other's B field, and F = IlB gives a force toward or away. <span class="f-eq" style="font-size:11px">F/l = &#956;&#8320;I&#8321;I&#8322;/(2&#960;d)</span>. This defines the SI ampere.</div>
+</div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--green)">
+<h4>CH 21 — Induction Laws</h4>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Faraday's Law of Electromagnetic Induction</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">A changing magnetic flux through a circuit induces an EMF (voltage). <span class="f-eq" style="font-size:11px">&#949; = &#8722;N(d&#934;/dt)</span>. The EMF depends on the <em>rate of change</em> of flux, not the flux itself. Flux can change by changing B, A, or the angle &#966; between B and the area normal. A constant flux produces zero EMF regardless of how large B is.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Lenz's Law</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The induced current flows in a direction that <b>opposes the change in flux</b> that caused it. If flux is increasing, induced current creates opposing B. If flux is decreasing, induced current supports the existing B. This is a consequence of <b>conservation of energy</b> — if it didn't oppose, you'd get perpetual motion. The minus sign in Faraday's law encodes Lenz's law.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Motional EMF</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">A conductor moving through a magnetic field develops a voltage across it. <span class="f-eq" style="font-size:11px">&#949; = vBL</span> (when v, B, L mutually &#8869;). The magnetic force pushes charges to one end, creating a potential difference. If v is parallel to B or parallel to L, no EMF is induced.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Magnetic Flux</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7"><span class="f-eq" style="font-size:11px">&#934; = BA cos&#966;</span> where &#966; is the angle between B and the <b>area normal</b> (NOT the surface). &#934; is maximum when B &#8869; surface (&#966; = 0&#176;), and zero when B &#8741; surface (&#966; = 90&#176;). Units: Weber (Wb) = T&#183;m&#178;.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Transformer Principle</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">AC in a primary coil creates a changing B that induces EMF in a secondary coil. <span class="f-eq" style="font-size:11px">V&#8322;/V&#8321; = N&#8322;/N&#8321;</span>. Power is conserved: <span class="f-eq" style="font-size:11px">V&#8321;I&#8321; = V&#8322;I&#8322;</span>. Step-up (N&#8322; > N&#8321;) increases voltage but decreases current. Does NOT work with DC — requires changing flux.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Self-Induction &amp; Back-EMF</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">A changing current in a coil induces an EMF in itself that opposes the change (Lenz's law applied to its own flux). <span class="f-eq" style="font-size:11px">&#949;_L = &#8722;L(dI/dt)</span>. An inductor resists <em>changes</em> in current. When a switch is opened, the rapid dI/dt can produce a large voltage spike. Energy stored: <span class="f-eq" style="font-size:11px">E = &#189;LI&#178;</span>.</div>
+</div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--purple)">
+<h4>Foundational Principles</h4>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Conservation of Energy</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">Energy cannot be created or destroyed, only transformed. In circuits: battery chemical energy &#8594; electrical &#8594; heat (resistors) or stored (capacitors/inductors). This principle underlies Kirchhoff's loop rule, Lenz's law, and why magnetic force does no work (it only redirects, never creates or destroys KE).</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Conservation of Charge</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">Electric charge can neither be created nor destroyed. The total charge in a closed system is constant. This underlies Kirchhoff's junction rule and why current is the same through all elements in series.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Principle of Superposition</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The net electric or magnetic field at any point is the vector sum of all individual fields. This allows us to analyze complex circuits (superposition theorem) and find B from multiple wires by adding each wire's contribution as vectors.</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Work-Energy Theorem</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7">The net work done on a particle equals its change in kinetic energy: <span class="f-eq" style="font-size:11px">W_net = &#916;KE</span>. Since magnetic force is always &#8869; to velocity, it does zero work &#8594; KE is unchanged &#8594; speed is constant in a magnetic field. Only direction changes (circular orbit).</div>
+</div>
+<div style="margin-bottom:12px">
+<div style="color:#fff;font-weight:600;font-size:13px;margin-bottom:4px">Newton's Second Law (applied to charged particles)</div>
+<div style="font-size:12px;color:var(--text-dim);line-height:1.7"><span class="f-eq" style="font-size:11px">F = ma</span>. For circular motion in B: <span class="f-eq" style="font-size:11px">qvB = mv&#178;/R</span> &#8594; <span class="f-eq" style="font-size:11px">R = mv/(qB)</span>. The magnetic force provides centripetal acceleration. Larger mass or speed &#8594; larger radius. Stronger B &#8594; tighter circle.</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
 <!-- FORMULAS -->
 <div class="tool-section">
 <div class="tool-header" onclick="toggleTool(this)">
