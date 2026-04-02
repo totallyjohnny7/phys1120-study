@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PHYS 1120 Exam 2 Review</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=ff3393f442b04ae39bd802f2018f0967"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#07070b;--card:#0e0e14;--border:#1a1a24;--gold:#d4a826;--gold-dim:#a8841e;--text:#e0e0e0;--text-dim:#888;--green:#3ecf8e;--blue:#4ea8de;--force-gold:#f0c040;--red:#ef4444;--purple:#8b6cef;--correct:#22c55e;--wrong:#ef4444}
@@ -95,6 +96,36 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 /* SVG common */
 svg text{font-family:'JetBrains Mono',monospace}
+
+/* TOOLS TAB */
+.tools-grid{display:grid;grid-template-columns:1fr;gap:20px;max-width:900px;margin:0 auto}
+.tool-section{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.tool-header{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;-webkit-user-select:none;transition:background .2s}
+.tool-header:hover{background:rgba(212,168,38,.04)}
+.tool-header:active{background:rgba(212,168,38,.08)}
+.tool-icon{font-size:20px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(212,168,38,.1)}
+.tool-title{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:var(--gold);flex:1}
+.tool-chevron{color:var(--text-dim);font-size:18px;transition:transform .3s}
+.tool-chevron.open{transform:rotate(180deg)}
+.tool-body{padding:0;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.tool-body.open{padding:16px 18px;max-height:6000px}
+#desmos-calc{width:100%;height:360px;border-radius:8px;overflow:hidden;border:1px solid var(--border);touch-action:manipulation}
+@media(min-width:700px){#desmos-calc{height:440px}}
+.formula-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.formula-grid{grid-template-columns:1fr 1fr}}
+.formula-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.formula-card h4{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.formula-row{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px}
+.formula-row .f-eq{font-family:'JetBrains Mono',monospace;color:var(--force-gold);white-space:nowrap}
+.formula-row .f-desc{color:var(--text-dim);font-size:12px}
+.unit-table{width:100%;border-collapse:collapse;font-size:13px}
+.unit-table th{font-family:'JetBrains Mono',monospace;background:rgba(212,168,38,.08);color:var(--gold);padding:8px 10px;text-align:left;border:1px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:1px;position:sticky;top:0}
+.unit-table td{padding:7px 10px;border:1px solid var(--border);font-size:12px}
+.unit-table td:first-child{font-family:'JetBrains Mono',monospace;color:var(--force-gold);white-space:nowrap}
+.unit-table tr:nth-child(even){background:rgba(255,255,255,.015)}
+.const-val{font-family:'JetBrains Mono',monospace;color:var(--green)}
+.unit-search{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:rgba(255,255,255,.03);color:var(--text);font-size:13px;font-family:'Inter',sans-serif;outline:none;margin-bottom:12px;transition:border-color .2s}
+.unit-search:focus{border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -112,6 +143,7 @@ svg text{font-family:'JetBrains Mono',monospace}
 <button class="tab-btn active" onclick="switchTab('study')">STUDY</button>
 <button class="tab-btn" onclick="switchTab('quiz')">EXAM QUIZ</button>
 <button class="tab-btn" onclick="switchTab('book')">BOOK PROBLEMS</button>
+<button class="tab-btn" onclick="switchTab('tools')">TOOLS</button>
 </div>
 </div>
 <!-- ==================== TAB 1: STUDY ==================== -->
@@ -822,13 +854,202 @@ Each depends on the previous!</div>
 <div id="book-score" class="score-card" style="display:none"></div>
 </div>
 </div>
+<!-- ==================== TAB 4: TOOLS ==================== -->
+<div id="tab-tools" class="tab-content">
+<div class="tools-grid">
+
+<!-- CALCULATOR -->
+<div class="tool-section">
+<div class="tool-header" onclick="toggleTool(this)">
+<div class="tool-icon">&#128248;</div>
+<div class="tool-title">SCIENTIFIC CALCULATOR</div>
+<div class="tool-chevron open">&#9660;</div>
+</div>
+<div class="tool-body open">
+<div id="desmos-calc"></div>
+</div>
+</div>
+
+<!-- FORMULAS -->
+<div class="tool-section">
+<div class="tool-header" onclick="toggleTool(this)">
+<div class="tool-icon">&#128220;</div>
+<div class="tool-title">FORMULA SHEET — ALL EXAM TOPICS</div>
+<div class="tool-chevron open">&#9660;</div>
+</div>
+<div class="tool-body open">
+<div class="formula-grid">
+
+<div class="formula-card" style="border-top:3px solid var(--gold)">
+<h4>CH 19 — DC Circuits</h4>
+<div class="formula-row"><span class="f-eq">V = IR</span><span class="f-desc">Ohm's law</span></div>
+<div class="formula-row"><span class="f-eq">R = &#961;L/A</span><span class="f-desc">Resistance from resistivity</span></div>
+<div class="formula-row"><span class="f-eq">P = IV = I&#178;R = V&#178;/R</span><span class="f-desc">Power dissipated</span></div>
+<div class="formula-row"><span class="f-eq">R_s = R&#8321;+R&#8322;+...</span><span class="f-desc">Series: same I, V adds</span></div>
+<div class="formula-row"><span class="f-eq">1/R_p = 1/R&#8321;+1/R&#8322;+...</span><span class="f-desc">Parallel: same V, I adds</span></div>
+<div class="formula-row"><span class="f-eq">&#949; = I(R+r)</span><span class="f-desc">EMF with internal resistance</span></div>
+<div class="formula-row"><span class="f-eq">V_term = &#949; &#8722; Ir</span><span class="f-desc">Terminal voltage</span></div>
+<div class="formula-row"><span class="f-eq">&#931;V = 0</span><span class="f-desc">Kirchhoff's loop rule</span></div>
+<div class="formula-row"><span class="f-eq">&#931;I_in = &#931;I_out</span><span class="f-desc">Kirchhoff's junction rule</span></div>
+<div class="formula-row"><span class="f-eq">q(t) = C&#949;(1&#8722;e^(-t/RC))</span><span class="f-desc">RC charging</span></div>
+<div class="formula-row"><span class="f-eq">&#964; = RC</span><span class="f-desc">RC time constant</span></div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--blue)">
+<h4>CH 20 — Magnetic Forces</h4>
+<div class="formula-row"><span class="f-eq">F = |q|vB sin&#966;</span><span class="f-desc">Force on moving charge</span></div>
+<div class="formula-row"><span class="f-eq">F = IlB sin&#966;</span><span class="f-desc">Force on current-carrying wire</span></div>
+<div class="formula-row"><span class="f-eq">R = mv/(|q|B)</span><span class="f-desc">Circular orbit radius</span></div>
+<div class="formula-row"><span class="f-eq">T = 2&#960;m/(|q|B)</span><span class="f-desc">Cyclotron period</span></div>
+<div class="formula-row"><span class="f-eq">v = E/B</span><span class="f-desc">Velocity selector</span></div>
+<div class="formula-row"><span class="f-eq">&#964; = NIAB sin&#966;</span><span class="f-desc">Torque on current loop</span></div>
+<div class="formula-row"><span class="f-eq">&#956; = NIA</span><span class="f-desc">Magnetic moment</span></div>
+<div class="formula-row"><span class="f-eq">B = &#956;&#8320;I/(2&#960;r)</span><span class="f-desc">Long straight wire</span></div>
+<div class="formula-row"><span class="f-eq">B = &#956;&#8320;NI/(2R)</span><span class="f-desc">Center of circular loop</span></div>
+<div class="formula-row"><span class="f-eq">B = &#956;&#8320;nI</span><span class="f-desc">Inside solenoid (n=N/L)</span></div>
+<div class="formula-row"><span class="f-eq">F/l = &#956;&#8320;I&#8321;I&#8322;/(2&#960;d)</span><span class="f-desc">Force between parallel wires</span></div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--green)">
+<h4>CH 21 — Electromagnetic Induction</h4>
+<div class="formula-row"><span class="f-eq">&#934; = BA cos&#966;</span><span class="f-desc">Magnetic flux</span></div>
+<div class="formula-row"><span class="f-eq">&#949; = &#8722;N(d&#934;/dt)</span><span class="f-desc">Faraday's law</span></div>
+<div class="formula-row"><span class="f-eq">&#949; = vBL</span><span class="f-desc">Motional EMF</span></div>
+<div class="formula-row"><span class="f-eq">&#949; = BLv sin&#952;</span><span class="f-desc">Motional EMF (angle)</span></div>
+<div class="formula-row"><span class="f-eq">Lenz's Law</span><span class="f-desc">Induced I opposes &#916;&#934;</span></div>
+<div class="formula-row"><span class="f-eq">&#949;&#8322;/&#949;&#8321; = N&#8322;/N&#8321;</span><span class="f-desc">Transformer voltage ratio</span></div>
+<div class="formula-row"><span class="f-eq">V&#8321;I&#8321; = V&#8322;I&#8322;</span><span class="f-desc">Transformer power conservation</span></div>
+<div class="formula-row"><span class="f-eq">E_L = &#189;LI&#178;</span><span class="f-desc">Energy stored in inductor</span></div>
+<div class="formula-row"><span class="f-eq">i(t) = (&#949;/R)(1&#8722;e^(-Rt/L))</span><span class="f-desc">RL circuit growth</span></div>
+<div class="formula-row"><span class="f-eq">&#964;_L = L/R</span><span class="f-desc">RL time constant</span></div>
+</div>
+
+<div class="formula-card" style="border-top:3px solid var(--purple)">
+<h4>Key Rules &amp; Mnemonics</h4>
+<div class="formula-row"><span class="f-eq">RHR (Force)</span><span class="f-desc">Fingers=v, curl=B, thumb=F (+ charge)</span></div>
+<div class="formula-row"><span class="f-eq">RHR (Wire B)</span><span class="f-desc">Thumb=I, fingers curl=B direction</span></div>
+<div class="formula-row"><span class="f-eq">Lenz's Law</span><span class="f-desc">Induced current opposes the CHANGE in flux</span></div>
+<div class="formula-row"><span class="f-eq">W_mag = 0</span><span class="f-desc">Magnetic force does NO work (F &#8869; v)</span></div>
+<div class="formula-row"><span class="f-eq">Series</span><span class="f-desc">Same I &#8594; P=I&#178;R &#8594; bigger R = more P</span></div>
+<div class="formula-row"><span class="f-eq">Parallel</span><span class="f-desc">Same V &#8594; P=V&#178;/R &#8594; bigger R = less P</span></div>
+<div class="formula-row"><span class="f-eq">&#966; in flux</span><span class="f-desc">Angle between B and area NORMAL, not surface</span></div>
+<div class="formula-row"><span class="f-eq">Same-dir I</span><span class="f-desc">Wires attract; opposite-dir wires repel</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- UNITS & CONSTANTS -->
+<div class="tool-section">
+<div class="tool-header" onclick="toggleTool(this)">
+<div class="tool-icon">&#128207;</div>
+<div class="tool-title">UNITS, CONVERSIONS &amp; CONSTANTS</div>
+<div class="tool-chevron open">&#9660;</div>
+</div>
+<div class="tool-body open">
+<input type="text" class="unit-search" placeholder="Search units, constants, conversions..." oninput="filterUnits(this.value)">
+
+<h4 style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:12px;margin-bottom:8px;letter-spacing:1px">FUNDAMENTAL CONSTANTS</h4>
+<table class="unit-table" id="const-table">
+<tr><th>Symbol</th><th>Name</th><th>Value</th></tr>
+<tr><td>e</td><td>Elementary charge</td><td class="const-val">1.602 &#215; 10&#8315;&#185;&#8313; C</td></tr>
+<tr><td>m_e</td><td>Electron mass</td><td class="const-val">9.109 &#215; 10&#8315;&#179;&#185; kg</td></tr>
+<tr><td>m_p</td><td>Proton mass</td><td class="const-val">1.673 &#215; 10&#8315;&#178;&#8311; kg</td></tr>
+<tr><td>m_&#945;</td><td>Alpha particle mass</td><td class="const-val">6.644 &#215; 10&#8315;&#178;&#8311; kg</td></tr>
+<tr><td>&#956;&#8320;</td><td>Permeability of free space</td><td class="const-val">4&#960; &#215; 10&#8315;&#8311; T&#183;m/A</td></tr>
+<tr><td>&#949;&#8320;</td><td>Permittivity of free space</td><td class="const-val">8.854 &#215; 10&#8315;&#185;&#178; F/m</td></tr>
+<tr><td>k</td><td>Coulomb constant</td><td class="const-val">8.988 &#215; 10&#8313; N&#183;m&#178;/C&#178;</td></tr>
+<tr><td>c</td><td>Speed of light</td><td class="const-val">3.00 &#215; 10&#8312; m/s</td></tr>
+<tr><td>g</td><td>Gravitational acceleration</td><td class="const-val">9.80 m/s&#178;</td></tr>
+</table>
+
+<h4 style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:12px;margin:18px 0 8px;letter-spacing:1px">UNITS &amp; DIMENSIONS</h4>
+<table class="unit-table" id="unit-table">
+<tr><th>Quantity</th><th>Unit</th><th>Symbol</th><th>Equivalent</th></tr>
+<tr><td>Current</td><td>Ampere</td><td>A</td><td>C/s</td></tr>
+<tr><td>Charge</td><td>Coulomb</td><td>C</td><td>A&#183;s</td></tr>
+<tr><td>Voltage / EMF</td><td>Volt</td><td>V</td><td>J/C = W/A</td></tr>
+<tr><td>Resistance</td><td>Ohm</td><td>&#937;</td><td>V/A</td></tr>
+<tr><td>Resistivity</td><td>Ohm-meter</td><td>&#937;&#183;m</td><td>&#8212;</td></tr>
+<tr><td>Power</td><td>Watt</td><td>W</td><td>V&#183;A = J/s</td></tr>
+<tr><td>Energy</td><td>Joule</td><td>J</td><td>V&#183;C = W&#183;s</td></tr>
+<tr><td>Magnetic field</td><td>Tesla</td><td>T</td><td>kg/(A&#183;s&#178;) = V&#183;s/m&#178;</td></tr>
+<tr><td>Magnetic field</td><td>Gauss</td><td>G</td><td>10&#8315;&#8308; T</td></tr>
+<tr><td>Magnetic flux</td><td>Weber</td><td>Wb</td><td>T&#183;m&#178; = V&#183;s</td></tr>
+<tr><td>Capacitance</td><td>Farad</td><td>F</td><td>C/V</td></tr>
+<tr><td>Inductance</td><td>Henry</td><td>H</td><td>V&#183;s/A = &#937;&#183;s</td></tr>
+<tr><td>Frequency</td><td>Hertz</td><td>Hz</td><td>1/s</td></tr>
+<tr><td>Force</td><td>Newton</td><td>N</td><td>kg&#183;m/s&#178;</td></tr>
+<tr><td>Torque</td><td>Newton-meter</td><td>N&#183;m</td><td>&#8212;</td></tr>
+</table>
+
+<h4 style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:12px;margin:18px 0 8px;letter-spacing:1px">SI PREFIX CONVERSIONS</h4>
+<table class="unit-table" id="prefix-table">
+<tr><th>Prefix</th><th>Symbol</th><th>Factor</th><th>Example</th></tr>
+<tr><td>Tera</td><td>T</td><td class="const-val">10&#185;&#178;</td><td>1 THz = 10&#185;&#178; Hz</td></tr>
+<tr><td>Giga</td><td>G</td><td class="const-val">10&#8313;</td><td>1 GW = 10&#8313; W</td></tr>
+<tr><td>Mega</td><td>M</td><td class="const-val">10&#8310;</td><td>1 M&#937; = 10&#8310; &#937;</td></tr>
+<tr><td>kilo</td><td>k</td><td class="const-val">10&#179;</td><td>1 kV = 1000 V</td></tr>
+<tr><td>centi</td><td>c</td><td class="const-val">10&#8315;&#178;</td><td>1 cm = 0.01 m</td></tr>
+<tr><td>milli</td><td>m</td><td class="const-val">10&#8315;&#179;</td><td>1 mA = 0.001 A</td></tr>
+<tr><td>micro</td><td>&#956;</td><td class="const-val">10&#8315;&#8310;</td><td>1 &#956;F = 10&#8315;&#8310; F</td></tr>
+<tr><td>nano</td><td>n</td><td class="const-val">10&#8315;&#8313;</td><td>1 nC = 10&#8315;&#8313; C</td></tr>
+<tr><td>pico</td><td>p</td><td class="const-val">10&#8315;&#185;&#178;</td><td>1 pF = 10&#8315;&#185;&#178; F</td></tr>
+</table>
+
+<h4 style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:12px;margin:18px 0 8px;letter-spacing:1px">COMMON RESISTIVITY VALUES</h4>
+<table class="unit-table" id="rho-table">
+<tr><th>Material</th><th>&#961; (&#937;&#183;m)</th><th>Type</th></tr>
+<tr><td>Silver</td><td class="const-val">1.47 &#215; 10&#8315;&#8312;</td><td>Conductor</td></tr>
+<tr><td>Copper</td><td class="const-val">1.72 &#215; 10&#8315;&#8312;</td><td>Conductor</td></tr>
+<tr><td>Aluminum</td><td class="const-val">2.63 &#215; 10&#8315;&#8312;</td><td>Conductor</td></tr>
+<tr><td>Tungsten</td><td class="const-val">5.25 &#215; 10&#8315;&#8312;</td><td>Conductor</td></tr>
+<tr><td>Iron</td><td class="const-val">9.68 &#215; 10&#8315;&#8312;</td><td>Conductor</td></tr>
+<tr><td>Nichrome</td><td class="const-val">1.00 &#215; 10&#8315;&#8310;</td><td>Alloy</td></tr>
+</table>
+
+</div>
+</div>
+
+</div>
+</div>
+
 <script>
+// ============ TOOLS FUNCTIONS ============
+let desmosCalc=null;
+function initDesmos(){
+  if(desmosCalc)return;
+  const el=document.getElementById('desmos-calc');
+  if(!el||!window.Desmos)return;
+  desmosCalc=Desmos.ScientificCalculator(el,{settingsMenu:false,zoomButtons:true});
+}
+function toggleTool(hdr){
+  const body=hdr.nextElementSibling;
+  const chev=hdr.querySelector('.tool-chevron');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+function filterUnits(q){
+  const term=q.trim().toLowerCase();
+  ['const-table','unit-table','prefix-table','rho-table'].forEach(id=>{
+    const tbl=document.getElementById(id);
+    if(!tbl)return;
+    const rows=tbl.querySelectorAll('tr');
+    rows.forEach((r,i)=>{
+      if(i===0)return;
+      r.style.display=(!term||r.textContent.toLowerCase().includes(term))?'':'none';
+    });
+  });
+}
+
 // ============ TAB SWITCHING ============
 function switchTab(tab){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
-  const labels={study:'STUDY',quiz:'EXAM QUIZ',book:'BOOK PROBLEMS'};
+  const labels={study:'STUDY',quiz:'EXAM QUIZ',book:'BOOK PROBLEMS',tools:'TOOLS'};
+  if(tab==='tools')initDesmos();
   document.querySelectorAll('.tab-btn').forEach(b=>{if(b.textContent===labels[tab])b.classList.add('active')});
 }
 
