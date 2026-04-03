@@ -2021,33 +2021,139 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="vm-title">V1: Speed halved</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> v &rarr; v/2 &rarr; mv halves &rarr; R = mv/(qB) halves</div>
     <div class="answer-box"><span class="lbl">KEY</span> R halves. Direct proportion — always the same ratio.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q9v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- original R circle (gold solid) -->
+    <circle cx="70" cy="70" r="40" fill="none" stroke="#f0c040" stroke-width="2"/>
+    <text x="64" y="74" fill="#f0c040" font-size="11">R</text>
+    <line x1="70" y1="70" x2="110" y2="70" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="35" y="20" fill="#888" font-size="9">speed v</text>
+    <!-- R/2 circle (green dashed) -->
+    <circle cx="160" cy="70" r="20" fill="none" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="154" y="74" fill="#3ecf8e" font-size="11">R/2</text>
+    <line x1="160" y1="70" x2="180" y2="70" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="138" y="20" fill="#3ecf8e" font-size="9">speed v/2</text>
+    <!-- v labels -->
+    <text x="58" y="55" fill="#f0c040" font-size="9">v</text>
+    <text x="150" y="60" fill="#3ecf8e" font-size="9">v/2</text>
+    <text x="20" y="120" fill="#888" font-size="9">Slower → smaller orbit (R ∝ v)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Mass doubled</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> m &rarr; 2m &rarr; numerator mv doubles &rarr; R doubles</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Heavier particle is harder to bend — same logic as faster particle</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- mass m circle (gold solid) -->
+    <circle cx="60" cy="70" r="30" fill="none" stroke="#f0c040" stroke-width="2"/>
+    <text x="54" y="74" fill="#f0c040" font-size="11">R</text>
+    <circle cx="60" cy="70" r="5" fill="#f0c040"/>
+    <text x="50" y="66" fill="#f0c040" font-size="9">m</text>
+    <text x="30" y="18" fill="#888" font-size="9">mass m</text>
+    <!-- mass 2m circle (green dashed, bigger) -->
+    <circle cx="155" cy="70" r="50" fill="none" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="149" y="74" fill="#3ecf8e" font-size="11">2R</text>
+    <circle cx="155" cy="70" r="7" fill="#3ecf8e" fill-opacity="0.5"/>
+    <text x="143" y="66" fill="#3ecf8e" font-size="9">2m</text>
+    <text x="125" y="18" fill="#3ecf8e" font-size="9">mass 2m</text>
+    <text x="10" y="120" fill="#888" font-size="9">Heavier → wider orbit (R ∝ m)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: B field doubled</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> B &rarr; 2B &rarr; denominator qB doubles &rarr; R halves</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Stronger field bends the path more tightly</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- B field circle (gold, original R) -->
+    <circle cx="70" cy="70" r="38" fill="none" stroke="#f0c040" stroke-width="2"/>
+    <text x="64" y="74" fill="#f0c040" font-size="10">R</text>
+    <text x="30" y="18" fill="#4ea8de" font-size="9">B</text>
+    <text x="40" y="28" fill="#4ea8de" font-size="9">field B</text>
+    <!-- 2B field circle (green dashed, R/2) -->
+    <circle cx="162" cy="70" r="19" fill="none" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="154" y="74" fill="#3ecf8e" font-size="10">R/2</text>
+    <text x="142" y="18" fill="#4ea8de" font-size="9">2B</text>
+    <text x="138" y="28" fill="#4ea8de" font-size="9">field 2B</text>
+    <!-- field strength label -->
+    <text x="82" y="55" fill="#4ea8de" font-size="9">B→</text>
+    <text x="148" y="55" fill="#4ea8de" font-size="9">2B→</text>
+    <text x="8" y="120" fill="#888" font-size="9">Stronger B = tighter grip = smaller R</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: Charge doubled</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> q &rarr; 2q &rarr; denominator qB doubles &rarr; R halves</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Higher charge &rarr; stronger force &rarr; tighter curve</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- charge q circle -->
+    <circle cx="70" cy="70" r="38" fill="none" stroke="#f0c040" stroke-width="2"/>
+    <text x="64" y="74" fill="#f0c040" font-size="10">R</text>
+    <circle cx="70" cy="70" r="5" fill="#f0c040"/>
+    <text x="60" y="66" fill="#f0c040" font-size="9">+q</text>
+    <text x="40" y="18" fill="#888" font-size="9">charge q</text>
+    <!-- charge 2q circle (tighter) -->
+    <circle cx="162" cy="70" r="19" fill="none" stroke="#3ecf8e" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="154" y="74" fill="#3ecf8e" font-size="10">R/2</text>
+    <circle cx="162" cy="70" r="5" fill="#3ecf8e" fill-opacity="0.7"/>
+    <text x="150" y="66" fill="#3ecf8e" font-size="9">+2q</text>
+    <text x="138" y="18" fill="#3ecf8e" font-size="9">charge 2q</text>
+    <text x="8" y="120" fill="#888" font-size="9">More charge → field grabs harder → R/2</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Speed AND B both doubled</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> v &rarr; 2v and B &rarr; 2B &rarr; numerator doubles, denominator doubles</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> They cancel &mdash; R is UNCHANGED!</div>
     <div class="warn">Trap: doubling both speed and field leaves radius the same. Changes in numerator and denominator cancel.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- single circle — R unchanged -->
+    <circle cx="110" cy="68" r="42" fill="none" stroke="#f0c040" stroke-width="2.5"/>
+    <text x="104" y="72" fill="#f0c040" font-size="12" font-weight="bold">R</text>
+    <!-- v→2v label -->
+    <text x="12" y="18" fill="#3ecf8e" font-size="10">v→2v</text>
+    <!-- B→2B label -->
+    <text x="148" y="18" fill="#4ea8de" font-size="10">B→2B</text>
+    <!-- numerator / denominator cancel labels -->
+    <text x="30" y="40" fill="#3ecf8e" font-size="9">↑ num×2</text>
+    <text x="140" y="40" fill="#4ea8de" font-size="9">↑ den×2</text>
+    <!-- UNCHANGED box -->
+    <rect x="55" y="85" width="110" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+    <text x="68" y="101" fill="#f0c040" font-size="12" font-weight="bold">UNCHANGED</text>
+    <text x="20" y="120" fill="#888" font-size="9">R = m(2v)/(q·2B) = mv/(qB) = R</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V6: Find period T (biggest trap)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> T = circumference / speed = 2&pi;R / v = 2&pi;(mv/qB) / v</div>
     <div class="eq">T = 2&pi;m/(qB) &mdash; INDEPENDENT of v!</div>
     <div class="warn">Period does NOT depend on speed. Faster particle, bigger circle, same time around. This is the cyclotron principle.</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="margin:8px 0">
+    <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q9v6-aF" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#f0c040"/></marker>
+      <marker id="q9v6-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+    </defs>
+    <!-- outer fast circle (big, solid gold) -->
+    <circle cx="110" cy="68" r="48" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="150" y="30" fill="#f0c040" font-size="9">fast (big R)</text>
+    <!-- inner slow circle (small, green dashed) -->
+    <circle cx="110" cy="68" r="24" fill="none" stroke="#3ecf8e" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="116" y="50" fill="#3ecf8e" font-size="9">slow (R/2)</text>
+    <!-- T arrows on each orbit (small arc indicator) -->
+    <text x="55" y="74" fill="#f0c040" font-size="9">T</text>
+    <text x="85" y="74" fill="#3ecf8e" font-size="9">T</text>
+    <!-- T formula box -->
+    <rect x="28" y="105" width="164" height="20" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1" rx="3"/>
+    <text x="38" y="119" fill="#ef4444" font-size="10">T = 2πm/(qB) — no v!</text>
+    <text x="18" y="132" fill="#888" font-size="9">T does NOT depend on speed</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -2117,28 +2223,161 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Current reverses &rarr; RHR 1 gives opposite N/S assignment</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Poles flip &rarr; force direction reverses (attract &harr; repel)</div>
     <div class="answer-box"><span class="lbl">KEY</span> Reverse the battery, reverse the force. The solenoid is just an electromagnet you can flip.</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="margin:8px 0">
+    <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q10v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- Solenoid reversed: now N on left, S on right -->
+    <rect x="10" y="40" width="80" height="40" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="3"/>
+    <text x="18" y="64" fill="#ef4444" font-size="11" font-weight="bold">N</text>
+    <text x="72" y="64" fill="#3ecf8e" font-size="11" font-weight="bold">S</text>
+    <text x="25" y="36" fill="#888" font-size="9">reversed I</text>
+    <!-- wavy coil lines -->
+    <path d="M25,40 Q32,32 39,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <path d="M39,40 Q46,32 53,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <path d="M53,40 Q60,32 67,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <!-- Bar magnet: N faces solenoid N -->
+    <rect x="130" y="42" width="36" height="36" fill="#ef4444" rx="3"/>
+    <text x="140" y="64" fill="#fff" font-size="11" font-weight="bold">N</text>
+    <rect x="166" y="42" width="36" height="36" fill="#4ea8de" rx="3"/>
+    <text x="176" y="64" fill="#fff" font-size="11" font-weight="bold">S</text>
+    <!-- repel arrows -->
+    <line x1="95" y1="60" x2="115" y2="60" stroke="#f0c040" stroke-width="2" marker-end="url(#q10v1-aF)"/>
+    <line x1="125" y1="60" x2="105" y2="60" stroke="#f0c040" stroke-width="2" marker-end="url(#q10v1-aF)"/>
+    <text x="70" y="105" fill="#ef4444" font-size="11" font-weight="bold">REPEL</text>
+    <text x="8" y="115" fill="#888" font-size="9">Reversed I → poles flip → N-N → repel</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Bar magnet flipped around</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Now the N end of bar magnet faces solenoid N pole &rarr; like poles &rarr; REPEL</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same trick as flipping a fridge magnet &mdash; switches from stick to push</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="margin:8px 0">
+    <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q10v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- Solenoid: S left, N right (same as original) -->
+    <rect x="10" y="40" width="80" height="40" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="3"/>
+    <text x="18" y="64" fill="#3ecf8e" font-size="11" font-weight="bold">S</text>
+    <text x="72" y="64" fill="#ef4444" font-size="11" font-weight="bold">N</text>
+    <text x="22" y="36" fill="#888" font-size="9">solenoid</text>
+    <path d="M25,40 Q32,32 39,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <path d="M39,40 Q46,32 53,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <path d="M53,40 Q60,32 67,40" fill="none" stroke="#3ecf8e" stroke-width="1"/>
+    <!-- Bar magnet flipped: N now faces solenoid N -->
+    <rect x="130" y="42" width="36" height="36" fill="#ef4444" rx="3"/>
+    <text x="140" y="64" fill="#fff" font-size="11" font-weight="bold">N</text>
+    <rect x="166" y="42" width="36" height="36" fill="#4ea8de" rx="3"/>
+    <text x="176" y="64" fill="#fff" font-size="11" font-weight="bold">S</text>
+    <!-- repel force arrows -->
+    <line x1="94" y1="60" x2="118" y2="60" stroke="#f0c040" stroke-width="2" marker-end="url(#q10v2-aF)"/>
+    <line x1="127" y1="60" x2="103" y2="60" stroke="#f0c040" stroke-width="2" marker-end="url(#q10v2-aF)"/>
+    <text x="62" y="105" fill="#ef4444" font-size="12" font-weight="bold">REPEL</text>
+    <text x="8" y="115" fill="#888" font-size="9">Like poles (N–N) → push apart</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Find B inside solenoid</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> B = &mu;&#8320;nI where n = N/L (turns per meter)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> More turns, longer length, higher current &rarr; stronger field</div>
     <div class="eq">B = &mu;&#8320;(N/L)I</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="margin:8px 0">
+    <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q10v3-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+    </defs>
+    <!-- solenoid cross-section rectangle -->
+    <rect x="20" y="30" width="160" height="50" fill="rgba(62,207,142,0.05)" stroke="#3ecf8e" stroke-width="2" rx="3"/>
+    <!-- uniform B arrows inside -->
+    <line x1="40" y1="55" x2="80" y2="55" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q10v3-aB)"/>
+    <line x1="85" y1="55" x2="125" y2="55" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q10v3-aB)"/>
+    <line x1="130" y1="55" x2="165" y2="55" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q10v3-aB)"/>
+    <!-- coil tick marks on top and bottom -->
+    <line x1="45" y1="30" x2="45" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="65" y1="30" x2="65" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="85" y1="30" x2="85" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="105" y1="30" x2="105" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="125" y1="30" x2="125" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="145" y1="30" x2="145" y2="22" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="45" y1="80" x2="45" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="65" y1="80" x2="65" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="85" y1="80" x2="85" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="105" y1="80" x2="105" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="125" y1="80" x2="125" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <line x1="145" y1="80" x2="145" y2="88" stroke="#3ecf8e" stroke-width="1"/>
+    <!-- formula box -->
+    <rect x="35" y="94" width="150" height="18" fill="rgba(78,168,222,0.1)" stroke="#4ea8de" stroke-width="1" rx="3"/>
+    <text x="50" y="107" fill="#4ea8de" font-size="10">B = μ₀nI  (uniform inside)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: Current in solenoid increases</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> B &prop; I &rarr; stronger field &rarr; stronger magnet &rarr; stronger force on bar magnet</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Direction unchanged, magnitude increases</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="margin:8px 0">
+    <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q10v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      <marker id="q10v4-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+    </defs>
+    <!-- Solenoid box -->
+    <rect x="10" y="38" width="80" height="40" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="3"/>
+    <text x="18" y="62" fill="#3ecf8e" font-size="11" font-weight="bold">S</text>
+    <text x="72" y="62" fill="#ef4444" font-size="11" font-weight="bold">N</text>
+    <!-- I↑ current increase arrow -->
+    <line x1="50" y1="85" x2="50" y2="100" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q10v4-aG)"/>
+    <text x="56" y="98" fill="#3ecf8e" font-size="9">I↑</text>
+    <!-- Bar magnet S-N -->
+    <rect x="130" y="42" width="34" height="34" fill="#4ea8de" rx="3"/>
+    <text x="139" y="63" fill="#fff" font-size="11" font-weight="bold">S</text>
+    <rect x="164" y="42" width="34" height="34" fill="#ef4444" rx="3"/>
+    <text x="172" y="63" fill="#fff" font-size="11" font-weight="bold">N</text>
+    <!-- Strong attract arrow (thicker) -->
+    <line x1="94" y1="59" x2="116" y2="59" stroke="#f0c040" stroke-width="3" marker-end="url(#q10v4-aF)"/>
+    <line x1="124" y1="59" x2="102" y2="59" stroke="#f0c040" stroke-width="3" marker-end="url(#q10v4-aF)"/>
+    <text x="50" y="110" fill="#f0c040" font-size="9">B↑ → stronger attraction</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Three-pole combination (two solenoids facing each other)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply RHR 1 to each solenoid separately to find each one&apos;s N pole</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Then compare facing poles: like &rarr; repel, unlike &rarr; attract</div>
     <div class="warn">Always determine pole orientation first, then apply magnet rules. Don&apos;t skip the RHR step.</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="margin:8px 0">
+    <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q10v5-aF" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#f0c040"/></marker>
+      <marker id="q10v5-aR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+    </defs>
+    <!-- Case 1: N-S attract -->
+    <text x="8" y="12" fill="#888" font-size="9">N—S → ATTRACT</text>
+    <rect x="8" y="16" width="22" height="18" fill="#ef4444" rx="2"/>
+    <text x="12" y="28" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <rect x="30" y="16" width="22" height="18" fill="#4ea8de" rx="2"/>
+    <text x="34" y="28" fill="#fff" font-size="9" font-weight="bold">S</text>
+    <line x1="56" y1="25" x2="70" y2="25" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q10v5-aF)"/>
+    <text x="72" y="29" fill="#f0c040" font-size="9">attract</text>
+    <!-- Case 2: N-N repel -->
+    <text x="8" y="52" fill="#888" font-size="9">N—N → REPEL</text>
+    <rect x="8" y="56" width="22" height="18" fill="#ef4444" rx="2"/>
+    <text x="12" y="68" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <rect x="30" y="56" width="22" height="18" fill="#ef4444" rx="2"/>
+    <text x="34" y="68" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <line x1="52" y1="65" x2="67" y2="65" stroke="#ef4444" stroke-width="1.5" marker-end="url(#q10v5-aR)"/>
+    <line x1="28" y1="65" x2="13" y2="65" stroke="#ef4444" stroke-width="1.5" marker-end="url(#q10v5-aR)"/>
+    <text x="72" y="69" fill="#ef4444" font-size="9">repel</text>
+    <!-- Case 3: S-N attract -->
+    <text x="8" y="92" fill="#888" font-size="9">S—N → ATTRACT</text>
+    <rect x="8" y="96" width="22" height="18" fill="#4ea8de" rx="2"/>
+    <text x="12" y="108" fill="#fff" font-size="9" font-weight="bold">S</text>
+    <rect x="30" y="96" width="22" height="18" fill="#ef4444" rx="2"/>
+    <text x="34" y="108" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <line x1="56" y1="105" x2="70" y2="105" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q10v5-aF)"/>
+    <text x="72" y="109" fill="#f0c040" font-size="9">attract</text>
+    <text x="8" y="130" fill="#888" font-size="9">Use RHR1 first to find poles, then compare</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -2206,29 +2445,158 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Positive charge &rarr; don&apos;t flip after RHR 2</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same B field, same v direction &rarr; force is DOWNWARD (opposite of electron)</div>
     <div class="answer-box"><span class="lbl">KEY</span> Protons deflect opposite to electrons. Sign of charge flips the direction.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q11v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q11v1-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q11v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- magnets top/bottom -->
+    <rect x="40" y="8" width="140" height="18" fill="#ef4444" rx="3"/>
+    <text x="102" y="21" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <rect x="40" y="104" width="140" height="18" fill="#4ea8de" rx="3"/>
+    <text x="102" y="117" fill="#fff" font-size="9" font-weight="bold">S</text>
+    <!-- B down arrows -->
+    <line x1="80" y1="30" x2="80" y2="98" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v1-aB)"/>
+    <line x1="160" y1="30" x2="160" y2="98" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v1-aB)"/>
+    <text x="164" y="65" fill="#4ea8de" font-size="9">B↓</text>
+    <!-- proton beam right -->
+    <line x1="10" y1="65" x2="52" y2="65" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q11v1-aG)"/>
+    <circle cx="65" cy="65" r="6" fill="#3ecf8e" fill-opacity="0.3" stroke="#3ecf8e" stroke-width="1.5"/>
+    <text x="60" y="69" fill="#3ecf8e" font-size="9">p⁺</text>
+    <!-- F down for proton -->
+    <line x1="110" y1="60" x2="110" y2="92" stroke="#f0c040" stroke-width="2" marker-end="url(#q11v1-aF)"/>
+    <text x="115" y="85" fill="#f0c040" font-size="10" font-weight="bold">F↓</text>
+    <text x="10" y="126" fill="#888" font-size="9">Proton: no flip → F downward (opposite e⁻)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: B field pointing in a different direction</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply RHR 2 fresh with the new B direction, then flip for electron</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force is always &perp; to BOTH v and B &mdash; redraw the setup if needed</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q11v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q11v2-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q11v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- B pointing right (horizontal magnets) -->
+    <rect x="8" y="35" width="18" height="80" fill="#ef4444" rx="3"/>
+    <text x="11" y="78" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <rect x="194" y="35" width="18" height="80" fill="#4ea8de" rx="3"/>
+    <text x="197" y="78" fill="#fff" font-size="9" font-weight="bold">S</text>
+    <!-- B arrows horizontal right -->
+    <line x1="30" y1="75" x2="82" y2="75" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v2-aB)"/>
+    <line x1="110" y1="75" x2="162" y2="75" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v2-aB)"/>
+    <text x="88" y="72" fill="#4ea8de" font-size="9">B→</text>
+    <!-- electron beam upward -->
+    <line x1="110" y1="118" x2="110" y2="40" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q11v2-aG)"/>
+    <text x="114" y="110" fill="#3ecf8e" font-size="9">e⁻↑</text>
+    <!-- F out of page (dot) or into page depending on calc -->
+    <circle cx="155" cy="50" r="7" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+    <circle cx="155" cy="50" r="2.5" fill="#f0c040"/>
+    <text x="164" y="54" fill="#f0c040" font-size="9">F⊙</text>
+    <text x="10" y="122" fill="#888" font-size="9">New B → apply RHR2, flip for e⁻</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: v parallel to B (trap!)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = qvB sin&theta;, and sin(0&deg;) = 0</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force = 0. No deflection. Particle goes straight through.</div>
     <div class="warn">Most common trap: if velocity is parallel to the B field, there is NO magnetic force.</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="margin:8px 0">
+    <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q11v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q11v3-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+    </defs>
+    <!-- v arrow right -->
+    <line x1="15" y1="55" x2="88" y2="55" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q11v3-aG)"/>
+    <text x="45" y="48" fill="#3ecf8e" font-size="11">v →</text>
+    <!-- B arrow right (parallel) -->
+    <line x1="100" y1="55" x2="175" y2="55" stroke="#4ea8de" stroke-width="2" marker-end="url(#q11v3-aB)"/>
+    <text x="130" y="48" fill="#4ea8de" font-size="11">B →</text>
+    <!-- θ=0 label -->
+    <text x="86" y="52" fill="#888" font-size="9">θ=0°</text>
+    <!-- straight path (no deflection) -->
+    <line x1="15" y1="70" x2="200" y2="70" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="60" y="84" fill="#888" font-size="9">→ straight through</text>
+    <!-- F=0 box -->
+    <rect x="55" y="90" width="110" height="22" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1" rx="4"/>
+    <text x="78" y="106" fill="#ef4444" font-size="14" font-weight="bold">F = 0</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: Find force magnitude</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = |q|vB sin&theta;</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> For electron: |q| = 1.6 &times; 10&minus;19 C</div>
     <div class="eq">F = (1.6&times;10&minus;19)vB (when &theta; = 90&deg;)</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q11v4-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q11v4-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q11v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- magnets -->
+    <rect x="40" y="8" width="140" height="16" fill="#ef4444" rx="3"/>
+    <text x="102" y="20" fill="#fff" font-size="9" font-weight="bold">N</text>
+    <rect x="40" y="100" width="140" height="16" fill="#4ea8de" rx="3"/>
+    <text x="102" y="113" fill="#fff" font-size="9" font-weight="bold">S</text>
+    <!-- B down -->
+    <line x1="110" y1="28" x2="110" y2="94" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v4-aB)"/>
+    <text x="116" y="62" fill="#4ea8de" font-size="9">B</text>
+    <!-- electron -->
+    <circle cx="60" cy="62" r="6" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="57" y="66" fill="#ef4444" font-size="9">e⁻</text>
+    <!-- v right arrow -->
+    <line x1="70" y1="62" x2="96" y2="62" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q11v4-aG)"/>
+    <text x="74" y="56" fill="#3ecf8e" font-size="9">v</text>
+    <!-- F arrow up -->
+    <line x1="60" y1="52" x2="60" y2="28" stroke="#f0c040" stroke-width="2" marker-end="url(#q11v4-aF)"/>
+    <text x="64" y="38" fill="#f0c040" font-size="9">F</text>
+    <!-- formula box -->
+    <rect x="130" y="44" width="82" height="30" fill="rgba(240,192,64,0.08)" stroke="#f0c040" stroke-width="1" rx="3"/>
+    <text x="136" y="58" fill="#f0c040" font-size="9">F = evB</text>
+    <text x="136" y="70" fill="#888" font-size="9">(θ=90°)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Magnets oriented differently (B horizontal)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> If B is horizontal and v is also horizontal but perpendicular to B</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force will be vertical &mdash; apply RHR 2 in the new geometry, flip for electron</div>
     <div class="warn">Always redraw axes. Don&apos;t assume up/down without working through the cross product direction.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q11v5-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+      <marker id="q11v5-aB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#4ea8de"/></marker>
+      <marker id="q11v5-aF" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#f0c040"/></marker>
+    </defs>
+    <!-- Setup 1: B right, v up -->
+    <text x="10" y="12" fill="#888" font-size="9">Setup 1: B→, v↑</text>
+    <line x1="10" y1="50" x2="50" y2="50" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q11v5-aB)"/>
+    <text x="24" y="46" fill="#4ea8de" font-size="9">B→</text>
+    <line x1="25" y1="70" x2="25" y2="30" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q11v5-aG)"/>
+    <text x="28" y="60" fill="#3ecf8e" font-size="9">v↑</text>
+    <circle cx="70" cy="55" r="6" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+    <line x1="66" y1="51" x2="74" y2="59" stroke="#f0c040" stroke-width="1.5"/>
+    <line x1="74" y1="51" x2="66" y2="59" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="78" y="59" fill="#f0c040" font-size="9">F⊗</text>
+    <!-- Setup 2: B into page, v right -->
+    <text x="118" y="12" fill="#888" font-size="9">Setup 2: B⊗, v→</text>
+    <circle cx="140" cy="50" r="6" fill="none" stroke="#4ea8de" stroke-width="1.5"/>
+    <line x1="136" y1="46" x2="144" y2="54" stroke="#4ea8de" stroke-width="1.5"/>
+    <line x1="144" y1="46" x2="136" y2="54" stroke="#4ea8de" stroke-width="1.5"/>
+    <text x="148" y="54" fill="#4ea8de" font-size="9">B⊗</text>
+    <line x1="118" y1="65" x2="162" y2="65" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q11v5-aG)"/>
+    <text x="133" y="60" fill="#3ecf8e" font-size="9">v→</text>
+    <line x1="140" y1="78" x2="140" y2="100" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q11v5-aF)"/>
+    <text x="144" y="95" fill="#f0c040" font-size="9">F↓</text>
+    <text x="10" y="122" fill="#888" font-size="9">Always redraw axes for each new configuration</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -2297,29 +2665,183 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Parallel branch active &rarr; R<sub>total</sub> is lower than either resistor alone</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> More current flows &rarr; voltmeter reads lower value</div>
     <div class="answer-box"><span class="lbl">KEY</span> Closed switch = added path = lower resistance = voltmeter reads less.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <defs>
+      <marker id="q12v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+    </defs>
+    <!-- outer circuit loop -->
+    <line x1="20" y1="20" x2="200" y2="20" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="200" y1="20" x2="200" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="20" y1="110" x2="200" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="20" y1="20" x2="20" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- battery on left side -->
+    <line x1="20" y1="55" x2="20" y2="51" stroke="#f0c040" stroke-width="3"/>
+    <line x1="20" y1="49" x2="20" y2="45" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="4" y="54" fill="#f0c040" font-size="9">ε</text>
+    <!-- resistor R1 on top -->
+    <rect x="70" y="12" width="40" height="16" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="83" y="24" fill="#f0c040" font-size="9">R</text>
+    <!-- switch CLOSED on bottom -->
+    <line x1="70" y1="110" x2="90" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="90" y1="110" x2="130" y2="110" stroke="#3ecf8e" stroke-width="2"/>
+    <line x1="130" y1="110" x2="150" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <text x="100" y="125" fill="#3ecf8e" font-size="9">S (closed)</text>
+    <!-- Parallel R2 branch middle -->
+    <line x1="140" y1="20" x2="140" y2="42" stroke="#3ecf8e" stroke-width="1.5"/>
+    <rect x="130" y="42" width="20" height="36" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="133" y="64" fill="#f0c040" font-size="9">R₂</text>
+    <line x1="140" y1="78" x2="140" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- voltmeter -->
+    <circle cx="190" cy="65" r="12" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="185" y="69" fill="#f0c040" font-size="9">V</text>
+    <!-- I up arrow (more current) -->
+    <line x1="48" y1="75" x2="48" y2="50" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q12v1-aG)"/>
+    <text x="52" y="62" fill="#3ecf8e" font-size="9">I↑</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Different resistor configurations</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Calculate R<sub>total</sub> before and after using parallel and series rules</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Then trace how voltage distributes across each element with V = IR</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- 3-resistor circuit: R1 series, then R2||R3 parallel with switch in R3 branch -->
+    <!-- top wire -->
+    <line x1="15" y1="20" x2="205" y2="20" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- bottom wire -->
+    <line x1="15" y1="110" x2="205" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- left vertical (battery) -->
+    <line x1="15" y1="20" x2="15" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- battery mark -->
+    <line x1="15" y1="60" x2="15" y2="56" stroke="#f0c040" stroke-width="3"/>
+    <line x1="15" y1="54" x2="15" y2="50" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="2" y="60" fill="#f0c040" font-size="8">ε</text>
+    <!-- R1 series on top -->
+    <rect x="50" y="12" width="30" height="16" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="59" y="24" fill="#f0c040" font-size="9">R₁</text>
+    <!-- middle vertical split point -->
+    <line x1="130" y1="20" x2="130" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="130" y1="95" x2="130" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- R2 branch left -->
+    <line x1="130" y1="35" x2="110" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+    <rect x="100" y="35" width="20" height="60" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="104" y="68" fill="#f0c040" font-size="9">R₂</text>
+    <line x1="110" y1="95" x2="130" y2="95" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- R3 branch right with switch -->
+    <line x1="130" y1="35" x2="155" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+    <rect x="145" y="35" width="20" height="40" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="149" y="58" fill="#f0c040" font-size="9">R₃</text>
+    <!-- switch open in R3 branch -->
+    <line x1="155" y1="75" x2="155" y2="82" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="155" y1="82" x2="162" y2="76" stroke="#ef4444" stroke-width="1.5"/>
+    <line x1="155" y1="86" x2="155" y2="95" stroke="#3ecf8e" stroke-width="1.5"/>
+    <text x="164" y="86" fill="#ef4444" font-size="8">S</text>
+    <!-- right vertical -->
+    <line x1="205" y1="20" x2="205" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- voltmeter on right -->
+    <circle cx="205" cy="65" r="11" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+    <text x="200" y="69" fill="#f0c040" font-size="9">V</text>
+    <text x="10" y="125" fill="#888" font-size="8">Series R₁ + parallel (R₂||R₃ via S)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Find current before and after switch opens</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Before: I = V<sub>bat</sub>/R<sub>parallel</sub></div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> After: I = V<sub>bat</sub>/R<sub>remaining</sub></div>
     <div class="eq">I<sub>after</sub> &lt; I<sub>before</sub> (higher R &rarr; less total current)</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- Two-column comparison: before vs after -->
+    <!-- Before column -->
+    <text x="18" y="14" fill="#3ecf8e" font-size="9" font-weight="bold">S CLOSED</text>
+    <rect x="10" y="20" width="90" height="60" fill="rgba(62,207,142,0.05)" stroke="#3ecf8e" stroke-width="1" rx="3"/>
+    <text x="20" y="40" fill="#888" font-size="9">R_total = R∥</text>
+    <text x="20" y="54" fill="#3ecf8e" font-size="9">I = ε/R∥</text>
+    <text x="20" y="68" fill="#3ecf8e" font-size="10" font-weight="bold">I_high</text>
+    <!-- After column -->
+    <text x="128" y="14" fill="#ef4444" font-size="9" font-weight="bold">S OPEN</text>
+    <rect x="120" y="20" width="90" height="60" fill="rgba(239,68,68,0.05)" stroke="#ef4444" stroke-width="1" rx="3"/>
+    <text x="130" y="40" fill="#888" font-size="9">R_total = R</text>
+    <text x="130" y="54" fill="#ef4444" font-size="9">I = ε/R</text>
+    <text x="130" y="68" fill="#ef4444" font-size="10" font-weight="bold">I_low</text>
+    <!-- arrow between -->
+    <text x="100" y="55" fill="#f0c040" font-size="14">&rarr;</text>
+    <!-- result box -->
+    <rect x="20" y="92" width="180" height="22" fill="rgba(240,192,64,0.08)" stroke="#f0c040" stroke-width="1" rx="3"/>
+    <text x="30" y="107" fill="#f0c040" font-size="10">I_after &lt; I_before → R↑ → I↓</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: Find power before and after</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = V&sup2;/R or P = I&sup2;R depending on what&apos;s constant</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> After switch opens: less total current &rarr; total power drops</div>
     <div class="warn">Power in each remaining component may go up or down depending on series vs parallel position.</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+    <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+    <!-- circuit with power labels -->
+    <line x1="15" y1="20" x2="205" y2="20" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="205" y1="20" x2="205" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="15" y1="110" x2="205" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <line x1="15" y1="20" x2="15" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- battery -->
+    <line x1="15" y1="60" x2="15" y2="56" stroke="#f0c040" stroke-width="3"/>
+    <line x1="15" y1="54" x2="15" y2="50" stroke="#f0c040" stroke-width="1.5"/>
+    <!-- R1 top with P label -->
+    <rect x="55" y="12" width="40" height="16" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="68" y="24" fill="#f0c040" font-size="9">R</text>
+    <text x="55" y="10" fill="#8b6cef" font-size="8">P=I²R</text>
+    <!-- R2 right side with switch -->
+    <line x1="155" y1="20" x2="155" y2="40" stroke="#3ecf8e" stroke-width="1.5"/>
+    <rect x="145" y="40" width="20" height="32" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+    <text x="148" y="59" fill="#f0c040" font-size="9">R₂</text>
+    <line x1="155" y1="72" x2="155" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+    <!-- switch open -->
+    <line x1="155" y1="80" x2="163" y2="74" stroke="#ef4444" stroke-width="1.5"/>
+    <line x1="155" y1="84" x2="155" y2="110" stroke="#3ecf8e" stroke-width="1.5"/>
+    <text x="166" y="82" fill="#ef4444" font-size="8">S</text>
+    <!-- power labels -->
+    <text x="90" y="60" fill="#8b6cef" font-size="8">P_total↓</text>
+    <text x="90" y="72" fill="#888" font-size="8">after S opens</text>
+    <text x="90" y="84" fill="#3ecf8e" font-size="8">use P=V²/R</text>
+    <!-- P formula -->
+    <rect x="10" y="110" width="200" height="16" fill="rgba(139,108,239,0.08)" stroke="#8b6cef" stroke-width="1" rx="2"/>
+    <text x="22" y="122" fill="#8b6cef" font-size="9">P = I²R  or  P = V²/R  (choose wisely)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Multiple switches</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Treat each switch state change as removing/adding a branch</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Recalculate R<sub>total</sub> for each configuration, then trace voltages</div>
     <div class="answer-box"><span class="lbl">KEY</span> Work systematically: draw the circuit for each switch state, then apply V = IR.</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="margin:8px 0">
+    <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+    <!-- Decision tree for S1 and S2 states -->
+    <!-- root node -->
+    <rect x="75" y="8" width="70" height="20" fill="rgba(240,192,64,0.1)" stroke="#f0c040" stroke-width="1" rx="3"/>
+    <text x="82" y="22" fill="#f0c040" font-size="9">S₁ and S₂?</text>
+    <!-- branch lines -->
+    <line x1="90" y1="28" x2="50" y2="55" stroke="#888" stroke-width="1"/>
+    <line x1="130" y1="28" x2="170" y2="55" stroke="#888" stroke-width="1"/>
+    <!-- both open node -->
+    <rect x="8" y="55" width="84" height="32" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1" rx="3"/>
+    <text x="14" y="67" fill="#ef4444" font-size="8">Both open</text>
+    <text x="14" y="79" fill="#888" font-size="8">R_total = R only</text>
+    <!-- S1 closes node -->
+    <rect x="128" y="55" width="84" height="32" fill="rgba(62,207,142,0.08)" stroke="#3ecf8e" stroke-width="1" rx="3"/>
+    <text x="134" y="67" fill="#3ecf8e" font-size="8">S₁ closes</text>
+    <text x="134" y="79" fill="#888" font-size="8">R_total↓</text>
+    <!-- branch from both open -->
+    <line x1="50" y1="87" x2="50" y2="105" stroke="#888" stroke-width="1"/>
+    <rect x="8" y="105" width="84" height="26" fill="rgba(139,108,239,0.08)" stroke="#8b6cef" stroke-width="1" rx="3"/>
+    <text x="14" y="117" fill="#8b6cef" font-size="8">V_meter = ε</text>
+    <text x="14" y="127" fill="#888" font-size="7">(no current → no drop)</text>
+    <!-- branch from S1 closes -->
+    <line x1="170" y1="87" x2="170" y2="105" stroke="#888" stroke-width="1"/>
+    <rect x="128" y="105" width="84" height="26" fill="rgba(139,108,239,0.08)" stroke="#8b6cef" stroke-width="1" rx="3"/>
+    <text x="134" y="117" fill="#8b6cef" font-size="8">V_meter = IR</text>
+    <text x="134" y="127" fill="#888" font-size="7">(check each branch)</text>
+    </svg>
   </div>
 </div>
 </div>
