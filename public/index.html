@@ -1203,33 +1203,182 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> R increases &rarr; I decreases &rarr; B decreases &rarr; &Phi; decreases</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz opposes decrease &rarr; loop induces current to maintain flux</div>
     <div class="answer-box"><span class="lbl">KEY</span> Current direction flips to CW — always oppose the change</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q5v1-aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker>
+      <marker id="q5v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Circuit rectangle -->
+      <rect x="12" y="20" width="90" height="60" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <!-- Resistor zigzag top -->
+      <path d="M35,20 L40,12 L46,28 L52,12 L58,28 L64,12 L69,20" fill="none" stroke="#888" stroke-width="1.5"/>
+      <text x="38" y="10" fill="#888" font-size="8">R (slider)</text>
+      <!-- Slider arrow RIGHT (R increases) -->
+      <line x1="50" y1="6" x2="64" y2="6" stroke="#ef4444" stroke-width="1.5" marker-end="url(#q5v1-aR)"/>
+      <text x="36" y="4" fill="#ef4444" font-size="7">R&uarr;</text>
+      <!-- I arrow down (decreasing) -->
+      <line x1="102" y1="45" x2="102" y2="68" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q5v1-aG)"/>
+      <text x="106" y="58" fill="#3ecf8e" font-size="9">I&darr;</text>
+      <!-- B arrow to loop -->
+      <line x1="115" y1="55" x2="140" y2="55" stroke="#4ea8de" stroke-width="1.5"/>
+      <text x="118" y="50" fill="#4ea8de" font-size="8">B&darr;</text>
+      <!-- Loop A circle -->
+      <circle cx="168" cy="65" r="32" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="157" y="69" fill="#8b6cef" font-size="10">Loop A</text>
+      <!-- CW arrow -->
+      <path d="M155,40 A25,25 0 1,1 148,80" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q5v1-aF)"/>
+      <text x="157" y="108" fill="#f0c040" font-size="10" font-weight="bold">CW</text>
+      <text x="128" y="120" fill="#888" font-size="8">R&uarr; &rarr; I&darr; &rarr; B&darr; &rarr; Lenz &rarr; CW</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Switch opens or closes instead of slider moving</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Opening switch: I drops to zero instantly &rarr; B drops &rarr; &Phi; drops &rarr; Lenz induces CW current</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Closing switch: I rises from zero &rarr; B rises &rarr; Lenz induces CCW current</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q5v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Left: Switch OPEN -->
+      <text x="8" y="12" fill="#888" font-size="8">Switch OPEN</text>
+      <rect x="8" y="18" width="80" height="55" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="4"/>
+      <!-- Open switch symbol -->
+      <line x1="28" y1="18" x2="38" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <circle cx="40" cy="18" r="2" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="44" y1="14" x2="52" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <circle cx="54" cy="18" r="2" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="56" y1="18" x2="66" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <text x="34" y="55" fill="#ef4444" font-size="9">I=0 &rarr; B&darr;</text>
+      <text x="24" y="68" fill="#f0c040" font-size="9">Lenz: CW</text>
+      <!-- Right: Switch CLOSED -->
+      <text x="118" y="12" fill="#888" font-size="8">Switch CLOSED</text>
+      <rect x="118" y="18" width="80" height="55" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="4"/>
+      <!-- Closed switch symbol -->
+      <line x1="138" y1="18" x2="148" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <circle cx="150" cy="18" r="2" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="152" y1="18" x2="163" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <circle cx="165" cy="18" r="2" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="167" y1="18" x2="178" y2="18" stroke="#3ecf8e" stroke-width="2"/>
+      <text x="130" y="55" fill="#3ecf8e" font-size="9">I jumps &rarr; B&uarr;</text>
+      <text x="126" y="68" fill="#f0c040" font-size="9">Lenz: CCW</text>
+      <!-- divider -->
+      <line x1="110" y1="15" x2="110" y2="85" stroke="#333" stroke-width="1"/>
+      <text x="20" y="100" fill="#888" font-size="8">Open: CW  |  Close: CCW</text>
+      <text x="18" y="115" fill="#888" font-size="8">Lenz always opposes the change</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Loop moves closer or farther away</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Closer: more flux through loop (field stronger nearby) &rarr; Lenz opposes increase</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Farther: less flux &rarr; Lenz opposes decrease</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q5v3-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q5v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Main circuit on left -->
+      <rect x="10" y="30" width="65" height="65" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="14" y="25" fill="#3ecf8e" font-size="8">Circuit</text>
+      <!-- B field arrows from circuit -->
+      <line x1="75" y1="62" x2="105" y2="62" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v3-aB)"/>
+      <text x="76" y="56" fill="#4ea8de" font-size="8">B</text>
+      <!-- Loop A on right, moving left (closer) -->
+      <circle cx="160" cy="62" r="30" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="148" y="66" fill="#8b6cef" font-size="9">Loop A</text>
+      <!-- Arrow showing loop moving left (closer) -->
+      <line x1="148" y1="48" x2="130" y2="48" stroke="#f0c040" stroke-width="2" marker-end="url(#q5v3-aF)"/>
+      <text x="130" y="42" fill="#f0c040" font-size="8">closer</text>
+      <text x="116" y="100" fill="#888" font-size="8">Closer &rarr; &Phi;&uarr; &rarr; Lenz opposes</text>
+      <text x="116" y="114" fill="#888" font-size="8">Farther &rarr; &Phi;&darr; &rarr; Lenz opposes</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: Loop rotates relative to field</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA cos&theta; — as &theta; changes, flux changes &rarr; EMF induced</div>
     <div class="eq">&epsilon; = NBA&omega; sin(&omega;t)</div>
     <div class="math-verbal">This is the generator equation — rotating a loop in B produces sinusoidal AC</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v4-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q5v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- B field arrows (horizontal) -->
+      <line x1="10" y1="50" x2="50" y2="50" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v4-aB)"/>
+      <line x1="10" y1="70" x2="50" y2="70" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v4-aB)"/>
+      <line x1="10" y1="90" x2="50" y2="90" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v4-aB)"/>
+      <text x="12" y="38" fill="#4ea8de" font-size="9">B field</text>
+      <!-- Loop shown at angle theta -->
+      <ellipse cx="120" cy="65" rx="35" ry="15" fill="none" stroke="#8b6cef" stroke-width="2" transform="rotate(-30,120,65)"/>
+      <text x="105" y="68" fill="#8b6cef" font-size="9">Loop</text>
+      <!-- Theta angle label -->
+      <line x1="120" y1="65" x2="155" y2="50" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="150" y="46" fill="#888" font-size="8">&theta;</text>
+      <!-- Rotation arc arrow -->
+      <path d="M145,42 A20,20 0 0,0 160,65" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q5v4-aF)"/>
+      <text x="162" y="60" fill="#f0c040" font-size="8">&omega;</text>
+      <text x="15" y="110" fill="#888" font-size="8">&Phi; = BA cos&theta;</text>
+      <text x="15" y="122" fill="#f0c040" font-size="8">&theta; changes &rarr; &Phi; changes &rarr; EMF!</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Battery removed suddenly</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> I drops to zero &rarr; B collapses &rarr; &Phi; through loop drops &rarr; Lenz induces current to oppose the loss</div>
     <div class="warn">Same physics as opening the switch — sudden change, Lenz fights back</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q5v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Circuit rectangle -->
+      <rect x="12" y="25" width="80" height="70" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="4"/>
+      <!-- Battery symbol (crossed out) -->
+      <line x1="36" y1="25" x2="36" y2="18" stroke="#888" stroke-width="3"/>
+      <line x1="44" y1="25" x2="44" y2="15" stroke="#888" stroke-width="1"/>
+      <!-- X mark over battery -->
+      <line x1="28" y1="12" x2="52" y2="26" stroke="#ef4444" stroke-width="2"/>
+      <line x1="52" y1="12" x2="28" y2="26" stroke="#ef4444" stroke-width="2"/>
+      <text x="14" y="13" fill="#ef4444" font-size="8">Removed!</text>
+      <!-- I=0 label -->
+      <text x="28" y="68" fill="#ef4444" font-size="10">I=0</text>
+      <text x="22" y="82" fill="#888" font-size="8">B collapses</text>
+      <!-- Loop A -->
+      <circle cx="168" cy="62" r="32" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="156" y="66" fill="#8b6cef" font-size="9">Loop A</text>
+      <!-- CW arrow (Lenz maintains) -->
+      <path d="M155,36 A26,26 0 1,1 148,78" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q5v5-aF)"/>
+      <text x="158" y="105" fill="#f0c040" font-size="9">CW current</text>
+      <text x="90" y="120" fill="#888" font-size="8">Lenz: opposes B collapse</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V6: What if there are two nearby loops?</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Both loops independently "see" the changing flux and each induces its own opposing current</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Mutual inductance: each loop's induced current also creates a field that the other loop notices</div>
     <div class="answer-box"><span class="lbl">KEY</span> Transformer principle — two coils coupled by mutual inductance</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q5v6-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q5v6-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      <marker id="q5v6-aP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker></defs>
+      <!-- Main circuit -->
+      <rect x="10" y="35" width="55" height="60" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="12" y="30" fill="#3ecf8e" font-size="8">Circuit</text>
+      <!-- B field arrows -->
+      <line x1="65" y1="58" x2="90" y2="58" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v6-aB)"/>
+      <text x="67" y="52" fill="#4ea8de" font-size="8">B&uarr;</text>
+      <!-- Loop A -->
+      <circle cx="118" cy="65" r="24" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="108" y="69" fill="#8b6cef" font-size="8">Loop A</text>
+      <!-- CCW arrow on A -->
+      <path d="M130,45 A18,18 0 1,0 112,82" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q5v6-aF)"/>
+      <!-- B arrow from A to B -->
+      <line x1="142" y1="58" x2="160" y2="58" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q5v6-aB)"/>
+      <!-- Loop B -->
+      <circle cx="185" cy="65" r="24" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="175" y="69" fill="#8b6cef" font-size="8">Loop B</text>
+      <!-- CCW arrow on B -->
+      <path d="M197,45 A18,18 0 1,0 179,82" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q5v6-aF)"/>
+      <text x="30" y="112" fill="#888" font-size="8">Each loop induces own current</text>
+      <text x="30" y="124" fill="#f0c040" font-size="8">= Mutual inductance / transformer</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -1292,23 +1441,101 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed is constant, but direction continuously changes</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Velocity is a vector — same magnitude, new direction = different velocity</div>
     <div class="answer-box"><span class="lbl">KEY</span> Speed unchanged, velocity changed — these are not the same thing!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q6v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker></defs>
+      <!-- Circle path -->
+      <circle cx="100" cy="65" r="45" fill="none" stroke="#f0c040" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Particle at right -->
+      <circle cx="145" cy="65" r="5" fill="#3ecf8e"/>
+      <!-- v1 arrow (up) -->
+      <line x1="145" y1="60" x2="145" y2="38" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q6v1-aG)"/>
+      <text x="149" y="50" fill="#3ecf8e" font-size="9">v&#x2081;</text>
+      <!-- Particle at top -->
+      <circle cx="100" cy="20" r="5" fill="#3ecf8e"/>
+      <!-- v2 arrow (left) -->
+      <line x1="95" y1="20" x2="68" y2="20" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q6v1-aG)"/>
+      <text x="73" y="16" fill="#3ecf8e" font-size="9">v&#x2082;</text>
+      <!-- Equal lengths label -->
+      <text x="155" y="85" fill="#888" font-size="9">|v&#x2081;| = |v&#x2082;|</text>
+      <text x="18" y="108" fill="#888" font-size="8">Same magnitude, different direction</text>
+      <text x="18" y="120" fill="#3ecf8e" font-size="8">Speed constant, velocity changed</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Does momentum change? (Yes — direction!)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> p = mv — magnitude constant, but direction rotates continuously</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Momentum is a vector, so it changes even though |p| is constant</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q6v2-aP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker></defs>
+      <!-- Circle path -->
+      <circle cx="100" cy="65" r="42" fill="none" stroke="#f0c040" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Particle at right -->
+      <circle cx="142" cy="65" r="5" fill="#8b6cef"/>
+      <!-- p1 arrow (up, purple) -->
+      <line x1="142" y1="60" x2="142" y2="36" stroke="#8b6cef" stroke-width="2" marker-end="url(#q6v2-aP)"/>
+      <text x="146" y="50" fill="#8b6cef" font-size="9">p&#x2081;</text>
+      <!-- Particle at top-left -->
+      <circle cx="70" cy="28" r="5" fill="#8b6cef"/>
+      <!-- p2 arrow (left-down, purple) -->
+      <line x1="68" y1="30" x2="46" y2="52" stroke="#8b6cef" stroke-width="2" marker-end="url(#q6v2-aP)"/>
+      <text x="38" y="50" fill="#8b6cef" font-size="9">p&#x2082;</text>
+      <text x="155" y="90" fill="#888" font-size="9">|p| same</text>
+      <text x="10" y="108" fill="#888" font-size="8">p = mv, |p| constant, direction rotates</text>
+      <text x="10" y="120" fill="#8b6cef" font-size="8">Momentum changes! (&Delta;p &ne; 0)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Is acceleration zero? (NO — this is THE trap)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Centripetal acceleration exists: a = v&sup2;/R, pointing inward</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Acceleration means changing velocity direction — not changing speed</div>
     <div class="warn">Classic trap: "no work" does NOT mean "no acceleration." Centripetal acceleration is always present!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q6v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q6v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Circle path -->
+      <circle cx="90" cy="62" r="42" fill="none" stroke="#f0c040" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Particle at right -->
+      <circle cx="132" cy="62" r="5" fill="#3ecf8e"/>
+      <!-- v tangent up -->
+      <line x1="132" y1="57" x2="132" y2="32" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q6v3-aG)"/>
+      <text x="136" y="45" fill="#3ecf8e" font-size="9">v</text>
+      <!-- a_c toward center -->
+      <line x1="127" y1="62" x2="100" y2="62" stroke="#f0c040" stroke-width="2" marker-end="url(#q6v3-aF)"/>
+      <text x="104" y="56" fill="#f0c040" font-size="9">a&#x2C;</text>
+      <!-- 90 deg mark -->
+      <rect x="127" y="54" width="5" height="5" fill="none" stroke="#888" stroke-width="1"/>
+      <!-- Big label -->
+      <text x="152" y="30" fill="#ef4444" font-size="14" font-weight="bold">a &ne; 0</text>
+      <text x="10" y="108" fill="#888" font-size="8">a = v&sup2;/R toward center (centripetal)</text>
+      <text x="10" y="120" fill="#ef4444" font-size="8">TRAP: no work &ne; no acceleration!</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: What if an electric field E is added?</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> E field force (qE) CAN be parallel to v &rarr; does work &rarr; KE changes</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Path is no longer a pure circle — becomes a spiral or cycloid</div>
     <div class="answer-box"><span class="lbl">KEY</span> Add E field and now KE does change — the B-field-only rule breaks down</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q6v4-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q6v4-aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker></defs>
+      <!-- E field vertical arrows -->
+      <line x1="20" y1="15" x2="20" y2="110" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="40" y1="15" x2="40" y2="110" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="60" y1="15" x2="60" y2="110" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="20" y1="25" x2="20" y2="38" stroke="#ef4444" stroke-width="1.5" marker-end="url(#q6v4-aR)"/>
+      <text x="12" y="12" fill="#ef4444" font-size="9">E</text>
+      <!-- Spiral path (approximated) -->
+      <path d="M90,65 C90,40 115,35 120,60 C125,82 110,92 90,90 C65,88 55,70 60,50 C65,28 100,18 115,40" fill="none" stroke="#3ecf8e" stroke-width="2"/>
+      <!-- Arrow at end of spiral -->
+      <line x1="112" y1="38" x2="116" y2="42" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q6v4-aG)"/>
+      <text x="128" y="45" fill="#3ecf8e" font-size="9">spiral!</text>
+      <text x="10" y="112" fill="#888" font-size="8">E does work &rarr; KE changes</text>
+      <text x="10" y="124" fill="#ef4444" font-size="8">Not a circle anymore</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -1372,23 +1599,116 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Rising I &rarr; rising B &rarr; rising &Phi; &rarr; d&Phi;/dt &gt; 0 &rarr; &epsilon; &ne; 0</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz: loop opposes increase &rarr; induced current creates opposing B</div>
     <div class="answer-box"><span class="lbl">KEY</span> Change is the trigger — not the presence of a field</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q7v1-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q7v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q7v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Solenoid rectangle -->
+      <rect x="10" y="35" width="90" height="55" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="14" y="30" fill="#3ecf8e" font-size="8">Solenoid</text>
+      <!-- I↑ arrow -->
+      <line x1="55" y1="100" x2="55" y2="85" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q7v1-aG)"/>
+      <text x="58" y="97" fill="#3ecf8e" font-size="9">I&uarr;</text>
+      <!-- Growing B arrows (3 sizes) -->
+      <line x1="18" y1="60" x2="40" y2="60" stroke="#4ea8de" stroke-width="1" marker-end="url(#q7v1-aB)"/>
+      <line x1="18" y1="72" x2="55" y2="72" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q7v1-aB)"/>
+      <line x1="18" y1="50" x2="65" y2="50" stroke="#4ea8de" stroke-width="2" marker-end="url(#q7v1-aB)"/>
+      <text x="22" y="44" fill="#4ea8de" font-size="8">B growing</text>
+      <!-- Loop nearby -->
+      <circle cx="170" cy="62" r="32" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="158" y="66" fill="#8b6cef" font-size="9">Loop</text>
+      <!-- CCW arrow (induced) -->
+      <path d="M183,38 A26,26 0 1,0 158,86" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q7v1-aF)"/>
+      <text x="158" y="108" fill="#f0c040" font-size="9">CCW induced</text>
+      <text x="95" y="122" fill="#888" font-size="8">dΦ/dt &gt; 0 &rarr; &epsilon; &ne; 0</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Current is decreasing</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Falling I &rarr; falling B &rarr; falling &Phi; &rarr; Lenz opposes decrease</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Induced current in loop tries to maintain the field — opposite direction to V1</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q7v2-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q7v2-aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker>
+      <marker id="q7v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Solenoid rectangle -->
+      <rect x="10" y="35" width="90" height="55" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="14" y="30" fill="#3ecf8e" font-size="8">Solenoid</text>
+      <!-- I↓ arrow -->
+      <line x1="55" y1="85" x2="55" y2="100" stroke="#ef4444" stroke-width="2" marker-end="url(#q7v2-aR)"/>
+      <text x="58" y="97" fill="#ef4444" font-size="9">I&darr;</text>
+      <!-- Shrinking B arrows -->
+      <line x1="18" y1="50" x2="50" y2="50" stroke="#4ea8de" stroke-width="2" marker-end="url(#q7v2-aB)"/>
+      <line x1="18" y1="62" x2="35" y2="62" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q7v2-aB)"/>
+      <line x1="18" y1="74" x2="25" y2="74" stroke="#4ea8de" stroke-width="1" marker-end="url(#q7v2-aB)"/>
+      <text x="22" y="44" fill="#4ea8de" font-size="8">B shrinking</text>
+      <!-- Loop nearby -->
+      <circle cx="170" cy="62" r="32" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="158" y="66" fill="#8b6cef" font-size="9">Loop</text>
+      <!-- CW arrow (induced — opposite to V1) -->
+      <path d="M157,38 A26,26 0 1,1 184,86" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q7v2-aF)"/>
+      <text x="160" y="108" fill="#f0c040" font-size="9">CW induced</text>
+      <text x="85" y="122" fill="#888" font-size="8">Opposite to V1 — Lenz maintains B</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Current oscillating (AC source)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> AC current: I = I&#8320; sin(&omega;t) &rarr; B oscillates &rarr; &Phi; oscillates &rarr; EMF oscillates</div>
     <div class="eq">&epsilon; = &minus;N d&Phi;/dt = &minus;NBA&omega; cos(&omega;t)</div>
     <div class="math-verbal">Fastest change happens when sine is steepest (at zero crossing) — that's when EMF peaks</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q7v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q7v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- AC source symbol (solenoid side) -->
+      <circle cx="35" cy="65" r="18" fill="none" stroke="#3ecf8e" stroke-width="2"/>
+      <!-- Sine wave inside circle -->
+      <path d="M20,65 C23,55 27,55 30,65 C33,75 37,75 40,65 C43,55 47,55 50,65" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <text x="24" y="95" fill="#3ecf8e" font-size="8">AC source</text>
+      <!-- Arrow to loop -->
+      <line x1="55" y1="55" x2="90" y2="45" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="62" y="48" fill="#888" font-size="8">B~</text>
+      <!-- Solenoid box -->
+      <rect x="88" y="35" width="60" height="55" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="4"/>
+      <text x="90" y="30" fill="#3ecf8e" font-size="8">Solenoid</text>
+      <!-- AC sine inside solenoid -->
+      <path d="M93,65 C97,52 103,52 108,65 C113,78 119,78 124,65 C129,52 135,52 140,65" fill="none" stroke="#4ea8de" stroke-width="1.5"/>
+      <!-- Loop nearby -->
+      <circle cx="180" cy="62" r="28" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="169" y="66" fill="#8b6cef" font-size="9">Loop</text>
+      <!-- Oscillating arrows on loop -->
+      <path d="M168,40 A22,22 0 1,0 148,76" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q7v3-aF)"/>
+      <text x="155" y="103" fill="#f0c040" font-size="8">EMF~</text>
+      <text x="12" y="118" fill="#888" font-size="8">Always changing &rarr; always inducing</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: What if the loop moves toward the solenoid?</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Even with steady I in solenoid, loop moving closer captures more flux</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; changes because loop position changes &rarr; EMF induced</div>
     <div class="warn">Trap: steady solenoid current + moving loop STILL causes induction — motion changes &Phi;!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q7v4-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q7v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Solenoid (steady) -->
+      <rect x="10" y="35" width="90" height="55" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="14" y="30" fill="#3ecf8e" font-size="8">Solenoid (steady I)</text>
+      <!-- Steady B arrows (uniform length) -->
+      <line x1="18" y1="55" x2="55" y2="55" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q7v4-aB)"/>
+      <line x1="18" y1="70" x2="55" y2="70" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q7v4-aB)"/>
+      <text x="22" y="48" fill="#4ea8de" font-size="8">B steady</text>
+      <!-- Loop moving left toward solenoid -->
+      <circle cx="172" cy="62" r="30" fill="none" stroke="#8b6cef" stroke-width="2"/>
+      <text x="160" y="66" fill="#8b6cef" font-size="9">Loop</text>
+      <!-- Arrow showing loop moving left -->
+      <line x1="158" y1="48" x2="138" y2="48" stroke="#f0c040" stroke-width="2" marker-end="url(#q7v4-aF)"/>
+      <text x="138" y="42" fill="#f0c040" font-size="8">moves!</text>
+      <text x="10" y="105" fill="#888" font-size="8">Steady I, but loop moves closer</text>
+      <text x="10" y="117" fill="#ef4444" font-size="8">More &Phi; captured &rarr; EMF induced!</text>
+    </svg>
   </div>
 </div>
 </div>
@@ -1469,29 +1789,143 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Field lines point upward into loop (toward S) instead of downward</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Flux still increases as it approaches &rarr; Lenz still opposes &rarr; current direction flips vs N-pole case</div>
     <div class="answer-box"><span class="lbl">KEY</span> Same Lenz logic, opposite field direction &rarr; CW current (approaching S-pole)</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="margin:8px 0">
+      <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q8v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q8v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      <marker id="q8v1-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker></defs>
+      <!-- Magnet: S on top (approaching from above) -->
+      <rect x="80" y="8" width="30" height="25" fill="#4ea8de" rx="3"/>
+      <text x="88" y="25" fill="#fff" font-size="10" font-weight="bold">S</text>
+      <rect x="80" y="33" width="30" height="25" fill="#ef4444" rx="3"/>
+      <text x="88" y="50" fill="#fff" font-size="10" font-weight="bold">N</text>
+      <!-- Arrow down (approaching) -->
+      <line x1="95" y1="62" x2="95" y2="75" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q8v1-aG)"/>
+      <text x="100" y="72" fill="#3ecf8e" font-size="9">v</text>
+      <!-- B arrows pointing upward (field lines go from N→S, toward S above) -->
+      <line x1="75" y1="85" x2="75" y2="68" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q8v1-aB)"/>
+      <line x1="115" y1="85" x2="115" y2="68" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q8v1-aB)"/>
+      <text x="48" y="88" fill="#4ea8de" font-size="8">B &uarr;</text>
+      <!-- Loop -->
+      <ellipse cx="95" cy="95" rx="45" ry="12" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <!-- CW arrow (Lenz: S-pole approaching → CW) -->
+      <path d="M133,90 A36,10 0 1,1 128,103" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q8v1-aF)"/>
+      <text x="78" y="120" fill="#f0c040" font-size="10" font-weight="bold">CW</text>
+      <text x="30" y="133" fill="#888" font-size="8">S-pole: opposite direction vs N-pole</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V2: Magnet stationary, loop moves toward magnet</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Relative motion is what matters — loop moving toward a stationary magnet = same result</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Flux through loop increases &rarr; Lenz opposes &rarr; same induced current as V1</div>
     <div class="warn">It's relative motion that drives flux change — either object moving gives the same physics!</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="margin:8px 0">
+      <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q8v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q8v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Magnet FIXED label -->
+      <text x="68" y="14" fill="#888" font-size="8">FIXED</text>
+      <rect x="75" y="18" width="30" height="25" fill="#ef4444" rx="3"/>
+      <text x="83" y="35" fill="#fff" font-size="10" font-weight="bold">N</text>
+      <rect x="75" y="43" width="30" height="25" fill="#4ea8de" rx="3"/>
+      <text x="83" y="59" fill="#fff" font-size="10" font-weight="bold">S</text>
+      <!-- Loop moving UP toward magnet -->
+      <ellipse cx="90" cy="100" rx="40" ry="12" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <!-- Arrow showing loop moving up -->
+      <line x1="90" y1="88" x2="90" y2="72" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q8v2-aG)"/>
+      <text x="95" y="82" fill="#3ecf8e" font-size="9">v</text>
+      <!-- CCW label -->
+      <path d="M122,95 A32,10 0 1,1 116,110" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#q8v2-aF)"/>
+      <text x="68" y="122" fill="#f0c040" font-size="10" font-weight="bold">CCW</text>
+      <text x="12" y="134" fill="#888" font-size="8">Same result — relative motion is all that matters</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V3: Horizontal setup (magnet moves sideways through loop)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply the same two-phase logic: approaching side &rarr; &Phi; rises, leaving side &rarr; &Phi; falls</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Direction of induced current determined by which pole faces loop and which way flux changes</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q8v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q8v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Vertical loop (side view ellipse) -->
+      <ellipse cx="110" cy="65" rx="12" ry="40" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <text x="88" y="20" fill="#f0c040" font-size="8">Loop</text>
+      <text x="88" y="30" fill="#f0c040" font-size="8">(side view)</text>
+      <!-- Magnet approaching from left -->
+      <rect x="20" y="50" width="18" height="30" fill="#ef4444" rx="3"/>
+      <text x="23" y="68" fill="#fff" font-size="9" font-weight="bold">N</text>
+      <rect x="38" y="50" width="18" height="30" fill="#4ea8de" rx="3"/>
+      <text x="41" y="68" fill="#fff" font-size="9" font-weight="bold">S</text>
+      <!-- Arrow right -->
+      <line x1="58" y1="65" x2="90" y2="65" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q8v3-aG)"/>
+      <text x="64" y="58" fill="#3ecf8e" font-size="9">v&rarr;</text>
+      <!-- Magnet exiting right -->
+      <rect x="140" y="50" width="18" height="30" fill="#ef4444" rx="3" opacity="0.5"/>
+      <text x="143" y="68" fill="#fff" font-size="9" font-weight="bold">N</text>
+      <rect x="158" y="50" width="18" height="30" fill="#4ea8de" rx="3" opacity="0.5"/>
+      <text x="161" y="68" fill="#fff" font-size="9" font-weight="bold">S</text>
+      <text x="140" y="40" fill="#888" font-size="8">(after)</text>
+      <!-- Labels -->
+      <text x="8" y="108" fill="#888" font-size="8">Approaching: &Phi;&uarr; &rarr; CCW</text>
+      <text x="8" y="120" fill="#888" font-size="8">Leaving: &Phi;&darr; &rarr; CW (same 2-phase logic)</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V4: At exact center — momentary zero current</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> At exact midpoint of the loop, flux is momentarily at its maximum</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> d&Phi;/dt = 0 at the peak &rarr; EMF = 0 &rarr; current = 0 at that instant</div>
     <div class="warn">Trap: maximum flux does NOT mean maximum current — it means ZERO current (rate of change is zero)!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- Magnet centered inside loop -->
+      <rect x="80" y="20" width="28" height="22" fill="#ef4444" rx="3"/>
+      <text x="87" y="35" fill="#fff" font-size="10" font-weight="bold">N</text>
+      <rect x="80" y="42" width="28" height="22" fill="#4ea8de" rx="3"/>
+      <text x="87" y="57" fill="#fff" font-size="10" font-weight="bold">S</text>
+      <!-- Loop -->
+      <ellipse cx="94" cy="65" rx="50" ry="14" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <!-- Magnet at center label -->
+      <text x="56" y="16" fill="#888" font-size="8">Magnet at center</text>
+      <!-- Flux graph sketch -->
+      <text x="10" y="90" fill="#888" font-size="8">Flux: maximum at center</text>
+      <path d="M10,115 C30,95 50,83 94,80 C138,83 158,95 178,115" fill="none" stroke="#4ea8de" stroke-width="1.5"/>
+      <text x="82" y="78" fill="#4ea8de" font-size="8">peak</text>
+      <!-- Zero current label -->
+      <text x="130" y="95" fill="#ef4444" font-size="11" font-weight="bold">I = 0</text>
+      <text x="70" y="128" fill="#ef4444" font-size="8">d&Phi;/dt = 0 &rarr; no EMF!</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V5: Two coils (transformer preview)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Moving magnet through primary coil &rarr; changing flux in secondary coil</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same Lenz/Faraday physics — this is the operating principle of a transformer</div>
     <div class="eq">V&#8322;/V&#8321; = N&#8322;/N&#8321;</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q8v5-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      <marker id="q8v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      <marker id="q8v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker></defs>
+      <!-- Primary coil -->
+      <rect x="10" y="30" width="70" height="55" fill="none" stroke="#3ecf8e" stroke-width="2" rx="4"/>
+      <text x="12" y="25" fill="#3ecf8e" font-size="8">Primary (N&#x2081;)</text>
+      <!-- AC in primary -->
+      <path d="M20,57 C26,45 32,45 38,57 C44,69 50,69 56,57 C62,45 68,45 74,57" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- B field coupling arrow -->
+      <line x1="80" y1="57" x2="108" y2="57" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q8v5-aB)"/>
+      <text x="82" y="50" fill="#4ea8de" font-size="8">B~</text>
+      <!-- Secondary coil -->
+      <rect x="110" y="30" width="70" height="55" fill="none" stroke="#8b6cef" stroke-width="2" rx="4"/>
+      <text x="112" y="25" fill="#8b6cef" font-size="8">Secondary (N&#x2082;)</text>
+      <!-- Induced EMF in secondary -->
+      <path d="M118,57 C124,45 130,45 136,57 C142,69 148,69 154,57 C160,45 166,45 172,57" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+      <text x="112" y="100" fill="#f0c040" font-size="8">EMF induced</text>
+      <!-- Zigzag resistor load on secondary -->
+      <path d="M180,45 L184,38 L188,52 L192,38 L196,52 L200,38 L204,45" fill="none" stroke="#888" stroke-width="1.5"/>
+      <line x1="180" y1="45" x2="180" y2="70" stroke="#888" stroke-width="1"/>
+      <line x1="204" y1="45" x2="204" y2="70" stroke="#888" stroke-width="1"/>
+      <text x="8" y="115" fill="#888" font-size="8">V&#x2082;/V&#x2081; = N&#x2082;/N&#x2081; &rarr; transformer</text>
+    </svg>
   </div>
   <div class="variation-mini">
     <div class="vm-title">V6: What if the loop has resistance R?</div>
@@ -1499,6 +1933,32 @@ svg text{font-family:'JetBrains Mono',monospace}
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Induced current follows Ohm's Law: I = &epsilon;/R</div>
     <div class="eq">I = N|&Delta;&Phi;/&Delta;t| / R</div>
     <div class="math-verbal">Higher resistance &rarr; same EMF, smaller current — Lenz force on magnet is weaker</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="margin:8px 0">
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <defs><marker id="q8v6-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+      <marker id="q8v6-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker></defs>
+      <!-- Magnet above -->
+      <rect x="80" y="8" width="28" height="20" fill="#ef4444" rx="3"/>
+      <text x="87" y="22" fill="#fff" font-size="10" font-weight="bold">N</text>
+      <rect x="80" y="28" width="28" height="20" fill="#4ea8de" rx="3"/>
+      <text x="87" y="42" fill="#fff" font-size="10" font-weight="bold">S</text>
+      <!-- Arrow down -->
+      <line x1="94" y1="50" x2="94" y2="62" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q8v6-aG)"/>
+      <!-- Loop with resistor -->
+      <rect x="55" y="65" width="80" height="45" fill="none" stroke="#f0c040" stroke-width="2" rx="4"/>
+      <!-- Zigzag resistor on right side -->
+      <path d="M135,70 L139,76 L143,64 L147,76 L151,64 L155,70" fill="none" stroke="#888" stroke-width="1.5"/>
+      <text x="142" y="60" fill="#888" font-size="9">R</text>
+      <!-- CCW arrow inside loop -->
+      <path d="M118,72 A20,14 0 1,0 72,82" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#q8v6-aF)"/>
+      <!-- I = ε/R label -->
+      <text x="62" y="82" fill="#f0c040" font-size="9">I = &epsilon;/R</text>
+      <!-- Result boxes -->
+      <rect x="8" y="108" width="90" height="16" fill="rgba(239,68,68,0.1)" rx="3"/>
+      <text x="12" y="120" fill="#ef4444" font-size="8">High R &rarr; small I</text>
+      <rect x="114" y="108" width="98" height="16" fill="rgba(62,207,142,0.1)" rx="3"/>
+      <text x="118" y="120" fill="#3ecf8e" font-size="8">Low R &rarr; large I</text>
+    </svg>
   </div>
 </div>
 </div>
