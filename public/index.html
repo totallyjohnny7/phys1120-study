@@ -3004,6 +3004,328 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 
+<!-- ═══ NEW EXAM PROBLEM CARDS ═══ -->
+
+<!-- Card E1: Metal Loop Entering B Field (Exam Q8) -->
+<div class="problem-card" id="card-exam-loop">
+<div class="card-header">
+  <span class="q-num" style="background:var(--purple)">E1</span>
+  <span class="q-title">Metal Loop Pushed Into Uniform B Field</span>
+  <span class="related-badge" style="background:rgba(139,108,239,.12);color:var(--purple);border:1px solid rgba(139,108,239,.3)">FROM 2010 EXAM</span>
+</div>
+<div class="card-body">
+<div class="card-text">
+<div class="story-block">A rectangular loop gets pushed into a region where a magnetic field exists. As the leading edge enters, flux starts changing, and Lenz's Law determines which end of the resistor is at higher potential.</div>
+<div class="analogy-block">pushing a sponge into a stream — the water creates a pressure difference across the sponge as it enters.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Loop pushed rightward into B field region</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Leading edge enters B; trailing edge still outside</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Area inside B increases &rarr; &Phi; increases (B into page)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz opposes increase &rarr; induced B must point out of page</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Current flows CCW (by RHR) &rarr; determines which side of R is higher potential</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&epsilon; = BLv</div>
+  <div class="math-verbal">EMF equals field times edge length times entry speed</div>
+</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>End "b" of resistor R is at higher potential (current flows from b through external circuit).</div>
+<div class="source-ref">Source: 2010 Exam Q8</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker>
+  <marker id="arrowV" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+</defs>
+<!-- B field region (right half) -->
+<rect x="140" y="20" width="130" height="170" fill="rgba(78,168,222,0.07)" stroke="#4ea8de" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="148" y="35" fill="#4ea8de" font-size="10">B field region</text>
+<!-- X marks (B into page) -->
+<text x="155" y="65" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="190" y="65" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="225" y="65" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="155" y="105" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="190" y="105" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="225" y="105" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="155" y="145" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="190" y="145" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="225" y="145" fill="#4ea8de" font-size="14" opacity="0.7">&#x2715;</text>
+<text x="195" y="175" fill="#4ea8de" font-size="10">(into page)</text>
+<!-- Rectangular loop (partially in field) -->
+<rect x="75" y="55" width="95" height="90" fill="none" stroke="#f0c040" stroke-width="2.5"/>
+<!-- Resistor R on left side of loop -->
+<line x1="75" y1="70" x2="75" y2="78" stroke="#f0c040" stroke-width="2"/>
+<path d="M75,78 L70,82 L80,86 L70,90 L80,94 L70,98 L75,100" fill="none" stroke="#888" stroke-width="1.5"/>
+<line x1="75" y1="100" x2="75" y2="110" stroke="#f0c040" stroke-width="2"/>
+<!-- Labels a and b -->
+<text x="60" y="76" fill="#3ecf8e" font-size="11" font-weight="bold">a</text>
+<text x="60" y="116" fill="#3ecf8e" font-size="11" font-weight="bold">b</text>
+<!-- Higher potential label -->
+<text x="45" y="130" fill="#22c55e" font-size="9">higher</text>
+<text x="44" y="140" fill="#22c55e" font-size="9">potential</text>
+<!-- v arrow -->
+<line x1="108" y1="100" x2="135" y2="100" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowV)"/>
+<text x="112" y="95" fill="#3ecf8e" font-size="11" font-weight="bold">v</text>
+<!-- CCW current arrow on top edge -->
+<line x1="140" y1="55" x2="90" y2="55" stroke="#8b6cef" stroke-width="2" marker-end="url(#arrowP)"/>
+<text x="96" y="50" fill="#8b6cef" font-size="9">CCW current</text>
+</svg>
+<div class="diagram-caption">Loop pushed right into B (into page). Flux &uarr; &rarr; Lenz induces CCW current &rarr; end b at higher potential.</div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q8')">Q8 &mdash; both involve changing flux + Lenz</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q16')">Q16 &mdash; same motional EMF formula &epsilon;=BLv</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-exam-loop')">
+  <span class="variation-chevron" id="chev-var-exam-loop">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">3</span>
+</div>
+<div class="variation-container" id="var-exam-loop">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Loop exiting the B field (pulled rightward out)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Area inside B decreases &rarr; &Phi; decreases &rarr; Lenz opposes decrease</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Induced current reverses direction (CW) &rarr; end a is now at higher potential</div>
+    <div class="answer-box"><span class="lbl">KEY</span> When exiting, current reverses — Lenz always fights the change.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Loop fully inside the B field (TRAP)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Entire loop inside uniform B &rarr; area in B is constant &rarr; &Phi; = constant</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> d&Phi;/dt = 0 &rarr; &epsilon; = 0 &rarr; no induced current</div>
+    <div class="warn">TRAP: Being inside a B field does NOT cause induction — only CHANGING flux does!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Loop enters from top edge instead of right side</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Top edge enters B first &rarr; same flux increase logic applies</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Use &epsilon; = BLv with L = width of loop, v = downward entry speed</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Same formula, same Lenz logic — just identify which edge is the "cutting" edge.</div>
+  </div>
+</div>
+</div>
+
+<!-- Card E2: Magnetic Flux Through Circular Area (Exam Q16) -->
+<div class="problem-card" id="card-exam-flux">
+<div class="card-header">
+  <span class="q-num" style="background:var(--purple)">E2</span>
+  <span class="q-title">Magnetic Flux at Different Angles</span>
+  <span class="related-badge" style="background:rgba(139,108,239,.12);color:var(--purple);border:1px solid rgba(139,108,239,.3)">FROM 2010 EXAM</span>
+</div>
+<div class="card-body">
+<div class="card-text">
+<div class="story-block">A circle lies flat in the xz plane. The normal to this circle points straight up (y-direction). Magnetic flux measures how much field "threads through" the circle — it depends on the angle between B and the normal.</div>
+<div class="analogy-block">holding a hula hoop in the rain. Rain falling straight through the hoop = maximum flux. Rain falling sideways along the hoop's plane = zero flux. At an angle, it's cos(&theta;) of the maximum.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">Setup:</span> Circle in xz plane &rarr; normal = &ycirc; (points up)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA cos&theta; where &theta; = angle between B and normal</div>
+  <div class="chain-step"><span class="chain-arrow">Case a:</span> B along z &rarr; &theta; = 90° &rarr; cos90° = 0 &rarr; &Phi; = 0</div>
+  <div class="chain-step"><span class="chain-arrow">Case b:</span> B at 60° from &ycirc; &rarr; &Phi; = BA cos60° = BA/2</div>
+  <div class="chain-step"><span class="chain-arrow">Case c:</span> B along &ycirc; &rarr; &theta; = 0° &rarr; cos0° = 1 &rarr; &Phi; = BA (maximum)</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&Phi; = BA cos&theta; &nbsp;&nbsp; A = &pi;r&sup2;</div>
+  <div class="math-verbal">Flux = field &times; area &times; cosine of angle between field and surface normal</div>
+</div>
+<div class="answer-box">
+  <span class="lbl">WORKED EXAMPLE</span><br>
+  r = 6 cm = 0.06 m, B = 0.23 T, A = &pi;(0.06)&sup2; &asymp; 0.01131 m&sup2;<br>
+  (a) B along z: &Phi; = 0<br>
+  (b) B at 60° from &ycirc;: &Phi; = 0.23 &times; 0.01131 &times; cos60° &asymp; 1.30 &times; 10<sup>&minus;3</sup> Wb<br>
+  (c) B along &ycirc;: &Phi; = 0.23 &times; 0.01131 &asymp; 2.60 &times; 10<sup>&minus;3</sup> Wb
+</div>
+<div class="warn">KEY INSIGHT: &Phi; = 0 when B is parallel to the surface (perpendicular to normal). &Phi; = maximum when B is perpendicular to the surface (parallel to normal).</div>
+<div class="source-ref">Source: 2010 Exam Q16</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="210" viewBox="0 0 280 210">
+<rect width="280" height="210" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="arrowY" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#22c55e"/></marker>
+  <marker id="arrowBx" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+  <marker id="arrowN" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker>
+</defs>
+<!-- Axes -->
+<text x="10" y="18" fill="#888" font-size="10">xz plane (circle lies flat)</text>
+<!-- Origin at 90,140 -->
+<!-- x axis (right) -->
+<line x1="90" y1="140" x2="145" y2="140" stroke="#888" stroke-width="1.5" marker-end="url(#arrowBx)"/>
+<text x="148" y="144" fill="#888" font-size="10">x</text>
+<!-- z axis (bottom-right, isometric) -->
+<line x1="90" y1="140" x2="120" y2="165" stroke="#888" stroke-width="1.5" marker-end="url(#arrowBx)"/>
+<text x="123" y="172" fill="#888" font-size="10">z</text>
+<!-- y axis (up) -->
+<line x1="90" y1="140" x2="90" y2="75" stroke="#888" stroke-width="1.5" marker-end="url(#arrowBx)"/>
+<text x="93" y="70" fill="#888" font-size="10">y</text>
+<!-- Circle in xz plane (drawn as ellipse for perspective) -->
+<ellipse cx="100" cy="148" rx="45" ry="14" fill="rgba(212,168,38,0.07)" stroke="#f0c040" stroke-width="2"/>
+<text x="70" y="170" fill="#f0c040" font-size="9">circle (xz plane)</text>
+<!-- Normal vector (up, ŷ direction) -->
+<line x1="100" y1="148" x2="100" y2="100" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowY)"/>
+<text x="103" y="112" fill="#22c55e" font-size="10" font-weight="bold">&ycirc; (normal)</text>
+<!-- Case a: B along z (parallel to surface, theta=90, phi=0) -->
+<text x="160" y="30" fill="#888" font-size="9">Case a: B along z</text>
+<line x1="175" y1="45" x2="230" y2="68" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowBx)"/>
+<text x="232" y="72" fill="#4ea8de" font-size="9">B</text>
+<text x="160" y="82" fill="#ef4444" font-size="9">&theta;=90° &rarr; &Phi;=0</text>
+<!-- Case c: B along y (perpendicular to surface, theta=0, max phi) -->
+<text x="160" y="105" fill="#888" font-size="9">Case c: B along &ycirc;</text>
+<line x1="200" y1="120" x2="200" y2="155" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowY)"/>
+<text x="205" y="142" fill="#22c55e" font-size="9">B</text>
+<text x="160" y="168" fill="#22c55e" font-size="9">&theta;=0° &rarr; &Phi;=BA</text>
+</svg>
+<div class="diagram-caption">Circle in xz plane, normal = &ycirc;. B along z &rarr; zero flux. B along y &rarr; max flux.</div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q5')">Q5 &mdash; flux feeds into Faraday's Law</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q8')">Q8 &mdash; changing flux drives induction</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-exam-flux')">
+  <span class="variation-chevron" id="chev-var-exam-flux">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">4</span>
+</div>
+<div class="variation-container" id="var-exam-flux">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Circle in xy plane (normal = &zcirc;)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Normal points along z &rarr; &theta; measured from z-axis</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B along z: &theta;=0° &rarr; &Phi;=BA. B along x: &theta;=90° &rarr; &Phi;=0</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Always identify the normal first, then find angle between B and that normal.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Circle in yz plane (normal = x&#x0302;)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Normal points along x &rarr; B along x gives maximum flux</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B along y or z: each is perpendicular to normal &rarr; &theta;=90° &rarr; &Phi;=0</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: B at arbitrary angle &theta; to normal</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA cos&theta; — general formula always applies</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> If given angle from surface (not from normal): use sin instead of cos</div>
+    <div class="warn">TRAP: Angle from surface and angle from normal are complementary — cos(&theta;<sub>normal</sub>) = sin(&theta;<sub>surface</sub>)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Square loop instead of circular loop</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same formula: &Phi; = BA cos&theta; where A = L&sup2; for a square of side L</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Shape doesn't matter for flux — only area and angle matter</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Flux formula is shape-independent. Only total area and orientation determine &Phi;.</div>
+  </div>
+</div>
+</div>
+
+<!-- Card E3: B=0 Between Opposite-Direction Parallel Wires (Exam Q18) -->
+<div class="problem-card" id="card-exam-oppwires">
+<div class="card-header">
+  <span class="q-num" style="background:var(--purple)">E3</span>
+  <span class="q-title">Finding B = 0: Opposite-Direction Wires</span>
+  <span class="related-badge" style="background:rgba(139,108,239,.12);color:var(--purple);border:1px solid rgba(139,108,239,.3)">FROM 2010 EXAM</span>
+</div>
+<div class="card-body">
+<div class="card-text">
+<div class="story-block">Two wires carry currents in opposite directions. Unlike same-direction wires (where fields cancel between them), opposite-direction wires have fields that ADD between them and cancel OUTSIDE. The zero point is outside, near the weaker wire.</div>
+<div class="analogy-block">two speakers playing out of phase — between them the sounds reinforce, but outside on one side they cancel. The quiet spot is closer to the quieter speaker.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Opposite currents &rarr; fields ADD between wires (no cancellation there)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Fields oppose each other OUTSIDE the wire pair</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Zero point exists outside, on the side of the weaker wire</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Set B&#8321; = B&#8322;: &mu;&#8320;I&#8321;/(2&pi;r&#8321;) = &mu;&#8320;I&#8322;/(2&pi;r&#8322;) &rarr; I&#8321;/r&#8321; = I&#8322;/r&#8322;</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Solve for position x from weaker wire (I&#8321; = 25 A): 25/x = 75/(x+0.4)</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">B = &mu;&#8320;I / (2&pi;r) &nbsp;&nbsp; Set B&#8321; = B&#8322;</div>
+  <div class="math-verbal">Find distance where both fields are equal and opposite &rarr; net B = 0</div>
+</div>
+<div class="answer-box">
+  <span class="lbl">WORKED EXAMPLE</span><br>
+  I&#8321; = 25 A, I&#8322; = 75 A, separation d = 40 cm = 0.4 m<br>
+  25/x = 75/(x + 0.4) &rarr; 25(x + 0.4) = 75x &rarr; 25x + 10 = 75x &rarr; x = 0.2 m<br>
+  Zero point is 0.2 m from the 25 A wire, on the OPPOSITE side from the 75 A wire.
+</div>
+<div class="source-ref">Source: 2010 Exam Q18</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="210" viewBox="0 0 280 210">
+<rect width="280" height="210" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="arrowUp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+  <marker id="arrowDn" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker>
+  <marker id="arrowBlue2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+</defs>
+<!-- Wire 1 (25A, up) at x=80 -->
+<line x1="80" y1="30" x2="80" y2="180" stroke="#3ecf8e" stroke-width="3"/>
+<line x1="80" y1="50" x2="80" y2="30" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arrowUp)"/>
+<text x="65" y="25" fill="#3ecf8e" font-size="10">I&#8321;=25A</text>
+<text x="68" y="17" fill="#3ecf8e" font-size="9">(up)</text>
+<!-- Wire 2 (75A, down) at x=180 -->
+<line x1="180" y1="30" x2="180" y2="180" stroke="#ef4444" stroke-width="3"/>
+<line x1="180" y1="30" x2="180" y2="50" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowDn)"/>
+<text x="165" y="25" fill="#ef4444" font-size="10">I&#8322;=75A</text>
+<text x="168" y="17" fill="#ef4444" font-size="9">(down)</text>
+<!-- Separation label -->
+<line x1="80" y1="195" x2="180" y2="195" stroke="#888" stroke-width="1"/>
+<text x="110" y="207" fill="#888" font-size="9">0.4 m</text>
+<!-- B field arrows BETWEEN wires (add) -->
+<line x1="115" y1="100" x2="145" y2="100" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowBlue2)"/>
+<text x="118" y="92" fill="#4ea8de" font-size="9">B fields ADD</text>
+<!-- B field arrows OUTSIDE left (cancel zone) -->
+<line x1="55" y1="100" x2="32" y2="100" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowBlue2)"/>
+<line x1="27" y1="100" x2="10" y2="100" stroke="#4ea8de" stroke-width="2" stroke-dasharray="3,2"/>
+<text x="5" y="91" fill="#22c55e" font-size="9" font-weight="bold">B=0</text>
+<text x="3" y="82" fill="#22c55e" font-size="8">zero pt</text>
+<!-- Zero point marker -->
+<circle cx="20" cy="100" r="5" fill="none" stroke="#22c55e" stroke-width="2"/>
+<line x1="17" y1="97" x2="23" y2="103" stroke="#22c55e" stroke-width="1.5"/>
+<line x1="23" y1="97" x2="17" y2="103" stroke="#22c55e" stroke-width="1.5"/>
+<!-- Distance label: 0.2m from wire 1 -->
+<line x1="20" y1="118" x2="80" y2="118" stroke="#22c55e" stroke-width="1"/>
+<text x="32" y="130" fill="#22c55e" font-size="9">0.2 m</text>
+<!-- Label: fields cancel outside -->
+<text x="5" y="155" fill="#888" font-size="8">fields cancel</text>
+<text x="8" y="165" fill="#888" font-size="8">outside here</text>
+<!-- Label: fields add between -->
+<text x="90" y="145" fill="#888" font-size="8">fields reinforce</text>
+<text x="95" y="155" fill="#888" font-size="8">between wires</text>
+</svg>
+<div class="diagram-caption">Opposite currents: B adds between wires, cancels outside near weaker wire. Zero at 0.2 m left of I&#8321;.</div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l5')">L5 &mdash; same-direction version (zero between wires)</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-exam-oppwires')">
+  <span class="variation-chevron" id="chev-var-exam-oppwires">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">3</span>
+</div>
+<div class="variation-container" id="var-exam-oppwires">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Same-direction currents (zero between wires instead)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same-direction: fields ADD outside, CANCEL between wires</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Zero point is BETWEEN the wires, closer to the weaker current</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Set I&#8321;/x = I&#8322;/(d&minus;x) &rarr; solve for x between 0 and d</div>
+    <div class="warn">Opposite vs Same direction is the key switch: zero point jumps from OUTSIDE to BETWEEN!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Three wires with mixed directions</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Add field contributions (with signs) at each point: B<sub>net</sub> = B&#8321; + B&#8322; + B&#8323;</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Use RHR for each wire's field direction at the point of interest</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Superposition — each wire contributes independently. Add as vectors, not scalars.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Find B at a specific point between the wires</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Compute B&#8321; = &mu;&#8320;I&#8321;/(2&pi;r&#8321;) and B&#8322; = &mu;&#8320;I&#8322;/(2&pi;r&#8322;) at that point</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Opposite directions &rarr; fields point same way between wires &rarr; B<sub>net</sub> = B&#8321; + B&#8322;</div>
+    <div class="eq">B<sub>net</sub> = (&mu;&#8320;/2&pi;)(I&#8321;/r&#8321; + I&#8322;/r&#8322;) between opposite-current wires</div>
+  </div>
+</div>
+</div>
+
 </div>
 
 </body>
