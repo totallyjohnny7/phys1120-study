@@ -2903,32 +2903,176 @@ svg text{font-family:'JetBrains Mono',monospace}
 </div>
 <div class="variation-container" id="var-q13">
   <div class="variation-mini">
-    <div class="vm-title">V1: Three resistors in series — find total power</div>
+    <div class="vm-title">V1: Three resistors in series — P ∝ R</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q13v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q13v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+      <!-- wire left -->
+      <line x1="8" y1="60" x2="30" y2="60" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R1 -->
+      <rect x="30" y="48" width="36" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="38" y="64" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="32" y="44" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">P₁</text>
+      <!-- wire mid1 -->
+      <line x1="66" y1="60" x2="82" y2="60" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R2 -->
+      <rect x="82" y="48" width="36" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="87" y="64" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">2R</text>
+      <text x="82" y="44" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">2P₁</text>
+      <!-- wire mid2 -->
+      <line x1="118" y1="60" x2="134" y2="60" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R3 -->
+      <rect x="134" y="48" width="36" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="139" y="64" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">3R</text>
+      <text x="134" y="44" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">3P₁</text>
+      <!-- wire right -->
+      <line x1="170" y1="60" x2="212" y2="60" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- I arrow -->
+      <line x1="8" y1="50" x2="26" y2="50" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q13v1-aG)"/>
+      <text x="6" y="44" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">I</text>
+      <!-- label -->
+      <text x="30" y="100" fill="#f0c040" font-size="11" font-weight="bold" font-family="'JetBrains Mono',monospace">P ∝ R in series</text>
+      <text x="30" y="114" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">same I → bigger R → more P</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Each has same I &rarr; P<sub>total</sub> = I&sup2;R&sub;1; + I&sup2;R&sub;2; + I&sup2;R&sub;3; = I&sup2;(R&sub;1;+R&sub;2;+R&sub;3;)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Total power = I&sup2; &times; R<sub>series</sub></div>
     <div class="answer-box"><span class="lbl">KEY</span> Sum the individual power terms, or use P<sub>total</sub> = I&sup2;R<sub>total</sub>.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V2: R and 4R in series — find the current</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(4R) = I&sup2;(4R) = 40W &rarr; I&sup2; = 10/R</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need battery voltage or R value to get a numerical answer for I</div>
+    <div class="vm-title">V2: R and 4R series — find total power</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q13v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q13v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- battery -->
+      <line x1="10" y1="65" x2="10" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="6" y1="35" x2="14" y2="35" stroke="#3ecf8e" stroke-width="2"/>
+      <line x1="8" y1="30" x2="12" y2="30" stroke="#3ecf8e" stroke-width="1.5"/>
+      <text x="16" y="33" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">ε</text>
+      <line x1="10" y1="65" x2="10" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top rail -->
+      <line x1="10" y1="30" x2="45" y2="30" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R -->
+      <rect x="45" y="18" width="40" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="56" y="34" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="44" y="14" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">10W</text>
+      <!-- wire mid -->
+      <line x1="85" y1="30" x2="110" y2="30" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- 4R -->
+      <rect x="110" y="18" width="44" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="119" y="34" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">4R</text>
+      <text x="109" y="14" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">40W</text>
+      <!-- right rail -->
+      <line x1="154" y1="30" x2="200" y2="30" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="200" y1="30" x2="200" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bottom rail -->
+      <line x1="10" y1="80" x2="200" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- result box -->
+      <rect x="20" y="90" width="180" height="32" fill="rgba(62,207,142,0.08)" stroke="rgba(62,207,142,0.3)" rx="4"/>
+      <text x="30" y="103" fill="#3ecf8e" font-size="10" font-family="'JetBrains Mono',monospace">P_total = 10 + 40 = 50W</text>
+      <text x="30" y="117" fill="#f0c040" font-size="10" font-weight="bold" font-family="'JetBrains Mono',monospace">= I²(R+4R) = I²·5R</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(4R) = I&sup2;(4R) = 40W &rarr; P(R) = 10W &rarr; P<sub>total</sub> = 50W</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need battery voltage or R value to get a numerical answer for I alone</div>
     <div class="warn">Trap: you need one extra piece of info (V or R) to find I alone.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V3: R and 2R in series (exam: 20W in 2R &rarr; P(R)=?)</div>
+    <div class="vm-title">V3: R and 4R series — find current I</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q13v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q13v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+      <!-- battery -->
+      <line x1="12" y1="28" x2="12" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="8" y1="28" x2="16" y2="28" stroke="#3ecf8e" stroke-width="2"/>
+      <line x1="9" y1="23" x2="15" y2="23" stroke="#3ecf8e" stroke-width="1.5"/>
+      <text x="18" y="27" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">ε</text>
+      <line x1="12" y1="23" x2="46" y2="23" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R -->
+      <rect x="46" y="12" width="34" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="55" y="27" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <line x1="80" y1="23" x2="106" y2="23" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- 4R -->
+      <rect x="106" y="12" width="38" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="114" y="27" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">4R</text>
+      <line x1="144" y1="23" x2="188" y2="23" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="188" y1="23" x2="188" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="12" y1="80" x2="188" y2="80" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- I arrow -->
+      <line x1="28" y1="23" x2="44" y2="23" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q13v3-aG)"/>
+      <text x="28" y="18" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">I→</text>
+      <!-- formula -->
+      <text x="14" y="98" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">I = ε/(R+4R) = ε/5R</text>
+      <text x="14" y="113" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">same I through both</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(R) = P(2R)/2 = 20/2 = <b>10W</b></div>
     <div class="answer-box"><span class="lbl">KEY</span> Scale by resistance ratio.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V4: R and 3R in series (exam: 30W in R &rarr; P(3R)=?)</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(3R) = 3 &times; P(R) = 3 &times; 30 = <b>90W</b></div>
-    <div class="answer-box"><span class="lbl">KEY</span> Scale by the resistance ratio in the direction that makes sense: bigger R, more power.</div>
+    <div class="vm-title">V4: R and 2R series — P₂R = 2×P_R</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q13v4-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q13v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+      <line x1="8" y1="55" x2="36" y2="55" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R -->
+      <rect x="36" y="43" width="40" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="47" y="59" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="36" y="39" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">P_R=15W</text>
+      <line x1="76" y1="55" x2="100" y2="55" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- 2R -->
+      <rect x="100" y="43" width="44" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="110" y="59" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">2R</text>
+      <text x="100" y="39" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">P₂R=30W</text>
+      <line x1="144" y1="55" x2="212" y2="55" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- I arrow -->
+      <line x1="10" y1="46" x2="30" y2="46" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q13v4-aG)"/>
+      <text x="8" y="42" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">I</text>
+      <!-- label -->
+      <text x="20" y="95" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">P₂R = 2 × P_R</text>
+      <text x="20" y="112" fill="#3ecf8e" font-size="10" font-family="'JetBrains Mono',monospace">15W → 30W</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(2R) = 2 &times; P(R) = 2 &times; 15 = <b>30W</b></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Scale by the resistance ratio: bigger R gets proportionally more power.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V5: Which resistor is hotter in a string of lights (series)?</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same current through all &rarr; highest R bulb dissipates most power &rarr; gets hottest</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> If one bulb burns out and breaks the circuit, all go out (series chain broken)</div>
-    <div class="warn">This is why Christmas-light strings used to all go dark when one bulb failed.</div>
+    <div class="vm-title">V5: R and 3R series — exam variant (2010)</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q13v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q13v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <line x1="8" y1="50" x2="36" y2="50" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- R -->
+      <rect x="36" y="38" width="40" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="47" y="54" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="36" y="34" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">P_R=30W</text>
+      <line x1="76" y1="50" x2="100" y2="50" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- 3R -->
+      <rect x="100" y="38" width="44" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="110" y="54" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">3R</text>
+      <text x="100" y="34" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">P₃R=?</text>
+      <line x1="144" y1="50" x2="212" y2="50" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- I arrow -->
+      <line x1="10" y1="40" x2="30" y2="40" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#q13v5-aG)"/>
+      <text x="8" y="36" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">I</text>
+      <!-- gold result box -->
+      <rect x="14" y="74" width="192" height="46" fill="rgba(212,168,38,0.12)" stroke="rgba(212,168,38,0.4)" rx="4"/>
+      <text x="24" y="89" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">P₃R = 3 × 30 = 90W</text>
+      <text x="24" y="107" fill="#d4a826" font-size="10" font-weight="bold" font-family="'JetBrains Mono',monospace">← 2010 exam answer</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(3R) = 3 &times; P(R) = 3 &times; 30 = <b>90W</b></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Scale by the resistance ratio in the direction that makes sense: bigger R, more power.</div>
   </div>
 </div>
 </div>
@@ -2996,29 +3140,183 @@ svg text{font-family:'JetBrains Mono',monospace}
 </div>
 <div class="variation-container" id="var-q14">
   <div class="variation-mini">
-    <div class="vm-title">V1: R and 2R parallel (exam: 10W in R &rarr; P(2R)=?)</div>
+    <div class="vm-title">V1: R and 2R parallel — exam (2010)</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q14v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q14v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+      <!-- left vertical wire -->
+      <line x1="22" y1="40" x2="22" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top branch -->
+      <line x1="22" y1="40" x2="52" y2="40" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="52" y="28" width="60" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="72" y="44" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="52" y="24" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">P=10W</text>
+      <line x1="112" y1="40" x2="158" y2="40" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bottom branch -->
+      <line x1="22" y1="100" x2="52" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="52" y="88" width="60" height="24" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="68" y="104" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">2R</text>
+      <text x="52" y="84" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">P=?</text>
+      <line x1="112" y1="100" x2="158" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- right vertical wire -->
+      <line x1="158" y1="40" x2="158" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- ΔV label -->
+      <text x="4" y="72" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">ΔV</text>
+      <!-- result box -->
+      <rect x="10" y="112" width="200" height="22" fill="rgba(212,168,38,0.12)" stroke="rgba(212,168,38,0.3)" rx="4"/>
+      <text x="18" y="127" fill="#f0c040" font-size="11" font-weight="bold" font-family="'JetBrains Mono',monospace">P(2R) = 10/2 = 5W</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; 1/R &rarr; P(2R) = P(R)/2 = 10/2 = <b>5W</b></div>
-    <div class="answer-box"><span class="lbl">KEY</span> Double the resistance, half the power.</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Double the resistance, half the power. Matches 2010 exam.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V2: Three resistors in parallel — find total power</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> All share V &rarr; P<sub>total</sub> = V&sup2;/R&sub;1; + V&sup2;/R&sub;2; + V&sup2;/R&sub;3;</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Or: P<sub>total</sub> = V&sup2; &times; (1/R&sub;1;+1/R&sub;2;+1/R&sub;3;) = V&sup2;/R<sub>parallel</sub></div>
+    <div class="vm-title">V2: Three resistors in parallel — P ∝ 1/R</div>
+    <svg width="220" height="145" viewBox="0 0 220 145" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q14v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q14v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="145" fill="#0a0a12" rx="6"/>
+      <!-- left bus -->
+      <line x1="18" y1="20" x2="18" y2="115" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top branch R -->
+      <line x1="18" y1="25" x2="44" y2="25" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="44" y="16" width="44" height="18" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+      <text x="57" y="29" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="44" y="12" fill="#3ecf8e" font-size="8" font-family="'JetBrains Mono',monospace">most P</text>
+      <line x1="88" y1="25" x2="162" y2="25" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- mid branch 2R -->
+      <line x1="18" y1="68" x2="44" y2="68" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="44" y="59" width="44" height="18" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+      <text x="52" y="72" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">2R</text>
+      <text x="44" y="55" fill="#888" font-size="8" font-family="'JetBrains Mono',monospace">P/2</text>
+      <line x1="88" y1="68" x2="162" y2="68" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bot branch 3R -->
+      <line x1="18" y1="111" x2="44" y2="111" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="44" y="102" width="44" height="18" fill="none" stroke="#f0c040" stroke-width="1.5" rx="3"/>
+      <text x="52" y="115" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">3R</text>
+      <text x="44" y="98" fill="#888" font-size="8" font-family="'JetBrains Mono',monospace">P/3</text>
+      <line x1="88" y1="111" x2="162" y2="111" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- right bus -->
+      <line x1="162" y1="20" x2="162" y2="115" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- label -->
+      <text x="10" y="133" fill="#f0c040" font-size="10" font-weight="bold" font-family="'JetBrains Mono',monospace">P ∝ 1/R in parallel</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> All share V &rarr; P<sub>total</sub> = V&sup2;/R + V&sup2;/2R + V&sup2;/3R</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Smallest R (R) gets the most power</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V3: Find total current from the source</div>
+    <div class="vm-title">V3: Parallel — find total power</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q14v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q14v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- left bus -->
+      <line x1="20" y1="30" x2="20" y2="90" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top branch R -->
+      <line x1="20" y1="35" x2="50" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="50" y="24" width="44" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="63" y="39" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="50" y="20" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">50W</text>
+      <line x1="94" y1="35" x2="160" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bottom branch 5R -->
+      <line x1="20" y1="85" x2="50" y2="85" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="50" y="74" width="44" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="60" y="89" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">5R</text>
+      <text x="50" y="70" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">10W</text>
+      <line x1="94" y1="85" x2="160" y2="85" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- right bus -->
+      <line x1="160" y1="30" x2="160" y2="90" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- result -->
+      <rect x="10" y="103" width="200" height="22" fill="rgba(62,207,142,0.08)" stroke="rgba(62,207,142,0.25)" rx="4"/>
+      <text x="18" y="118" fill="#3ecf8e" font-size="11" font-family="'JetBrains Mono',monospace">P_total = 50 + 10 = 60W</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Each branch: I = V/R and I = V/(5R) &rarr; total I = V/R + V/5R = 6V/5R</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Or use P<sub>total</sub>/V to find I<sub>total</sub></div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P<sub>total</sub> = P<sub>R</sub> + P<sub>5R</sub> = 50 + 10 = <b>60W</b></div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V4: Current divider — how much current through each branch?</div>
+    <div class="vm-title">V4: Current divider — I₁/I₂ = R₂/R₁</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q14v4-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q14v4-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+        <marker id="q14v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+      <!-- total I in -->
+      <line x1="2" y1="68" x2="22" y2="68" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q14v4-aG)"/>
+      <text x="2" y="62" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">I_total</text>
+      <!-- left bus -->
+      <line x1="24" y1="30" x2="24" y2="105" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top branch R1 with I1 -->
+      <line x1="24" y1="35" x2="54" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="26" y1="28" x2="44" y2="28" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q14v4-aB)"/>
+      <text x="26" y="22" fill="#4ea8de" font-size="9" font-family="'JetBrains Mono',monospace">I₁</text>
+      <rect x="54" y="24" width="50" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="68" y="39" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R₁</text>
+      <line x1="104" y1="35" x2="160" y2="35" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bottom branch R2 with I2 -->
+      <line x1="24" y1="100" x2="54" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="26" y1="93" x2="44" y2="93" stroke="#4ea8de" stroke-width="1.5" marker-end="url(#q14v4-aB)"/>
+      <text x="26" y="88" fill="#4ea8de" font-size="9" font-family="'JetBrains Mono',monospace">I₂</text>
+      <rect x="54" y="89" width="50" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="68" y="104" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R₂</text>
+      <line x1="104" y1="100" x2="160" y2="100" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- right bus -->
+      <line x1="160" y1="30" x2="160" y2="105" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- formula -->
+      <text x="10" y="125" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">I₁/I₂ = R₂/R₁</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> I through branch = V/R<sub>branch</sub></div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Smaller R &rarr; more current &rarr; more power (consistent with P = I&sup2;R and P = V&sup2;/R both giving same answer)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Smaller R &rarr; more current &rarr; more power (P = I&sup2;R and P = V&sup2;/R are consistent)</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V5: Mixed series-parallel — which formula to use?</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For components in series: use P = I&sup2;R (I is shared)</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For components in parallel: use P = V&sup2;/R (V is shared)</div>
+    <div class="vm-title">V5: Mixed series-parallel — reduce step by step</div>
+    <svg width="220" height="140" viewBox="0 0 220 140" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q14v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q14v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="140" fill="#0a0a12" rx="6"/>
+      <!-- R in series -->
+      <line x1="8" y1="38" x2="28" y2="38" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="28" y="27" width="30" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="36" y="42" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <line x1="58" y1="38" x2="74" y2="38" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- parallel block left bus -->
+      <line x1="74" y1="18" x2="74" y2="58" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- top parallel branch 2R -->
+      <line x1="74" y1="22" x2="94" y2="22" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="94" y="13" width="34" height="18" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="3"/>
+      <text x="100" y="26" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">2R</text>
+      <line x1="128" y1="22" x2="148" y2="22" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- bot parallel branch 3R -->
+      <line x1="74" y1="55" x2="94" y2="55" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="94" y="46" width="34" height="18" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="3"/>
+      <text x="100" y="59" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">3R</text>
+      <line x1="128" y1="55" x2="148" y2="55" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- parallel block right bus -->
+      <line x1="148" y1="18" x2="148" y2="58" stroke="#3ecf8e" stroke-width="1.5"/>
+      <line x1="148" y1="38" x2="212" y2="38" stroke="#3ecf8e" stroke-width="1.5"/>
+      <!-- arrow -->
+      <text x="60" y="88" fill="#888" font-size="18" font-family="'JetBrains Mono',monospace">→</text>
+      <!-- reduced circuit -->
+      <line x1="8" y1="115" x2="28" y2="115" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="28" y="104" width="30" height="22" fill="none" stroke="#f0c040" stroke-width="1.5" rx="4"/>
+      <text x="36" y="119" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R</text>
+      <line x1="58" y1="115" x2="78" y2="115" stroke="#3ecf8e" stroke-width="1.5"/>
+      <rect x="78" y="104" width="46" height="22" fill="none" stroke="#3ecf8e" stroke-width="1.5" rx="4"/>
+      <text x="84" y="119" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">6R/5</text>
+      <text x="72" y="100" fill="#888" font-size="8" font-family="'JetBrains Mono',monospace">2R∥3R</text>
+      <line x1="124" y1="115" x2="212" y2="115" stroke="#3ecf8e" stroke-width="1.5"/>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For the series part: use P = I&sup2;R (I is shared)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For the parallel part: find R<sub>eq</sub> = 2R&times;3R/(2R+3R) = 6R/5, then P = V&sup2;/R<sub>eq</sub></div>
     <div class="warn">Identify what is constant (I or V) for each pair, then pick the right formula. Getting this backwards is the #1 mistake.</div>
   </div>
 </div>
@@ -3093,32 +3391,145 @@ R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
 </div>
 <div class="variation-container" id="var-q15">
   <div class="variation-mini">
-    <div class="vm-title">V1: Proton instead of alpha particle</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: q = e = 1.6&times;10<sup>&minus;19</sup> C, m = 1.67&times;10<sup>&minus;27</sup> kg</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; smaller mass AND smaller charge &rarr; similar radius to alpha</div>
+    <div class="vm-title">V1: Proton vs alpha particle paths</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q15v1-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+        <marker id="q15v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- B field dots background -->
+      <g fill="#4ea8de" opacity="0.4">
+        <circle cx="20" cy="20" r="2"/><circle cx="50" cy="20" r="2"/><circle cx="80" cy="20" r="2"/><circle cx="110" cy="20" r="2"/><circle cx="140" cy="20" r="2"/><circle cx="170" cy="20" r="2"/><circle cx="200" cy="20" r="2"/>
+        <circle cx="20" cy="45" r="2"/><circle cx="50" cy="45" r="2"/><circle cx="80" cy="45" r="2"/><circle cx="110" cy="45" r="2"/><circle cx="140" cy="45" r="2"/><circle cx="170" cy="45" r="2"/><circle cx="200" cy="45" r="2"/>
+        <circle cx="20" cy="70" r="2"/><circle cx="50" cy="70" r="2"/><circle cx="80" cy="70" r="2"/><circle cx="110" cy="70" r="2"/><circle cx="140" cy="70" r="2"/><circle cx="170" cy="70" r="2"/><circle cx="200" cy="70" r="2"/>
+        <circle cx="20" cy="95" r="2"/><circle cx="50" cy="95" r="2"/><circle cx="80" cy="95" r="2"/><circle cx="110" cy="95" r="2"/><circle cx="140" cy="95" r="2"/><circle cx="170" cy="95" r="2"/><circle cx="200" cy="95" r="2"/>
+      </g>
+      <!-- alpha circle (larger, gold) -->
+      <circle cx="80" cy="68" r="38" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <circle cx="80" cy="30" r="5" fill="#f0c040"/>
+      <text x="76" y="34" fill="#0a0a12" font-size="7" font-weight="bold">α</text>
+      <text x="46" y="68" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">R_α</text>
+      <!-- proton circle (smaller, blue) -->
+      <circle cx="155" cy="75" r="19" fill="none" stroke="#4ea8de" stroke-width="2"/>
+      <circle cx="155" cy="56" r="4" fill="#4ea8de"/>
+      <text x="152" y="60" fill="#0a0a12" font-size="7" font-weight="bold">p</text>
+      <text x="138" y="75" fill="#4ea8de" font-size="9" font-family="'JetBrains Mono',monospace">R_p</text>
+      <!-- label -->
+      <text x="8" y="118" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">R_α/R_p = (4m/2e)/(m/e) = 2</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: q = e, m = m<sub>p</sub> &rarr; R<sub>p</sub> = m<sub>p</sub>v/(eB)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Alpha: q = 2e, m = 4m<sub>p</sub> &rarr; R<sub>&alpha;</sub> = 4m<sub>p</sub>v/(2eB) = 2R<sub>p</sub></div>
     <div class="answer-box"><span class="lbl">KEY</span> Alpha has 2&times; charge but 4&times; mass &rarr; alpha radius = 2&times; proton radius (for same v and B).</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V2: Different magnetic field — how does R change?</div>
+    <div class="vm-title">V2: Stronger B → smaller circle (R ∝ 1/B)</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q15v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+        <marker id="q15v2-aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#4ea8de"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- B1 label region -->
+      <text x="8" y="14" fill="#4ea8de" font-size="9" font-family="'JetBrains Mono',monospace">B₁ (weaker)</text>
+      <!-- large circle at B1 -->
+      <circle cx="62" cy="72" r="44" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <text x="36" y="72" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">R₁</text>
+      <!-- B2 label region -->
+      <text x="128" y="14" fill="#4ea8de" font-size="9" font-family="'JetBrains Mono',monospace">B₂=2B₁</text>
+      <!-- small circle at B2 -->
+      <circle cx="168" cy="72" r="22" fill="none" stroke="#ef4444" stroke-width="2"/>
+      <text x="150" y="72" fill="#ef4444" font-size="9" font-family="'JetBrains Mono',monospace">R/2</text>
+      <!-- arrow between -->
+      <text x="105" y="75" fill="#888" font-size="16">→</text>
+      <!-- formula -->
+      <text x="14" y="122" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">R ∝ 1/B → 2B → R/2</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; R &prop; 1/B</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Double B &rarr; half the radius. Same v, stronger field &rarr; tighter circle.</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Double B &rarr; half the radius. Stronger field &rarr; tighter circle.</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V3: Find the period T and frequency f of the circular orbit</div>
+    <div class="vm-title">V3: Period T and frequency f — independent of v!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q15v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q15v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- circle -->
+      <circle cx="75" cy="62" r="42" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <!-- radius line -->
+      <line x1="75" y1="62" x2="117" y2="62" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="90" y="58" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">R</text>
+      <!-- T arc label -->
+      <path d="M75,20 A42,42 0 0,1 117,62" fill="none" stroke="#3ecf8e" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="108" y="46" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">T</text>
+      <!-- particle dot -->
+      <circle cx="75" cy="20" r="5" fill="#f0c040"/>
+      <text x="72" y="24" fill="#0a0a12" font-size="7" font-weight="bold">α</text>
+      <!-- formulas -->
+      <text x="130" y="40" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">T = 2πm</text>
+      <text x="130" y="54" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">     qB</text>
+      <line x1="130" y1="45" x2="195" y2="45" stroke="#f0c040" stroke-width="1"/>
+      <text x="130" y="72" fill="#3ecf8e" font-size="10" font-family="'JetBrains Mono',monospace">f = qB/(2πm)</text>
+      <!-- box highlight -->
+      <rect x="128" y="87" width="84" height="34" fill="rgba(62,207,142,0.1)" stroke="rgba(62,207,142,0.3)" rx="4"/>
+      <text x="134" y="100" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">T independent</text>
+      <text x="134" y="114" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">of speed v!</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Circumference = 2&pi;R, period T = 2&pi;R/v = 2&pi;m/(qB)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> f = 1/T = qB/(2&pi;m) &mdash; cyclotron frequency, independent of speed!</div>
     <div class="eq">T = 2&pi;m/(qB)</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V4: What if B doubles — how does acceleration change?</div>
+    <div class="vm-title">V4: B doubles — radius halves, diameter halves</div>
+    <svg width="220" height="120" viewBox="0 0 220 120" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q15v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="120" fill="#0a0a12" rx="6"/>
+      <!-- large circle at B -->
+      <circle cx="52" cy="62" r="38" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <text x="8" y="12" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">field B</text>
+      <text x="20" y="62" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">R</text>
+      <text x="34" y="108" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">D</text>
+      <!-- arrow -->
+      <text x="97" y="65" fill="#888" font-size="16">→</text>
+      <!-- small circle at 2B -->
+      <circle cx="162" cy="62" r="19" fill="none" stroke="#ef4444" stroke-width="2"/>
+      <text x="128" y="12" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">field 2B</text>
+      <text x="143" y="62" fill="#ef4444" font-size="9" font-family="'JetBrains Mono',monospace">R/2</text>
+      <text x="152" y="90" fill="#ef4444" font-size="9" font-family="'JetBrains Mono',monospace">D/2</text>
+      <!-- label -->
+      <text x="50" y="112" fill="#888" font-size="8" font-family="'JetBrains Mono',monospace">diameter halves with 2B</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> a = qvB/m &rarr; a &prop; B &rarr; double B &rarr; double acceleration</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> But v is unchanged (B never does work) &rarr; radius halves, a doubles</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v unchanged (B never does work) &rarr; R = mv/(qB) &rarr; R halves, diameter halves</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V5: Deuteron comparison (mass = 2m_p, charge = e)</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Deuteron: q = e, m = 2m_p &rarr; R = 2m_p v/(eB)</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: R = m_p v/(eB) &rarr; deuteron radius = 2 &times; proton radius (for same v and B)</div>
-    <div class="answer-box"><span class="lbl">KEY</span> Only mass and charge ratio determines relative radius — not the particle's speed (cancel from ratio).</div>
+    <div class="vm-title">V5: Deuteron vs alpha — same radius!</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q15v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q15v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- alpha circle -->
+      <circle cx="62" cy="65" r="38" fill="none" stroke="#f0c040" stroke-width="2"/>
+      <circle cx="62" cy="27" r="5" fill="#f0c040"/>
+      <text x="59" y="31" fill="#0a0a12" font-size="7" font-weight="bold">α</text>
+      <text x="6" y="30" fill="#f0c040" font-size="8" font-family="'JetBrains Mono',monospace">q=2e,m=4u</text>
+      <!-- deuteron circle (same radius) -->
+      <circle cx="155" cy="65" r="38" fill="none" stroke="#3ecf8e" stroke-width="2"/>
+      <circle cx="155" cy="27" r="5" fill="#3ecf8e"/>
+      <text x="152" y="31" fill="#0a0a12" font-size="7" font-weight="bold">d</text>
+      <text x="118" y="30" fill="#3ecf8e" font-size="8" font-family="'JetBrains Mono',monospace">q=e,m=2u</text>
+      <!-- = sign -->
+      <text x="98" y="118" fill="#d4a826" font-size="13" font-weight="bold" font-family="'JetBrains Mono',monospace">R_d = R_α</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R<sub>d</sub>/R<sub>&alpha;</sub> = (m<sub>d</sub>&middot;q<sub>&alpha;</sub>)/(m<sub>&alpha;</sub>&middot;q<sub>d</sub>) = (2u&middot;2e)/(4u&middot;e) = 1</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Deuteron and alpha trace the <b>same radius</b> for same v and B</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Only mass/charge ratio determines relative radius &mdash; speed cancels out.</div>
   </div>
 </div>
 </div>
@@ -3240,33 +3651,178 @@ Each step depends on the previous!</div>
 </div>
 <div class="variation-container" id="var-q16">
   <div class="variation-mini">
-    <div class="vm-title">V1: Rod moves in the opposite direction</div>
+    <div class="vm-title">V1: Rod moves LEFT — area decreases, flux drops</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v1-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q16v1-aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker>
+        <marker id="q16v1-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- Rails -->
+      <line x1="20" y1="30" x2="200" y2="30" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="95" x2="200" y2="95" stroke="#888" stroke-width="1.5"/>
+      <!-- Resistor left -->
+      <path d="M20,30 L20,42 L14,47 L26,53 L14,59 L26,65 L14,71 L26,77 L20,83 L20,95" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+      <text x="2" y="62" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">R</text>
+      <!-- Rod (moving left) -->
+      <line x1="130" y1="26" x2="130" y2="99" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round"/>
+      <text x="122" y="20" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">rod</text>
+      <!-- v arrow pointing LEFT -->
+      <line x1="128" y1="62" x2="98" y2="62" stroke="#ef4444" stroke-width="2" marker-end="url(#q16v1-aR)"/>
+      <text x="102" y="57" fill="#ef4444" font-size="10" font-family="'JetBrains Mono',monospace">v←</text>
+      <!-- × B field crosses -->
+      <g stroke="#4ea8de" stroke-width="0.8" opacity="0.7">
+        <line x1="42" y1="42" x2="48" y2="48"/><line x1="48" y1="42" x2="42" y2="48"/>
+        <line x1="68" y1="42" x2="74" y2="48"/><line x1="74" y1="42" x2="68" y2="48"/>
+        <line x1="94" y1="42" x2="100" y2="48"/><line x1="100" y1="42" x2="94" y2="48"/>
+        <line x1="42" y1="65" x2="48" y2="71"/><line x1="48" y1="65" x2="42" y2="71"/>
+        <line x1="68" y1="65" x2="74" y2="71"/><line x1="74" y1="65" x2="68" y2="71"/>
+        <line x1="94" y1="65" x2="100" y2="71"/><line x1="100" y1="65" x2="94" y2="71"/>
+      </g>
+      <text x="142" y="34" fill="#4ea8de" font-size="8" font-family="'JetBrains Mono',monospace">× B (into page)</text>
+      <!-- label -->
+      <text x="12" y="116" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">Φ↓ → Lenz: current to maintain Φ</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Area decreases &rarr; flux decreases &rarr; Lenz induces current to maintain flux (opposite direction)</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Braking force still opposes motion (now pointing right, opposing leftward motion)</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V2: Rod accelerates instead of moving at constant speed</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v increases over time &rarr; &epsilon; = BLv increases &rarr; I increases &rarr; F increases</div>
+    <div class="vm-title">V2: Rod accelerating — v increases → terminal velocity</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v2-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q16v2-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- rails -->
+      <line x1="20" y1="30" x2="200" y2="30" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="95" x2="200" y2="95" stroke="#888" stroke-width="1.5"/>
+      <!-- resistor -->
+      <path d="M20,30 L20,42 L14,47 L26,53 L14,59 L26,65 L14,71 L26,77 L20,83 L20,95" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+      <!-- rod -->
+      <line x1="120" y1="26" x2="120" y2="99" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round"/>
+      <!-- a arrow and v arrow -->
+      <line x1="122" y1="55" x2="155" y2="55" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q16v2-aG)"/>
+      <text x="128" y="50" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">v→</text>
+      <line x1="122" y1="70" x2="168" y2="70" stroke="#f0c040" stroke-width="2" marker-end="url(#q16v2-aF)"/>
+      <text x="128" y="84" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">a→ (accelerating)</text>
+      <!-- chain labels -->
+      <text x="12" y="112" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">v↑ → ε↑ → I↑ → F_brake↑</text>
+      <text x="12" y="125" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">→ terminal v when F_app=F_brake</text>
+    </svg>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v increases over time &rarr; &epsilon; = BLv increases &rarr; I increases &rarr; F<sub>brake</sub> increases</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Terminal velocity when F<sub>applied</sub> = F<sub>brake</sub> = B&sup2;L&sup2;v/R</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V3: Different rod length L</div>
+    <div class="vm-title">V3: Longer rod → more EMF (ε ∝ L)</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v3-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q16v3-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- SHORT rod setup (left) -->
+      <text x="8" y="12" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">small L</text>
+      <line x1="8" y1="38" x2="90" y2="38" stroke="#888" stroke-width="1"/>
+      <line x1="8" y1="68" x2="90" y2="68" stroke="#888" stroke-width="1"/>
+      <line x1="60" y1="34" x2="60" y2="72" stroke="#3ecf8e" stroke-width="3" stroke-linecap="round"/>
+      <text x="64" y="56" fill="#3ecf8e" font-size="8" font-family="'JetBrains Mono',monospace">L</text>
+      <text x="18" y="88" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">ε = BLv</text>
+      <!-- LONG rod setup (right) -->
+      <text x="118" y="12" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">big L</text>
+      <line x1="118" y1="28" x2="210" y2="28" stroke="#888" stroke-width="1"/>
+      <line x1="118" y1="78" x2="210" y2="78" stroke="#888" stroke-width="1"/>
+      <line x1="178" y1="24" x2="178" y2="82" stroke="#3ecf8e" stroke-width="3" stroke-linecap="round"/>
+      <text x="184" y="56" fill="#3ecf8e" font-size="8" font-family="'JetBrains Mono',monospace">2L</text>
+      <text x="120" y="100" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">ε = 2BLv</text>
+      <!-- label -->
+      <text x="14" y="118" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">longer rod → more EMF</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> &epsilon; = BLv &rarr; &epsilon; &prop; L. F = BIL = B&sup2;L&sup2;v/R &rarr; F &prop; L&sup2;</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Double L &rarr; double &epsilon;, quadruple F for constant v and B</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V4: Find the initial flux through the circuit</div>
+    <div class="vm-title">V4: Find initial flux Φ₀ = B×L×x₀</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v4-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- circuit rectangle -->
+      <line x1="20" y1="25" x2="160" y2="25" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="85" x2="160" y2="85" stroke="#888" stroke-width="1.5"/>
+      <!-- resistor left -->
+      <path d="M20,25 L20,36 L14,40 L26,44 L14,48 L26,52 L14,56 L26,60 L20,64 L20,85" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+      <!-- rod right -->
+      <line x1="160" y1="21" x2="160" y2="89" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round"/>
+      <!-- x₀ dimension arrow -->
+      <line x1="22" y1="100" x2="158" y2="100" stroke="#f0c040" stroke-width="1"/>
+      <line x1="22" y1="96" x2="22" y2="104" stroke="#f0c040" stroke-width="1"/>
+      <line x1="158" y1="96" x2="158" y2="104" stroke="#f0c040" stroke-width="1"/>
+      <text x="75" y="113" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">x₀</text>
+      <!-- L dimension -->
+      <line x1="174" y1="25" x2="174" y2="85" stroke="#3ecf8e" stroke-width="1"/>
+      <line x1="170" y1="25" x2="178" y2="25" stroke="#3ecf8e" stroke-width="1"/>
+      <line x1="170" y1="85" x2="178" y2="85" stroke="#3ecf8e" stroke-width="1"/>
+      <text x="178" y="59" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">L</text>
+      <!-- formula -->
+      <text x="14" y="120" fill="#f0c040" font-size="11" font-family="'JetBrains Mono',monospace">Φ₀ = B × L × x₀</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA = B &times; L &times; x (where x is distance from resistor to rod)</div>
-    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need a given value for x (position of rod along rails) to get a number</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need a given value for x<sub>0</sub> (initial position of rod) to get a number</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V5: Power dissipated in the resistor</div>
+    <div class="vm-title">V5: Power dissipated P = B²L²v²/R</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v5-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q16v5-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- circuit -->
+      <line x1="20" y1="25" x2="160" y2="25" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="85" x2="160" y2="85" stroke="#888" stroke-width="1.5"/>
+      <path d="M20,25 L20,36 L14,40 L26,44 L14,48 L26,52 L14,56 L26,60 L20,64 L20,85" fill="none" stroke="#f0c040" stroke-width="1.5"/>
+      <text x="2" y="56" fill="#f0c040" font-size="8" font-family="'JetBrains Mono',monospace">R</text>
+      <line x1="160" y1="21" x2="160" y2="89" stroke="#3ecf8e" stroke-width="4" stroke-linecap="round"/>
+      <!-- v arrow -->
+      <line x1="162" y1="55" x2="188" y2="55" stroke="#3ecf8e" stroke-width="2" marker-end="url(#q16v5-aG)"/>
+      <text x="165" y="50" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">v</text>
+      <!-- formulas -->
+      <text x="12" y="104" fill="#f0c040" font-size="10" font-family="'JetBrains Mono',monospace">P = I²R = ε²/R</text>
+      <rect x="10" y="110" width="200" height="16" fill="rgba(212,168,38,0.12)" stroke="rgba(212,168,38,0.3)" rx="3"/>
+      <text x="18" y="122" fill="#d4a826" font-size="10" font-weight="bold" font-family="'JetBrains Mono',monospace">= B²L²v²/R</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = I&sup2;R = (&epsilon;/R)&sup2; &times; R = &epsilon;&sup2;/R = (BLv)&sup2;/R</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> This equals F &times; v (mechanical power in = electrical power out)</div>
     <div class="eq">P = B&sup2;L&sup2;v&sup2;/R</div>
   </div>
   <div class="variation-mini">
-    <div class="vm-title">V6: Energy conservation check</div>
+    <div class="vm-title">V6: Energy conservation — P_in = P_out</div>
+    <svg width="220" height="130" viewBox="0 0 220 130" style="display:block;margin:8px 0">
+      <defs>
+        <marker id="q16v6-aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#3ecf8e"/></marker>
+        <marker id="q16v6-aF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
+      </defs>
+      <rect width="220" height="130" fill="#0a0a12" rx="6"/>
+      <!-- left side: mechanical input -->
+      <rect x="8" y="14" width="92" height="70" fill="rgba(62,207,142,0.06)" stroke="rgba(62,207,142,0.25)" rx="5"/>
+      <text x="16" y="30" fill="#3ecf8e" font-size="9" font-weight="bold" font-family="'JetBrains Mono',monospace">MECHANICAL IN</text>
+      <text x="14" y="48" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">F_applied × v</text>
+      <text x="14" y="63" fill="#3ecf8e" font-size="9" font-family="'JetBrains Mono',monospace">= B²L²v²/R</text>
+      <!-- arrow center -->
+      <text x="100" y="55" fill="#d4a826" font-size="16" font-weight="bold">=</text>
+      <!-- right side: electrical dissipated -->
+      <rect x="118" y="14" width="94" height="70" fill="rgba(212,168,38,0.06)" stroke="rgba(212,168,38,0.25)" rx="5"/>
+      <text x="122" y="30" fill="#f0c040" font-size="9" font-weight="bold" font-family="'JetBrains Mono',monospace">ELECTRICAL OUT</text>
+      <text x="126" y="48" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">I²R = ε²/R</text>
+      <text x="126" y="63" fill="#f0c040" font-size="9" font-family="'JetBrains Mono',monospace">= B²L²v²/R</text>
+      <!-- conservation label -->
+      <rect x="14" y="92" width="192" height="30" fill="rgba(212,168,38,0.1)" stroke="rgba(212,168,38,0.35)" rx="4"/>
+      <text x="30" y="107" fill="#d4a826" font-size="10" font-weight="bold" font-family="'JetBrains Mono',monospace">P_in = P_out</text>
+      <text x="30" y="118" fill="#888" font-size="9" font-family="'JetBrains Mono',monospace">Lenz enforces energy conservation</text>
+    </svg>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Work done pushing rod: W = F &times; d = (B&sup2;L&sup2;v/R) &times; (v &times; t) = B&sup2;L&sup2;v&sup2;t/R</div>
     <div class="chain-step"><span class="chain-arrow">&rarr;</span> Energy dissipated in resistor: Q = P &times; t = B&sup2;L&sup2;v&sup2;t/R</div>
     <div class="answer-box"><span class="lbl">KEY</span> Mechanical work in equals electrical heat out. No free energy &mdash; Lenz enforces conservation.</div>
