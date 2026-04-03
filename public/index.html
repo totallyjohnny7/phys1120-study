@@ -228,17 +228,31 @@ svg text{font-family:'JetBrains Mono',monospace}
 <div id="tab-study" class="tab-content active">
 
 <!-- Q1 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q1">
 <div class="card-header"><span class="q-num">Q1</span><span class="q-title">Force Direction on Proton (RHR 2)</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">CONCEPT</span><br>A positive charge moving through a magnetic field experiences a force: <span class="eq">F = qvB sin&theta;</span></div>
+<div class="story-block">A moving charge in a magnetic field gets shoved sideways — always sideways, never speeding up or slowing down. The direction of the shove depends on which way the charge moves and which way the field points. Your right hand is the tool that figures it out.</div>
+<div class="analogy-block">a crosswind hitting a jogger — the wind pushes you sideways but doesn't slow you down or speed you up.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Charge moves through B field</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> B pushes charge perpendicular to both v and B</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR 2: fingers along v, curl toward B, thumb = F direction</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> For negative charge: flip F direction</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> If v parallel to B: sin&theta; = 0, so F = 0</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">F = qvB sin&theta;</div>
+  <div class="math-verbal">Force equals charge times speed times field strength times how perpendicular they are</div>
+</div>
 <div class="step"><span class="step-label">METHOD</span><br>Use Right-Hand Rule #2: Point fingers in direction of v, curl toward B. Thumb = F direction (for + charge).</div>
 <div class="sub-case"><b>(a)</b> v &rarr; (right), B &uarr; (up) &rArr; <b>F out of page</b> (&odot;)</div>
 <div class="sub-case"><b>(b)</b> v &uarr; (up), B &otimes; (into page) &rArr; <b>F right</b> (&rarr;)</div>
 <div class="sub-case"><b>(c)</b> v &odot; (out of page), B &rarr; (right) &rArr; <b>F up</b> (&uarr;)</div>
 <div class="mnemonic">MNEMONIC: "FBI" &mdash; F = Thumb, B = Curl-to, I(v) = Fingers point</div>
 <div class="warn">For NEGATIVE charges (electrons), flip the force direction!</div>
+<div class="source-ref">Source: notes-19 p1, notes-20 p2</div>
 </div>
 <div class="card-svg">
 <svg width="320" height="220" viewBox="0 0 320 220">
@@ -277,20 +291,76 @@ svg text{font-family:'JetBrains Mono',monospace}
 <marker id="arrowF" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#f0c040"/></marker>
 </defs>
 </svg>
+<div class="diagram-caption">RHR 2 applied to three cases: v right/B up, v up/B into page, v out of page/B right</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q2')">Q2 — reverse problem</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 — what force does over time</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q1')">
+  <span class="variation-chevron" id="chev-var-q1">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q1">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Electron instead of proton</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same RHR 2 setup, then flip F direction for negative charge</div>
+    <div class="answer-box"><span class="lbl">KEY</span> F points opposite to what RHR gives for + charge</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: v parallel to B (F = 0 trap)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> sin(0°) = 0, so F = qvB&times;0 = 0 regardless of q, v, or B magnitude</div>
+    <div class="warn">Common exam trap: F = 0 when v and B point same direction!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: v at angle &theta; to B</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = qvB sin&theta; — only the perpendicular component of v contributes</div>
+    <div class="eq">F = qvB sin&theta;</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Find v given F, q, B</div>
+    <div class="eq">v = F / (qB sin&theta;)</div>
+    <div class="math-verbal">Rearrange F = qvB sin&theta; for v</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: 3D direction combos</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Systematically apply RHR 2 for each axis combination: +x/+y, +x/+z, +y/+z, etc.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: Find &theta; given F, q, v, B</div>
+    <div class="eq">sin&theta; = F / (qvB) &nbsp;&rarr;&nbsp; &theta; = arcsin(F / qvB)</div>
+    <div class="math-verbal">Inverse-sine of the force ratio gives the angle between v and B</div>
+  </div>
 </div>
 </div>
 <!-- Q2 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q2">
 <div class="card-header"><span class="q-num">Q2</span><span class="q-title">Find B from Known v and F (RHR 2 Reverse)</span></div>
 <div class="card-body">
 <div class="card-text">
+<div class="story-block">You know something is pushing a charge, and you know which way it's moving — now figure out which direction the invisible field must be pointing. It's like detective work: the clues are the motion and the push, and the field is the culprit you're tracking down.</div>
+<div class="analogy-block">figuring out which direction the wind is blowing by watching which way a flag leans.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Know F direction (the observed push)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Know v direction (how the charge is moving)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR 2 in reverse: palm faces F, fingers along v</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> The direction fingers curl toward = B direction</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Negative charge? Flip B direction at the end</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">B = F / (qv sin&theta;)</div>
+  <div class="math-verbal">Field strength equals force divided by charge-times-speed (times sine of angle)</div>
+</div>
 <div class="step"><span class="step-label">CONCEPT</span><br>Given v and F directions, find B by reversing RHR 2. Point fingers along v, thumb along F &mdash; palm pushes toward B.</div>
 <div class="sub-case"><b>Ex 1:</b> v &rarr; (right), F &uarr; (up) &rArr; <b>B out of page</b> (&odot;)</div>
 <div class="sub-case"><b>Ex 2:</b> v &rarr; (right), F &otimes; (into page) &rArr; <b>B down</b> (&darr;)</div>
 <div class="step"><span class="step-label">KEY</span><br>For electrons: apply RHR as if positive, then <b>flip B direction</b>.</div>
-<div class="eq">F = qvB &rArr; B = F/(qv)</div>
 <div class="warn">Common mistake: forgetting to flip for negative charges!</div>
+<div class="source-ref">Source: notes-19 p1, notes-20 p1</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="180" viewBox="0 0 280 180">
@@ -314,20 +384,70 @@ svg text{font-family:'JetBrains Mono',monospace}
 <line x1="170" y1="150" x2="170" y2="165" stroke="#4ea8de" stroke-width="2" marker-end="url(#arrowB)"/>
 <text x="178" y="163" fill="#4ea8de" font-size="12" font-weight="bold">B (down)</text>
 </svg>
+<div class="diagram-caption">Reverse RHR 2: given v right and F direction, deduce B field direction</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q1')">Q1 — forward problem</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q2')">
+  <span class="variation-chevron" id="chev-var-q2">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q2">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Electron (negative charge)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply RHR 2 as if positive charge, then flip the B direction you find</div>
+    <div class="warn">Always flip B (not F) when working backwards for a negative charge</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Wire current form (F = BIL)</div>
+    <div class="eq">B = F / (IL sin&theta;)</div>
+    <div class="math-verbal">Same logic: divide force by current times length — works for a current-carrying wire</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: All 3D combos table</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Systematically tabulate: given F in +x and v in +y &rarr; B in &minus;z, etc.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Find B magnitude only</div>
+    <div class="eq">|B| = |F| / (|q||v| sin&theta;)</div>
+    <div class="math-verbal">When you only need the size, not the direction — plug in and divide</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Is B unique? (given F magnitude only)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> No — many B directions can produce the same F magnitude if the angle &theta; compensates</div>
+    <div class="warn">Direction is uniquely determined only when you know both F direction AND v direction!</div>
+  </div>
 </div>
 </div>
 
 <!-- Q3 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q3">
 <div class="card-header"><span class="q-num">Q3</span><span class="q-title">Forces Between Parallel Wires</span></div>
 <div class="card-body">
 <div class="card-text">
+<div class="story-block">Two wires carrying current create magnetic fields that reach each other. Those fields push on the other wire's current. Same direction currents snuggle together. Opposite direction currents shove apart.</div>
+<div class="analogy-block">two people walking the same direction on a narrow sidewalk — they drift together. Walking opposite directions? They dodge apart.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Wire 1 carries I&#8321; &rarr; creates B field circling around it (RHR 1)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Wire 2 sits inside that B field</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Wire 2's current feels a force: F = BIL (current in a field)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same direction currents: force points toward wire 1 = ATTRACT</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Opposite direction currents: force points away from wire 1 = REPEL</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">F/&#8467; = &mu;&#8320;I&#8321;I&#8322; / (2&pi;R&#8321;&#8322;)</div>
+  <div class="math-verbal">Force per length equals permeability times both currents divided by (2&pi; times the distance between wires)</div>
+</div>
 <div class="step"><span class="step-label">RULE</span><br>Same direction currents &rarr; <b>ATTRACT</b><br>Opposite direction currents &rarr; <b>REPEL</b></div>
-<div class="eq">F/&#8467; = &mu;&#8320;I&#8321;I&#8322; / (2&pi;R&#8321;&#8322;)</div>
 <div class="step"><span class="step-label">WORKED EXAMPLE</span><br>I&#8321; = I&#8322; = 25 A, R = 35 cm = 0.35 m, &#8467; = 15 cm = 0.15 m</div>
 <div class="calc-result">F/&#8467; = (4&pi;&times;10&#8315;&#8311;)(25)(25) / (2&pi;)(0.35) = 3.57&times;10&#8315;&#8308; N/m<br>F = (3.57&times;10&#8315;&#8308;)(0.15) &asymp; <b>5.4&times;10&#8315;&#8308; N</b></div>
 <div class="mnemonic">MNEMONIC: "Same = Snuggle, Opposite = Oh no!" (attract vs repel)</div>
+<div class="source-ref">Source: notes-19 pp2-4</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="180" viewBox="0 0 280 180">
@@ -357,19 +477,68 @@ svg text{font-family:'JetBrains Mono',monospace}
 <text x="200" y="75" fill="#ef4444" font-size="10">REPEL</text>
 <defs><marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker></defs>
 </svg>
+<div class="diagram-caption">Left: same-direction currents attract. Right: opposite-direction currents repel.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q1')">Q1 — force on a wire</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q3')">
+  <span class="variation-chevron" id="chev-var-q3">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q3">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Different I magnitudes (I&#8321; &ne; I&#8322;)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Plug both values into F/&#8467; = &mu;&#8320;I&#8321;I&#8322;/(2&pi;R) — forces on each wire are equal in magnitude, opposite in direction (Newton 3)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Find I given F/&#8467; and R</div>
+    <div class="eq">I = &radic;(2&pi;R &middot; F/&#8467; / &mu;&#8320;)</div>
+    <div class="math-verbal">When both currents are equal, rearrange and take the square root</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Three parallel wires</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Net force on middle wire = sum of forces from wire 1 and wire 3 (direction depends on each pair's current directions)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Force per unit length only</div>
+    <div class="eq">F/&#8467; = &mu;&#8320;I&#8321;I&#8322; / (2&pi;R&#8321;&#8322;)</div>
+    <div class="math-verbal">When &#8467; isn't given, just report force per meter — no extra step needed</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: B at midpoint between wires</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same direction: B fields cancel at midpoint (B = 0). Opposite direction: B fields add at midpoint.</div>
+    <div class="warn">B = 0 between same-direction parallel wires is a classic exam question!</div>
+  </div>
 </div>
 </div>
 <!-- Q4 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q4">
 <div class="card-header"><span class="q-num">Q4</span><span class="q-title">+ Charge in B Out of Page &rarr; Clockwise Circle</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">CONCEPT</span><br>A positive charge moving in a uniform B field follows a circular path. F is always perpendicular to v, acting as centripetal force.</div>
-<div class="eq">R = mv / (qB)</div>
+<div class="story-block">A positive charge enters a magnetic field and gets constantly shoved sideways. Since the shove is always perpendicular to motion, the charge curves — and keeps curving — tracing a perfect circle at constant speed. The field steers without ever pushing forward or back.</div>
+<div class="analogy-block">a car on an icy road turning the steering wheel — the tires push sideways, changing direction without changing speed.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Charge enters B field (B out of page, charge moving right)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force is perpendicular to v: RHR 2 gives F downward</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Charge curves downward</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> As direction changes, force rotates too (always stays &perp; to new v)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Continuous perpendicular force = perfect circle</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> + charge in B&odot; moving right: F down &rarr; clockwise (CW) path</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">R = mv / (qB)</div>
+  <div class="math-verbal">Radius equals momentum (mass times speed) divided by how strongly the field grabs the charge</div>
+</div>
 <div class="step"><span class="step-label">DIRECTION</span><br>+ charge enters B&odot; (out of page) moving right &rarr; RHR gives F downward &rarr; curves down &rarr; <b>Clockwise circle</b></div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>Clockwise circular path</div>
 <div class="warn">Negative charge in same setup &rarr; COUNTERCLOCKWISE</div>
+<div class="source-ref">Source: notes-19 p5, notes-20 p2</div>
 </div>
 <div class="card-svg">
 <svg width="260" height="200" viewBox="0 0 260 200">
@@ -396,7 +565,48 @@ svg text{font-family:'JetBrains Mono',monospace}
 <path d="M155,65 A50,50 0 0,1 170,105" fill="none" stroke="#f0c040" stroke-width="1.5" marker-end="url(#arrowF)"/>
 <text x="85" y="78" fill="#f0c040" font-size="12" font-weight="bold">CW</text>
 </svg>
+<div class="diagram-caption">+ charge enters B (out of page) moving right — force pushes down, tracing a clockwise circle</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q1')">Q1 — the sideways force</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q4')">
+  <span class="variation-chevron" id="chev-var-q4">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q4">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Negative charge (CCW)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same B (out of page), same entry direction — but force flips for negative charge &rarr; counterclockwise path</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Negative charge &rarr; opposite rotation direction</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Find period T and frequency f — TRAP</div>
+    <div class="eq">T = 2&pi;m / (qB) &nbsp;&nbsp; f = qB / (2&pi;m)</div>
+    <div class="math-verbal">Period is independent of v and R — faster charge just makes a bigger circle in the same time!</div>
+    <div class="warn">Classic exam trap: T does NOT depend on speed or radius!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: B into page instead of out</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B into page + + charge moving right: RHR gives F upward &rarr; counterclockwise path</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Helix (v at angle to B)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Component of v parallel to B is unaffected (no force) &rarr; charge spirals along B direction in a helix</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: B doubles &rarr; R halves</div>
+    <div class="eq">R = mv/(qB) &nbsp;&rarr;&nbsp; R &prop; 1/B</div>
+    <div class="math-verbal">Stronger field = tighter circle. Double B, radius cuts in half at the same speed.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: Both v and B double (R unchanged)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; if v doubles AND B doubles: numerator &times;2, denominator &times;2 &rarr; R unchanged</div>
+    <div class="warn">Another exam trap: proportional changes in v and B cancel out in R = mv/(qB)!</div>
+  </div>
 </div>
 </div>
 
@@ -1787,6 +1997,13 @@ function toggleVariations(btn){
   var chevron=btn.querySelector('.variation-chevron');
   container.classList.toggle('open');
   chevron.classList.toggle('open');
+}
+function toggleVariation(containerId){
+  var container=document.getElementById(containerId);
+  if(!container)return;
+  var chevron=document.getElementById('chev-'+containerId);
+  container.classList.toggle('open');
+  if(chevron)chevron.classList.toggle('open');
 }
 
 // ============ LEARNING PROFILE: CROSS-REFERENCE SCROLL ============
