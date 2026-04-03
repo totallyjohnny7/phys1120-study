@@ -221,6 +221,7 @@ svg text{font-family:'JetBrains Mono',monospace}
 <button class="tab-btn active" onclick="switchTab('study')">STUDY</button>
 <button class="tab-btn" onclick="switchTab('quiz')">EXAM QUIZ</button>
 <button class="tab-btn" onclick="switchTab('book')">BOOK PROBLEMS</button>
+<button class="tab-btn" onclick="switchTab('map')">MAP</button>
 <button class="tab-btn" onclick="switchTab('tools')">TOOLS</button>
 </div>
 </div>
@@ -1830,7 +1831,291 @@ Each step depends on the previous!</div>
 <div id="book-score" class="score-card" style="display:none"></div>
 </div>
 </div>
-<!-- ==================== TAB 4: TOOLS ==================== -->
+<!-- ==================== TAB 4: MAP ==================== -->
+<div id="tab-map" class="tab-content">
+<div class="map-container">
+
+<!-- Master Chain Banner -->
+<div class="map-chain-banner">
+<span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);letter-spacing:1px">THE BIG PICTURE</span><br>
+Charges move <span class="chain-arrow">&rarr;</span>
+Moving charges create B <span class="chain-arrow">&rarr;</span>
+B exerts force on other charges <span class="chain-arrow">&rarr;</span>
+Changing B creates E (Faraday) <span class="chain-arrow">&rarr;</span>
+Induced E drives current (Lenz opposes) <span class="chain-arrow">&rarr;</span>
+Circuits harness all of this
+</div>
+
+<!-- Tooltip element -->
+<div class="map-tooltip" id="map-tooltip"></div>
+
+<!-- SVG Concept Map (Desktop) -->
+<div class="map-svg-container" style="overflow-x:auto">
+<svg viewBox="0 0 1000 550" style="width:100%;max-width:1000px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ── HUB LABELS ── -->
+  <text x="80" y="36" class="map-hub-label" fill="#d4a826">MAGNETIC FORCES</text>
+  <text x="80" y="296" class="map-hub-label" fill="#8b6cef">ELECTROMAGNETIC INDUCTION</text>
+  <text x="730" y="180" class="map-hub-label" fill="#4ea8de">CIRCUITS &amp;</text>
+  <text x="730" y="197" class="map-hub-label" fill="#4ea8de">APPLICATIONS</text>
+
+  <!-- ══ CONNECTION LINES (drawn first, below nodes) ══ -->
+
+  <!-- Q1 ↔ Q2: Forward vs reverse RHR -->
+  <path class="map-connection" stroke="#d4a826"
+    d="M 148 90 L 148 140"
+    onmouseenter="showMapTooltip(event,'Q1 ↔ Q2: Forward vs reverse RHR')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q1 → Q4: Force leads to circular motion -->
+  <path class="map-connection" stroke="#d4a826"
+    d="M 190 80 Q 310 60 340 80"
+    onmouseenter="showMapTooltip(event,'Q1 → Q4: Force leads to circular motion')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q4 → Q6: Circular motion → KE constant -->
+  <path class="map-connection" stroke="#d4a826"
+    d="M 400 80 L 460 80"
+    onmouseenter="showMapTooltip(event,'Q4 → Q6: Circular motion → KE constant')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q4 → Q9: Base case → proportional reasoning -->
+  <path class="map-connection" stroke="#d4a826"
+    d="M 380 100 L 530 140"
+    onmouseenter="showMapTooltip(event,'Q4 → Q9: Base case → proportional reasoning')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q4 → Q15: Same formula, alpha particle -->
+  <path class="map-connection" stroke="#d4a826"
+    d="M 380 90 Q 490 55 610 80"
+    onmouseenter="showMapTooltip(event,'Q4 → Q15: Same formula, alpha particle')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q5 ↔ Q7: TRAP — Changing vs steady current -->
+  <path class="map-connection" stroke="#ef4444" stroke-dasharray="4,3"
+    d="M 148 320 L 148 370"
+    onmouseenter="showMapTooltip(event,'⚠ TRAP: Q5 ↔ Q7 — Changing vs steady current')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q5 ↔ Q8: Different cause, same Lenz Law -->
+  <path class="map-connection" stroke="#8b6cef"
+    d="M 190 330 Q 290 310 310 330"
+    onmouseenter="showMapTooltip(event,'Q5 ↔ Q8: Different cause, same Lenz Law')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q7 ↔ Q8: TRAP — Steady vs changing flux -->
+  <path class="map-connection" stroke="#ef4444" stroke-dasharray="4,3"
+    d="M 190 375 Q 260 360 310 340"
+    onmouseenter="showMapTooltip(event,'⚠ TRAP: Q7 ↔ Q8 — Steady vs changing flux')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q8 ↔ Q16: Both change Φ, different mechanism -->
+  <path class="map-connection" stroke="#8b6cef"
+    d="M 370 340 L 460 340"
+    onmouseenter="showMapTooltip(event,'Q8 ↔ Q16: Both change Φ, different mechanism')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q12 → Q13: Switch changes circuit → power redistributes -->
+  <path class="map-connection" stroke="#4ea8de"
+    d="M 780 210 L 780 250"
+    onmouseenter="showMapTooltip(event,'Q12 → Q13: Switch changes circuit → power redistributes')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- Q13 ↔ Q14: TRAP — Series vs parallel (opposite rules!) -->
+  <path class="map-connection" stroke="#ef4444" stroke-dasharray="4,3"
+    d="M 820 270 L 870 270"
+    onmouseenter="showMapTooltip(event,'⚠ TRAP: Q13 ↔ Q14 — Series vs parallel (opposite rules!)')"
+    onmouseleave="hideMapTooltip()"/>
+
+  <!-- ══ NODES ══ -->
+
+  <!-- ── Magnetic Forces cluster (gold) ── -->
+
+  <!-- Q1 Force Dir -->
+  <g class="map-node" onclick="mapNodeClick('card-q1')">
+    <rect x="70" y="58" width="120" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="130" y="80" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q1 Force Dir</text>
+  </g>
+
+  <!-- Q2 Find B -->
+  <g class="map-node" onclick="mapNodeClick('card-q2')">
+    <rect x="70" y="140" width="120" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="130" y="162" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q2 Find B</text>
+  </g>
+
+  <!-- Q3 Wire Forces -->
+  <g class="map-node" onclick="mapNodeClick('card-q3')">
+    <rect x="70" y="200" width="120" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="130" y="222" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q3 Wire Forces</text>
+  </g>
+
+  <!-- Q4 Circular Path -->
+  <g class="map-node" onclick="mapNodeClick('card-q4')">
+    <rect x="320" y="58" width="130" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="385" y="80" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q4 Circular Path</text>
+  </g>
+
+  <!-- Q6 KE Constant -->
+  <g class="map-node" onclick="mapNodeClick('card-q6')">
+    <rect x="460" y="58" width="120" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="520" y="80" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q6 KE Constant</text>
+  </g>
+
+  <!-- Q9 Speed→Radius -->
+  <g class="map-node" onclick="mapNodeClick('card-q9')">
+    <rect x="460" y="140" width="130" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="525" y="162" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q9 Speed→Radius</text>
+  </g>
+
+  <!-- Q15 Alpha Particle -->
+  <g class="map-node" onclick="mapNodeClick('card-q15')">
+    <rect x="600" y="58" width="130" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="665" y="80" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q15 Alpha Part.</text>
+  </g>
+
+  <!-- Q10 Solenoid Force -->
+  <g class="map-node" onclick="mapNodeClick('card-q10')">
+    <rect x="600" y="140" width="130" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="665" y="162" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q10 Solenoid F.</text>
+  </g>
+
+  <!-- Q11 e⁻ Beam -->
+  <g class="map-node" onclick="mapNodeClick('card-q11')">
+    <rect x="600" y="200" width="130" height="34" rx="6" fill="rgba(212,168,38,.12)" stroke="#d4a826" stroke-width="1.5"/>
+    <text x="665" y="222" text-anchor="middle" fill="#d4a826" font-size="12" font-family="'JetBrains Mono',monospace">Q11 e&#8315; Beam</text>
+  </g>
+
+  <!-- ── EM Induction cluster (purple) ── -->
+
+  <!-- Q5 Var Resistor -->
+  <g class="map-node" onclick="mapNodeClick('card-q5')">
+    <rect x="70" y="308" width="120" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="130" y="330" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">Q5 Var Resistor</text>
+  </g>
+
+  <!-- Q7 Steady I=No EMF -->
+  <g class="map-node" onclick="mapNodeClick('card-q7')">
+    <rect x="70" y="360" width="120" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="130" y="382" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">Q7 Steady I=0</text>
+  </g>
+
+  <!-- Q8 Magnet+Loop -->
+  <g class="map-node" onclick="mapNodeClick('card-q8')">
+    <rect x="310" y="318" width="130" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="375" y="340" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">Q8 Magnet+Loop</text>
+  </g>
+
+  <!-- Q16 Rod on Rails -->
+  <g class="map-node" onclick="mapNodeClick('card-q16')">
+    <rect x="460" y="318" width="130" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="525" y="340" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">Q16 Rod on Rails</text>
+  </g>
+
+  <!-- E1 Loop in Field -->
+  <g class="map-node" onclick="mapNodeClick('card-exam-loop')">
+    <rect x="70" y="430" width="130" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="135" y="452" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">E1 Loop in Field</text>
+  </g>
+
+  <!-- E2 Flux Angles -->
+  <g class="map-node" onclick="mapNodeClick('card-exam-flux')">
+    <rect x="220" y="430" width="120" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="280" y="452" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">E2 Flux Angles</text>
+  </g>
+
+  <!-- E3 Opposite Wires -->
+  <g class="map-node" onclick="mapNodeClick('card-exam-oppwires')">
+    <rect x="360" y="430" width="130" height="34" rx="6" fill="rgba(139,108,239,.12)" stroke="#8b6cef" stroke-width="1.5"/>
+    <text x="425" y="452" text-anchor="middle" fill="#8b6cef" font-size="12" font-family="'JetBrains Mono',monospace">E3 Opp. Wires</text>
+  </g>
+
+  <!-- ── Circuits cluster (blue) ── -->
+
+  <!-- Q12 Switch+Voltmeter -->
+  <g class="map-node" onclick="mapNodeClick('card-q12')">
+    <rect x="720" y="185" width="150" height="34" rx="6" fill="rgba(78,168,222,.12)" stroke="#4ea8de" stroke-width="1.5"/>
+    <text x="795" y="207" text-anchor="middle" fill="#4ea8de" font-size="12" font-family="'JetBrains Mono',monospace">Q12 Switch+VM</text>
+  </g>
+
+  <!-- Q13 Series Power -->
+  <g class="map-node" onclick="mapNodeClick('card-q13')">
+    <rect x="720" y="248" width="130" height="34" rx="6" fill="rgba(78,168,222,.12)" stroke="#4ea8de" stroke-width="1.5"/>
+    <text x="785" y="270" text-anchor="middle" fill="#4ea8de" font-size="12" font-family="'JetBrains Mono',monospace">Q13 Series Pwr</text>
+  </g>
+
+  <!-- Q14 Parallel Power -->
+  <g class="map-node" onclick="mapNodeClick('card-q14')">
+    <rect x="862" y="248" width="130" height="34" rx="6" fill="rgba(78,168,222,.12)" stroke="#4ea8de" stroke-width="1.5"/>
+    <text x="927" y="270" text-anchor="middle" fill="#4ea8de" font-size="12" font-family="'JetBrains Mono',monospace">Q14 Parallel Pwr</text>
+  </g>
+
+  <!-- ── LEGEND ── -->
+  <g transform="translate(20,510)">
+    <line x1="0" y1="8" x2="30" y2="8" stroke="#d4a826" stroke-width="1.5" opacity="0.7"/>
+    <text x="36" y="12" fill="#a0a0a0" font-size="11" font-family="sans-serif">Connection</text>
+    <line x1="120" y1="8" x2="150" y2="8" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+    <text x="156" y="12" fill="#a0a0a0" font-size="11" font-family="sans-serif">Trap pair</text>
+    <text x="250" y="12" fill="#a0a0a0" font-size="11" font-family="sans-serif">Click any node to jump to problem</text>
+  </g>
+
+</svg>
+</div><!-- end map-svg-container -->
+
+<!-- Mobile Fallback List -->
+<div class="map-mobile-list">
+
+  <!-- Hub 1: Magnetic Forces -->
+  <div class="map-mobile-hub">
+    <h3 style="color:#d4a826;border-left:3px solid #d4a826;padding-left:10px">MAGNETIC FORCES</h3>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q1')">Q1 — Force Direction on Proton (RHR 2)</div>
+    <div class="map-mobile-conn">&#8597; Forward vs reverse RHR</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q2')">Q2 — Find B Field Direction</div>
+    <div class="map-mobile-conn">&#8595;</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q3')">Q3 — Wire Forces</div>
+    <div class="map-mobile-conn">Q1 → Q4: Force leads to circular motion</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q4')">Q4 — Circular Path in B Field</div>
+    <div class="map-mobile-conn">&#8594; KE stays constant in magnetic field</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q6')">Q6 — KE Constant in B Field</div>
+    <div class="map-mobile-conn">Q4 → Q9: Base case → proportional reasoning</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q9')">Q9 — Speed → Radius relationship</div>
+    <div class="map-mobile-conn">Q4 → Q15: Same formula, different particle</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q15')">Q15 — Alpha Particle in B Field</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q10')">Q10 — Solenoid Force</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q11')">Q11 — Electron Beam Deflection</div>
+  </div>
+
+  <!-- Hub 2: EM Induction -->
+  <div class="map-mobile-hub">
+    <h3 style="color:#8b6cef;border-left:3px solid #8b6cef;padding-left:10px">ELECTROMAGNETIC INDUCTION</h3>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q5')">Q5 — Varying Resistor (Changing I)</div>
+    <div class="map-mobile-conn">&#8597; ⚠ TRAP: Changing vs steady current</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q7')">Q7 — Steady Current = No EMF</div>
+    <div class="map-mobile-conn">&#8597; ⚠ TRAP: Steady vs changing flux</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q8')">Q8 — Magnet + Loop (Lenz Law)</div>
+    <div class="map-mobile-conn">Q5 ↔ Q8: Different cause, same Lenz Law</div>
+    <div class="map-mobile-conn">Q8 ↔ Q16: Both change Φ, different mechanism</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q16')">Q16 — Rod on Rails</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-exam-loop')">E1 — Metal Loop Entering B Field (Exam)</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-exam-flux')">E2 — Flux at Various Angles (Exam)</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-exam-oppwires')">E3 — Opposite Current Wires (Exam)</div>
+  </div>
+
+  <!-- Hub 3: Circuits -->
+  <div class="map-mobile-hub">
+    <h3 style="color:#4ea8de;border-left:3px solid #4ea8de;padding-left:10px">CIRCUITS &amp; APPLICATIONS</h3>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q12')">Q12 — Switch + Voltmeter Circuit</div>
+    <div class="map-mobile-conn">Q12 → Q13: Switch changes circuit → power redistributes</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q13')">Q13 — Series Circuit Power</div>
+    <div class="map-mobile-conn">&#8594; ⚠ TRAP: Series vs parallel (opposite rules!)</div>
+    <div class="map-mobile-node" onclick="mapNodeClick('card-q14')">Q14 — Parallel Circuit Power</div>
+  </div>
+
+</div><!-- end map-mobile-list -->
+
+</div><!-- end map-container -->
+</div><!-- end tab-map -->
+
+<!-- ==================== TAB 5: TOOLS ==================== -->
 <div id="tab-tools" class="tab-content">
 <div class="tools-grid">
 
@@ -2146,7 +2431,7 @@ function switchTab(tab){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+tab).classList.add('active');
-  const labels={study:'STUDY',quiz:'EXAM QUIZ',book:'BOOK PROBLEMS',tools:'TOOLS'};
+  const labels={study:'STUDY',quiz:'EXAM QUIZ',book:'BOOK PROBLEMS',map:'MAP',tools:'TOOLS'};
   if(tab==='tools')initDesmos();
   document.querySelectorAll('.tab-btn').forEach(b=>{if(b.textContent===labels[tab])b.classList.add('active')});
 }
