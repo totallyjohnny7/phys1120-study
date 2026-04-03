@@ -611,18 +611,27 @@ svg text{font-family:'JetBrains Mono',monospace}
 </div>
 
 <!-- Q5 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q5">
 <div class="card-header"><span class="q-num">Q5</span><span class="q-title">Variable Resistor &rarr; Induced Current in Loop A</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">SETUP</span><br>Circuit with variable resistor (slider). Nearby loop A detects induced current.</div>
-<div class="step"><span class="step-label">CHAIN OF REASONING</span><br>
-Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
-&rarr; B increases (B &prop; I) &rarr; &Phi; through loop A increases<br>
-&rarr; Lenz's Law: induced current <b>opposes</b> increase<br>
-&rarr; Induced B opposes original B</div>
+<div class="story-block">You slide a resistor dial and that changes the current in a circuit. The changing current changes the magnetic field. A nearby loop "notices" the changing field and fights back by creating its own current.</div>
+<div class="analogy-block">a thermostat — when the room gets warmer, it kicks on the AC to push back. Nature resists change.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Slider moves &rarr; R changes</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> I changes (V = IR, V fixed)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> B changes (B &prop; I)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; through loop A changes</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz's Law: loop creates current to oppose the change</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&epsilon; = N|&Delta;&Phi;/&Delta;t|</div>
+  <div class="math-verbal">EMF equals number of turns times how fast the flux is changing</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>(b) Counterclockwise in loop A</div>
 <div class="mnemonic">MNEMONIC: Lenz = "Nature is Lazy" &mdash; opposes all change</div>
+<div class="source-ref">Source: notes-22 pp2-3, notes-21 pp3-4</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="180" viewBox="0 0 280 180">
@@ -652,20 +661,78 @@ Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
 <path d="M220,38 A30,30 0 1,0 185,50" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
 <text x="215" y="118" fill="#f0c040" font-size="11" font-weight="bold">CCW</text>
 </svg>
+<div class="diagram-caption">Slider decreases R &rarr; I rises &rarr; B rises &rarr; loop A fights back with CCW current</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q7')">Q7 — trap: steady vs changing</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q8')">Q8 — moving magnet version</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q16')">Q16 — rod version</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q5')">
+  <span class="variation-chevron" id="chev-var-q5">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q5">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Slider moves opposite direction (R increases)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R increases &rarr; I decreases &rarr; B decreases &rarr; &Phi; decreases</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz opposes decrease &rarr; loop induces current to maintain flux</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Current direction flips to CW — always oppose the change</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Switch opens or closes instead of slider moving</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Opening switch: I drops to zero instantly &rarr; B drops &rarr; &Phi; drops &rarr; Lenz induces CW current</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Closing switch: I rises from zero &rarr; B rises &rarr; Lenz induces CCW current</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Loop moves closer or farther away</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Closer: more flux through loop (field stronger nearby) &rarr; Lenz opposes increase</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Farther: less flux &rarr; Lenz opposes decrease</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Loop rotates relative to field</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA cos&theta; — as &theta; changes, flux changes &rarr; EMF induced</div>
+    <div class="eq">&epsilon; = NBA&omega; sin(&omega;t)</div>
+    <div class="math-verbal">This is the generator equation — rotating a loop in B produces sinusoidal AC</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Battery removed suddenly</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> I drops to zero &rarr; B collapses &rarr; &Phi; through loop drops &rarr; Lenz induces current to oppose the loss</div>
+    <div class="warn">Same physics as opening the switch — sudden change, Lenz fights back</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: What if there are two nearby loops?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Both loops independently "see" the changing flux and each induces its own opposing current</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Mutual inductance: each loop's induced current also creates a field that the other loop notices</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Transformer principle — two coils coupled by mutual inductance</div>
+  </div>
 </div>
 </div>
 
 <!-- Q6 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q6">
 <div class="card-header"><span class="q-num">Q6</span><span class="q-title">KE of Particle in Circular Path</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>Magnetic force is always <b>perpendicular</b> to velocity. Therefore:</div>
-<div class="eq">W = F &middot; d &middot; cos(90&deg;) = 0</div>
-<div class="step">Zero work done &rarr; No change in kinetic energy &rarr; Speed stays constant (only direction changes)</div>
+<div class="story-block">The magnetic force only pushes sideways — it never pushes along the direction of motion. Since it never pushes "with" or "against" the charge, it does zero work. Zero work means zero change in kinetic energy.</div>
+<div class="analogy-block">a Ferris wheel — it constantly redirects your seat sideways, but you're not going faster at the top vs bottom. The motor changes your direction, not your speed.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> F is always &perp; to v (perpendicular, by the nature of the cross product)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Work = F &middot; d &middot; cos(90&deg;) = 0</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> W = 0 means &Delta;KE = 0</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed is constant &mdash; only direction changes</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">W = Fd cos90&deg; = 0 &nbsp;&nbsp;&nbsp; &Delta;KE = W = 0</div>
+  <div class="math-verbal">Work equals force times distance times the cosine of the angle between them. At 90&deg;, cosine is zero.</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>(c) Remains constant &mdash; F &perp; v means W = 0 means &Delta;KE = 0</div>
 <div class="warn">B field changes DIRECTION of velocity, never SPEED!</div>
+<div class="source-ref">Source: notes-19 p5, notes-20 pp2-3</div>
 </div>
 <div class="card-svg">
 <svg width="220" height="160" viewBox="0 0 220 160">
@@ -684,19 +751,66 @@ Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
 <text x="30" y="140" fill="#888" font-size="10">F &perp; v &rarr; W=0 &rarr; &Delta;KE=0</text>
 <text x="30" y="154" fill="#3ecf8e" font-size="11" font-weight="bold">|v| = constant</text>
 </svg>
+<div class="diagram-caption">F is always centripetal (toward center), v is always tangential — they are always 90&deg; apart</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 — the circular path</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q9')">Q9 — speed changes = radius changes</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q6')">
+  <span class="variation-chevron" id="chev-var-q6">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">4</span>
+</div>
+<div class="variation-container" id="var-q6">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Does velocity change? (Yes — direction!)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed is constant, but direction continuously changes</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Velocity is a vector — same magnitude, new direction = different velocity</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Speed unchanged, velocity changed — these are not the same thing!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Does momentum change? (Yes — direction!)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> p = mv — magnitude constant, but direction rotates continuously</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Momentum is a vector, so it changes even though |p| is constant</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Is acceleration zero? (NO — this is THE trap)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Centripetal acceleration exists: a = v&sup2;/R, pointing inward</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Acceleration means changing velocity direction — not changing speed</div>
+    <div class="warn">Classic trap: "no work" does NOT mean "no acceleration." Centripetal acceleration is always present!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: What if an electric field E is added?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> E field force (qE) CAN be parallel to v &rarr; does work &rarr; KE changes</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Path is no longer a pure circle — becomes a spiral or cycloid</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Add E field and now KE does change — the B-field-only rule breaks down</div>
+  </div>
 </div>
 </div>
 <!-- Q7 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q7">
 <div class="card-header"><span class="q-num">Q7</span><span class="q-title">Steady 1.5A in Solenoid &rarr; Loop Current</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>Faraday's Law: EMF is induced only when flux is <b>changing</b>.</div>
-<div class="eq">&epsilon; = &minus;d&Phi;/dt</div>
-<div class="step">Steady (constant) current &rarr; Constant B &rarr; Constant &Phi; &rarr; d&Phi;/dt = 0 &rarr; &epsilon; = 0 &rarr; <b>No induced current</b></div>
+<div class="story-block">A solenoid has a constant, unchanging current flowing through it. That creates a constant magnetic field. A nearby loop sits in that steady field and feels... nothing. No change = no induction. This is the #1 Faraday trap.</div>
+<div class="analogy-block">standing in a room with the lights on — you don't notice the light until someone flickers it. Steady state is invisible to induction.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Current is steady &rarr; B is steady</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; is steady</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> d&Phi;/dt = 0</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> &epsilon; = 0 &rarr; No induced current</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&epsilon; = &minus;d&Phi;/dt = 0 &nbsp;(when &Phi; is constant)</div>
+  <div class="math-verbal">The rate of change of flux is zero because nothing is changing</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>ZERO &mdash; a steady current produces no change in flux</div>
 <div class="warn">This is the #1 Faraday trap! "Steady" = "constant" = NO induction. Only CHANGING currents induce.</div>
+<div class="source-ref">Source: notes-22 p2</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="160" viewBox="0 0 280 160">
@@ -717,19 +831,65 @@ Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
 <text x="170" y="120" fill="#ef4444" font-size="12" font-weight="bold">I = 0</text>
 <text x="160" y="140" fill="#888" font-size="10">d&Phi;/dt = 0 &rarr; &epsilon; = 0</text>
 </svg>
+<div class="diagram-caption">Steady 1.5A &rarr; constant B &rarr; constant flux &rarr; zero EMF &rarr; zero induced current</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q5')">Q5 — changing current = induction (contrast!)</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q8')">Q8 — changing &Phi; from motion</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q7')">
+  <span class="variation-chevron" id="chev-var-q7">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">4</span>
+</div>
+<div class="variation-container" id="var-q7">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Current is increasing (now there IS induction)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Rising I &rarr; rising B &rarr; rising &Phi; &rarr; d&Phi;/dt &gt; 0 &rarr; &epsilon; &ne; 0</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Lenz: loop opposes increase &rarr; induced current creates opposing B</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Change is the trigger — not the presence of a field</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Current is decreasing</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Falling I &rarr; falling B &rarr; falling &Phi; &rarr; Lenz opposes decrease</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Induced current in loop tries to maintain the field — opposite direction to V1</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Current oscillating (AC source)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> AC current: I = I&#8320; sin(&omega;t) &rarr; B oscillates &rarr; &Phi; oscillates &rarr; EMF oscillates</div>
+    <div class="eq">&epsilon; = &minus;N d&Phi;/dt = &minus;NBA&omega; cos(&omega;t)</div>
+    <div class="math-verbal">Fastest change happens when sine is steepest (at zero crossing) — that's when EMF peaks</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: What if the loop moves toward the solenoid?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Even with steady I in solenoid, loop moving closer captures more flux</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; changes because loop position changes &rarr; EMF induced</div>
+    <div class="warn">Trap: steady solenoid current + moving loop STILL causes induction — motion changes &Phi;!</div>
+  </div>
 </div>
 </div>
 
 <!-- Q8 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q8">
 <div class="card-header"><span class="q-num">Q8</span><span class="q-title">Bar Magnet Through Loop</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">PHASE 1: APPROACHING (N-end down)</span><br>&Phi; increasing &rarr; Lenz opposes increase &rarr; induced B opposes magnet's B &rarr; <b>CCW current</b> (from above) &rarr; Loop REPELS magnet</div>
-<div class="step"><span class="step-label">PHASE 2: LEAVING (N-end still down)</span><br>&Phi; decreasing &rarr; Lenz opposes decrease &rarr; induced B supports magnet's B &rarr; <b>CW current</b> (from above) &rarr; Loop ATTRACTS magnet</div>
+<div class="story-block">A magnet falls toward a loop. As it approaches, the flux through the loop grows — and the loop fights back by creating a current that repels the magnet. Once the magnet passes through and moves away, flux decreases — and the loop switches its current to attract the magnet, still fighting the change.</div>
+<div class="analogy-block">a bouncer at a door — pushes you away when you're coming in, grabs you when you're leaving. Always opposes your motion.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">Phase 1:</span> Magnet approaches &rarr; &Phi;&uarr; &rarr; Lenz opposes increase &rarr; loop repels &rarr; CCW</div>
+  <div class="chain-step"><span class="chain-arrow">Phase 2:</span> Magnet leaves &rarr; &Phi;&darr; &rarr; Lenz opposes decrease &rarr; loop attracts &rarr; CW</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&epsilon; = N|&Delta;&Phi;/&Delta;t| &nbsp;&nbsp; direction from Lenz's Law</div>
+  <div class="math-verbal">EMF magnitude from Faraday, direction from Lenz</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>Current REVERSES direction as magnet passes through. Approaching: CCW. Leaving: CW.</div>
 <div class="mnemonic">MNEMONIC: "Coming in? Push away. Going out? Pull back." &mdash; Lenz always fights change.</div>
+<div class="source-ref">Source: notes-21 p3, notes-22 p2</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="200" viewBox="0 0 280 200">
@@ -767,7 +927,57 @@ Slider moves LEFT &rarr; R decreases &rarr; I increases (V=IR, V fixed)<br>
 <text x="170" y="58" fill="#f0c040" font-size="11" font-weight="bold">CW</text>
 <text x="160" y="48" fill="#3ecf8e" font-size="10">ATTRACTS</text>
 </svg>
+<div class="diagram-caption">Left: magnet approaching, loop repels (CCW). Right: magnet leaving, loop attracts (CW).</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q5')">Q5 — different cause, same Lenz</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q7')">Q7 — if magnet stops &rarr; no current</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q16')">Q16 — rod version</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q8')">
+  <span class="variation-chevron" id="chev-var-q8">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q8">
+  <div class="variation-mini">
+    <div class="vm-title">V1: S-pole approaching instead of N-pole</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Field lines point upward into loop (toward S) instead of downward</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Flux still increases as it approaches &rarr; Lenz still opposes &rarr; current direction flips vs N-pole case</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Same Lenz logic, opposite field direction &rarr; CW current (approaching S-pole)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Magnet stationary, loop moves toward magnet</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Relative motion is what matters — loop moving toward a stationary magnet = same result</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Flux through loop increases &rarr; Lenz opposes &rarr; same induced current as V1</div>
+    <div class="warn">It's relative motion that drives flux change — either object moving gives the same physics!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Horizontal setup (magnet moves sideways through loop)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply the same two-phase logic: approaching side &rarr; &Phi; rises, leaving side &rarr; &Phi; falls</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Direction of induced current determined by which pole faces loop and which way flux changes</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: At exact center — momentary zero current</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> At exact midpoint of the loop, flux is momentarily at its maximum</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> d&Phi;/dt = 0 at the peak &rarr; EMF = 0 &rarr; current = 0 at that instant</div>
+    <div class="warn">Trap: maximum flux does NOT mean maximum current — it means ZERO current (rate of change is zero)!</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Two coils (transformer preview)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Moving magnet through primary coil &rarr; changing flux in secondary coil</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same Lenz/Faraday physics — this is the operating principle of a transformer</div>
+    <div class="eq">V&#8322;/V&#8321; = N&#8322;/N&#8321;</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: What if the loop has resistance R?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> EMF is set by Faraday: &epsilon; = N|&Delta;&Phi;/&Delta;t|</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Induced current follows Ohm's Law: I = &epsilon;/R</div>
+    <div class="eq">I = N|&Delta;&Phi;/&Delta;t| / R</div>
+    <div class="math-verbal">Higher resistance &rarr; same EMF, smaller current — Lenz force on magnet is weaker</div>
+  </div>
 </div>
 </div>
 
