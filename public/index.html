@@ -1781,6 +1781,48 @@ document.addEventListener('keydown',function(e){
   if(e.key==='Escape'){document.getElementById('search-input').value='';doSearch('');}
 });
 
+// ============ LEARNING PROFILE: VARIATION TOGGLES ============
+function toggleVariations(btn){
+  var container=btn.nextElementSibling;
+  var chevron=btn.querySelector('.variation-chevron');
+  container.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+// ============ LEARNING PROFILE: CROSS-REFERENCE SCROLL ============
+function scrollToCard(cardId){
+  switchTab('study');
+  setTimeout(function(){
+    var card=document.getElementById(cardId);
+    if(!card)return;
+    card.scrollIntoView({behavior:'smooth',block:'center'});
+    card.classList.add('card-highlighted');
+    setTimeout(function(){card.classList.remove('card-highlighted');},1500);
+  },100);
+}
+
+// ============ CONCEPT MAP: NODE CLICK ============
+function mapNodeClick(cardId){
+  scrollToCard(cardId);
+}
+
+// ============ CONCEPT MAP: TOOLTIP ============
+var mapTooltip=null;
+function showMapTooltip(evt,text){
+  if(!mapTooltip){
+    mapTooltip=document.createElement('div');
+    mapTooltip.className='map-tooltip';
+    document.body.appendChild(mapTooltip);
+  }
+  mapTooltip.textContent=text;
+  mapTooltip.style.display='block';
+  mapTooltip.style.left=(evt.pageX+12)+'px';
+  mapTooltip.style.top=(evt.pageY-30)+'px';
+}
+function hideMapTooltip(){
+  if(mapTooltip)mapTooltip.style.display='none';
+}
+
 // ============ INIT ============
 document.addEventListener('DOMContentLoaded',function(){
   renderQuizQ();
