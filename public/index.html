@@ -135,6 +135,75 @@ svg text{font-family:'JetBrains Mono',monospace}
 .omi-source-inline::after{content:" 🎙️";font-size:10px;color:#cc0000;font-weight:bold}
 .omi-legend{display:inline-flex;align-items:center;gap:5px;background:rgba(204,0,0,.12);border:1px solid #cc0000;border-radius:4px;padding:3px 8px;font-size:11px;color:#cc0000;font-weight:700;margin-bottom:10px}
 .omi-hidden{display:none!important}
+
+/* ── LEARNING PROFILE: STORY-FIRST CARD STRUCTURE ── */
+.story-block{background:rgba(212,168,38,.04);padding:14px 18px;border-radius:8px;font-size:15px;line-height:1.7;color:var(--text);margin-bottom:12px}
+.analogy-block{border-left:3px solid var(--purple);padding:8px 14px;margin:10px 0;font-style:italic;font-size:14px;color:var(--text);background:rgba(139,108,239,.04);border-radius:0 6px 6px 0}
+.analogy-block::before{content:"Think of it like... ";font-weight:600;font-style:normal;color:var(--purple)}
+.chain-block{margin:10px 0;padding:10px 14px;background:rgba(255,255,255,.02);border-radius:6px}
+.chain-step{display:flex;align-items:baseline;gap:6px;margin:4px 0;font-size:14px;line-height:1.5}
+.chain-arrow{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700;flex-shrink:0}
+.math-confirms{margin:10px 0}
+.math-confirms .section-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.math-verbal{font-size:12px;color:var(--text-dim);margin-top:2px;margin-bottom:8px;padding-left:12px;font-style:italic}
+.diagram-caption{font-size:12px;color:var(--text-dim);text-align:center;margin-top:6px;font-style:italic}
+.connects-section{display:flex;flex-wrap:wrap;gap:6px;padding:10px 20px;border-top:1px solid var(--border)}
+.connects-pill{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 10px;border-radius:12px;background:rgba(212,168,38,.08);border:1px solid rgba(212,168,38,.15);color:var(--gold);cursor:pointer;transition:all .2s;text-decoration:none}
+.connects-pill:hover{background:rgba(212,168,38,.15);box-shadow:0 0 8px rgba(212,168,38,.2)}
+.connects-label{font-size:11px;color:var(--text-dim);align-self:center}
+
+/* ── VARIATIONS ── */
+.variation-toggle{display:flex;align-items:center;gap:8px;padding:10px 20px;border-top:1px solid var(--border);cursor:pointer;user-select:none;transition:background .2s;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim)}
+.variation-toggle:hover{background:rgba(212,168,38,.04);color:var(--gold)}
+.variation-chevron{transition:transform .3s;font-size:14px}
+.variation-chevron.open{transform:rotate(90deg)}
+.variation-count{background:rgba(212,168,38,.12);color:var(--gold);padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+.variation-container{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.variation-container.open{max-height:20000px}
+.variation-mini{padding:14px 20px;border-top:1px solid rgba(255,255,255,.04)}
+.variation-mini:nth-child(odd){background:rgba(255,255,255,.01)}
+.variation-mini .vm-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);margin-bottom:6px;font-weight:600}
+.variation-mini .chain-step{font-size:13px}
+.variation-mini .eq{font-size:12px}
+.variation-mini .answer-box{font-size:12px}
+.variation-mini .story-block{font-size:13px;padding:8px 12px}
+
+/* ── CONCEPT MAP TAB ── */
+.map-container{max-width:1100px;margin:0 auto;padding:20px}
+.map-chain-banner{text-align:center;padding:16px 20px;background:rgba(212,168,38,.06);border:1px solid rgba(212,168,38,.12);border-radius:10px;margin-bottom:24px;font-size:14px;line-height:1.7;color:var(--text)}
+.map-chain-banner .chain-arrow{display:inline}
+.map-svg-container{width:100%;overflow-x:auto}
+.map-node{cursor:pointer;transition:all .2s}
+.map-node:hover rect{stroke-width:3;filter:drop-shadow(0 0 8px rgba(212,168,38,.3))}
+.map-node:hover text{fill:#fff}
+.map-connection{stroke-width:1.5;fill:none;opacity:.4;transition:opacity .2s}
+.map-connection:hover{opacity:1;stroke-width:2.5}
+.map-tooltip{position:absolute;background:var(--card);border:1px solid var(--gold);border-radius:6px;padding:8px 12px;font-size:12px;color:var(--text);max-width:250px;pointer-events:none;z-index:100;display:none;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.map-hub-label{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;letter-spacing:1px}
+@media(max-width:800px){.map-svg-container{display:none}.map-mobile-list{display:block!important}}
+.map-mobile-list{display:none;padding:0 16px}
+.map-mobile-hub{margin-bottom:20px}
+.map-mobile-hub h3{font-family:'JetBrains Mono',monospace;font-size:14px;margin-bottom:8px}
+.map-mobile-node{padding:8px 12px;margin:4px 0;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:13px;transition:border-color .2s}
+.map-mobile-node:hover{border-color:var(--gold)}
+.map-mobile-conn{padding:4px 12px 4px 24px;font-size:11px;color:var(--text-dim)}
+
+/* ── QUIZ MODES ── */
+.quiz-mode-bar{display:flex;justify-content:center;gap:8px;margin-bottom:20px}
+.quiz-mode-btn{font-family:'JetBrains Mono',monospace;font-size:12px;padding:8px 20px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-dim);cursor:pointer;transition:all .3s}
+.quiz-mode-btn:hover{border-color:var(--gold);color:var(--gold)}
+.quiz-mode-btn.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.concept-group{margin-top:12px;padding:8px 12px;background:rgba(212,168,38,.06);border-radius:6px}
+.concept-group h4{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);margin-bottom:4px}
+.reasoning-gap{text-align:center;margin-top:16px;padding:12px;background:rgba(139,108,239,.08);border:1px solid rgba(139,108,239,.15);border-radius:8px;font-size:14px;color:var(--purple)}
+
+/* ── HIGHLIGHT ANIMATION ── */
+@keyframes card-highlight{0%{box-shadow:0 0 0 3px rgba(212,168,38,.6)}100%{box-shadow:0 0 0 0 rgba(212,168,38,0)}}
+.card-highlighted{animation:card-highlight 1.5s ease-out}
+
+/* ── SECTION LABELS ── */
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;display:block}
+.source-ref{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);padding:4px 0;opacity:.6}
 </style>
 </head>
 <body>
