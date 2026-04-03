@@ -1342,15 +1342,27 @@ svg text{font-family:'JetBrains Mono',monospace}
 </div>
 </div>
 <!-- Q13 -->
-<div class="problem-card">
-<div class="card-header"><span class="q-num">Q13</span><span class="q-title">R and 4R in SERIES, P(4R)=40W &rarr; P(R)=?</span></div>
+<div class="problem-card" id="card-q13">
+<div class="card-header"><span class="q-num">Q13</span><span class="q-title">R and 4R in SERIES — P(4R)=40W &rarr; P(R)=?</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>In SERIES, current I is the <b>same</b> through all resistors.</div>
-<div class="eq">P = I&sup2;R &rArr; P &prop; R (same I)</div>
-<div class="step"><span class="step-label">LOGIC</span><br>P(4R) = I&sup2;(4R) = 40W<br>P(R) = I&sup2;(R) = 40W &divide; 4 = <b>10W</b></div>
-<div class="answer-box"><span class="lbl">ANSWER</span><br>P(R) = 10W &mdash; In series, power is proportional to resistance</div>
-<div class="warn">Series: P &prop; R (bigger R = MORE power)<br>Don't confuse with parallel!</div>
+<div class="story-block">Two resistors in series share the same current. Since power equals I&sup2;R, the bigger resistor dissipates more power. If 4R produces 40W, R produces exactly 1/4 of that — 10W.</div>
+<div class="analogy-block">two water wheels on the same stream — the bigger wheel catches more energy. Same flow rate (current), but the bigger wheel (bigger R) extracts more.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Series &rarr; same I through both resistors</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = I&sup2;R, so P &prop; R when I is fixed</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(4R) = I&sup2;(4R) = 40W</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> I&sup2;R = 40W &divide; 4 = 10W</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(R) = <b>10W</b></div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">P = I&sup2;R &nbsp;&nbsp; P &prop; R (in series)</div>
+  <div class="math-verbal">Power is proportional to resistance when current is the same</div>
+</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>P(R) = 10W &mdash; in series, larger R gets MORE power</div>
+<div class="mnemonic">KEY RULE: SERIES: same I &rarr; use P = I&sup2;R &rarr; larger R gets MORE power</div>
+<div class="source-ref">Source: notes-16 p3</div>
 </div>
 <div class="card-svg">
 <svg width="260" height="140" viewBox="0 0 260 140">
@@ -1372,20 +1384,73 @@ svg text{font-family:'JetBrains Mono',monospace}
 <text x="50" y="115" fill="#f0c040" font-size="12" font-weight="bold">Series: P &prop; R</text>
 <text x="50" y="132" fill="#3ecf8e" font-size="11">P(R) = 40/4 = 10W</text>
 </svg>
+<div class="diagram-caption">Same current I through both resistors &rarr; bigger R dissipates more power (P = I&sup2;R)</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q14')">Q14 &mdash; parallel (opposite rule)</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q12')">Q12 &mdash; switch changes config</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q13')">
+  <span class="variation-chevron" id="chev-var-q13">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q13">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Three resistors in series — find total power</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Each has same I &rarr; P<sub>total</sub> = I&sup2;R&sub;1; + I&sup2;R&sub;2; + I&sup2;R&sub;3; = I&sup2;(R&sub;1;+R&sub;2;+R&sub;3;)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Total power = I&sup2; &times; R<sub>series</sub></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Sum the individual power terms, or use P<sub>total</sub> = I&sup2;R<sub>total</sub>.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: R and 4R in series — find the current</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(4R) = I&sup2;(4R) = 40W &rarr; I&sup2; = 10/R</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need battery voltage or R value to get a numerical answer for I</div>
+    <div class="warn">Trap: you need one extra piece of info (V or R) to find I alone.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: R and 2R in series (exam: 20W in 2R &rarr; P(R)=?)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(R) = P(2R)/2 = 20/2 = <b>10W</b></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Scale by resistance ratio.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: R and 3R in series (exam: 30W in R &rarr; P(3R)=?)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; R &rarr; P(3R) = 3 &times; P(R) = 3 &times; 30 = <b>90W</b></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Scale by the resistance ratio in the direction that makes sense: bigger R, more power.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Which resistor is hotter in a string of lights (series)?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same current through all &rarr; highest R bulb dissipates most power &rarr; gets hottest</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> If one bulb burns out and breaks the circuit, all go out (series chain broken)</div>
+    <div class="warn">This is why Christmas-light strings used to all go dark when one bulb failed.</div>
+  </div>
 </div>
 </div>
 
 <!-- Q14 -->
-<div class="problem-card">
-<div class="card-header"><span class="q-num">Q14</span><span class="q-title">R and 5R in PARALLEL, P(R)=50W &rarr; P(5R)=?</span></div>
+<div class="problem-card" id="card-q14">
+<div class="card-header"><span class="q-num">Q14</span><span class="q-title">R and 5R in PARALLEL — P(R)=50W &rarr; P(5R)=?</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">KEY PRINCIPLE</span><br>In PARALLEL, voltage V is the <b>same</b> across all resistors.</div>
-<div class="eq">P = V&sup2;/R &rArr; P &prop; 1/R (same V)</div>
-<div class="step"><span class="step-label">LOGIC</span><br>P(R) = V&sup2;/R = 50W<br>P(5R) = V&sup2;/(5R) = 50W &divide; 5 = <b>10W</b></div>
-<div class="answer-box"><span class="lbl">ANSWER</span><br>P(5R) = 10W &mdash; In parallel, power is INVERSELY proportional to resistance</div>
-<div class="warn">Parallel: P &prop; 1/R (bigger R = LESS power)<br>OPPOSITE of series!</div>
+<div class="story-block">Two resistors in parallel share the same voltage. Since power equals V&sup2;/R, the smaller resistor dissipates more. If R produces 50W, 5R produces only 1/5 of that — 10W.</div>
+<div class="analogy-block">two drinking fountains on the same water main — the wide-mouth fountain (small R) lets more water through and uses more energy.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Parallel &rarr; same V across both resistors</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = V&sup2;/R, so P &prop; 1/R when V is fixed</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(R) = V&sup2;/R = 50W</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(5R) = V&sup2;/(5R) = 50W &divide; 5 = 10W</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> P(5R) = <b>10W</b></div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">P = &Delta;V&sup2;/R &nbsp;&nbsp; P &prop; 1/R (in parallel)</div>
+  <div class="math-verbal">Power is inversely proportional to resistance when voltage is the same</div>
+</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>P(5R) = 10W &mdash; in parallel, larger R gets LESS power</div>
+<div class="mnemonic">KEY RULE: PARALLEL: same &Delta;V &rarr; use P = &Delta;V&sup2;/R &rarr; larger R gets LESS power &mdash; OPPOSITE of series!</div>
+<div class="source-ref">Source: notes-16 p3</div>
 </div>
 <div class="card-svg">
 <svg width="260" height="150" viewBox="0 0 260 150">
@@ -1412,16 +1477,68 @@ svg text{font-family:'JetBrains Mono',monospace}
 <!-- Result -->
 <text x="50" y="140" fill="#f0c040" font-size="11" font-weight="bold">Parallel: P &prop; 1/R &rarr; P(5R) = 50/5 = 10W</text>
 </svg>
+<div class="diagram-caption">Same voltage across both &rarr; smaller R carries more current, dissipates more power (P = V&sup2;/R)</div>
 </div>
 </div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q13')">Q13 &mdash; series (opposite rule)</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q12')">Q12 &mdash; switch adds/removes paths</span>
 </div>
+<div class="variation-toggle" onclick="toggleVariation('var-q14')">
+  <span class="variation-chevron" id="chev-var-q14">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q14">
+  <div class="variation-mini">
+    <div class="vm-title">V1: R and 2R parallel (exam: 10W in R &rarr; P(2R)=?)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P &prop; 1/R &rarr; P(2R) = P(R)/2 = 10/2 = <b>5W</b></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Double the resistance, half the power.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Three resistors in parallel — find total power</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> All share V &rarr; P<sub>total</sub> = V&sup2;/R&sub;1; + V&sup2;/R&sub;2; + V&sup2;/R&sub;3;</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Or: P<sub>total</sub> = V&sup2; &times; (1/R&sub;1;+1/R&sub;2;+1/R&sub;3;) = V&sup2;/R<sub>parallel</sub></div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Find total current from the source</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Each branch: I = V/R and I = V/(5R) &rarr; total I = V/R + V/5R = 6V/5R</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Or use P<sub>total</sub>/V to find I<sub>total</sub></div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Current divider — how much current through each branch?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> I through branch = V/R<sub>branch</sub></div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Smaller R &rarr; more current &rarr; more power (consistent with P = I&sup2;R and P = V&sup2;/R both giving same answer)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Mixed series-parallel — which formula to use?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For components in series: use P = I&sup2;R (I is shared)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For components in parallel: use P = V&sup2;/R (V is shared)</div>
+    <div class="warn">Identify what is constant (I or V) for each pair, then pick the right formula. Getting this backwards is the #1 mistake.</div>
+  </div>
+</div>
+</div>
+
 <!-- Q15 INTERACTIVE -->
-<div class="problem-card">
+<div class="problem-card" id="card-q15">
 <div class="card-header"><span class="q-num">Q15</span><span class="q-title">Alpha Particle in B Field (INTERACTIVE)</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">GIVEN</span><br>Alpha particle: q = 2e = 3.2&times;10<sup>&minus;19</sup> C, m = 6.64&times;10<sup>&minus;27</sup> kg</div>
-<div class="eq">R = mv/(qB), Diameter = 2R, a = qvB/m</div>
+<div class="story-block">An alpha particle — a helium nucleus with double the charge and quadruple the mass of a proton — enters a magnetic field and traces a tiny circle. This problem walks through everything: drawing the diagram with RHR, finding the radius, explaining why speed doesn't change, and finding the centripetal acceleration that IS there.</div>
+<div class="analogy-block">throwing a heavy ball bearing through a curved magnetic track at a science museum — the heavier it is, the wider it curves, but the magnets never speed it up.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Identify: q = 2e = 3.2&times;10<sup>&minus;19</sup> C, m = 6.64&times;10<sup>&minus;27</sup> kg</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Draw diagram: use RHR2 to find force direction &rarr; circular path</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; Diameter = 2R</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed constant: F &perp; v &rarr; W = 0 &rarr; &Delta;KE = 0</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Acceleration = v&sup2;/R toward center (NOT zero &mdash; direction changes!)</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">R = mv/(qB) &nbsp;&nbsp; a = v&sup2;/R = qvB/m</div>
+  <div class="math-verbal">Radius from momentum over field-grab. Acceleration from speed-squared over radius.</div>
+</div>
 <div class="slider-group">
 <label>Speed v: <span id="v15val" class="slider-val">35.6 km/s</span></label>
 <input type="range" id="v15" min="10" max="100" value="35.6" step="0.1" oninput="calcQ15()">
@@ -1433,7 +1550,8 @@ svg text{font-family:'JetBrains Mono',monospace}
 <div class="calc-result" id="q15result">
 R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
 </div>
-<div class="warn">Alpha has charge 2e (not 1e)! Forgetting = double the radius.</div>
+<div class="warn">Alpha has charge 2e (not e)! Forgetting the factor of 2 doubles the radius error.</div>
+<div class="source-ref">Source: notes-20 p3, notes-19 p6</div>
 </div>
 <div class="card-svg">
 <svg width="240" height="200" viewBox="0 0 240 200" id="svg15">
@@ -1447,7 +1565,7 @@ R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
 <circle cx="15" cy="140" r="2.5"/><circle cx="45" cy="140" r="2.5"/><circle cx="75" cy="140" r="2.5"/><circle cx="105" cy="140" r="2.5"/><circle cx="135" cy="140" r="2.5"/><circle cx="165" cy="140" r="2.5"/><circle cx="195" cy="140" r="2.5"/><circle cx="220" cy="140" r="2.5"/>
 <circle cx="15" cy="170" r="2.5"/><circle cx="45" cy="170" r="2.5"/><circle cx="75" cy="170" r="2.5"/><circle cx="105" cy="170" r="2.5"/><circle cx="135" cy="170" r="2.5"/><circle cx="165" cy="170" r="2.5"/><circle cx="195" cy="170" r="2.5"/><circle cx="220" cy="170" r="2.5"/>
 </g>
-<text x="205" y="16" fill="#4ea8de" font-size="9">⊙ B</text>
+<text x="205" y="16" fill="#4ea8de" font-size="9">&#x2299; B</text>
 <circle id="circle15" cx="120" cy="100" r="40" fill="none" stroke="#f0c040" stroke-width="2"/>
 <circle cx="120" cy="60" r="5" fill="#f0c040"/>
 <text x="117" y="64" fill="#0a0a12" font-size="8" font-weight="bold">&alpha;</text>
@@ -1455,17 +1573,71 @@ R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
 <line x1="120" y1="100" x2="160" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
 <text id="diam15txt" x="60" y="195" fill="#3ecf8e" font-size="11">D = 1.34 mm</text>
 </svg>
+<div class="diagram-caption">Alpha traces a circle &mdash; radius set by R = mv/(qB). Drag sliders to see circle scale.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; same circular-orbit formula</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q6')">Q6 &mdash; KE constant (F&perp;v)</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q9')">Q9 &mdash; proportional reasoning with R</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q15')">
+  <span class="variation-chevron" id="chev-var-q15">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q15">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Proton instead of alpha particle</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: q = e = 1.6&times;10<sup>&minus;19</sup> C, m = 1.67&times;10<sup>&minus;27</sup> kg</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; smaller mass AND smaller charge &rarr; similar radius to alpha</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Alpha has 2&times; charge but 4&times; mass &rarr; alpha radius = 2&times; proton radius (for same v and B).</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Different magnetic field — how does R change?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB) &rarr; R &prop; 1/B</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Double B &rarr; half the radius. Same v, stronger field &rarr; tighter circle.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Find the period T and frequency f of the circular orbit</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Circumference = 2&pi;R, period T = 2&pi;R/v = 2&pi;m/(qB)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> f = 1/T = qB/(2&pi;m) &mdash; cyclotron frequency, independent of speed!</div>
+    <div class="eq">T = 2&pi;m/(qB)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: What if B doubles — how does acceleration change?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> a = qvB/m &rarr; a &prop; B &rarr; double B &rarr; double acceleration</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> But v is unchanged (B never does work) &rarr; radius halves, a doubles</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Deuteron comparison (mass = 2m_p, charge = e)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Deuteron: q = e, m = 2m_p &rarr; R = 2m_p v/(eB)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: R = m_p v/(eB) &rarr; deuteron radius = 2 &times; proton radius (for same v and B)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Only mass and charge ratio determines relative radius — not the particle's speed (cancel from ratio).</div>
+  </div>
 </div>
 </div>
 
 <!-- Q16 INTERACTIVE -->
-<div class="problem-card">
+<div class="problem-card" id="card-q16">
 <div class="card-header"><span class="q-num">Q16</span><span class="q-title">Rod on Rails (INTERACTIVE)</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">GIVEN</span><br>Rod of length L = 0.50 m slides on rails, external resistor R = 1.50 &Omega;</div>
-<div class="eq">&epsilon; = BLv, I = &epsilon;/R, F = BIL</div>
+<div class="story-block">A metal rod slides along rails in a magnetic field. As it moves, it changes the circuit area, changing the magnetic flux, inducing a voltage (EMF), driving a current, and creating a braking force. To keep the rod moving at constant speed, you must push with a force equal to that magnetic braking force.</div>
+<div class="analogy-block">dragging your hand through water — the faster you move, the harder the water pushes back. The rod drags through the magnetic field and the field pushes back harder the faster it goes.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Rod moves &rarr; circuit area increases &rarr; &Phi; = BA increases</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> &epsilon; = BLv (motional EMF)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> I = &epsilon;/R (Ohm&apos;s law)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = BIL on rod (opposes motion &mdash; Lenz)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> For constant v: F<sub>applied</sub> = F<sub>magnetic</sub> = B&sup2;L&sup2;v/R</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">&epsilon; = BLv &nbsp;&nbsp; I = &epsilon;/R &nbsp;&nbsp; F = BIL = B&sup2;L&sup2;v/R</div>
+  <div class="math-verbal">EMF from field-times-length-times-speed. Current from Ohm&apos;s law. Force from field-times-current-times-length.</div>
+</div>
 <div class="slider-group">
 <label>Rod Speed v: <span id="v16val" class="slider-val">7.50 m/s</span></label>
 <input type="range" id="v16" min="1" max="15" value="7.5" step="0.1" oninput="calcQ16()">
@@ -1479,8 +1651,9 @@ R = 0.670 mm | Diameter = 1.340 mm<br>a = 1.89&times;10<sup>9</sup> m/s&sup2;
 </div>
 <div class="step"><span class="step-label">VIFf CHAIN</span><br>
 v (speed) &rarr; &epsilon; (EMF) &rarr; I (current) &rarr; F (force on rod)<br>
-Each depends on the previous!</div>
-<div class="warn">Force on the rod OPPOSES motion (Lenz's Law applied mechanically)</div>
+Each step depends on the previous!</div>
+<div class="warn">Force on the rod OPPOSES motion (Lenz&apos;s Law applied mechanically). Constant v requires you to push.</div>
+<div class="source-ref">Source: notes-22 pp3-4</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="200" viewBox="0 0 280 200">
@@ -1539,7 +1712,7 @@ Each depends on the previous!</div>
 <line x1="202" y1="132" x2="208" y2="138"/><line x1="208" y1="132" x2="202" y2="138"/>
 <line x1="227" y1="132" x2="233" y2="138"/><line x1="233" y1="132" x2="227" y2="138"/>
 </g>
-<text x="215" y="48" fill="#4ea8de" font-size="9">× B</text>
+<text x="215" y="48" fill="#4ea8de" font-size="9">&times; B</text>
 <!-- EMF label -->
 <text id="emf16txt" x="100" y="180" fill="#f0c040" font-size="11">&epsilon; = BLv = 3.0 V</text>
 <!-- I arrow -->
@@ -1547,7 +1720,53 @@ Each depends on the previous!</div>
 <text x="95" y="52" fill="#8b6cef" font-size="9">I</text>
 <defs><marker id="arrowP" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#8b6cef"/></marker></defs>
 </svg>
+<div class="diagram-caption">Rod slides right &rarr; area grows &rarr; flux grows &rarr; EMF &rarr; current &rarr; braking force (Lenz)</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q5')">Q5 &mdash; same Lenz logic</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q8')">Q8 &mdash; changing flux drives current</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q7')">Q7 &mdash; rod stops &rarr; no current</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q16')">
+  <span class="variation-chevron" id="chev-var-q16">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q16">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Rod moves in the opposite direction</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Area decreases &rarr; flux decreases &rarr; Lenz induces current to maintain flux (opposite direction)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Braking force still opposes motion (now pointing right, opposing leftward motion)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Rod accelerates instead of moving at constant speed</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v increases over time &rarr; &epsilon; = BLv increases &rarr; I increases &rarr; F increases</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Terminal velocity when F<sub>applied</sub> = F<sub>brake</sub> = B&sup2;L&sup2;v/R</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Different rod length L</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> &epsilon; = BLv &rarr; &epsilon; &prop; L. F = BIL = B&sup2;L&sup2;v/R &rarr; F &prop; L&sup2;</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Double L &rarr; double &epsilon;, quadruple F for constant v and B</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Find the initial flux through the circuit</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> &Phi; = BA = B &times; L &times; x (where x is distance from resistor to rod)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Need a given value for x (position of rod along rails) to get a number</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Power dissipated in the resistor</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = I&sup2;R = (&epsilon;/R)&sup2; &times; R = &epsilon;&sup2;/R = (BLv)&sup2;/R</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> This equals F &times; v (mechanical power in = electrical power out)</div>
+    <div class="eq">P = B&sup2;L&sup2;v&sup2;/R</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: Energy conservation check</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Work done pushing rod: W = F &times; d = (B&sup2;L&sup2;v/R) &times; (v &times; t) = B&sup2;L&sup2;v&sup2;t/R</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Energy dissipated in resistor: Q = P &times; t = B&sup2;L&sup2;v&sup2;t/R</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Mechanical work in equals electrical heat out. No free energy &mdash; Lenz enforces conservation.</div>
+  </div>
 </div>
 </div>
 <!-- QUICK REFERENCE TABLE -->
