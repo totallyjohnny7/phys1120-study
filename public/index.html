@@ -982,15 +982,26 @@ svg text{font-family:'JetBrains Mono',monospace}
 </div>
 
 <!-- Q9 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q9">
 <div class="card-header"><span class="q-num">Q9</span><span class="q-title">4&times; Speed &rarr; 4R Radius</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">FORMULA</span></div>
-<div class="eq">R = mv / (qB)</div>
-<div class="step">R is <b>directly proportional</b> to v (m, q, B held constant).<br>If v &rarr; 4v, then R &rarr; <b>4R</b></div>
+<div class="story-block">A faster charge has more momentum, so the magnetic field has a harder time bending its path. Double the speed, double the radius. Quadruple the speed, quadruple the radius.</div>
+<div class="analogy-block">driving a car around a curve &mdash; the faster you go, the wider you swing out. Same road, but speed determines how tight the turn.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> v increases &rarr; mv increases</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Field can&apos;t bend it as sharply</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> R = mv/(qB)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> R scales linearly with v</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">R = mv/(qB) &nbsp;&nbsp; R &prop; v</div>
+  <div class="math-verbal">Radius is directly proportional to speed</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>New radius = 4R (radius scales linearly with speed)</div>
-<div class="warn">Don't confuse with KE (KE &prop; v&sup2;) &mdash; radius is LINEAR in v!</div>
+<div class="mnemonic">MNEMONIC: "Faster = wider arc" &mdash; R proportional to v, NOT v&sup2; (that&apos;s KE).</div>
+<div class="source-ref">Source: notes-19 p5, notes-20 p3</div>
 </div>
 <div class="card-svg">
 <svg width="240" height="180" viewBox="0 0 240 180">
@@ -1009,17 +1020,77 @@ svg text{font-family:'JetBrains Mono',monospace}
 <line x1="110" y1="50" x2="135" y2="50" stroke="#d4a826" stroke-width="2" marker-end="url(#arrowF)"/>
 <text x="112" y="45" fill="#d4a826" font-size="10">4&times;</text>
 </svg>
+<div class="diagram-caption">Same B field, quadruple speed &rarr; quadruple radius. Linear relationship.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; base formula</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q6')">Q6 &mdash; KE relationship</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q15')">Q15 &mdash; alpha particle</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q9')">
+  <span class="variation-chevron" id="chev-var-q9">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">6</span>
+</div>
+<div class="variation-container" id="var-q9">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Speed halved</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v &rarr; v/2 &rarr; mv halves &rarr; R = mv/(qB) halves</div>
+    <div class="answer-box"><span class="lbl">KEY</span> R halves. Direct proportion — always the same ratio.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Mass doubled</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> m &rarr; 2m &rarr; numerator mv doubles &rarr; R doubles</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Heavier particle is harder to bend — same logic as faster particle</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: B field doubled</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B &rarr; 2B &rarr; denominator qB doubles &rarr; R halves</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Stronger field bends the path more tightly</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Charge doubled</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> q &rarr; 2q &rarr; denominator qB doubles &rarr; R halves</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Higher charge &rarr; stronger force &rarr; tighter curve</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Speed AND B both doubled</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> v &rarr; 2v and B &rarr; 2B &rarr; numerator doubles, denominator doubles</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> They cancel &mdash; R is UNCHANGED!</div>
+    <div class="warn">Trap: doubling both speed and field leaves radius the same. Changes in numerator and denominator cancel.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V6: Find period T (biggest trap)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> T = circumference / speed = 2&pi;R / v = 2&pi;(mv/qB) / v</div>
+    <div class="eq">T = 2&pi;m/(qB) &mdash; INDEPENDENT of v!</div>
+    <div class="warn">Period does NOT depend on speed. Faster particle, bigger circle, same time around. This is the cyclotron principle.</div>
+  </div>
 </div>
 </div>
 <!-- Q10 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q10">
 <div class="card-header"><span class="q-num">Q10</span><span class="q-title">Solenoid + Bar Magnet &rarr; Attract (Unlike Poles)</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">METHOD</span><br>1. Use RHR 1 to find solenoid polarity: curl fingers in direction of current, thumb points to N pole.<br>2. Compare solenoid pole facing magnet to magnet pole facing solenoid.<br>3. Unlike poles &rarr; ATTRACT. Like poles &rarr; REPEL.</div>
+<div class="story-block">A battery powers a solenoid, turning it into an electromagnet. A bar magnet sits nearby. The solenoid has its own N and S poles. Like poles repel, unlike attract.</div>
+<div class="analogy-block">two refrigerator magnets &mdash; flip one around and it switches from sticking to pushing away.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Current flows through solenoid</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR 1 determines which end is N</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Compare solenoid&apos;s pole with bar magnet&apos;s facing pole</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Like poles repel, unlike attract</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force direction follows</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">B<sub>solenoid</sub> = &mu;&#8320;nI = &mu;&#8320;(N/L)I</div>
+  <div class="math-verbal">Solenoid field equals permeability times turns per length times current</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>Unlike poles face each other &rarr; <b>ATTRACT</b> (pull toward each other)</div>
-<div class="mnemonic">MNEMONIC: RHR 1 &mdash; "Curl with Current, Thumb = North"</div>
+<div class="mnemonic">MNEMONIC: RHR 1 &mdash; "Curl fingers with current, thumb points to N pole"</div>
+<div class="source-ref">Source: notes-21 p1, notes-19 pp2-4</div>
 </div>
 <div class="card-svg">
 <svg width="280" height="150" viewBox="0 0 280 150">
@@ -1045,19 +1116,73 @@ svg text{font-family:'JetBrains Mono',monospace}
 <text x="125" y="100" fill="#f0c040" font-size="12" font-weight="bold">ATTRACT</text>
 <text x="110" y="115" fill="#888" font-size="10">N faces S = unlike poles</text>
 </svg>
+<div class="diagram-caption">Solenoid N pole faces bar magnet S pole &rarr; unlike poles attract.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l1')">L1 &mdash; solenoid = electromagnet</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q3')">Q3 &mdash; force between magnetic objects</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q10')">
+  <span class="variation-chevron" id="chev-var-q10">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q10">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Reverse battery polarity</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Current reverses &rarr; RHR 1 gives opposite N/S assignment</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Poles flip &rarr; force direction reverses (attract &harr; repel)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Reverse the battery, reverse the force. The solenoid is just an electromagnet you can flip.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Bar magnet flipped around</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Now the N end of bar magnet faces solenoid N pole &rarr; like poles &rarr; REPEL</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same trick as flipping a fridge magnet &mdash; switches from stick to push</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Find B inside solenoid</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B = &mu;&#8320;nI where n = N/L (turns per meter)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> More turns, longer length, higher current &rarr; stronger field</div>
+    <div class="eq">B = &mu;&#8320;(N/L)I</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Current in solenoid increases</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> B &prop; I &rarr; stronger field &rarr; stronger magnet &rarr; stronger force on bar magnet</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Direction unchanged, magnitude increases</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Three-pole combination (two solenoids facing each other)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply RHR 1 to each solenoid separately to find each one&apos;s N pole</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Then compare facing poles: like &rarr; repel, unlike &rarr; attract</div>
+    <div class="warn">Always determine pole orientation first, then apply magnet rules. Don&apos;t skip the RHR step.</div>
+  </div>
 </div>
 </div>
 
 <!-- Q11 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q11">
 <div class="card-header"><span class="q-num">Q11</span><span class="q-title">Electron Beam Between Magnets</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">SETUP</span><br>Electron beam travels horizontally between magnets. B field points downward.</div>
-<div class="step"><span class="step-label">METHOD</span><br>1. Pretend it's a POSITIVE charge &rarr; apply RHR 2<br>2. v horizontal, B down &rarr; RHR gives force in one direction<br>3. FLIP for electron (negative charge) &rarr; force in opposite direction &rarr; <b>UPWARD</b></div>
-<div class="answer-box"><span class="lbl">ANSWER</span><br>(c) Accelerated upward &mdash; "accelerated" here means direction changes, not speed</div>
-<div class="warn">"Accelerated" in physics = any change in velocity (including direction). B field can accelerate without changing speed!</div>
+<div class="story-block">A beam of electrons flies between two magnets. The magnetic field exerts a force &mdash; always sideways, never speeding them up or slowing them down. The electrons deflect perpendicular to both their motion and the field.</div>
+<div class="analogy-block">a bowling ball with backspin rolling across a tilted lane &mdash; the tilt pushes it sideways without changing how fast it rolls.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Electrons enter B field</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = qvB on them</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR 2 then flip for negative charge</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force &perp; to v and B &rarr; electrons curve</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed unchanged (force always perpendicular to motion)</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">F = |q|vB sin&theta; &nbsp; direction via RHR 2 (flip for e&minus;)</div>
+  <div class="math-verbal">Same force formula, but flip the result for negative charges</div>
+</div>
+<div class="answer-box"><span class="lbl">ANSWER</span><br>Accelerated upward &mdash; "accelerated" means direction changes, not speed</div>
+<div class="warn">"Accelerated" in physics = any change in velocity (including direction). B field changes direction without changing speed!</div>
+<div class="source-ref">Source: notes-19 p1, notes-20 p2</div>
 </div>
 <div class="card-svg">
 <svg width="260" height="160" viewBox="0 0 260 160">
@@ -1079,19 +1204,75 @@ svg text{font-family:'JetBrains Mono',monospace}
 <path d="M60,75 Q130,75 130,45" fill="none" stroke="#f0c040" stroke-width="2" marker-end="url(#arrowF)"/>
 <text x="135" y="50" fill="#f0c040" font-size="11" font-weight="bold">F (up)</text>
 </svg>
+<div class="diagram-caption">B field points down (N to S). Electron enters right &rarr; RHR gives force down for positive, flip &rarr; upward for electron.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q1')">Q1 &mdash; same force formula</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; if they curve enough &rarr; circle</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q6')">Q6 &mdash; KE unchanged</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q11')">
+  <span class="variation-chevron" id="chev-var-q11">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q11">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Protons instead of electrons</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Positive charge &rarr; don&apos;t flip after RHR 2</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same B field, same v direction &rarr; force is DOWNWARD (opposite of electron)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Protons deflect opposite to electrons. Sign of charge flips the direction.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: B field pointing in a different direction</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Apply RHR 2 fresh with the new B direction, then flip for electron</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force is always &perp; to BOTH v and B &mdash; redraw the setup if needed</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: v parallel to B (trap!)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = qvB sin&theta;, and sin(0&deg;) = 0</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force = 0. No deflection. Particle goes straight through.</div>
+    <div class="warn">Most common trap: if velocity is parallel to the B field, there is NO magnetic force.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Find force magnitude</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> F = |q|vB sin&theta;</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> For electron: |q| = 1.6 &times; 10&minus;19 C</div>
+    <div class="eq">F = (1.6&times;10&minus;19)vB (when &theta; = 90&deg;)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Magnets oriented differently (B horizontal)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> If B is horizontal and v is also horizontal but perpendicular to B</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Force will be vertical &mdash; apply RHR 2 in the new geometry, flip for electron</div>
+    <div class="warn">Always redraw axes. Don&apos;t assume up/down without working through the cross product direction.</div>
+  </div>
 </div>
 </div>
 
 <!-- Q12 -->
-<div class="problem-card">
+<div class="problem-card" id="card-q12">
 <div class="card-header"><span class="q-num">Q12</span><span class="q-title">Switch Opens &rarr; Voltmeter Reading Increases</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">CONCEPT</span><br>When switch S opens, a parallel branch is removed from the circuit.</div>
-<div class="step"><span class="step-label">CHAIN</span><br>Remove parallel branch &rarr; Total R increases &rarr; Current from battery may decrease &rarr; But the voltage redistribution across remaining components changes &rarr; Voltmeter reading <b>INCREASES</b></div>
+<div class="story-block">A circuit has a switch controlling a parallel branch. Opening the switch removes that branch, changing the total resistance and redistributing voltage. The voltmeter reading changes because current redistribution changes voltage drops.</div>
+<div class="analogy-block">a two-lane road narrowing to one lane &mdash; traffic decreases overall, but the remaining lane handles everything differently.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">S closed:</span> parallel branch active &rarr; lower R<sub>total</sub> &rarr; specific voltage distribution</div>
+  <div class="chain-step"><span class="chain-arrow">S opens:</span> branch removed &rarr; R<sub>total</sub> increases</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> I decreases</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Voltage redistributes</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Voltmeter reads higher</div>
+</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">1/R<sub>total</sub> = 1/R&#8321; + 1/R&#8322;</div>
+  <div class="math-verbal">Total resistance of parallel branches is always less than the smallest individual</div>
+</div>
 <div class="answer-box"><span class="lbl">ANSWER</span><br>Voltmeter reading INCREASES when switch opens</div>
-<div class="step"><span class="step-label">WHY</span><br>Opening the switch removes a current path. The remaining resistor now gets a larger share of the battery voltage (less voltage dropped elsewhere).</div>
+<div class="mnemonic">MNEMONIC: "Open switch = remove branch = more resistance = voltmeter reads more"</div>
+<div class="source-ref">Source: notes-17 pp2-4</div>
 </div>
 <div class="card-svg">
 <svg width="260" height="160" viewBox="0 0 260 160">
@@ -1115,7 +1296,49 @@ svg text{font-family:'JetBrains Mono',monospace}
 <text x="230" y="78" fill="#3ecf8e" font-size="10" font-weight="bold">&uarr;</text>
 <text x="50" y="150" fill="#888" font-size="10">Remove branch &rarr; R&uarr; &rarr; V reading &uarr;</text>
 </svg>
+<div class="diagram-caption">Switch open &rarr; parallel branch gone &rarr; R<sub>total</sub> rises &rarr; voltage redistributes &rarr; voltmeter reads higher.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q13')">Q13 &mdash; series power</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q14')">Q14 &mdash; parallel power</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-q12')">
+  <span class="variation-chevron" id="chev-var-q12">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">5</span>
+</div>
+<div class="variation-container" id="var-q12">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Switch closed instead (original state)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Parallel branch active &rarr; R<sub>total</sub> is lower than either resistor alone</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> More current flows &rarr; voltmeter reads lower value</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Closed switch = added path = lower resistance = voltmeter reads less.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Different resistor configurations</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Calculate R<sub>total</sub> before and after using parallel and series rules</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Then trace how voltage distributes across each element with V = IR</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Find current before and after switch opens</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Before: I = V<sub>bat</sub>/R<sub>parallel</sub></div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> After: I = V<sub>bat</sub>/R<sub>remaining</sub></div>
+    <div class="eq">I<sub>after</sub> &lt; I<sub>before</sub> (higher R &rarr; less total current)</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V4: Find power before and after</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> P = V&sup2;/R or P = I&sup2;R depending on what&apos;s constant</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> After switch opens: less total current &rarr; total power drops</div>
+    <div class="warn">Power in each remaining component may go up or down depending on series vs parallel position.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V5: Multiple switches</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Treat each switch state change as removing/adding a branch</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Recalculate R<sub>total</sub> for each configuration, then trace voltages</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Work systematically: draw the circuit for each switch state, then apply V = IR.</div>
+  </div>
 </div>
 </div>
 <!-- Q13 -->
