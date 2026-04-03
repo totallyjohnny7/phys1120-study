@@ -1800,6 +1800,11 @@ Each step depends on the previous!</div>
 <!-- ==================== TAB 2: EXAM QUIZ ==================== -->
 <div id="tab-quiz" class="tab-content">
 <div class="quiz-container">
+<div class="quiz-mode-bar">
+<button class="quiz-mode-btn active" data-mode="calculation" onclick="setQuizMode('calculation')">CALCULATION</button>
+<button class="quiz-mode-btn" data-mode="conceptual" onclick="setQuizMode('conceptual')">CONCEPTUAL</button>
+<button class="quiz-mode-btn" data-mode="mixed" onclick="setQuizMode('mixed')">MIXED EXAM SIM</button>
+</div>
 <div id="quiz-area">
 <div class="quiz-progress" id="quiz-progress">Question 1 of 16</div>
 <div class="quiz-q" id="quiz-question"></div>
@@ -2471,86 +2476,150 @@ function calcQ16(){
 // ============ EXAM QUIZ DATA ============
 const examQuiz=[
 {q:"A proton moves to the RIGHT through a magnetic field directed INTO the page. What is the direction of the magnetic force on the proton?",
-opts:["Up","Down","Left","Into the page"],correct:0,
+opts:["Up","Down","Left","Into the page"],correct:0,concept:"Magnetic Forces",
 why:"RHR 2: fingers point right (v), curl into page (B), thumb points UP. Force is upward on a positive charge.",
 wrongs:["","(B) Down: This would be correct for an ELECTRON (negative charge). You forgot that proton is positive.","(C) Left: This would require v and B to be in a different configuration. You may have confused the RHR axes.","(D) Into page: Force cannot be parallel to B. The cross product v\u00D7B is always perpendicular to both."]},
 
 {q:"An electron moves to the RIGHT and is forced UPWARD. What is the direction of the magnetic field?",
-opts:["Out of page","Into the page","Up","Down"],correct:1,
+opts:["Out of page","Into the page","Up","Down"],correct:1,concept:"Magnetic Forces",
 why:"For positive charge moving right with force up, RHR gives B OUT of page. But this is an ELECTRON (negative), so flip: B is INTO the page.",
 wrongs:["(A) Out of page: This would be correct for a POSITIVE charge. You forgot to flip for the electron's negative charge.","","(C) Up: B cannot be parallel to the force direction in a magnetic force problem. F = qv\u00D7B means F \u22A5 B always.","(D) Down: Confuses the relationship between F and B. The force is perpendicular to both v and B, not parallel."]},
 
 {q:"Two long parallel wires carry currents in the SAME direction. The force between them is:",
-opts:["Attractive","Repulsive","Zero","Oscillating"],correct:0,
+opts:["Attractive","Repulsive","Zero","Oscillating"],correct:0,concept:"Magnetic Forces",
 why:"Same-direction currents create magnetic fields that push the wires toward each other. F/l = \u03BC\u2080I\u2081I\u2082/(2\u03C0d). Same direction = ATTRACT.",
 wrongs:["","(B) Repulsive: This is the rule for OPPOSITE direction currents, not same direction. Remember: Same = Snuggle.","(C) Zero: The force is only zero if one current is zero. Two currents always interact magnetically.","(D) Oscillating: There is no oscillation in DC parallel wire forces. The force is steady and constant."]},
 
 {q:"A positive charge enters a region of B directed OUT of the page, moving to the right. The charge will:",
-opts:["Curve upward in a CCW circle","Curve downward in a CW circle","Travel in a straight line","Stop immediately"],correct:1,
+opts:["Curve upward in a CCW circle","Curve downward in a CW circle","Travel in a straight line","Stop immediately"],correct:1,concept:"Magnetic Forces",
 why:"RHR 2: v right, B out of page \u2192 F downward. Charge curves down, then continues in a CW circle. F is always perpendicular to v, providing centripetal force.",
 wrongs:["(A) CCW circle: This would be the path for a NEGATIVE charge. Positive charges curve CW in B out-of-page.","","(C) Straight line: A charged particle in a B field (with v not parallel to B) MUST curve. Only if v \u2225 B would it go straight.","(D) Stop: Magnetic force does zero work (F \u22A5 v), so it cannot slow down or stop a charge. Speed is constant."]},
 
 {q:"A variable resistor's slider moves LEFT, decreasing resistance. The induced current in nearby Loop A is:",
-opts:["Clockwise","Counterclockwise","Zero","Alternating"],correct:1,
+opts:["Clockwise","Counterclockwise","Zero","Alternating"],correct:1,concept:"EM Induction",
 why:"R decreases \u2192 I increases \u2192 B increases \u2192 \u03A6 increases through Loop A \u2192 Lenz opposes increase \u2192 induced current is CCW to create opposing B.",
 wrongs:["(A) Clockwise: This would SUPPORT the increasing flux, violating Lenz's Law. Induced current must OPPOSE change.","","(C) Zero: Flux is CHANGING (because current is changing), so an EMF IS induced. Only steady flux gives zero.","(D) Alternating: The slider moves steadily in one direction, so the flux change is one-directional. No alternation."]},
 
 {q:"A charged particle moves in a circular path in a uniform magnetic field. Its kinetic energy:",
-opts:["Increases","Decreases","Remains constant","Oscillates"],correct:2,
+opts:["Increases","Decreases","Remains constant","Oscillates"],correct:2,concept:"Magnetic Forces",
 why:"Magnetic force is always perpendicular to velocity: W = Fd cos(90\u00B0) = 0. Zero work = zero change in KE. Speed (and thus KE) stays constant.",
 wrongs:["(A) Increases: No energy can be added by a magnetic force. It does zero work because F \u22A5 v at all times.","(B) Decreases: Magnetic force cannot remove energy either. Only direction changes, never speed.","","(D) Oscillates: Speed remains perfectly constant. Only the direction of v changes continuously."]},
 
 {q:"A solenoid carries a STEADY current of 1.5 A. A conducting loop is placed nearby. The induced current in the loop is:",
-opts:["1.5 A","0.75 A","Zero","Depends on loop area"],correct:2,
+opts:["1.5 A","0.75 A","Zero","Depends on loop area"],correct:2,concept:"EM Induction",
 why:"STEADY current = constant B = constant \u03A6 = d\u03A6/dt = 0 = no EMF = no induced current. Faraday's Law requires CHANGING flux.",
 wrongs:["(A) 1.5 A: The loop is not connected to the solenoid circuit. And even inductively, steady current induces nothing.","(B) 0.75 A: There is no 'half the current' rule. Induction requires changing flux, not just having flux.","","(D) Depends on area: Even with a large loop area, \u03A6 = BA is constant when B is constant, so d\u03A6/dt = 0 regardless of area."]},
 
 {q:"A bar magnet with N-pole pointing DOWN falls toward a horizontal conducting loop. Viewed from above, the induced current is:",
-opts:["Clockwise","Counterclockwise","Zero","First CW then CCW"],correct:1,
+opts:["Clockwise","Counterclockwise","Zero","First CW then CCW"],correct:1,concept:"EM Induction",
 why:"As N-pole approaches from above, downward flux through loop increases. Lenz's Law: induced current opposes increase by creating upward B inside loop \u2192 CCW when viewed from above.",
 wrongs:["(A) Clockwise: CW from above would create B pointing DOWN, which SUPPORTS the increasing flux. Lenz says OPPOSE.","","(C) Zero: Flux is clearly changing as the magnet approaches, so there must be an induced EMF and current.","(D) First CW then CCW: The reversal happens when the magnet PASSES THROUGH, not while approaching. During approach only, it's CCW."]},
 
 {q:"A particle orbits in a magnetic field with radius R. If its speed is increased to 4 times the original, the new radius is:",
-opts:["R/4","R","4R","16R"],correct:2,
+opts:["R/4","R","4R","16R"],correct:2,concept:"Magnetic Forces",
 why:"R = mv/(qB). With m, q, B constant, R is directly proportional to v. If v \u2192 4v, then R \u2192 4R.",
 wrongs:["(A) R/4: This reverses the proportionality. R \u221D v (direct), not R \u221D 1/v (inverse).","(B) R: R only stays the same if v stays the same. Radius scales linearly with speed.","","(D) 16R: This confuses R with KE. KE \u221D v\u00B2 (so KE would be 16\u00D7), but R \u221D v (linear, so R is 4\u00D7)."]},
 
 {q:"A solenoid's N-end faces a bar magnet's S-end nearby. The force between them is:",
-opts:["Attractive (toward each other)","Repulsive (away from each other)","Zero","Depends on current magnitude"],correct:0,
+opts:["Attractive (toward each other)","Repulsive (away from each other)","Zero","Depends on current magnitude"],correct:0,concept:"Magnetic Forces",
 why:"N faces S = unlike poles = ATTRACT. This is the fundamental magnetic pole interaction: unlike poles attract, like poles repel.",
 wrongs:["","(B) Repulsive: Repulsion occurs between LIKE poles (N-N or S-S). Unlike poles (N-S) always attract.","(C) Zero: Two magnetic poles in proximity always exert a force. Zero force only if one has no magnetic field.","(D) Depends on current: While force magnitude depends on current (it determines B), the DIRECTION is always attractive for unlike poles."]},
 
 {q:"Electrons travel horizontally between magnets producing a downward B field. The electrons are:",
-opts:["Accelerated downward","Not affected","Accelerated upward","Accelerated along B"],correct:2,
+opts:["Accelerated downward","Not affected","Accelerated upward","Accelerated along B"],correct:2,concept:"Magnetic Forces",
 why:"For positive charge: v horizontal, B down \u2192 RHR gives force in one direction. But electrons are NEGATIVE, so flip \u2192 force is UPWARD. 'Accelerated' means direction changes.",
 wrongs:["(A) Downward: This is the result for a POSITIVE charge before flipping. For electrons, you must reverse the force direction.","(B) Not affected: Electrons ARE charged particles. Any charged particle moving through B (not parallel to B) experiences a force.","","(D) Along B: Magnetic force is ALWAYS perpendicular to B (and to v). It can never be parallel to B."]},
 
 {q:"In a circuit with parallel branches, switch S is opened (disconnecting one branch). The voltmeter reading across the remaining branch:",
-opts:["Decreases","Stays the same","Increases","Drops to zero"],correct:2,
+opts:["Decreases","Stays the same","Increases","Drops to zero"],correct:2,concept:"Circuits",
 why:"Opening the switch removes a parallel path. Total resistance increases. The remaining resistor gets a larger share of battery voltage, so voltmeter reads higher.",
 wrongs:["(A) Decreases: Removing a parallel branch increases total R, which changes voltage distribution. The remaining branch gets MORE voltage, not less.","(B) Stays the same: Only true if the removed branch had infinite resistance (carried no current). A real branch removal changes the circuit.","","(D) Drops to zero: The circuit is still complete through the remaining branch. Current still flows and produces a voltage drop."]},
 
 {q:"Resistors R and 4R are connected in SERIES. If P(4R) = 40W, what is P(R)?",
-opts:["10 W","40 W","160 W","2.5 W"],correct:0,
+opts:["10 W","40 W","160 W","2.5 W"],correct:0,concept:"Circuits",
 why:"Series: same current I through both. P = I\u00B2R, so P \u221D R. P(R)/P(4R) = R/(4R) = 1/4. P(R) = 40/4 = 10W.",
 wrongs:["","(B) 40 W: This assumes equal power in series. But P \u221D R in series, and R \u2260 4R, so powers differ by factor of 4.","(C) 160 W: This multiplied by 4 instead of dividing. The SMALLER resistor gets LESS power in series (P \u221D R).","(D) 2.5 W: This used P = V\u00B2/R (parallel formula) instead of P = I\u00B2R (series formula). In series, current is shared, not voltage."]},
 
 {q:"Resistors R and 5R are connected in PARALLEL. If P(R) = 50W, what is P(5R)?",
-opts:["250 W","50 W","10 W","5 W"],correct:2,
+opts:["250 W","50 W","10 W","5 W"],correct:2,concept:"Circuits",
 why:"Parallel: same voltage V across both. P = V\u00B2/R, so P \u221D 1/R. P(5R)/P(R) = R/(5R) = 1/5. P(5R) = 50/5 = 10W.",
 wrongs:["(A) 250 W: This multiplied by 5 (used P \u221D R). That's the SERIES rule! In parallel, bigger R gets LESS power.","(B) 50 W: Equal power only if resistances are equal. 5R \u2260 R, so powers differ by factor of 5.","","(D) 5 W: Divided by 10 instead of 5. The ratio is R to 5R = factor of 5, not 10."]},
 
 {q:"An alpha particle (q=2e, m=6.64\u00D710\u207B\u00B2\u2077 kg) moves at 35.6 km/s in a 1.1 T field. Its circular orbit DIAMETER is approximately:",
-opts:["0.67 mm","1.34 mm","2.68 mm","0.34 mm"],correct:1,
+opts:["0.67 mm","1.34 mm","2.68 mm","0.34 mm"],correct:1,concept:"Magnetic Forces",
 why:"R = mv/(qB) = (6.64\u00D710\u207B\u00B2\u2077)(35600)/((3.2\u00D710\u207B\u00B9\u2079)(1.1)) = 6.71\u00D710\u207B\u2074 m = 0.671 mm. DIAMETER = 2R \u2248 1.34 mm.",
 wrongs:["(A) 0.67 mm: This is the RADIUS, not the diameter! The question asks for diameter = 2R. Read carefully.","","(C) 2.68 mm: This used q = e (single charge) instead of q = 2e. Alpha particles have charge +2e, not +e.","(D) 0.34 mm: This used q = 4e or made another factor-of-2 error. Alpha charge is exactly 2e = 3.2\u00D710\u207B\u00B9\u2079 C."]},
 
 {q:"A rod of length 0.50 m moves at 7.5 m/s through a 0.8 T field on conducting rails with R = 1.50 \u03A9. The induced EMF is:",
-opts:["1.5 V","3.0 V","6.0 V","0.3 V"],correct:1,
+opts:["1.5 V","3.0 V","6.0 V","0.3 V"],correct:1,concept:"EM Induction",
 why:"\u03B5 = BLv = (0.8)(0.50)(7.5) = 3.0 V. Then I = \u03B5/R = 3.0/1.5 = 2.0 A, F = BIL = (0.8)(2.0)(0.50) = 0.8 N.",
 wrongs:["(A) 1.5 V: Likely forgot to include one factor. Check: B\u00D7L\u00D7v = 0.8\u00D70.5\u00D77.5 = 3.0, not 1.5.","","(C) 6.0 V: Possibly doubled one of the values or used L = 1.0 m instead of 0.50 m. Read the given values carefully.","(D) 0.3 V: Used incorrect units or decimal placement. Always convert to SI and check: 0.8 \u00D7 0.5 \u00D7 7.5 = 3.0."]}
 ];
+// ============ CONCEPTUAL QUIZ DATA ============
+var conceptualQuiz=[
+{q:"A proton moves rightward through B pointing out of the page. It follows a:",
+opts:["Clockwise circle","Counterclockwise circle","Straight line","Helix"],correct:0,
+why:"RHR 2: fingers right, curl toward out-of-page \u2192 thumb points down \u2192 curves down \u2192 clockwise.",concept:"Magnetic Forces"},
+
+{q:"A proton's speed doubles in the same B field. What happens to the PERIOD T of its orbit?",
+opts:["T stays the same","T doubles","T halves","T quadruples"],correct:0,
+why:"T = 2\u03C0m/(qB) \u2014 period depends on mass, charge, and B only. Speed is NOT in the formula. This is the biggest trap.",concept:"Magnetic Forces"},
+
+{q:"A steady 3A current flows through a solenoid. A loop sits nearby. The induced current is:",
+opts:["Zero","Clockwise","Counterclockwise","Depends on orientation"],correct:0,
+why:"Steady current \u2192 steady B \u2192 steady \u03A6 \u2192 d\u03A6/dt = 0 \u2192 no EMF \u2192 no current. Change is required for induction.",concept:"EM Induction"},
+
+{q:"A bar magnet approaches a loop (N-pole first). The loop's induced current:",
+opts:["Repels the magnet","Attracts the magnet","Does nothing","Depends on speed"],correct:0,
+why:"Lenz's Law: the induced current opposes the CHANGE. Approaching magnet = increasing flux \u2192 loop creates opposing field \u2192 repels.",concept:"EM Induction"},
+
+{q:"A charged particle moves in a circle in a B field. Its kinetic energy:",
+opts:["Remains constant","Increases","Decreases","Oscillates"],correct:0,
+why:"F is always \u22A5 to v \u2192 W = Fd cos90\u00B0 = 0 \u2192 \u0394KE = 0. The field bends the path but can't change speed.",concept:"Magnetic Forces"},
+
+{q:"An electron moves in B. Its ACCELERATION is:",
+opts:["Nonzero (centripetal)","Zero (constant speed)","Equal to qvB/m","Both A and C"],correct:3,
+why:"Speed is constant but direction changes \u2192 centripetal acceleration a = v\u00B2/r = qvB/m. Acceleration is NOT zero!",concept:"Magnetic Forces"},
+
+{q:"R and 4R are in SERIES. Which dissipates more power?",
+opts:["4R (the larger one)","R (the smaller one)","Equal power","Cannot determine"],correct:0,
+why:"Series = same current. P = I\u00B2R \u2192 bigger R = more power. The 4R resistor gets 4\u00D7 the power of R.",concept:"Circuits"},
+
+{q:"R and 4R are in PARALLEL. Which dissipates more power?",
+opts:["R (the smaller one)","4R (the larger one)","Equal power","Cannot determine"],correct:0,
+why:"Parallel = same voltage. P = V\u00B2/R \u2192 bigger R = LESS power. Opposite of series!",concept:"Circuits"},
+
+{q:"A conducting rod slides rightward on rails in B\u2297 (into page). The induced current flows:",
+opts:["Counterclockwise","Clockwise","No current","Alternating"],correct:0,
+why:"Rod right \u2192 area increases \u2192 \u03A6 increases (B into page) \u2192 Lenz opposes \u2192 induced B out of page \u2192 CCW current.",concept:"EM Induction"},
+
+{q:"Two parallel wires carry current in the SAME direction. They:",
+opts:["Attract","Repel","No force","Oscillate"],correct:0,
+why:"Same direction \u2192 attract. Each wire's B field pushes the other wire's current toward it.",concept:"Magnetic Forces"},
+
+{q:"A loop is FULLY inside a uniform B field. The induced EMF is:",
+opts:["Zero","Maximum","Depends on B strength","Depends on loop size"],correct:0,
+why:"Fully inside uniform B \u2192 \u03A6 is constant (B constant, A constant, \u03B8 constant) \u2192 d\u03A6/dt = 0 \u2192 \u03B5 = 0.",concept:"EM Induction"},
+
+{q:"A velocity selector lets through particles with speed v = E/B. This speed depends on:",
+opts:["Nothing about the particle (any charge, any mass)","Charge only","Mass only","Both charge and mass"],correct:0,
+why:"qE = qvB \u2192 charge cancels! v = E/B works for ANY particle regardless of charge or mass.",concept:"Magnetic Forces"},
+
+{q:"Opening a switch removes a parallel branch. The voltmeter reading across the remaining component:",
+opts:["Increases","Decreases","Stays the same","Drops to zero"],correct:0,
+why:"Removing a parallel path increases total R \u2192 current redistribution \u2192 remaining component gets a larger share of voltage.",concept:"Circuits"},
+
+{q:"Two opposite-direction wires: where is B = 0?",
+opts:["Outside the pair, near the weaker wire","Between the wires","Outside, near the stronger wire","Nowhere"],correct:0,
+why:"Opposite currents \u2192 fields ADD between wires (same direction). They only cancel OUTSIDE, near the weaker wire.",concept:"Magnetic Forces"},
+
+{q:"A circle lies in the xz plane. B points in the z direction. The magnetic flux through it is:",
+opts:["Zero","BA","BA cos60\u00B0","BA cos30\u00B0"],correct:0,
+why:"Circle in xz plane \u2192 normal = \u0177 (y-direction). B in z-direction \u2192 \u03B8 = 90\u00B0 between B and normal \u2192 \u03A6 = BA cos90\u00B0 = 0.",concept:"EM Induction"}
+];
+
 // ============ EXAM QUIZ ENGINE ============
+var quizMode='calculation', mixedPool=[];
 let quizIdx=0, quizScore=0, quizAnswered=false, quizMissed=[];
 
 function shuffleOpts(q){
@@ -2559,12 +2628,35 @@ function shuffleOpts(q){
   return indices;
 }
 
+function setQuizMode(mode){
+  quizMode=mode;
+  document.querySelectorAll('.quiz-mode-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelector('[data-mode="'+mode+'"]').classList.add('active');
+  quizIdx=0;quizScore=0;quizAnswered=false;quizMissed=[];mixedPool=[];
+  document.getElementById('quiz-score').style.display='none';
+  document.getElementById('quiz-area').style.display='block';
+  renderQuizQ();
+}
+
+function getActiveQuiz(){
+  if(quizMode==='conceptual') return conceptualQuiz;
+  if(quizMode==='mixed'){
+    if(!mixedPool.length){
+      mixedPool=examQuiz.concat(conceptualQuiz);
+      for(var i=mixedPool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=mixedPool[i];mixedPool[i]=mixedPool[j];mixedPool[j]=t;}
+    }
+    return mixedPool;
+  }
+  return examQuiz;
+}
+
 function renderQuizQ(){
-  if(quizIdx>=examQuiz.length){showQuizScore();return;}
+  var activeQuiz=getActiveQuiz();
+  if(quizIdx>=activeQuiz.length){showQuizScore();return;}
   quizAnswered=false;
-  const q=examQuiz[quizIdx];
+  const q=activeQuiz[quizIdx];
   const order=shuffleOpts(q);
-  document.getElementById('quiz-progress').textContent='Question '+(quizIdx+1)+' of '+examQuiz.length;
+  document.getElementById('quiz-progress').textContent='Question '+(quizIdx+1)+' of '+activeQuiz.length;
   document.getElementById('quiz-question').textContent=q.q;
   const letters=['A','B','C','D'];
   let html='';
@@ -2580,10 +2672,11 @@ function renderQuizQ(){
 function answerQuiz(btn,oi){
   if(quizAnswered)return;
   quizAnswered=true;
-  const q=examQuiz[quizIdx];
+  var activeQuiz=getActiveQuiz();
+  const q=activeQuiz[quizIdx];
   const correct=oi===q.correct;
   if(correct)quizScore++;
-  else quizMissed.push({idx:quizIdx,q:q.q,yourAns:q.opts[oi],correctAns:q.opts[q.correct]});
+  else quizMissed.push({idx:quizIdx,q:q.q,yourAns:q.opts[oi],correctAns:q.opts[q.correct],concept:q.concept||'General'});
   document.querySelectorAll('.quiz-option').forEach(b=>{
     b.classList.add('disabled');
     const boi=parseInt(b.getAttribute('data-oi'));
@@ -2592,7 +2685,7 @@ function answerQuiz(btn,oi){
   });
   let expHtml='<h4>'+(correct?'Correct!':'Incorrect')+'</h4>';
   expHtml+='<div class="exp-correct">'+q.why+'</div>';
-  q.wrongs.forEach((w,i)=>{if(w&&i!==q.correct)expHtml+='<div class="exp-wrong">&bull; '+w+'</div>';});
+  if(q.wrongs){q.wrongs.forEach((w,i)=>{if(w&&i!==q.correct)expHtml+='<div class="exp-wrong">&bull; '+w+'</div>';});}
   document.getElementById('quiz-explanation').innerHTML=expHtml;
   document.getElementById('quiz-explanation').className='explanation show';
   document.getElementById('quiz-next').style.display='inline-block';
@@ -2601,20 +2694,43 @@ function answerQuiz(btn,oi){
 function nextQuizQ(){quizIdx++;renderQuizQ();}
 
 function showQuizScore(){
+  var activeQuiz=getActiveQuiz();
   document.getElementById('quiz-area').style.display='none';
-  const pct=Math.round(quizScore/examQuiz.length*100);
+  const pct=Math.round(quizScore/activeQuiz.length*100);
   let grade='F';
   if(pct>=93)grade='A';else if(pct>=90)grade='A-';else if(pct>=87)grade='B+';else if(pct>=83)grade='B';else if(pct>=80)grade='B-';else if(pct>=77)grade='C+';else if(pct>=73)grade='C';else if(pct>=70)grade='C-';else if(pct>=67)grade='D+';else if(pct>=60)grade='D';
   let html='<h2>EXAM QUIZ COMPLETE</h2>';
-  html+='<div class="score-num">'+quizScore+'/'+examQuiz.length+'</div>';
+  html+='<div class="score-num">'+quizScore+'/'+activeQuiz.length+'</div>';
   html+='<div style="color:var(--text-dim)">'+pct+'%</div>';
   html+='<div class="grade" style="color:'+(pct>=70?'var(--correct)':'var(--wrong)')+'">Grade: '+grade+'</div>';
   if(quizMissed.length>0){
     html+='<div class="missed-list"><h4 style="color:var(--gold);margin:16px 0 8px">Missed Questions:</h4>';
-    quizMissed.forEach(m=>{
+    quizMissed.forEach(function(m){
       html+='<div class="missed-item"><b>Q'+(m.idx+1)+':</b> '+m.q.substring(0,80)+'...<br><span style="color:var(--wrong)">Your answer: '+m.yourAns+'</span> | <span style="color:var(--correct)">Correct: '+m.correctAns+'</span></div>';
     });
     html+='</div>';
+    // Group by concept
+    var groups={};
+    quizMissed.forEach(function(m){
+      var c=m.concept||'General';
+      if(!groups[c])groups[c]={total:0,items:[]};
+      groups[c].total++;
+      groups[c].items.push(m);
+    });
+    var groupHtml='';
+    for(var g in groups){
+      groupHtml+='<div class="concept-group"><h4>'+g+': missed '+groups[g].total+'</h4>';
+      groups[g].items.forEach(function(it){
+        groupHtml+='<div style="font-size:12px;color:var(--text-dim);margin:2px 0">\u2022 '+it.q.substring(0,60)+'...</div>';
+      });
+      groupHtml+='</div>';
+    }
+    html+=groupHtml;
+    // Reasoning gap
+    if(Object.keys(groups).length>0){
+      var weakest=Object.keys(groups).reduce(function(a,b){return groups[a].total>groups[b].total?a:b;});
+      html+='<div class="reasoning-gap">Your reasoning gap: <b>'+weakest+'</b> \u2014 focus your review on this area</div>';
+    }
   }
   html+='<button class="next-btn" onclick="resetQuiz()" style="margin-top:20px">Retake Quiz</button>';
   document.getElementById('quiz-score').innerHTML=html;
@@ -2622,7 +2738,7 @@ function showQuizScore(){
 }
 
 function resetQuiz(){
-  quizIdx=0;quizScore=0;quizAnswered=false;quizMissed=[];
+  quizIdx=0;quizScore=0;quizAnswered=false;quizMissed=[];mixedPool=[];
   document.getElementById('quiz-area').style.display='block';
   document.getElementById('quiz-score').style.display='none';
   renderQuizQ();
