@@ -2709,126 +2709,298 @@ document.addEventListener('DOMContentLoaded',function(){
 <h2 style="font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:20px;margin:1.5rem 0 1rem;letter-spacing:1px">🎙️ LECTURE NOTES — Magnetism &amp; Charged Particles (April 1)</h2>
 
 <!-- Magnetic Fields & Bar Magnets -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Magnetic Fields Basics">
+<div class="problem-card omi-source" id="card-l1" data-source="omi" data-lecture="2026-04-01" data-topic="Magnetic Fields Basics">
 <div class="card-header"><span class="q-num">L1</span><span class="q-title">Magnetic Fields: Bar Magnets vs Solenoids</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">KEY CLAIM FROM LECTURE</span><br>"There's nothing a natural magnet does that we cannot produce with a current." — Any bar magnet field pattern can be replicated by the right geometry of current-carrying coils.</div>
-<div class="step"><span class="step-label">FIELD LINES</span><br>Magnetic field lines go <b>out of North, into South</b> (outside the magnet). Inside the magnet, they go South→North. A solenoid produces the same pattern — uniform B inside, with identifiable N and S poles.</div>
-<div class="step"><span class="step-label">SOLENOID → BAR MAGNET</span><br>Use right-hand grip rule: wrap fingers in direction of current → thumb points to <b>North pole</b>. Then replace the solenoid with a bar magnet that has matching N/S orientation.</div>
-<div class="mnemonic">🧠 <b>From lecture:</b> "Put a black box on top — you can't tell if it's a bar magnet or a solenoid producing the field."</div>
+<div class="story-block">Every magnetic field from a bar magnet can be perfectly recreated by running current through the right shape of wire. There's no magic in magnets — just organized charge motion.</div>
+<div class="analogy-block">a fountain — natural springs and man-made pumps both produce flowing water. You can't tell which is which just by looking at the stream.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Current flows in coil</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Creates B field</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Pattern identical to bar magnet</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR grip: thumb = North</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Solenoid IS an electromagnet</div>
 </div>
+<div class="math-confirms">
+  <span class="section-label">KEY FACT</span>
+  <div class="eq">B field lines: out of North, into South (outside magnet)</div>
+  <div class="math-verbal">Solenoid produces identical pattern — uniform B inside, identifiable N/S poles determined by RHR grip</div>
+</div>
+<div class="mnemonic">MNEMONIC: "Put a black box on top — you can't tell if it's a bar magnet or a solenoid producing the field."</div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q3')">Q3 &mdash; wire B field</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q7')">Q7 &mdash; solenoid flux</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q12')">Q12 &mdash; transformer uses two solenoids</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l1')">
+  <span class="variation-chevron" id="chev-var-l1">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">2</span>
+</div>
+<div class="variation-container" id="var-l1">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Identify poles from current direction</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Look at which end current loops are counterclockwise (CCW) when viewed head-on</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> CCW end = North pole (field exits). CW end = South pole (field enters)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> RHR grip: wrap fingers in current direction, thumb points to North</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Compare bar magnet and solenoid field line patterns</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Both: closed loops, exit North, enter South, uniform inside</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Solenoid: B uniform only deep inside. Bar magnet: B strongest near poles</div>
+    <div class="answer-box"><span class="lbl">KEY</span> External field patterns are indistinguishable — same physics, different source</div>
+  </div>
 </div>
 </div>
 
 <!-- Right-Hand Rules -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Right-Hand Rules">
-<div class="card-header"><span class="q-num">L2</span><span class="q-title">The Two Right-Hand Rules (from lecture)</span></div>
+<div class="problem-card omi-source" id="card-l2" data-source="omi" data-lecture="2026-04-01" data-topic="Right-Hand Rules">
+<div class="card-header"><span class="q-num">L2</span><span class="q-title">The Two Right-Hand Rules</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">RHR #1 — GRIP RULE (for currents → B field)</span><br>Thumb = direction of current (I)<br>Curled fingers = direction of magnetic field lines (B)<br>Used for: straight wires, solenoids, any current-producing geometry</div>
-<div class="step"><span class="step-label">RHR #2 — FLAT HAND (for force on charges)</span><br>Thumb = velocity (v) of positive charge<br>Fingers = magnetic field (B)<br>Palm/force = out of palm (F)<br>For <b>negative charge</b>: force is in the <b>opposite direction</b></div>
-<div class="warn">⚠️ <b>Lecture trap:</b> If v and B end up parallel in your setup, something is wrong! F = qvB sin(θ), and sin(0°) = 0 → no force. You cannot get circular motion with parallel v and B.</div>
-<div class="step"><span class="step-label">WIRE FORM</span><br>For a current-carrying wire: <span class="eq">F = ILB sinθ</span><br>Thumb = I (current direction), curl toward B → palm = F direction</div>
+<div class="story-block">Physics gives you two tools for magnetism, both using your right hand. Rule 1 tells you what field a current creates. Rule 2 tells you what force a field exerts on a moving charge.</div>
+<div class="analogy-block">Rule 1 is like wrapping your hand around a garden hose to feel which way the water swirls. Rule 2 is like sticking your hand out a car window and feeling the wind push your palm.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">RHR1:</span> Thumb = current direction &rarr; curled fingers = B field direction</div>
+  <div class="chain-step"><span class="chain-arrow">RHR2:</span> Fingers = v, curl toward B, thumb = F (for + charge)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Negative charge: flip F direction</div>
 </div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">F = qv &times; B &nbsp;&nbsp;&nbsp; (cross product gives direction)</div>
+  <div class="math-verbal">RHR2 physically performs the cross product: F = qvB sin&theta; with direction from right-hand rule</div>
+</div>
+<div class="mnemonic">MNEMONIC: RHR1 = "grip the wire." RHR2 = "flatten your hand, fingers point along v, curl toward B, palm is force."</div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q1')">Q1/Q2 &mdash; force on moving charge</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q3')">Q3 &mdash; B from current</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l1')">L1 &mdash; solenoid poles</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l2')">
+  <span class="variation-chevron" id="chev-var-l2">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">3</span>
+</div>
+<div class="variation-container" id="var-l2">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Which rule for which scenario?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> "Current-carrying wire produces what B field direction?" &rarr; RHR1 (grip rule)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> "Proton moving in B field — what force direction?" &rarr; RHR2 (flat hand)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> RHR1 = source of field. RHR2 = force felt by moving charge IN that field.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Common confusion between the two</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Students mix them up under pressure. Anchor: RHR1 involves wrapping (for circular B around a wire). RHR2 involves flat hand (for force direction)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> If asked about a charge moving in an existing field, ALWAYS use RHR2.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: When to use RHR1 vs RHR2</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> RHR1: you know I, you want B. RHR2: you know v and B, you want F.</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Both rules needed together in: "current creates B, that B exerts force on nearby moving charge"</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Apply RHR1 first to get B, then RHR2 to get force on the test charge.</div>
+  </div>
 </div>
 </div>
 
 <!-- Circular Motion in B Fields -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Circular Motion in B Fields">
-<div class="card-header"><span class="q-num">L3</span><span class="q-title">Charged Particle Circular Motion in B Field</span></div>
+<div class="problem-card omi-source" id="card-l3" data-source="omi" data-lecture="2026-04-01" data-topic="Circular Motion in B Fields">
+<div class="card-header"><span class="q-num">L3</span><span class="q-title">Charged Particle Circular Motion (Lecture Derivation)</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">SETUP</span><br>When v ⟂ B: magnetic force is always perpendicular to velocity → <b>circular motion at constant speed</b></div>
-<div class="step"><span class="step-label">DERIVATION (done on board)</span><br>
-Magnetic force = centripetal force:<br>
-<span class="eq">|q|vB = mv²/r</span><br>
-Solve for radius:<br>
-<span class="eq">r = mv / (|q|B)</span>
+<div class="story-block">The lecture derived the radius formula by setting magnetic force equal to centripetal force. Every variable in R = mv/(qB) has a physical meaning.</div>
+<div class="analogy-block">a ball on a string — heavier ball or faster spin needs longer string. Pulling harder tightens the circle.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> F<sub>mag</sub> = F<sub>cent</sub></div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> qvB = mv&sup2;/r</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> r = mv / (qB)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Each variable has an intuitive role: mass &uarr; = wider circle, charge &uarr; = tighter, B &uarr; = tighter, v &uarr; = wider</div>
 </div>
-<div class="step"><span class="step-label">KEY RELATIONSHIPS</span></div>
-<div class="sub-case">• <b>Velocity doubles (2v)</b> → radius doubles (2r)</div>
-<div class="sub-case">• <b>Charge doubles (2q)</b> → radius halves (r/2) — <em>"larger charge = smaller radius"</em></div>
-<div class="sub-case">• <b>Mass quadruples (4m)</b> → radius quadruples (4r)</div>
-<div class="sub-case">• <b>B doubles (2B)</b> → radius halves (r/2)</div>
-<div class="step"><span class="step-label">SPEED &amp; KINETIC ENERGY</span><br>
-Magnetic force is always ⟂ to velocity → does <b>zero work</b> → ΔKE = 0 → speed is <b>constant</b><br>
-"The magnetic force can bend the path but cannot change the speed."
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">r = mv / (|q|B)</div>
+  <div class="math-verbal">Radius proportional to momentum (mv), inversely proportional to charge and field strength</div>
 </div>
-<div class="warn">⚠️ <b>Common student mistake (from lecture):</b> "Acceleration = 0 because speed is constant." WRONG! There IS acceleration — it's <b>centripetal</b> (v²/r), which changes direction, not speed. Acceleration has two aspects: tangential (changes speed) and centripetal/radial (bends path).</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; radius calculation</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q9')">Q9 &mdash; particle in B</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l4')">L4 &mdash; centripetal vs tangential</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l3')">
+  <span class="variation-chevron" id="chev-var-l3">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">2</span>
+</div>
+<div class="variation-container" id="var-l3">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Derive period T from radius formula</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Circumference = 2&pi;r, speed = v, so T = 2&pi;r/v</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Substitute r = mv/(qB): T = 2&pi;m / (qB)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Period is independent of speed! Faster particles have bigger radius but same period.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: What if particle has velocity component parallel to B?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Parallel component: not affected by B (F = qvB sin&theta;, &theta;=0 → F=0)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Perpendicular component: creates circular motion as normal</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Result is helical motion — spirals along field lines. The two motions are independent.</div>
+  </div>
 </div>
 </div>
 
 <!-- Tangential vs Centripetal -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Tangential vs Centripetal Acceleration">
+<div class="problem-card omi-source" id="card-l4" data-source="omi" data-lecture="2026-04-01" data-topic="Tangential vs Centripetal Acceleration">
 <div class="card-header"><span class="q-num">L4</span><span class="q-title">Tangential vs Centripetal Acceleration</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">TWO COMPONENTS OF ACCELERATION</span><br>
-<b>Tangential acceleration (aₜ)</b>: changes the <em>magnitude</em> of velocity (speeds up or slows down). Force is parallel or anti-parallel to v.<br>
-<b>Centripetal/radial acceleration (aᶜ)</b>: changes the <em>direction</em> of velocity (bends the path). Force is perpendicular to v. Formula: <span class="eq">aᶜ = v²/r</span>
+<div class="story-block">Acceleration has two flavors. Tangential changes how fast you go. Centripetal changes which way you go. Magnetic force only provides centripetal — that's why it bends without speeding up.</div>
+<div class="analogy-block">in a car: gas pedal = tangential (speeds up), steering wheel = centripetal (turns). Magnetic force is a steering wheel with no gas pedal.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">Tangential:</span> parallel to v &rarr; changes speed</div>
+  <div class="chain-step"><span class="chain-arrow">Centripetal:</span> &perp; to v &rarr; changes direction</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Magnetic force always &perp; &rarr; purely centripetal &rarr; speed constant</div>
 </div>
-<div class="step"><span class="step-label">BECAUSE THEY'RE PERPENDICULAR</span><br>
-These two components are independent — you can study them separately. This is why Physics 1 covers straight-line motion first (tangential), then circular motion (centripetal), then combines them.</div>
-<div class="step"><span class="step-label">FOR MAGNETIC FORCE SPECIFICALLY</span><br>
-Magnetic force is always ⟂ to velocity → only centripetal component → aₜ = 0 → constant speed → circular path</div>
-<div class="mnemonic">🧠 <b>From lecture:</b> "To say the magnetic force is perpendicular to velocity is to say it does no work. Perpendicular forces change direction but not speed."</div>
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">a<sub>c</sub> = v&sup2;/r &nbsp;&nbsp; (centripetal, NOT zero!)</div>
+  <div class="math-verbal">Even at constant speed, direction change = acceleration. a = 0 is WRONG for circular motion.</div>
 </div>
+</div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q6')">Q6 &mdash; circular motion</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; radius and force</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l3')">L3 &mdash; derivation</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l4')">
+  <span class="variation-chevron" id="chev-var-l4">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">2</span>
+</div>
+<div class="variation-container" id="var-l4">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Is acceleration zero for circular motion in B field?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed is constant (no tangential acceleration) &rarr; students conclude a = 0</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> WRONG: centripetal acceleration a<sub>c</sub> = v&sup2;/r is NOT zero</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Acceleration = 0 requires both components to be zero. Centripetal is always present in circular motion.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Can tangential and centripetal coexist?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Yes — in non-uniform circular motion (e.g., roller coaster, satellite changing orbit)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> But for magnetic force only: a<sub>t</sub> = 0 always (field never does work)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Pure magnetic field &rarr; only centripetal. Add electric field &rarr; can add tangential.</div>
+  </div>
 </div>
 </div>
 
 <!-- Superposition of B Fields -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Superposition of B Fields from Wires">
+<div class="problem-card omi-source" id="card-l5" data-source="omi" data-lecture="2026-04-01" data-topic="Superposition of B Fields from Wires">
 <div class="card-header"><span class="q-num">L5</span><span class="q-title">Finding B = 0 Between Two Parallel Wires</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">SETUP</span><br>Two parallel wires 40 cm apart. I₁ = 25 A, I₂ = 75 A. Find where net B = 0 along the line between them.</div>
-<div class="step"><span class="step-label">METHOD</span><br>
-1. Use RHR to find B direction from each wire at various regions (left of both, between, right of both)<br>
-2. For B = 0: need B₁ and B₂ equal and opposite<br>
-3. From <span class="eq">B = μ₀I / (2πr)</span>, equal B requires: <span class="eq">I₁/r₁ = I₂/r₂</span>
+<div class="story-block">Two wires each create their own field. Between them (same-direction currents), those fields oppose. There's one spot where they cancel — always closer to the weaker wire.</div>
+<div class="analogy-block">two speakers playing the same note — there's a spot where sound waves cancel. That spot is closer to the quieter speaker.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">1.</span> Each wire makes B = &mu;<sub>0</sub>I / (2&pi;r)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Same-direction currents: fields oppose between the wires</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Set B<sub>1</sub> = B<sub>2</sub>: I<sub>1</sub>/r<sub>1</sub> = I<sub>2</sub>/r<sub>2</sub></div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Zero field is closer to the weaker current wire</div>
 </div>
-<div class="step"><span class="step-label">SOLUTION</span><br>
-Since I₂ = 3 × I₁, we need r₂ = 3 × r₁ (three times farther from the stronger wire)<br>
-Point must be between the wires where fields oppose. With r₁ + r₂ = 0.4 m and r₂ = 3r₁:<br>
-<span class="eq">4r₁ = 0.4 → r₁ = 0.1 m</span> (10 cm from I₁, 30 cm from I₂)
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">I<sub>1</sub>/r<sub>1</sub> = I<sub>2</sub>/r<sub>2</sub> &nbsp;&rarr;&nbsp; r<sub>1</sub>/r<sub>2</sub> = I<sub>1</sub>/I<sub>2</sub></div>
+  <div class="math-verbal">Weaker current needs shorter distance to match field strength of stronger current farther away</div>
 </div>
-<div class="step"><span class="step-label">KEY INSIGHT</span><br>The zero point is always closer to the <b>weaker</b> current — the stronger wire's field needs more distance to weaken enough to match.</div>
 </div>
+</div>
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q3')">Q3 &mdash; B from a wire</span>
+  <span class="connects-pill">Exam: opposite-direction wire pair</span>
+</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l5')">
+  <span class="variation-chevron" id="chev-var-l5">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">3</span>
+</div>
+<div class="variation-container" id="var-l5">
+  <div class="variation-mini">
+    <div class="vm-title">V1: Opposite-direction currents — zero is OUTSIDE</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Between the wires: fields add (both point same direction in that region) &rarr; never zero between</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Zero must be outside, on the side of the weaker wire</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Same direction &rarr; zero is between. Opposite direction &rarr; zero is outside (weaker side).</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: Three wires</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Add all three B contributions (vector sum) at each candidate point</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Use superposition: B<sub>net</sub> = B<sub>1</sub> + B<sub>2</sub> + B<sub>3</sub> (with signs for direction)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Still use I/r ratios, but now solve algebraically with three unknowns/constraints.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V3: Unequal spacing — given a specific distance, verify B = 0</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Compute B<sub>1</sub> = &mu;<sub>0</sub>I<sub>1</sub>/(2&pi;r<sub>1</sub>) and B<sub>2</sub> = &mu;<sub>0</sub>I<sub>2</sub>/(2&pi;r<sub>2</sub>) at the point</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Check if they are equal and opposite — if yes, B<sub>net</sub> = 0</div>
+    <div class="answer-box"><span class="lbl">KEY</span> The ratio check I<sub>1</sub>/r<sub>1</sub> = I<sub>2</sub>/r<sub>2</sub> is the fastest verification method.</div>
+  </div>
 </div>
 </div>
 
 <!-- Alpha Particle Problem -->
-<div class="problem-card omi-source" data-source="omi" data-lecture="2026-04-01" data-topic="Alpha Particle in B Field">
-<div class="card-header"><span class="q-num">L6</span><span class="q-title">Alpha Particle in Magnetic Field (Worked Example)</span></div>
+<div class="problem-card omi-source" id="card-l6" data-source="omi" data-lecture="2026-04-01" data-topic="Alpha Particle in B Field">
+<div class="card-header"><span class="q-num">L6</span><span class="q-title">Alpha Particle Worked Example</span></div>
 <div class="card-body">
 <div class="card-text">
-<div class="step"><span class="step-label">GIVEN</span><br>
-Alpha particle: 2 protons + 2 neutrons<br>
-q = 2 × 1.6×10⁻¹⁹ = <b>3.2×10⁻¹⁹ C</b><br>
-Mass given in problem<br>
-B = 1.1 T, enters perpendicular to field
+<div class="story-block">An alpha particle (2p + 2n) enters a magnetic field with double charge and quadruple mass of a proton. The lecture walked through every step including the trap: acceleration is NOT zero.</div>
+<div class="analogy-block">a cannonball vs tennis ball curving in wind — heavier ball curves wider, but you need to know both mass and "grip" (charge) to predict the path.</div>
+<div class="chain-block">
+  <div class="chain-step"><span class="chain-arrow">Given:</span> q = 2e, m = 4m<sub>p</sub></div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> r = mv / (qB)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Diameter = 2r (read problem carefully!)</div>
+  <div class="chain-step"><span class="chain-arrow">&rarr;</span> Speed constant &rarr; a = v&sup2;/r (NOT zero!)</div>
 </div>
-<div class="step"><span class="step-label">FIND RADIUS</span><br>
-Use <span class="eq">r = mv / (|q|B)</span><br>
-Plug in mass, velocity, charge, B → calculate r<br>
-<b>Diameter = 2r</b> — read the problem carefully, sometimes they ask for diameter not radius!
+<div class="math-confirms">
+  <span class="section-label">MATH CONFIRMS</span>
+  <div class="eq">r = (4m<sub>p</sub>)v / (2eB) = 2m<sub>p</sub>v / (eB)</div>
+  <div class="math-verbal">Alpha radius is 2&times; proton radius at same speed — mass effect (4&times;) wins over charge effect (2&times;)</div>
 </div>
-<div class="step"><span class="step-label">FIND DIRECTION OF B</span><br>
-Use RHR: face v direction, force must point toward center of circle (centripetal).<br>
-Fingers must match B. Determine if B is into or out of page.
+<div class="warn">LECTURE TRAP: "What effect does B have on speed?" &rarr; None! Speed stays constant. But a = v&sup2;/r is NOT zero — centripetal acceleration exists. "a = 0" is the wrong answer.</div>
 </div>
-<div class="step"><span class="step-label">SPEED &amp; KINETIC ENERGY</span><br>
-Speed: <b>constant</b> (magnetic force ⟂ velocity)<br>
-ΔKE = 0 (no work done by magnetic force)
 </div>
-<div class="step"><span class="step-label">ACCELERATION</span><br>
-NOT zero! It's centripetal: <span class="eq">a = v²/r</span><br>
-Direction: toward center of circular path
+<div class="connects-section">
+  <span class="connects-label">Connects to:</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q4')">Q4 &mdash; radius formula</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q9')">Q9 &mdash; particle in B</span>
+  <span class="connects-pill" onclick="scrollToCard('card-q15')">Q15 &mdash; charge-to-mass</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l3')">L3 &mdash; derivation</span>
+  <span class="connects-pill" onclick="scrollToCard('card-l4')">L4 &mdash; centripetal trap</span>
 </div>
-<div class="warn">⚠️ <b>Lecture trap:</b> "What effect does B have on speed?" Students say "it accelerates it" — wrong framing. B changes DIRECTION only. Speed stays constant. But there IS acceleration (centripetal). The wrong answer is a = 0.</div>
+<div class="variation-toggle" onclick="toggleVariation('var-l6')">
+  <span class="variation-chevron" id="chev-var-l6">&#9654;</span>
+  <span>Variations</span>
+  <span class="variation-count">2</span>
 </div>
+<div class="variation-container" id="var-l6">
+  <div class="variation-mini">
+    <div class="vm-title">V1: What if proton instead of alpha particle?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Proton: q = e, m = m<sub>p</sub> &rarr; r<sub>p</sub> = m<sub>p</sub>v / (eB)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Alpha: r<sub>&alpha;</sub> = 2m<sub>p</sub>v / (eB) = 2r<sub>p</sub></div>
+    <div class="answer-box"><span class="lbl">KEY</span> Alpha particle circles at twice the radius of a proton at the same speed — mass wins over charge.</div>
+  </div>
+  <div class="variation-mini">
+    <div class="vm-title">V2: What if you need to find B given the radius?</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Rearrange r = mv/(qB): B = mv / (qr)</div>
+    <div class="chain-step"><span class="chain-arrow">&rarr;</span> Plug in alpha values: B = (4m<sub>p</sub>)v / (2e &times; r)</div>
+    <div class="answer-box"><span class="lbl">KEY</span> Same formula, rearranged. Always identify q and m for the specific particle first.</div>
+  </div>
 </div>
 </div>
 
