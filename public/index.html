@@ -5250,6 +5250,50 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <div class="mnemonic">MNEMONIC: "Put a black box on top — you can't tell if it's a bar magnet or a solenoid producing the field."</div>
 </div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l1-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+  <marker id="l1-bG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L8,3 L0,6Z" fill="#ef4444"/></marker>
+</defs>
+<!-- Left: Bar Magnet -->
+<text x="18" y="18" fill="#888" font-size="9" font-family="JetBrains Mono,monospace">BAR MAGNET</text>
+<rect x="24" y="75" width="26" height="50" rx="3" fill="#ef4444"/>
+<text x="27" y="104" fill="#fff" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">N</text>
+<rect x="50" y="75" width="26" height="50" rx="3" fill="#4ea8de"/>
+<text x="53" y="104" fill="#fff" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">S</text>
+<!-- Field lines bar magnet: arcs from N to S outside -->
+<path d="M37,75 Q37,35 63,35 Q88,35 63,100" fill="none" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#l1-aG)"/>
+<path d="M37,125 Q37,160 63,160 Q88,160 63,100" fill="none" stroke="#3ecf8e" stroke-width="1.5"/>
+<!-- Inner arrow S to N -->
+<line x1="50" y1="100" x2="34" y2="100" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#l1-aG)"/>
+<!-- RHR thumb label -->
+<text x="12" y="172" fill="#3ecf8e" font-size="8" font-family="JetBrains Mono,monospace">Thumb → N</text>
+
+<!-- Right: Solenoid -->
+<text x="158" y="18" fill="#888" font-size="9" font-family="JetBrains Mono,monospace">SOLENOID</text>
+<!-- Coil loops -->
+<path d="M155,78 Q165,68 175,78 Q185,88 195,78 Q205,68 215,78 Q225,88 235,78" fill="none" stroke="#4ea8de" stroke-width="2"/>
+<path d="M155,102 Q165,92 175,102 Q185,112 195,102 Q205,92 215,102 Q225,112 235,102" fill="none" stroke="#4ea8de" stroke-width="2"/>
+<line x1="155" y1="78" x2="155" y2="102" stroke="#4ea8de" stroke-width="2"/>
+<line x1="235" y1="78" x2="235" y2="102" stroke="#4ea8de" stroke-width="2"/>
+<!-- Field lines solenoid -->
+<path d="M235,90 Q255,55 248,35 Q235,20 195,25 Q158,20 148,40 Q140,60 155,90" fill="none" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#l1-aG)"/>
+<!-- Inner B arrow -->
+<line x1="165" y1="90" x2="220" y2="90" stroke="#3ecf8e" stroke-width="1.5" marker-end="url(#l1-aG)"/>
+<!-- N/S labels on solenoid ends -->
+<text x="238" y="95" fill="#ef4444" font-size="10" font-weight="bold" font-family="JetBrains Mono,monospace">N</text>
+<text x="143" y="95" fill="#4ea8de" font-size="10" font-weight="bold" font-family="JetBrains Mono,monospace">S</text>
+
+<!-- SAME FIELD PATTERN label connecting both -->
+<rect x="82" y="87" width="92" height="20" rx="4" fill="rgba(62,207,142,0.12)" stroke="#3ecf8e" stroke-width="1"/>
+<text x="86" y="101" fill="#3ecf8e" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">SAME PATTERN</text>
+<line x1="76" y1="97" x2="83" y2="97" stroke="#3ecf8e" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="174" y1="97" x2="155" y2="97" stroke="#3ecf8e" stroke-width="1" stroke-dasharray="3,2"/>
+</svg>
+<div class="diagram-caption">Bar magnet and solenoid produce identical B field patterns</div>
+</div>
 </div>
 <div class="connects-section">
   <span class="connects-label">Connects to:</span>
@@ -5353,6 +5397,53 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="math-verbal">RHR2 physically performs the cross product: F = qvB sin&theta; with direction from right-hand rule</div>
 </div>
 <div class="mnemonic">MNEMONIC: RHR1 = "grip the wire." RHR2 = "flatten your hand, fingers point along v, curl toward B, palm is force."</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l2-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+  <marker id="l2-bR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+  <marker id="l2-cB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#4ea8de"/></marker>
+</defs>
+<!-- Divider -->
+<line x1="140" y1="12" x2="140" y2="188" stroke="#1a1a2e" stroke-width="1.5"/>
+
+<!-- LEFT: RHR 1 -->
+<text x="8" y="22" fill="#3ecf8e" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">RHR 1: I → B</text>
+<!-- Vertical wire with current up -->
+<line x1="65" y1="155" x2="65" y2="50" stroke="#f0c040" stroke-width="3" marker-end="url(#l2-aG)"/>
+<text x="70" y="48" fill="#f0c040" font-size="10" font-family="JetBrains Mono,monospace">I</text>
+<!-- Circular B field arcs curling around wire -->
+<path d="M65,90 Q95,90 95,100 Q95,115 65,115" fill="none" stroke="#4ea8de" stroke-width="2" stroke-dasharray="4,2"/>
+<path d="M65,70 Q105,70 105,100 Q105,130 65,130" fill="none" stroke="#4ea8de" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.6"/>
+<text x="96" y="102" fill="#4ea8de" font-size="9" font-family="JetBrains Mono,monospace">B</text>
+<!-- Clockwise label -->
+<text x="14" y="170" fill="#4ea8de" font-size="8" font-family="JetBrains Mono,monospace">Grip: thumb=I</text>
+<text x="14" y="182" fill="#4ea8de" font-size="8" font-family="JetBrains Mono,monospace">fingers curl = B</text>
+
+<!-- RIGHT: RHR 2 -->
+<text x="148" y="22" fill="#f0c040" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">RHR 2: v,B→F</text>
+<!-- + charge moving right -->
+<circle cx="185" cy="110" r="9" fill="rgba(240,192,64,0.2)" stroke="#f0c040" stroke-width="1.5"/>
+<text x="182" y="115" fill="#f0c040" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">+</text>
+<!-- v arrow (right) -->
+<line x1="195" y1="110" x2="222" y2="110" stroke="#3ecf8e" stroke-width="2" marker-end="url(#l2-aG)"/>
+<text x="200" y="105" fill="#3ecf8e" font-size="10" font-family="JetBrains Mono,monospace">v</text>
+<!-- B field dots (out of page) -->
+<text x="153" y="85" fill="#4ea8de" font-size="14" font-family="JetBrains Mono,monospace">•</text>
+<text x="175" y="75" fill="#4ea8de" font-size="14" font-family="JetBrains Mono,monospace">•</text>
+<text x="200" y="80" fill="#4ea8de" font-size="14" font-family="JetBrains Mono,monospace">•</text>
+<text x="218" y="90" fill="#4ea8de" font-size="14" font-family="JetBrains Mono,monospace">•</text>
+<text x="155" y="68" fill="#4ea8de" font-size="9" font-family="JetBrains Mono,monospace">B (out)</text>
+<!-- F arrow (upward = out of page dot) -->
+<line x1="185" y1="100" x2="185" y2="70" stroke="#ef4444" stroke-width="2.5" marker-end="url(#l2-bR)"/>
+<text x="190" y="87" fill="#ef4444" font-size="10" font-family="JetBrains Mono,monospace">F</text>
+<!-- Flat hand label -->
+<text x="148" y="170" fill="#ef4444" font-size="8" font-family="JetBrains Mono,monospace">Fingers→v, curl→B</text>
+<text x="148" y="182" fill="#ef4444" font-size="8" font-family="JetBrains Mono,monospace">Thumb = F</text>
+</svg>
+<div class="diagram-caption">RHR 1 finds B from current. RHR 2 finds F from velocity and B.</div>
 </div>
 </div>
 <div class="connects-section">
@@ -5477,6 +5568,48 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="math-verbal">Radius proportional to momentum (mv), inversely proportional to charge and field strength</div>
 </div>
 </div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l3-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+  <marker id="l3-bR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+</defs>
+<!-- B field dots (out of page) -->
+<text x="20" y="35" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="48" y="22" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="22" y="65" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="18" y="100" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="25" y="130" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="245" y="35" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="255" y="70" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="250" y="110" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="246" y="150" fill="#4ea8de" font-size="13" font-family="JetBrains Mono,monospace">•</text>
+<text x="12" y="18" fill="#4ea8de" font-size="8" font-family="JetBrains Mono,monospace">B (out of page)</text>
+<!-- Circular path -->
+<circle cx="140" cy="110" r="65" fill="none" stroke="#4ea8de" stroke-width="2" stroke-dasharray="5,3"/>
+<!-- + charge at top of circle -->
+<circle cx="140" cy="45" r="8" fill="rgba(240,192,64,0.25)" stroke="#f0c040" stroke-width="1.5"/>
+<text x="137" y="50" fill="#f0c040" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">+</text>
+<!-- v arrow tangent (rightward at top) -->
+<line x1="149" y1="45" x2="185" y2="45" stroke="#3ecf8e" stroke-width="2.5" marker-end="url(#l3-aG)"/>
+<text x="188" y="50" fill="#3ecf8e" font-size="10" font-family="JetBrains Mono,monospace">v</text>
+<!-- F arrow toward center (downward) -->
+<line x1="140" y1="54" x2="140" y2="90" stroke="#ef4444" stroke-width="2.5" marker-end="url(#l3-bR)"/>
+<text x="144" y="78" fill="#ef4444" font-size="10" font-family="JetBrains Mono,monospace">F</text>
+<!-- 90° angle mark -->
+<rect x="140" y="54" width="7" height="7" fill="none" stroke="#888" stroke-width="1"/>
+<text x="150" y="65" fill="#888" font-size="8" font-family="JetBrains Mono,monospace">F⊥v</text>
+<!-- R label -->
+<line x1="140" y1="110" x2="140" y2="53" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="144" y="95" fill="#888" font-size="9" font-family="JetBrains Mono,monospace">R</text>
+<!-- Boxed equation -->
+<rect x="60" y="155" width="160" height="36" rx="4" fill="rgba(62,207,142,0.1)" stroke="#3ecf8e" stroke-width="1.5"/>
+<text x="68" y="170" fill="#3ecf8e" font-size="9" font-family="JetBrains Mono,monospace">qvB = mv²/R</text>
+<text x="68" y="184" fill="#3ecf8e" font-size="10" font-weight="bold" font-family="JetBrains Mono,monospace">→ R = mv/(qB)</text>
+</svg>
+<div class="diagram-caption">Magnetic force = centripetal force gives the radius formula</div>
+</div>
 </div>
 <div class="connects-section">
   <span class="connects-label">Connects to:</span>
@@ -5561,6 +5694,38 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="eq">a<sub>c</sub> = v&sup2;/r &nbsp;&nbsp; (centripetal, NOT zero!)</div>
   <div class="math-verbal">Even at constant speed, direction change = acceleration. a = 0 is WRONG for circular motion.</div>
 </div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l4-aT" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#f0c040"/></marker>
+  <marker id="l4-bC" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+  <marker id="l4-cV" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#4ea8de"/></marker>
+</defs>
+<!-- Curved path (slightly spiral, not perfect circle) -->
+<path d="M30,155 Q60,60 120,40 Q175,25 210,70 Q235,100 220,140" fill="none" stroke="#4ea8de" stroke-width="2.5"/>
+<!-- Particle at midpoint on path (~x=140, y=38) -->
+<circle cx="148" cy="36" r="8" fill="rgba(240,192,64,0.25)" stroke="#f0c040" stroke-width="1.5"/>
+<text x="144" y="41" fill="#f0c040" font-size="10" font-weight="bold" font-family="JetBrains Mono,monospace">+</text>
+<!-- a_t arrow: tangent to path (rightward along curve) -->
+<line x1="156" y1="34" x2="192" y2="26" stroke="#f0c040" stroke-width="2.5" marker-end="url(#l4-aT)"/>
+<text x="196" y="25" fill="#f0c040" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">a_t</text>
+<text x="192" y="36" fill="#f0c040" font-size="8" font-family="JetBrains Mono,monospace">changes speed</text>
+<!-- a_c arrow: perpendicular inward (downward toward center of curvature) -->
+<line x1="148" y1="44" x2="148" y2="85" stroke="#ef4444" stroke-width="2.5" marker-end="url(#l4-bC)"/>
+<text x="154" y="70" fill="#ef4444" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">a_c</text>
+<text x="154" y="82" fill="#ef4444" font-size="8" font-family="JetBrains Mono,monospace">changes direction</text>
+<!-- Boxed summary -->
+<rect x="20" y="115" width="240" height="44" rx="5" fill="rgba(239,68,68,0.09)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="28" y="132" fill="#888" font-size="9" font-family="JetBrains Mono,monospace">Magnetic force: a_t = 0, a_c = v²/R</text>
+<text x="28" y="148" fill="#ef4444" font-size="11" font-weight="bold" font-family="JetBrains Mono,monospace">a ≠ 0!  (centripetal still present)</text>
+<!-- Labels on arrows connecting to descriptions -->
+<line x1="20" y1="100" x2="20" y2="115" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="8" y="100" fill="#888" font-size="8" font-family="JetBrains Mono,monospace">Both</text>
+<text x="8" y="110" fill="#888" font-size="8" font-family="JetBrains Mono,monospace">shown</text>
+</svg>
+<div class="diagram-caption">Two independent components: tangential (speed) and centripetal (direction)</div>
 </div>
 </div>
 <div class="connects-section">
@@ -5654,6 +5819,52 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="eq">I<sub>1</sub>/r<sub>1</sub> = I<sub>2</sub>/r<sub>2</sub> &nbsp;&rarr;&nbsp; r<sub>1</sub>/r<sub>2</sub> = I<sub>1</sub>/I<sub>2</sub></div>
   <div class="math-verbal">Weaker current needs shorter distance to match field strength of stronger current farther away</div>
 </div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l5-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+  <marker id="l5-bB" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#4ea8de"/></marker>
+  <marker id="l5-cR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+</defs>
+<!-- Wire 1 (I₁=25A, left) at x=60 -->
+<line x1="60" y1="18" x2="60" y2="145" stroke="#3ecf8e" stroke-width="3"/>
+<line x1="60" y1="18" x2="60" y2="50" stroke="#3ecf8e" stroke-width="3" marker-end="url(#l5-aG)"/>
+<text x="46" y="14" fill="#3ecf8e" font-size="9" font-family="JetBrains Mono,monospace">I₁=25A</text>
+
+<!-- Wire 2 (I₂=75A, right) at x=210 -->
+<line x1="210" y1="18" x2="210" y2="145" stroke="#4ea8de" stroke-width="3"/>
+<line x1="210" y1="18" x2="210" y2="50" stroke="#4ea8de" stroke-width="3" marker-end="url(#l5-bB)"/>
+<text x="196" y="14" fill="#4ea8de" font-size="9" font-family="JetBrains Mono,monospace">I₂=75A</text>
+
+<!-- B₁ arrow at zero point (pointing left, away from wire 1) -->
+<line x1="107" y1="82" x2="82" y2="82" stroke="#3ecf8e" stroke-width="2" marker-end="url(#l5-aG)"/>
+<text x="83" y="77" fill="#3ecf8e" font-size="9" font-family="JetBrains Mono,monospace">B₁</text>
+
+<!-- B₂ arrow at zero point (pointing right, away from wire 2) -->
+<line x1="113" y1="82" x2="138" y2="82" stroke="#4ea8de" stroke-width="2" marker-end="url(#l5-bB)"/>
+<text x="127" y="77" fill="#4ea8de" font-size="9" font-family="JetBrains Mono,monospace">B₂</text>
+
+<!-- Zero point marker -->
+<circle cx="110" cy="82" r="7" fill="none" stroke="#22c55e" stroke-width="2"/>
+<text x="94" y="100" fill="#22c55e" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">B=0 here</text>
+
+<!-- Distance markers -->
+<line x1="60" y1="150" x2="110" y2="150" stroke="#888" stroke-width="1"/>
+<text x="72" y="163" fill="#3ecf8e" font-size="9" font-family="JetBrains Mono,monospace">r₁=10cm</text>
+<line x1="110" y1="150" x2="210" y2="150" stroke="#888" stroke-width="1"/>
+<text x="135" y="163" fill="#4ea8de" font-size="9" font-family="JetBrains Mono,monospace">r₂=30cm</text>
+<!-- Endpoint ticks -->
+<line x1="60" y1="147" x2="60" y2="153" stroke="#888" stroke-width="1"/>
+<line x1="110" y1="147" x2="110" y2="153" stroke="#888" stroke-width="1"/>
+<line x1="210" y1="147" x2="210" y2="153" stroke="#888" stroke-width="1"/>
+
+<!-- Equation box -->
+<rect x="40" y="170" width="200" height="22" rx="4" fill="rgba(62,207,142,0.1)" stroke="#3ecf8e" stroke-width="1.5"/>
+<text x="48" y="185" fill="#3ecf8e" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">I₁/r₁ = I₂/r₂ → 25/10 = 75/30 ✓</text>
+</svg>
+<div class="diagram-caption">B = 0 is always closer to the weaker current</div>
 </div>
 </div>
 <div class="connects-section">
@@ -5778,6 +5989,48 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="math-verbal">Alpha radius is 2&times; proton radius at same speed — mass effect (4&times;) wins over charge effect (2&times;)</div>
 </div>
 <div class="warn">LECTURE TRAP: "What effect does B have on speed?" &rarr; None! Speed stays constant. But a = v&sup2;/r is NOT zero — centripetal acceleration exists. "a = 0" is the wrong answer.</div>
+</div>
+<div class="card-svg">
+<svg width="280" height="200" viewBox="0 0 280 200">
+<rect width="280" height="200" fill="#0a0a12" rx="8"/>
+<defs>
+  <marker id="l6-aG" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#3ecf8e"/></marker>
+  <marker id="l6-bU" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#4ea8de"/></marker>
+  <marker id="l6-cR" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5Z" fill="#ef4444"/></marker>
+</defs>
+<!-- B field arrows pointing upward (vertical, left side) -->
+<line x1="22" y1="155" x2="22" y2="118" stroke="#4ea8de" stroke-width="2" marker-end="url(#l6-bU)"/>
+<line x1="42" y1="155" x2="42" y2="118" stroke="#4ea8de" stroke-width="2" marker-end="url(#l6-bU)"/>
+<line x1="62" y1="155" x2="62" y2="118" stroke="#4ea8de" stroke-width="2" marker-end="url(#l6-bU)"/>
+<text x="18" y="168" fill="#4ea8de" font-size="8" font-family="JetBrains Mono,monospace">B↑ (vertical)</text>
+
+<!-- Circular path in horizontal plane (shown as ellipse to indicate 3D) -->
+<ellipse cx="178" cy="100" rx="72" ry="50" fill="none" stroke="#8b6cef" stroke-width="2" stroke-dasharray="5,3"/>
+
+<!-- Alpha particle at right of ellipse -->
+<circle cx="250" cy="100" r="9" fill="rgba(212,168,38,0.25)" stroke="#d4a826" stroke-width="1.5"/>
+<text x="243" y="105" fill="#d4a826" font-size="9" font-weight="bold" font-family="JetBrains Mono,monospace">α²⁺</text>
+
+<!-- v arrow (entering horizontally, rightward at particle position) -->
+<line x1="250" y1="88" x2="250" y2="60" stroke="#3ecf8e" stroke-width="2.5" marker-end="url(#l6-aG)"/>
+<text x="254" y="76" fill="#3ecf8e" font-size="9" font-family="JetBrains Mono,monospace">v→</text>
+<text x="238" y="57" fill="#3ecf8e" font-size="8" font-family="JetBrains Mono,monospace">(horizontal)</text>
+
+<!-- F arrow toward center -->
+<line x1="241" y1="100" x2="210" y2="100" stroke="#ef4444" stroke-width="2.5" marker-end="url(#l6-cR)"/>
+<text x="212" y="95" fill="#ef4444" font-size="9" font-family="JetBrains Mono,monospace">F</text>
+<text x="200" y="108" fill="#ef4444" font-size="8" font-family="JetBrains Mono,monospace">toward center</text>
+
+<!-- R dashed line from center to particle -->
+<line x1="178" y1="100" x2="249" y2="100" stroke="#888" stroke-width="1.5" stroke-dasharray="4,2"/>
+<text x="203" y="115" fill="#888" font-size="9" font-family="JetBrains Mono,monospace">R</text>
+
+<!-- Key values box -->
+<rect x="12" y="12" width="148" height="34" rx="4" fill="rgba(212,168,38,0.1)" stroke="#d4a826" stroke-width="1"/>
+<text x="18" y="25" fill="#d4a826" font-size="8" font-family="JetBrains Mono,monospace">q = 3.2×10⁻¹⁹ C</text>
+<text x="18" y="38" fill="#d4a826" font-size="8" font-family="JetBrains Mono,monospace">B = 1.1 T, m = 4mₚ</text>
+</svg>
+<div class="diagram-caption">Alpha particle traces circular path in horizontal plane (B vertical, v horizontal)</div>
 </div>
 </div>
 <div class="connects-section">
